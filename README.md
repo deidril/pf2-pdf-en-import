@@ -2,16 +2,18 @@
 This foundry vtt plugin allows to import PDFs into the current world. 
 
 # Supported PDFs 
-1.Shadows at Sundown
+Shadows at Sundown
 
 # Known issues
-      (TODO) Elite flagged creatures aren't upgraded to Elite. You must do it yourself in waiting this issue fixed
-      (BUG) Gender of creatures using the stat block of another creature, aren't set. Issue is on the todo list"
-      (BUG) Foundry ids of imported entries are not static. Entries will not be correctly overwritten if you reimport the PDF.
-      (TODO) Map tags of room should have their number upon 2 characters, so [A10] will appears after [A09]
-      (BUG) Activities stat blocks are using the encounter's stat block template.
-      (BUG) Initial import of images may freeze foundry for up to a minute
-      (TODO) Creature from Bestiary 6 doesn't have any actor imported
+
+      + Initial import of images may freeze foundry for up to a minute
+
+      + Elite flagged creatures aren't upgraded to Elite. You must do it yourself in waiting this issue fixed
+      + Gender of creatures using the stat block of another creature, aren't set. Issue is on the todo list"
+      + Foundry ids of imported entries are not static. Entries will not be correctly overwritten if you reimport the PDF.
+      + Map tags of room should have their number upon 2 characters, so [A10] will appears after [A09]
+      + Activities stat blocks are using the encounter's stat block template.
+      + Creature from Bestiary 6 doesn't have any actor imported
 
 
 # Installation
