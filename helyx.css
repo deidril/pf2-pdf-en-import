@@ -11,7 +11,7 @@
     --ancestry: #5d0000;
 
 }
-
+  
 .helyx-version {
     visibility: hidden;
 }
@@ -20,6 +20,10 @@
     height: 30px;
 }
 
+.helyx-statblock
+{
+    padding-right: 5px;
+}
 
 .helyx-inline
 {
@@ -62,9 +66,18 @@ form .editor-content .helyx-content div.helyx-block-read-section
     color: var(--primary);
 }
 
+form .editor-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table
+{
+    border: 0px;
+}
+
+form .editor-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table tbody
+{
+    border: 0px;
+}
+
 form .editor-content .helyx-content div.helyx-block-section
 {
-    border: 4px solid #026939;
     border-radius: 20px;
 }
 
@@ -76,10 +89,41 @@ form .editor-content .helyx-content div.helyx-block-section div.helyx-block-sect
     border-top-right-radius: 17px;
 }
 
+.helyx-header-secret
+{
+    border-bottom: 4px solid #000000;
+    background: linear-gradient(rgb(100, 100, 100),rgb(24, 24, 24));
+}
+
+form .editor-content .helyx-content div.helyx-block-section-secret
+{
+    border: 4px solid #000000;
+    background: #f8f8eb    
+}
+
+.helyx-header-balance
+{
+    border-bottom: 4px solid #000000;
+    background: linear-gradient(rgb(100, 100, 100),rgb(0, 161, 108));
+}
+
+form .editor-content .helyx-content div.helyx-block-section-balance
+{
+    border: 4px solid #000000;
+    background: #f8f8eb    
+}
+
+
 .helyx-header-treasure
 {
     border-bottom: 4px solid #026939;
     background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-treasure
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
 }
 
 .helyx-header-encounter
@@ -88,10 +132,22 @@ form .editor-content .helyx-content div.helyx-block-section div.helyx-block-sect
     background: linear-gradient( red,black);
 }
 
+form .editor-content .helyx-content div.helyx-block-section-encounter
+{
+    border: 4px solid #5d0000;
+    background: #f8f8eb    
+}
+
 .helyx-header-danger
 {
     border-bottom: 4px solid #5d0000;
     background: linear-gradient( red,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-danger
+{
+    border: 4px solid #5d0000;
+    background: #f8f8eb    
 }
 
 .helyx-header-hazard
@@ -100,10 +156,74 @@ form .editor-content .helyx-content div.helyx-block-section div.helyx-block-sect
     background: linear-gradient( red,black);
 }
 
+form .editor-content .helyx-content div.helyx-block-section-hazard
+{
+    border: 4px solid #5d0000;
+    background: #f8f8eb    
+}
+
+.helyx-header-map
+{
+    border-bottom: 4px solid #22180f;
+    background: linear-gradient( #b2845d,#352517);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-map
+{
+    border: 4px solid #22180f;
+    background: #f8f8eb    
+}
+
+
 .helyx-header-success
 {
-    border-bottom: 4px solid green;
-    background: linear-gradient( #5fff73,black);
+    border-bottom: 4px solid rgb(0, 88, 151);;
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-success
+{
+    border: 4px solid rgb(0, 88, 151);;
+    background: #f8f8eb    
+}
+
+.helyx-header-bylevel
+{
+    border-bottom: 4px solid rgb(0, 88, 151);;
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-bylevel
+{
+    border: 4px solid rgb(0, 88, 151);;
+    background: #f8f8eb    
+}
+
+.helyx-header-dices
+{
+    border-bottom: 4px solid rgb(0, 88, 151);;
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-dices
+{
+    border: 4px solid rgb(0, 88, 151);;
+    background: #f8f8eb    
+}
+
+.helyx-header-peace
+{
+    border-bottom: 4px solid rgb(0, 151, 43);;
+    background: linear-gradient( #76ff31,rgb(239, 255, 61));
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+ 
+
+}
+
+form .editor-content .helyx-content div.helyx-block-section-peace
+{
+    border: 4px solid rgb(0, 151, 43);;
+    background: #f8f8eb    
 }
 
 .helyx-header-question
@@ -112,10 +232,22 @@ form .editor-content .helyx-content div.helyx-block-section div.helyx-block-sect
     background: linear-gradient( #1c7ec5,black);
 }
 
+form .editor-content .helyx-content div.helyx-block-section-question
+{
+    border: 4px solid rgb(0, 88, 151);
+    background: #f8f8eb    
+}
+
 .helyx-header-development
 {
     border-bottom: 4px solid rgb(0, 88, 151);
     background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-development
+{
+    border: 4px solid rgb(0, 88, 151);
+    background: #f8f8eb    
 }
 
 form .editor-content .helyx-content div.helyx-block-section div.helyx-block-section-body
@@ -127,19 +259,20 @@ form .editor-content .helyx-content div.helyx-block-section-icon
 {
     padding-bottom: 10px;
     display: block;
-    height: 60px;
+    height: 50px;
 }
 
 form .editor-content .helyx-content .helyx-block-section h3
 {
     color: white;
     text-transform: uppercase;
+    font-size: medium;
 }
 
 form .editor-content .helyx-content div.helyx-block-section img.helyx-exploration-icon
 {
     border-radius: 50%;
-    width: 90px;
+    width: 70px;
     position: relative;
     left: -19px;
     top: -10px;
@@ -178,7 +311,7 @@ form .editor-content .helyx-content div.helyx-block-box-title img.helyx-explorat
     margin-left: 20px;
 }
 
-.helyx-content h2.helyx-room-title span.helyx-room-difficulty
+.helyx-content h2.helyx-room-title span.helyx-room-cr
 {
     position: absolute ; 
     right: 25px;
@@ -192,6 +325,11 @@ form .editor-content .helyx-content div.helyx-block-box-title img.helyx-explorat
 .helyx-content .helyx-block-p
 {
     text-indent: 20px;
+}
+
+.helyx-content .helyx-block-p a
+{
+    text-indent: 0px;
 }
 
 .helyx-block-box
@@ -211,6 +349,13 @@ form .editor-content .helyx-content div.helyx-block-box-title img.helyx-explorat
 .helyx-block-equipment
 {
     background: #f8f8eb;
+    border: 2px solid black; 
+    border-radius: 10px;
+}
+
+.helyx-block-map
+{
+    background:  #f8f8eb;
     border: 2px solid black; 
     border-radius: 10px;
 }
@@ -285,16 +430,21 @@ form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title d
 {
     flex: 50%;
 }
+form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-listing span
+{
+    margin-top: 0px;
+    margin-left: 5px;
+}
 form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title h3
 {
     color: white;
     margin-bottom: 5px;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-difficulty
+form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-cr
 {
     flex: 25%;
 }
-form .editor-content .helyx-content .helyx-block-box h3 span.helyx-block-box-difficulty
+form .editor-content .helyx-content .helyx-block-box h3 span.helyx-block-box-cr
 {
     position: absolute; 
     right: 25px;
@@ -374,24 +524,24 @@ form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equip
     color: white;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-difficulty
+form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-cr
 {
     flex: 30%;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-difficulty
+form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-cr
 {
     flex: 30%;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter h3 span.helyx-block-encounter-difficulty
+form .editor-content .helyx-content .helyx-block-encounter h3 span.helyx-block-encounter-cr
 {
     position: absolute; 
     right: 25px;
     top: -15px;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment h3 span.helyx-block-equipment-difficulty
+form .editor-content .helyx-content .helyx-block-equipment h3 span.helyx-block-equipment-cr
 {
     position: absolute; 
     right: 25px;
@@ -439,6 +589,18 @@ form .editor-content .helyx-content .helyx-stat-block-section-title
     text-transform: uppercase;
 }
 
+form .editor-content .helyx-content .statblock .helyx-p
+{
+    text-indent: -15px;
+    padding-left: 15px;
+}
+
+form .editor-content .helyx-content .statblock .stat-description .helyx-p
+{
+    text-indent: 15px;
+    padding-left: 0px;
+}
+
 .helyx-pf2-encounter
 {
     border-bottom: 2px solid black; 
@@ -461,7 +623,7 @@ form .editor-content .helyx-content .helyx-stat-block-section-title
 }
 
 
-.helyx-pf2-difficulty
+.helyx-pf2-cr
 {
     position: absolute; 
     top: -20px; 
