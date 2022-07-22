@@ -1,5 +1,26 @@
 {
     "Helyx.File" : "File",
     "Helyx.Book" : "Book",
-    "Helyx.Progress" : "Progress"
+    "Helyx.Progress" : "Progress",
+    "Helyx.Inventory" : "Inventory",
+    "Helyx.PF2Conversion": "Pathfinder 2 Conversion(s)",
+
+    "Helyx.ImportItemJournal" : "Import",
+
+    "Helyx.Advance.ImportPageDetails" : "Imported details of page {number}", 
+    "Helyx.Advance.ActorAlreadyImported" : "Previous actor import found for '{name}'", 
+    "Helyx.Advance.ActorImported" : "Created actor '{name}'", 
+    "Helyx.Advance.ImageImport" : "Imported image '{name}'",
+    "Helyx.Advance.JournalAlreadyImported" : "Previous journal import found for '{name}'",
+    "Helyx.Advance.JournalImported" : "Created journal '{name}'",
+    "Helyx.Advance.PageReaded" : "Readed page {current} , {readed}/{total}", 
+    "Helyx.Advance.SceneAlreadyImported" : "Previous scene import found for '{name}'",
+    "Helyx.Advance.SceneImported" : "Created scene '{name}'", 
+    "Helyx.Advance.FolderAlreadyCreated" : "Existing folder found for '{name}'", 
+    "Helyx.Advance.FolderCreated" : "Created folder '{name}'", 
+    "Helyx.Advance.BackgroundAlreadyImported" : "Previous background item found for '{name}", 
+    "Helyx.Advance.BackgroundItemCreated" : "Created background item '{name}'", 
+    "Helyx.Advance.ItemAlreadyImported" : "Previous item found for '{name}'", 
+    "Helyx.Advance.ItemCreated" : "Created item '{name}'"
+
 }
