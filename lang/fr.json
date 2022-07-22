@@ -1,5 +1,25 @@
 {
     "Helyx.File" : "Fichier",
     "Helyx.Book" : "Oeuvre",
-    "Helyx.Progress" : "Progression"
+    "Helyx.Progress" : "Progression", 
+    "Helyx.Inventory" : "Inventaire",
+    "Helyx.PF2Conversion": "Conversion(s) pour Pathfinder 2",
+
+    "Helyx.ImportItemJournal" : "Définition", 
+
+    "Helyx.Advance.ImportPageDetails" : "Importe les détails de la page {number}", 
+    "Helyx.Advance.ActorAlreadyImported" : "Import précédent trouvé pour l'acteur '{name}'", 
+    "Helyx.Advance.ActorImported" : "Création de l'acteur '{name}'", 
+    "Helyx.Advance.ImageImport" : "Import de l'image '{name}'", 
+    "Helyx.Advance.JournalAlreadyImported" : "Import précédent trouvé pour le journal '{name}'", 
+    "Helyx.Advance.JournalImported" : "Création du journal '{name}'", 
+    "Helyx.Advance.PageReaded" : "Lecture de la page {current} , {readed}/{total}", 
+    "Helyx.Advance.SceneAlreadyImported" : "Import précédent trouvé pour la scène '{name}'", 
+    "Helyx.Advance.SceneImported" : "Création de la scène '{name}'", 
+    "Helyx.Advance.FolderAlreadyCreated" : "Dossier existant trouvé pour '{name}'", 
+    "Helyx.Advance.FolderCreated" : "Création du dossier '{name}'", 
+    "Helyx.Advance.BackgroundAlreadyImported" : "Import précédent trouvé pour l'historique '{name}", 
+    "Helyx.Advance.BackgroundItemCreated" : "Création de l'historique '{name}'", 
+    "Helyx.Advance.ItemAlreadyImported" : "Import précent trouvé pour l'objet '{name}'", 
+    "Helyx.Advance.ItemCreated" : "Création de l'objet '{name}'"
 }
