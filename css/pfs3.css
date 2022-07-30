@@ -1,0 +1,17 @@
+form .editor-content .helyx-content h2.helyx-pfs3e13-room-title
+{
+    background: url(/helyx/pfs3e13-guardian-s-covenant/banner.webp);
+
+    border-radius: 10px;
+    box-shadow:10px 5px 5px #b16b3e;
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+    color: white;    
+}
+
+.helyx-content h2.helyx-pfs3e13-room-title span.helyx-room-cr
+{
+    position: absolute ; 
+    right: 25px;
+}
