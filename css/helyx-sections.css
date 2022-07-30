@@ -1,0 +1,423 @@
+
+.helyx-header-secret
+{
+    border-bottom: 4px solid #000000;
+    background: linear-gradient(rgb(100, 100, 100),rgb(24, 24, 24));
+}
+
+form .editor-content .helyx-content div.helyx-block-section-secret
+{
+    border: 4px solid #000000;
+    background: #f8f8eb    
+}
+
+.helyx-header-balance
+{
+    border-bottom: 4px solid #000000;
+    background: linear-gradient(rgb(100, 100, 100),rgb(0, 161, 108));
+}
+
+form .editor-content .helyx-content div.helyx-block-section-balance
+{
+    border: 4px solid #000000;
+    background: #f8f8eb    
+}
+
+.helyx-header-camp
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-camp
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-treasure
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-treasure
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-encounter
+{
+    border-bottom: 4px solid #5d0000;
+    background: linear-gradient( red,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-encounter
+{
+    border: 4px solid #5d0000;
+    background: #f8f8eb    
+}
+
+.helyx-header-danger
+{
+    border-bottom: 4px solid #5d0000;
+    background: linear-gradient( red,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-danger
+{
+    border: 4px solid #5d0000;
+    background: #f8f8eb    
+}
+
+.helyx-header-hazard
+{
+    border-bottom: 4px solid #5d0000;
+    background: linear-gradient( red,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-hazard
+{
+    border: 4px solid #5d0000;
+    background: #f8f8eb    
+}
+
+.helyx-header-map
+{
+    border-bottom: 4px solid #22180f;
+    background: linear-gradient( #b2845d,#352517);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-map
+{
+    border: 4px solid #22180f;
+    background: #f8f8eb    
+}
+
+.helyx-header-anvil
+{
+    border-bottom: 4px solid rgb(0, 88, 151);;
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-anvil
+{
+    border: 4px solid rgb(0, 88, 151);;
+    background: #f8f8eb    
+}
+
+
+.helyx-header-success
+{
+    border-bottom: 4px solid rgb(0, 88, 151);;
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-success
+{
+    border: 4px solid rgb(0, 88, 151);;
+    background: #f8f8eb    
+}
+
+.helyx-header-bylevel
+{
+    border-bottom: 4px solid rgb(0, 88, 151);;
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-bylevel
+{
+    border: 4px solid rgb(0, 88, 151);;
+    background: #f8f8eb    
+}
+
+.helyx-header-dices
+{
+    border-bottom: 4px solid rgb(0, 88, 151);;
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-dices
+{
+    border: 4px solid rgb(0, 88, 151);;
+    background: #f8f8eb    
+}
+
+.helyx-header-peace
+{
+    border-bottom: 4px solid rgb(0, 151, 43);;
+    background: linear-gradient( #76ff31,rgb(239, 255, 61));
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+
+form .editor-content .helyx-content div.helyx-block-section-peace
+{
+    border: 4px solid rgb(0, 151, 43);;
+    background: #f8f8eb    
+}
+
+.helyx-header-question
+{
+    border-bottom: 4px solid rgb(0, 88, 151);
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-question
+{
+    border: 4px solid rgb(0, 88, 151);
+    background: #f8f8eb    
+}
+
+.helyx-header-development
+{
+    border-bottom: 4px solid rgb(0, 88, 151);
+    background: linear-gradient( #1c7ec5,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-development
+{
+    border: 4px solid rgb(0, 88, 151);
+    background: #f8f8eb    
+}
+
+
+.helyx-header-alchemist
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-alchemist
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+form .editor-content .helyx-content div.helyx-block-section-barbarian
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-barbarian
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-bard
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-bard
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-champion
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-champion
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-cleric
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-cleric
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-druid
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-druid
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-fighter
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-fighter
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-gunslinger
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-gunslinger
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-inventor
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-inventor
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-investigator
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-investigator
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-magus
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-magus
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-monk
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-monk
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-oracle
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-oracle
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-ranger
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-ranger
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-rogue
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-rogue
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-sorcerer
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-sorcerer
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-summoner
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-summoner
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-swashbuckler
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-swashbuckler
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-witch
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-witch
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+form .editor-content .helyx-content div.helyx-block-section-wizard
+{
+    border: 4px solid #026939;
+    background: #f8f8eb    
+}
+
+.helyx-header-wizard
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}

@@ -4,15 +4,17 @@ This foundry vtt plugin allows to import PDFs into the current world.
 # Supported PDFs 
 Shadows at Sundown
 
+Pathfinder Society Season 3 : 
+Episode 12 : Fury's Toll
+Episode 13 : guardian's Covenant
+
 # Known issues
 
       + Initial import of images may freeze foundry for up to a minute
+      + Sometimes the import just fail after importing images. Cancel and retry.
 
-      + Elite flagged creatures aren't upgraded to Elite. You must do it yourself in waiting this issue fixed
       + Gender of creatures using the stat block of another creature, aren't set. Issue is on the todo list"
       + Foundry ids of imported entries are not static. Entries will not be correctly overwritten if you reimport the PDF.
-      + Map tags of room should have their number upon 2 characters, so [A10] will appears after [A09]
-      + Activities stat blocks are using the encounter's stat block template.
       + Creature from Bestiary 6 doesn't have any actor imported
 
 
