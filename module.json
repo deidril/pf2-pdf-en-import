@@ -1,14 +1,14 @@
 {
   "name": "pf2-pdf-en-import",
   "title": "Deidril's Pathfinder 2 PDF Import",
-  "description": "Allow to import Shadows at Sundown and Pathfinder Season 3 episodes PDFs into foundry'",
+  "description": "Allow to Pathfinder 2 PDFs from Paizo into foundry'",
   "author": "Deidril",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "minimumCoreVersion": "9.235",
   "compatibleCoreVersion": "9",
   "styles": [
     "css/helyx.css", "css/helyx-conversions.css", "css/helyx-sections.css", 
-    "css/pfs3.css"
+    "css/pfs3.css", "css/adventures.css"
   ],
   "system": ["pf2e"],
   "dependencies": [
@@ -33,5 +33,5 @@
   ],
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/archive/refs/tags/0.1.8.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/archive/refs/tags/0.1.9.zip"
 }
