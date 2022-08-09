@@ -118,7 +118,7 @@ form .editor-content .helyx-content div.helyx-block-section img.helyx-exploratio
     top: -10px;
 }
 
-form .editor-content .helyx-content h2.helyx-room-title
+form .editor-content .helyx-content h2.helyx-journal-title
 {
     background: url(/systems/pf2e/assets/sheet/header.webp);
     border: 2px solid var(--primary); 
@@ -151,7 +151,7 @@ form .editor-content .helyx-content div.helyx-block-box-title img.helyx-explorat
     margin-left: 20px;
 }
 
-.helyx-content h2.helyx-room-title span.helyx-room-cr
+.helyx-content h2.helyx-journal-title span.helyx-room-cr
 {
     position: absolute ; 
     right: 25px;
