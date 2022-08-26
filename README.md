@@ -2,11 +2,17 @@
 This foundry vtt plugin allows to import PDFs into the current world. 
 
 # Supported PDFs 
+
+## Adventures
 Shadows at Sundown
 
-Pathfinder Society Season 3 : 
+## Free Adventures
+A Fistfull of Flowers
+
+## Pathfinder Society Season 3
 Episode 12 : Fury's Toll
-Episode 13 : guardian's Covenant
+Episode 13 : Guardian's Covenant
+Episode 14 : The tomb between worlds
 
 # Known issues
 
@@ -15,8 +21,6 @@ Episode 13 : guardian's Covenant
 
       + Gender of creatures using the stat block of another creature, aren't set. Issue is on the todo list"
       + Foundry ids of imported entries are not static. Entries will not be correctly overwritten if you reimport the PDF.
-      + Creature from Bestiary 6 doesn't have any actor imported
-
 
 # Installation
 1. Install the plugin from the following url ; https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json
