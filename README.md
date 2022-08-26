@@ -10,9 +10,9 @@ Shadows at Sundown
 A Fistfull of Flowers
 
 ## Pathfinder Society Season 3
-Episode 12 : Fury's Toll
-Episode 13 : Guardian's Covenant
-Episode 14 : The tomb between worlds
+- Episode 12 : Fury's Toll
+- Episode 13 : Guardian's Covenant
+- Episode 14 : The tomb between worlds
 
 # Known issues
 
