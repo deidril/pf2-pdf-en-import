@@ -409,6 +409,13 @@ form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encou
     border: 2px solid black;
 }
 
+
+form .editor-content .helyx-content .helyx-encounter .helyx-statblock .helyx-action-details
+{
+    padding-top: 5px;
+    padding-left: 15px;
+}
+
 form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title a.entity-link
 {
     background: var(--light);
