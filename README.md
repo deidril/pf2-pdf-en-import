@@ -13,6 +13,7 @@ A Fistfull of Flowers
 - Episode 12 : Fury's Toll
 - Episode 13 : Guardian's Covenant
 - Episode 14 : The tomb between worlds
+- Episode 15 : Cavern of the Sundered Song
 
 # Known issues
 
