@@ -49,6 +49,9 @@ form .editor-content .helyx-content div.helyx-read-section
     background: #f8f8eb;
     border-top: 2px solid #C5A924;
     border-bottom: 2px solid #C5A924;
+    border-left: 1px solid #C5A924;
+    border-right: 1px solid #C5A924;
+    box-shadow: 12px 5px 5px grey;
     padding: 1em;
     text-indent: 20px;
     font-family: Roboto;
@@ -60,6 +63,9 @@ form .editor-content .helyx-content div.helyx-block-read-section
     background: #f8f8eb;
     border-top: 2px solid #C5A924;
     border-bottom: 2px solid #C5A924;
+    border-left: 1px solid #C5A924;
+    border-right: 1px solid #C5A924;
+    box-shadow: 12px 5px 5px grey;
     padding: 1em;
     text-indent: 20px;
     font-family: Roboto;
@@ -219,6 +225,7 @@ form .editor-content .helyx-content .helyx-block-box img.helyx-token-icon
 {
     width: 40px;
     height: 40px;
+    border: none;
 }
 
 
@@ -409,11 +416,17 @@ form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encou
     border: 2px solid black;
 }
 
-
-form .editor-content .helyx-content .helyx-encounter .helyx-statblock .helyx-action-details
+form .editor-content .helyx-content .helyx-statblock .helyx-action-details
 {
     padding-top: 5px;
-    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+
+form .editor-content .helyx-content .helyx-statblock .helyx-action-details p
+{
+    padding-left: 35px;
+    text-indent: -15px;
 }
 
 form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title a.entity-link
