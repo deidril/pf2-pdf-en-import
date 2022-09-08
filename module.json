@@ -2,10 +2,19 @@
   "name": "pf2-pdf-en-import",
   "title": "Deidril's Pathfinder 2 PDF Import",
   "description": "Allow to import Pathfinder 2nd PDFs from Paizo into foundry'",
-  "author": "Deidril",
-  "version": "0.1.11",
-  "minimumCoreVersion": "9.235",
-  "compatibleCoreVersion": "9",
+  "authors": [ 
+    {
+      "name": "Deidril",
+      "url": "https://github.com/deidril",
+      "flags": {}
+    }
+  ],
+  "version": "1.12-v10-beta1",
+  "compatibility": {
+    "minimum": "10.276",
+    "verified": "10.284",
+    "maximum": "10"
+  },
   "styles": [
     "css/helyx.css", "css/helyx-conversions.css", "css/helyx-sections.css", 
     "css/pfs3.css", "css/adventures.css"
@@ -32,6 +41,6 @@
     }
   ],
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
-  "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/0.1.11/pf2-pdf-en-import-0.1.11.zip"
+  "manifest": "https://github.com/deidril/pf2-pdf-en-import/blob/foundryv10/module.json",
+  "download": "https://github.com/deidril/pf2-pdf-en-import/archive/refs/heads/foundryv10.zip"
 }

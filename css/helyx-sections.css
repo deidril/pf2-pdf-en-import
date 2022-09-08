@@ -5,7 +5,7 @@
     background: linear-gradient(rgb(100, 100, 100),rgb(24, 24, 24));
 }
 
-form .editor-content .helyx-content div.helyx-block-section-secret
+.window-content .helyx-content div.helyx-block-section-secret
 {
     border: 4px solid #000000;
     background: #f8f8eb    
@@ -17,7 +17,7 @@ form .editor-content .helyx-content div.helyx-block-section-secret
     background: linear-gradient(rgb(100, 100, 100),rgb(0, 161, 108));
 }
 
-form .editor-content .helyx-content div.helyx-block-section-balance
+.window-content .helyx-content div.helyx-block-section-balance
 {
     border: 4px solid #000000;
     background: #f8f8eb    
@@ -29,7 +29,7 @@ form .editor-content .helyx-content div.helyx-block-section-balance
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-camp
+.window-content .helyx-content div.helyx-block-section-camp
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -41,7 +41,7 @@ form .editor-content .helyx-content div.helyx-block-section-camp
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-treasure
+.window-content .helyx-content div.helyx-block-section-treasure
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -53,7 +53,7 @@ form .editor-content .helyx-content div.helyx-block-section-treasure
     background: linear-gradient( red,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-encounter
+.window-content .helyx-content div.helyx-block-section-encounter
 {
     border: 4px solid #5d0000;
     background: #f8f8eb    
@@ -65,7 +65,7 @@ form .editor-content .helyx-content div.helyx-block-section-encounter
     background: linear-gradient( red,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-danger
+.window-content .helyx-content div.helyx-block-section-danger
 {
     border: 4px solid #5d0000;
     background: #f8f8eb    
@@ -77,7 +77,7 @@ form .editor-content .helyx-content div.helyx-block-section-danger
     background: linear-gradient( red,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-hazard
+.window-content .helyx-content div.helyx-block-section-hazard
 {
     border: 4px solid #5d0000;
     background: #f8f8eb    
@@ -89,7 +89,7 @@ form .editor-content .helyx-content div.helyx-block-section-hazard
     background: linear-gradient( #b2845d,#352517);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-map
+.window-content .helyx-content div.helyx-block-section-map
 {
     border: 4px solid #22180f;
     background: #f8f8eb    
@@ -101,7 +101,7 @@ form .editor-content .helyx-content div.helyx-block-section-map
     background: linear-gradient( #1c7ec5,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-anvil
+.window-content .helyx-content div.helyx-block-section-anvil
 {
     border: 4px solid rgb(0, 88, 151);;
     background: #f8f8eb    
@@ -114,7 +114,7 @@ form .editor-content .helyx-content div.helyx-block-section-anvil
     background: linear-gradient( #1c7ec5,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-success
+.window-content .helyx-content div.helyx-block-section-success
 {
     border: 4px solid rgb(0, 88, 151);;
     background: #f8f8eb    
@@ -126,7 +126,7 @@ form .editor-content .helyx-content div.helyx-block-section-success
     background: linear-gradient( #1c7ec5,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-bylevel
+.window-content .helyx-content div.helyx-block-section-bylevel
 {
     border: 4px solid rgb(0, 88, 151);;
     background: #f8f8eb    
@@ -138,7 +138,7 @@ form .editor-content .helyx-content div.helyx-block-section-bylevel
     background: linear-gradient( #1c7ec5,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-dices
+.window-content .helyx-content div.helyx-block-section-dices
 {
     border: 4px solid rgb(0, 88, 151);;
     background: #f8f8eb    
@@ -151,7 +151,7 @@ form .editor-content .helyx-content div.helyx-block-section-dices
     text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
 }
 
-form .editor-content .helyx-content div.helyx-block-section-peace
+.window-content .helyx-content div.helyx-block-section-peace
 {
     border: 4px solid rgb(0, 151, 43);;
     background: #f8f8eb    
@@ -163,7 +163,7 @@ form .editor-content .helyx-content div.helyx-block-section-peace
     background: linear-gradient( #1c7ec5,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-question
+.window-content .helyx-content div.helyx-block-section-question
 {
     border: 4px solid rgb(0, 88, 151);
     background: #f8f8eb    
@@ -175,7 +175,7 @@ form .editor-content .helyx-content div.helyx-block-section-question
     background: linear-gradient( #1c7ec5,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-development
+.window-content .helyx-content div.helyx-block-section-development
 {
     border: 4px solid rgb(0, 88, 151);
     background: #f8f8eb    
@@ -188,13 +188,13 @@ form .editor-content .helyx-content div.helyx-block-section-development
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-alchemist
+.window-content .helyx-content div.helyx-block-section-alchemist
 {
     border: 4px solid #026939;
     background: #f8f8eb    
 }
 
-form .editor-content .helyx-content div.helyx-block-section-barbarian
+.window-content .helyx-content div.helyx-block-section-barbarian
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -206,7 +206,7 @@ form .editor-content .helyx-content div.helyx-block-section-barbarian
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-bard
+.window-content .helyx-content div.helyx-block-section-bard
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -218,7 +218,7 @@ form .editor-content .helyx-content div.helyx-block-section-bard
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-champion
+.window-content .helyx-content div.helyx-block-section-champion
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -230,7 +230,7 @@ form .editor-content .helyx-content div.helyx-block-section-champion
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-cleric
+.window-content .helyx-content div.helyx-block-section-cleric
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -242,7 +242,7 @@ form .editor-content .helyx-content div.helyx-block-section-cleric
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-druid
+.window-content .helyx-content div.helyx-block-section-druid
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -254,7 +254,7 @@ form .editor-content .helyx-content div.helyx-block-section-druid
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-fighter
+.window-content .helyx-content div.helyx-block-section-fighter
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -266,7 +266,7 @@ form .editor-content .helyx-content div.helyx-block-section-fighter
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-gunslinger
+.window-content .helyx-content div.helyx-block-section-gunslinger
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -278,7 +278,7 @@ form .editor-content .helyx-content div.helyx-block-section-gunslinger
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-inventor
+.window-content .helyx-content div.helyx-block-section-inventor
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -290,7 +290,7 @@ form .editor-content .helyx-content div.helyx-block-section-inventor
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-investigator
+.window-content .helyx-content div.helyx-block-section-investigator
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -302,7 +302,7 @@ form .editor-content .helyx-content div.helyx-block-section-investigator
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-magus
+.window-content .helyx-content div.helyx-block-section-magus
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -314,7 +314,7 @@ form .editor-content .helyx-content div.helyx-block-section-magus
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-monk
+.window-content .helyx-content div.helyx-block-section-monk
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -326,7 +326,7 @@ form .editor-content .helyx-content div.helyx-block-section-monk
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-oracle
+.window-content .helyx-content div.helyx-block-section-oracle
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -338,7 +338,7 @@ form .editor-content .helyx-content div.helyx-block-section-oracle
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-ranger
+.window-content .helyx-content div.helyx-block-section-ranger
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -350,7 +350,7 @@ form .editor-content .helyx-content div.helyx-block-section-ranger
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-rogue
+.window-content .helyx-content div.helyx-block-section-rogue
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -362,7 +362,7 @@ form .editor-content .helyx-content div.helyx-block-section-rogue
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-sorcerer
+.window-content .helyx-content div.helyx-block-section-sorcerer
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -374,7 +374,7 @@ form .editor-content .helyx-content div.helyx-block-section-sorcerer
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-summoner
+.window-content .helyx-content div.helyx-block-section-summoner
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -386,7 +386,7 @@ form .editor-content .helyx-content div.helyx-block-section-summoner
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-swashbuckler
+.window-content .helyx-content div.helyx-block-section-swashbuckler
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -398,7 +398,7 @@ form .editor-content .helyx-content div.helyx-block-section-swashbuckler
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-witch
+.window-content .helyx-content div.helyx-block-section-witch
 {
     border: 4px solid #026939;
     background: #f8f8eb    
@@ -410,7 +410,7 @@ form .editor-content .helyx-content div.helyx-block-section-witch
     background: linear-gradient(green,black);
 }
 
-form .editor-content .helyx-content div.helyx-block-section-wizard
+.window-content .helyx-content div.helyx-block-section-wizard
 {
     border: 4px solid #026939;
     background: #f8f8eb    

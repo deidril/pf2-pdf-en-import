@@ -39,12 +39,12 @@
     white-space: nowrap;
 }
 
-form .editor-content .helyx-content th.w20
+.window-content .helyx-content th.w20
 {
     width: 20%;
 }
 
-form .editor-content .helyx-content div.helyx-read-section
+.window-content .helyx-content div.helyx-read-section
 {
     background: #f8f8eb;
     border-top: 2px solid #C5A924;
@@ -58,7 +58,7 @@ form .editor-content .helyx-content div.helyx-read-section
     color: var(--primary);
 }
 
-form .editor-content .helyx-content div.helyx-block-read-section
+.window-content .helyx-content div.helyx-block-read-section
 {
     background: #f8f8eb;
     border-top: 2px solid #C5A924;
@@ -72,22 +72,25 @@ form .editor-content .helyx-content div.helyx-block-read-section
     color: var(--primary);
 }
 
-form .editor-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table
+.window-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table
 {
     border: 0px;
 }
 
-form .editor-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table tbody
+.window-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table tbody
 {
     border: 0px;
 }
 
-form .editor-content .helyx-content div.helyx-block-section
+.window-content .helyx-content div.helyx-block-section
 {
     border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-form .editor-content .helyx-content div.helyx-block-section div.helyx-block-section-header
+.window-content .helyx-content div.helyx-block-section div.helyx-block-section-header
 {
     display: flex;
     margin-bottom: 20px;
@@ -96,35 +99,38 @@ form .editor-content .helyx-content div.helyx-block-section div.helyx-block-sect
 }
 
 
-form .editor-content .helyx-content div.helyx-block-section div.helyx-block-section-body
+.window-content .helyx-content div.helyx-block-section div.helyx-block-section-body
 {
     margin: 15px;
 }
 
-form .editor-content .helyx-content div.helyx-block-section-icon
+.window-content .helyx-content div.helyx-block-section-icon
 {
     padding-bottom: 10px;
     display: block;
     height: 50px;
 }
 
-form .editor-content .helyx-content .helyx-block-section h3
+.window-content .helyx-content .helyx-block-section h3
 {
     color: white;
     text-transform: uppercase;
     font-size: medium;
+    border-bottom: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-form .editor-content .helyx-content div.helyx-block-section img.helyx-exploration-icon
+.window-content .helyx-content div.helyx-block-section img.helyx-exploration-icon
 {
     border-radius: 50%;
     width: 70px;
     position: relative;
-    left: -19px;
+    left: -14px;
     top: -10px;
 }
 
-form .editor-content .helyx-content h2.helyx-journal-title
+.window-content .helyx-content h2.helyx-journal-title
 {
     background: url(/systems/pf2e/assets/sheet/header.webp);
     border: 2px solid var(--primary); 
@@ -136,7 +142,7 @@ form .editor-content .helyx-content h2.helyx-journal-title
     color: white;
 }
 
-form .editor-content .helyx-content h2.helyx-exploration-title
+.window-content .helyx-content h2.helyx-exploration-title
 {
     background: #5E6A4D;
     border: 2px solid black; 
@@ -148,7 +154,7 @@ form .editor-content .helyx-content h2.helyx-exploration-title
     color: white;
 }
 
-form .editor-content .helyx-content div.helyx-block-box-title img.helyx-exploration-icon
+.window-content .helyx-content div.helyx-block-box-title img.helyx-exploration-icon
 {
     border-radius: 50%;
     width: 60px;
@@ -221,7 +227,7 @@ form .editor-content .helyx-content div.helyx-block-box-title img.helyx-explorat
 }
 
 
-form .editor-content .helyx-content .helyx-block-box img.helyx-token-icon
+.window-content .helyx-content .helyx-block-box img.helyx-token-icon
 {
     width: 40px;
     height: 40px;
@@ -230,13 +236,13 @@ form .editor-content .helyx-content .helyx-block-box img.helyx-token-icon
 
 
 /*                              Generic BOX CSS  */
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title
 {
     color: white;
     padding: 8px;
     display: flex;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-exploration-title
+.window-content .helyx-content .helyx-block-box div.helyx-block-exploration-title
 {
     color: white;
     border-bottom: 1px solid black;
@@ -247,64 +253,64 @@ form .editor-content .helyx-content .helyx-block-box div.helyx-block-exploration
 
 
 
-form .editor-content .helyx-content .helyx-block-box div.helyx-encounter
+.window-content .helyx-content .helyx-block-box div.helyx-encounter
 {
     background: url(/systems/pf2e/assets/sheet/header.webp);
     background-color:rgba(30, 30, 30, .5);
     background-blend-mode: multiply;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-equipment
+.window-content .helyx-content .helyx-block-box div.helyx-equipment
 {
     background-color:#1b1b0b;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-location
+.window-content .helyx-content .helyx-block-box div.helyx-location
 {
     background-color:#1b1b0b;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-feat
+.window-content .helyx-content .helyx-block-box div.helyx-feat
 {
     background-color:#004d29;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-treasure
+.window-content .helyx-content .helyx-block-box div.helyx-treasure
 {
     background-color:#5E6A4D;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-icon
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-icon
 {
     flex: 25%;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-listing
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-listing
 {
     flex: 50%;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-listing span
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-listing span
 {
     margin-top: 0px;
     margin-left: 5px;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title h3
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title h3
 {
     color: white;
     margin-bottom: 5px;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-cr
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-cr
 {
     flex: 25%;
 }
 
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title span.helyx-creature-amount
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title span.helyx-creature-amount
 {
     padding-top: 15px;
     font-size: large;
 }
 
-form .editor-content .helyx-content .helyx-block-box h3 span.helyx-block-box-cr
+.window-content .helyx-content .helyx-block-box h3 span.helyx-block-box-cr
 {
     position: absolute; 
     right: 25px;
     top: -15px;
 }
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title span.entity-name
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title span.entity-name
 {
     background: var(--light);
     border: 2px solid black;
@@ -312,14 +318,14 @@ form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title s
     padding-right: 4px;
 }
 
-form .editor-content .helyx-content .helyx-block-box div.helyx-block-box-title a.entity-link
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title a.entity-link
 {
     background: var(--light);
     border: 2px solid black;
 }
 
 /*                  Specific */ 
-form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title
 {
     background: url(/systems/pf2e/assets/sheet/header.webp);
     background-color:rgba(30, 30, 30, .5);
@@ -330,7 +336,7 @@ form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encou
     display: flex;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title
 {
     background-color:#1b1b0b;
     color: white;
@@ -339,7 +345,7 @@ form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equip
     display: flex;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-location-title
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-location-title
 {
     background-color:#1b1b0b;
     color: white;
@@ -348,61 +354,61 @@ form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-locat
     display: flex;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-icon
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-icon
 {
     flex: 15%;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-icon
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-icon
 {
     flex: 15%;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-listing
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-listing
 {
     flex: 70%;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-listing
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-listing
 {
     flex: 70%;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title h3
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title h3
 {
     color: white;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title h3
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title h3
 {
     color: white;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-cr
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-cr
 {
     flex: 30%;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-cr
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-cr
 {
     flex: 30%;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter h3 span.helyx-block-encounter-cr
+.window-content .helyx-content .helyx-block-encounter h3 span.helyx-block-encounter-cr
 {
     position: absolute; 
     right: 25px;
     top: -15px;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment h3 span.helyx-block-equipment-cr
+.window-content .helyx-content .helyx-block-equipment h3 span.helyx-block-equipment-cr
 {
     position: absolute; 
     right: 25px;
     top: -15px;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title span.entity-name
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title span.entity-name
 {
     background: var(--light);
     border: 2px solid black;
@@ -410,23 +416,17 @@ form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encou
     padding-right: 4px;
 }
 
-form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title a.entity-link
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title a.entity-link
 {
     background: var(--light);
     border: 2px solid black;
 }
 
-form .editor-content .helyx-content .helyx-statblock .helyx-action-details
+
+form .editor-content .helyx-content .helyx-encounter .helyx-statblock .helyx-action-details
 {
     padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-
-form .editor-content .helyx-content .helyx-statblock .helyx-action-details p
-{
-    padding-left: 35px;
-    text-indent: -15px;
+    padding-left: 15px;
 }
 
 form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title a.entity-link
@@ -437,7 +437,7 @@ form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equip
 
 
 
-form .editor-content .helyx-content .helyx-block-encounter h3.helyx-block-stat-title
+.window-content .helyx-content .helyx-block-encounter h3.helyx-block-stat-title
 {
     background: url(/systems/pf2e/assets/sheet/header.webp);
     background-color:rgba(30, 30, 30, .5);
@@ -448,7 +448,7 @@ form .editor-content .helyx-content .helyx-block-encounter h3.helyx-block-stat-t
     position: relative;  
 }
 
-form .editor-content .helyx-content .helyx-stat-block-section-title
+.window-content .helyx-content .helyx-stat-block-section-title
 {
     color: #917340;
     border-top: 2px solid  #917340;
@@ -456,13 +456,13 @@ form .editor-content .helyx-content .helyx-stat-block-section-title
     text-transform: uppercase;
 }
 
-form .editor-content .helyx-content .statblock .helyx-p
+.window-content .helyx-content .statblock .helyx-p
 {
     text-indent: -15px;
     padding-left: 15px;
 }
 
-form .editor-content .helyx-content .statblock .stat-description .helyx-p
+.window-content .helyx-content .statblock .stat-description .helyx-p
 {
     text-indent: 15px;
     padding-left: 0px;
