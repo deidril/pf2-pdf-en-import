@@ -5,14 +5,16 @@
   "authors": [ 
     {
       "name": "Deidril",
+      "discord": "Deidril#2009",
       "url": "https://github.com/deidril",
+      "email": "fmanisse@gmail.com",
       "flags": {}
     }
   ],
   "version": "1.12",
   "compatibility": {
     "minimum": "10.276",
-    "verified": "10.284",
+    "verified": "10.285",
     "maximum": "10"
   },
   "styles": [
@@ -42,5 +44,5 @@
   ],
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/raw/foundryv10/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/archive/refs/heads/foundryv10.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/0.1.11/pf2-pdf-en-import-1.12.zip"
 }
