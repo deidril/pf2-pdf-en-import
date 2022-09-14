@@ -1,17 +1,18 @@
-.window-content .helyx-content h2.helyx-afof-journal-title
+.window-content .journal-entry-content header.helyx-afof-journal-title
 {
     background: url(/helyx/a-fistful-of-flowers/banner.webp);
 
-    border-radius: 10px;
+    border: 2px solid white;
     box-shadow:10px 5px 5px #b16b3e;
     padding: 8px;
     margin-bottom: 25px;
     position: relative;     
     color: white;    
+
+    font-family: "Roboto Condensed", Roboto, sans-serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 32px;
+    
 }
 
-.helyx-content h2.helyx-afof-journal-title span.helyx-room-cr
-{
-    position: absolute ; 
-    right: 25px;
-}

@@ -181,6 +181,30 @@
     background: #f8f8eb    
 }
 
+.helyx-header-search
+{
+    border-bottom: 4px solid #22180f;
+    background: linear-gradient( #b2845d,#352517);
+}
+
+.window-content .helyx-content div.helyx-block-section-search
+{
+    border: 4px solid #22180f;
+    background: #f8f8eb    
+}
+
+.helyx-header-candle
+{
+    border-bottom: 4px solid rgb(151, 103, 0);
+    background: linear-gradient( #ffd102,black);
+}
+
+.window-content .helyx-content div.helyx-block-section-candle
+{
+    border: 4px solid rgb(151, 103, 0);
+    background: #f8f8eb    
+}
+
 
 .helyx-header-alchemist
 {

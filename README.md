@@ -15,6 +15,9 @@ A Fistfull of Flowers
 - Episode 14 : The tomb between worlds
 - Episode 15 : Cavern of the Sundered Song
 
+## Pathfinder Society Season 4
+- Episode 01 : Year of Boundless Wonder
+
 # Known issues
 
       + Initial import of images may freeze foundry for up to a minute

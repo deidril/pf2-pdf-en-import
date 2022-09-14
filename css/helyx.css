@@ -44,6 +44,29 @@
     width: 20%;
 }
 
+.window-content .journal-entry-content header.helyx-journal-title-default
+{
+
+    border: 2px solid white;
+    background-color: var(--primary);
+    box-shadow:10px 5px 5px #b16b3e;
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+    color: white;    
+
+    font-family: "Roboto Condensed", Roboto, sans-serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 32px;
+}
+
+.window-content .journal-entry-content header.helyx-journal-title h1
+{
+    border-bottom: none;
+    text-align: center;
+}
+
 .window-content .helyx-content div.helyx-read-section
 {
     background: #f8f8eb;
@@ -72,6 +95,13 @@
     color: var(--primary);
 }
 
+.window-content .helyx-content table caption
+{
+    background: var(--primary);
+    color: white;
+    border: 1px solid black;
+}
+
 .window-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table
 {
     border: 0px;
@@ -88,6 +118,7 @@
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .window-content .helyx-content div.helyx-block-section div.helyx-block-section-header
@@ -163,10 +194,21 @@
     margin-left: 20px;
 }
 
-.helyx-content h2.helyx-journal-title span.helyx-room-cr
+.window-content .helyx-content div.helyx-room-cr
 {
-    position: absolute ; 
-    right: 25px;
+    flex-flow: column wrap;
+    margin-bottom: 30px;
+    display: flex;
+    align-content: flex-end;
+}
+
+.window-content .helyx-content div.helyx-room-cr span
+{
+    background-color: var(--primary);
+    color: white;
+    font-size: x-large;
+    padding: 10px;
+    font-variant: all-small-caps;
 }
 
 .helyx-background-tint-dark {
@@ -226,6 +268,12 @@
     border-radius: 10px;
 }
 
+.window-content .helyx-content .helyx-block-box
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 .window-content .helyx-content .helyx-block-box img.helyx-token-icon
 {
@@ -263,6 +311,12 @@
 {
     background-color:#1b1b0b;
 }
+
+.window-content .helyx-content .helyx-block-box div.helyx-activity
+{
+    background-color:#1b1b0b;
+}
+
 .window-content .helyx-content .helyx-block-box div.helyx-location
 {
     background-color:#1b1b0b;
@@ -296,6 +350,17 @@
 .window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-cr
 {
     flex: 25%;
+    position: relative;
+}
+
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-cr .helyx-cr
+{
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    right: 6px;
+    top: 15px;
 }
 
 .window-content .helyx-content .helyx-block-box div.helyx-block-box-title span.helyx-creature-amount
@@ -318,7 +383,7 @@
     padding-right: 4px;
 }
 
-.window-content .helyx-content .helyx-block-box div.helyx-block-box-title a.entity-link
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title a.content-link
 {
     background: var(--light);
     border: 2px solid black;
@@ -337,6 +402,15 @@
 }
 
 .window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title
+{
+    background-color:#1b1b0b;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-activity-title
 {
     background-color:#1b1b0b;
     color: white;
@@ -416,20 +490,20 @@
     padding-right: 4px;
 }
 
-.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title a.entity-link
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title a.content-link
 {
     background: var(--light);
     border: 2px solid black;
 }
 
 
-form .editor-content .helyx-content .helyx-encounter .helyx-statblock .helyx-action-details
+.window-content .helyx-content .helyx-encounter .helyx-statblock .helyx-action-details
 {
     padding-top: 5px;
     padding-left: 15px;
 }
 
-form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title a.entity-link
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title a.content-link
 {
     background: var(--light);
     border: 2px solid black;
