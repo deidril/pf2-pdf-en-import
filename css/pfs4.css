@@ -1,0 +1,19 @@
+form .editor-content .helyx-content h2.helyx-pfs4e01-journal-title
+{
+    background: url(/helyx/pfs4e01-year-of-the-boundless-wonder/assets/banner.webp);
+
+    border-radius: 10px;
+    box-shadow:10px 5px 5px #b16b3e;
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+    color: white;    
+
+    text-shadow: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;
+}
+
+.helyx-content h2.helyx-pfs4e01-journal-title span.helyx-room-cr
+{
+    position: absolute ; 
+    right: 25px;
+}

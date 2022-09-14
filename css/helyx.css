@@ -72,6 +72,13 @@ form .editor-content .helyx-content div.helyx-block-read-section
     color: var(--primary);
 }
 
+form .editor-content .helyx-content table caption
+{
+    background: var(--primary);
+    color: white;
+    border: 1px solid black;
+}
+
 form .editor-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table
 {
     border: 0px;
@@ -257,6 +264,10 @@ form .editor-content .helyx-content .helyx-block-box div.helyx-equipment
 {
     background-color:#1b1b0b;
 }
+form .editor-content .helyx-content .helyx-block-box div.helyx-activity
+{
+    background-color:#1b1b0b;
+}
 form .editor-content .helyx-content .helyx-block-box div.helyx-location
 {
     background-color:#1b1b0b;
@@ -331,6 +342,15 @@ form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encou
 }
 
 form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title
+{
+    background-color:#1b1b0b;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+}
+
+form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-activity-title
 {
     background-color:#1b1b0b;
     color: white;
@@ -416,17 +436,11 @@ form .editor-content .helyx-content .helyx-block-encounter div.helyx-block-encou
     border: 2px solid black;
 }
 
-form .editor-content .helyx-content .helyx-statblock .helyx-action-details
+
+form .editor-content .helyx-content .helyx-encounter .helyx-statblock .helyx-action-details
 {
     padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-
-form .editor-content .helyx-content .helyx-statblock .helyx-action-details p
-{
-    padding-left: 35px;
-    text-indent: -15px;
+    padding-left: 15px;
 }
 
 form .editor-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title a.entity-link
