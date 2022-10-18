@@ -1,6 +1,13 @@
 # Deidril's Pathfinder 2 PDF Import
 This foundry vtt plugin allows to import PDFs into the current world. 
 
+# Licenses
+helyx.bundle.js code is under the MIT license
+pdf.worker.min.js code is under the apache license
+
+images in ~/datas/images are generated through Midjourney by Deidril, and are copyrighted (c) Deidril as far as AI generated content could be. Their use is restricted to this module scope.
+
+
 # Supported PDFs 
 
 ## Adventures
@@ -17,6 +24,7 @@ A Fistfull of Flowers
 
 ## Pathfinder Society Season 4
 - Episode 01 : Year of Boundless Wonder
+- Episode 02 : Return to the Grave
 
 # Known issues
 
