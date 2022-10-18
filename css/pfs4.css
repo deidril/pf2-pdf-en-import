@@ -14,3 +14,21 @@
     font-weight: 600;
     font-size: 24px;    
 }
+
+.window-content .journal-entry-content header.helyx-pfs4e02-journal-title
+{
+    background: url(/helyx/pfs4e02-return-to-the-grave/assets/banner.webp);
+
+    border: 2px solid white;
+    box-shadow:10px 5px 5px #b16b3e;
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+    color: white;    
+
+    font-family: "Roboto Condensed", Roboto, sans-serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 24px;    
+}
+
