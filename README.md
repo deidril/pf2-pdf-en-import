@@ -25,6 +25,7 @@ A Fistfull of Flowers
 ## Pathfinder Society Season 4
 - Episode 01 : Year of Boundless Wonder
 - Episode 02 : Return to the Grave
+- Episode 03 : Linnorm's Legacy
 
 # Known issues
 
