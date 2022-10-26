@@ -169,6 +169,18 @@
     background: #f8f8eb    
 }
 
+.helyx-header-character
+{
+    border-bottom: 4px solid rgb(0, 88, 151);
+    background: linear-gradient( #1c7ec5,black);
+}
+
+.window-content .helyx-content div.helyx-block-section-character
+{
+    border: 4px solid rgb(0, 88, 151);
+    background: #f8f8eb    
+}
+
 .helyx-header-development
 {
     border-bottom: 4px solid rgb(0, 88, 151);
