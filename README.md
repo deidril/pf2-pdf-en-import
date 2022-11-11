@@ -11,10 +11,11 @@ images in ~/datas/images are generated through Midjourney by Deidril, and are co
 # Supported PDFs 
 
 ## Adventures
-Shadows at Sundown
+- Shadows at Sundown
+- Crown of the Kobold King
 
 ## Free Adventures
-A Fistfull of Flowers
+- A Fistfull of Flowers
 
 ## Pathfinder Society Season 3
 - Episode 12 : Fury's Toll

@@ -16,3 +16,37 @@
     
 }
 
+.window-content .journal-entry-content header.helyx-cotkk-journal-title
+{
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    color: var(--primary);    
+    font-family: "Vollkorn";
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 25px;
+    
+}
+
+.window-content .journal-entry-content header.helyx-cotkk-journal-title h1
+{
+    margin: 0;
+}
+
+.window-content .journal-entry-content header.helyx-cotkk-journal-title img.helyx-cotkk-journal-title-top
+{
+    border: none; 
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);   
+}
+
+.window-content .journal-entry-content header.helyx-cotkk-journal-title img.helyx-cotkk-journal-title-bottom
+{
+    border: none;     
+}

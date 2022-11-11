@@ -38,8 +38,9 @@
 .helyx-content .helyx-statblock .helyx-action-details p.helyx-p
 {
     text-indent: 0px;
-    padding-left: 0px;
+    padding-left: 5px;
     padding-bottom: 5px;
+    margin: 0px;
 }
 
 
@@ -77,7 +78,7 @@
     font-family: "Roboto Condensed", Roboto, sans-serif;
     font-variant: small-caps;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 32px;
 }
 
 .window-content .journal-entry-content header.helyx-journal-title h1
@@ -229,7 +230,6 @@
     padding: 10px;
     font-variant: all-small-caps;
 
-    top: -95px;
     position: relative;
     right: 20px;
     border: 2px white solid;
@@ -245,6 +245,8 @@
 .helyx-content .helyx-block-p
 {
     text-indent: 20px;
+    font-family: 'Vollkorn';
+    font-size: 15px;
 }
 
 .helyx-content .helyx-block-p a
@@ -327,7 +329,13 @@
 
 
 
-.window-content .helyx-content .helyx-block-box div.helyx-encounter
+.window-content .helyx-content .helyx-block-box div.helyx-creature
+{
+    background: url(/systems/pf2e/assets/sheet/header.webp);
+    background-color:rgba(30, 30, 30, .5);
+    background-blend-mode: multiply;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-hazard
 {
     background: url(/systems/pf2e/assets/sheet/header.webp);
     background-color:rgba(30, 30, 30, .5);
@@ -345,9 +353,17 @@
 
 .window-content .helyx-content .helyx-block-box div.helyx-location
 {
-    background-color:#1b1b0b;
+    background-color:#004d29;
 }
 .window-content .helyx-content .helyx-block-box div.helyx-feat
+{
+    background-color:#004d29;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-background
+{
+    background-color:#004d29;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-settlement
 {
     background-color:#004d29;
 }
