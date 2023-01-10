@@ -21,13 +21,12 @@
     "css/helyx.css", "css/helyx-conversions.css", "css/helyx-sections.css", 
     "css/pfs3.css", "css/pfs4.css","css/adventures.css"
   ],
-  "system":
-  [
-    { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.6.3" } }
-  ],
-  "dependencies": [
-
-  ],
+  "relationships": {
+    "system":
+    [
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.6.5" } }
+    ]
+  },
   "scripts": [
   ],
   "esmodules": [
@@ -47,5 +46,5 @@
   ],
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.18/pf2-pdf-en-import-1.18.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.19/pf2-pdf-en-import-1.19.zip"
 }
