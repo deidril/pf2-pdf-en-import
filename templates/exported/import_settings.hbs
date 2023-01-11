@@ -1,41 +1,23 @@
-<div class="helyx-configuration">
-<div class="flexrow">
-    <aside class="sidebar flexcol">
-        <nav class="tabs" aria-label="Navigation">
-            <a class="item category-tab active" data-tab="import">
-                Import
-            </a>
-            <a class="item category-tab" data-tab="pdfs-list">
-                Supported PDFs
-            </a>
-            <a class="item category-tab" data-tab="discord">
-                Discord
-            </a>
-            <a class="item category-tab" data-tab="patreon">
-                Patreon
-            </a>
-        </nav>
-    </aside>
-    <form class="categories flexcol">
-        <div class="scrollable">
-            <section class="tab category" data-tab="pdfs-list" data-category="pdfs-list">
-                <h2 class="category-title">Supported PDFs</h2>
                 {{> "modules/pf2-pdf-en-import/templates/exported/pdfList.hbs"}}
-            </section>
-            <section class="tab category" data-tab="discord" data-category="discord">
-                <h2 class="category-title">Discord</h2>
-                <p>There is a discord channel at https://discord.gg/FdKzgYWd for this import module.
-                    You can use it to drop issues, get the latest news, submit ideas, or just say 'hi'.
+
+<hr/>
+
+<section class="helyx-import-form">
+        <div class="form-group">
+         <label for="helyx-known-bugs" style="font-weight: bold;">Known Issue</label>
+        <div class="form-fields"></div>
+        <p class="notes" id="helyx-pdf-filename">
+            Once the PDF has been identified and starts to extract the PDF's images, 
+            Foundry will freeze from a few seconds to a minute. 
+            Don't worry, it's the image extracting process...
+            This problem is been investigated.
                 </p>
+    </div>
+
+    <hr/>
+    <div class="form-group" style="display: flex; gap: 10%;">
+        <button id="helyx-import-pdf" class="helyx-inline" onclick="game.helyx.select_pdf();">PDF file</button>
+        <label id="helyx-imported-pdf" class="helyx-inline helyx-no-overflow" name="data"></label>
+    </div>
             </section>
-            <section class="tab category" data-tab="patreon" data-category="patreon">
-                <h2 class="category-title">Patreon</h2>
-                <p>
-                    If you wish to help this module going further, you can join its patreons at 
-                    https://www.patreon.com/deidril. 
-                    Whatever is your choice, this module will remain free.
-                </p>
-            </section>
-        </div>
-    </form>
-</div></div>
+<hr>
