@@ -1,4 +1,4 @@
-                {{> "modules/pf2-pdf-en-import/templates/exported/pdfList.hbs"}}
+{{> "modules/pf2-pdf-en-import/templates/exported/pdfList.hbs"}}
 
 <hr/>
 
@@ -11,7 +11,7 @@
             Foundry will freeze from a few seconds to a minute. 
             Don't worry, it's the image extracting process...
             This problem is been investigated.
-                </p>
+        </p>
     </div>
 
     <hr/>
@@ -19,5 +19,5 @@
         <button id="helyx-import-pdf" class="helyx-inline" onclick="game.helyx.select_pdf();">PDF file</button>
         <label id="helyx-imported-pdf" class="helyx-inline helyx-no-overflow" name="data"></label>
     </div>
-            </section>
+</section>
 <hr>
