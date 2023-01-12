@@ -1,23 +1,51 @@
-                {{> "modules/pf2-pdf-en-import/templates/exported/pdfList.hbs"}}
+<div class="helyx-configuration">
+<div class="flexrow">
+    <aside class="sidebar flexcol" style="height: 500px">
+        <nav class="tabs" aria-label="Navigation">
+            <a class="item category-tab active helyx-import-nav" id="helyx-nav-import" onclick="game.helyx.import_nav_tab('import');">
+                Import
+            </a>
+            <a class="item category-tab helyx-import-nav" id="helyx-nav-pdf-list" onclick="game.helyx.import_nav_tab('pdf-list');">
+                Supported PDFs
+            </a>
+            <a class="item category-tab helyx-import-nav" id="helyx-nav-faq" onclick="game.helyx.import_nav_tab('faq');">
+                F.A.Q
+            </a>
+            <a class="item category-tab helyx-import-nav" id="helyx-nav-discord" onclick="game.helyx.import_nav_tab('discord');">
+                Discord
+            </a>
+        </nav>
+    </aside>
+    <form class="categories flexcol helyx-import-tab-space">
+        <div class="scrollable">
+            <section class="tab category helyx-import-tab active" id="helyx-tab-import">
+                <h2 class="category-title">Import</h2>
 
-<hr/>
+                    <div class="form-group">        
+                        <button id="helyx-import-pdf" class="helyx-inline" onclick="game.helyx.select_pdf();">Source PDF</button>
+                        
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <b>Filename : </b>
+                            <label id="helyx-imported-pdf-filename" class="helyx-inline helyx-import-filename" name="data">NOT SET</label>
+                        </p>
+                    </div>
 
-<section class="helyx-import-form">
-        <div class="form-group">
-         <label for="helyx-known-bugs" style="font-weight: bold;">Known Issue</label>
-        <div class="form-fields"></div>
-        <p class="notes" id="helyx-pdf-filename">
-            Once the PDF has been identified and starts to extract the PDF's images, 
-            Foundry will freeze from a few seconds to a minute. 
-            Don't worry, it's the image extracting process...
-            This problem is been investigated.
-                </p>
-    </div>
-
-    <hr/>
-    <div class="form-group" style="display: flex; gap: 10%;">
-        <button id="helyx-import-pdf" class="helyx-inline" onclick="game.helyx.select_pdf();">PDF file</button>
-        <label id="helyx-imported-pdf" class="helyx-inline helyx-no-overflow" name="data"></label>
-    </div>
             </section>
-<hr>
+            <section class="tab category helyx-import-tab hidden" id="helyx-tab-pdf-list">
+                <h2 class="category-title">Supported PDFs</h2>
+                {{> "modules/pf2-pdf-en-import/templates/exported/pdfList.hbs"}}
+            </section>
+            <section class="tab category helyx-import-tab hidden" id="helyx-tab-discord">
+                <h2 class="category-title">Discord</h2>
+                <p>There is a discord channel at https://discord.gg/FdKzgYWd for this import module.
+                    You can use it to drop issues, get the latest news, submit ideas, or just say 'hi'.
+                </p>
+            </section>
+            <section class="tab category helyx-import-tab hidden" id="helyx-tab-faq">
+                {{> "modules/pf2-pdf-en-import/templates/exported/faq.hbs"}}
+            </section>
+        </div>
+    </form>
+</div></div>
