@@ -11,7 +11,7 @@
       "flags": {}
     }
   ],
-  "version": "1.20",
+  "version": "1.21",
   "compatibility": {
     "minimum": "10.276",
     "verified": "10.291",
@@ -25,7 +25,7 @@
   "relationships": {
     "system":
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.6.5" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.6.6" } }
     ]
   },
   "scripts": [
@@ -47,5 +47,5 @@
   ],
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.20/pf2-pdf-en-import-1.20.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.21/pf2-pdf-en-import-1.21.zip"
 }
