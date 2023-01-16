@@ -16,6 +16,7 @@ images in ~/datas/images are generated through Midjourney by Deidril, and are co
 
 ## Free Adventures
 - A Fistfull of Flowers
+- Threshold of Knowledge
 
 ## Pathfinder Society Season 3
 - Episode 12 : Fury's Toll
@@ -27,6 +28,8 @@ images in ~/datas/images are generated through Midjourney by Deidril, and are co
 - Episode 01 : Year of Boundless Wonder
 - Episode 02 : Return to the Grave
 - Episode 03 : Linnorm's Legacy
+- Episode 04 : To Seek the Heart of Calamity
+- Episode 05 : The Arclord Who Never Was
 
 # Known issues
 
