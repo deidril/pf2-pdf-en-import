@@ -14,6 +14,9 @@
             <a class="item category-tab helyx-import-nav" id="helyx-nav-discord" onclick="game.helyx.import_nav_tab('discord');">
                 Discord
             </a>
+            <a class="item category-tab helyx-import-nav" id="helyx-nav-patreon" onclick="game.helyx.import_nav_tab('patreon');">
+                Patreon
+            </a>
         </nav>
     </aside>
     <form class="categories flexcol helyx-import-tab-space">
@@ -41,18 +44,31 @@
                     </div>
 
             </section>
+            <section class="tab category helyx-import-tab hidden" id="helyx-tab-faq">
+                {{> "modules/pf2-pdf-en-import/templates/exported/faq.hbs"}}
+            </section>
             <section class="tab category helyx-import-tab hidden" id="helyx-tab-pdf-list">
                 <h2 class="category-title">Supported PDFs</h2>
                 {{> "modules/pf2-pdf-en-import/templates/exported/pdfList.hbs"}}
             </section>
             <section class="tab category helyx-import-tab hidden" id="helyx-tab-discord">
                 <h2 class="category-title">Discord</h2>
-                <p>There is a discord channel at https://discord.gg/FdKzgYWd for this import module.
+                <p>There is a discord channel at <a href="https://discord.gg/XryTbnxWVq">https://discord.gg/XryTbnxWVq</a> for this import module.
                     You can use it to drop issues, get the latest news, submit ideas, or just say 'hi'.
                 </p>
             </section>
-            <section class="tab category helyx-import-tab hidden" id="helyx-tab-faq">
-                {{> "modules/pf2-pdf-en-import/templates/exported/faq.hbs"}}
+            <section class="tab category helyx-import-tab hidden" id="helyx-tab-patreon">
+                <p>A patreon is a way to support free softwares like this module. </p>
+
+                <p>You can provide a few money to help buy new pdfs for new imports, or simply
+                because you support free softwares like this one at the following patreon web page :
+                    <br/> <a href="https://www.patreon.com/deidril">https://www.patreon.com/deidril</a> </p>
+
+                <p>There is not special content for patreons. However, i may set up votes to decide
+                of extra imported contents.</p>
+
+                <p>I plan to continue to import PF2e stand-alone adventures and PFS adventures, and release new versions of
+                this module for free.</p>
             </section>
         </div>
     </form>
