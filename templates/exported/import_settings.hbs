@@ -14,6 +14,9 @@
             <a class="item category-tab helyx-import-nav" id="helyx-nav-discord" onclick="game.helyx.import_nav_tab('discord');">
                 Discord
             </a>
+            <a class="item category-tab helyx-import-nav" id="helyx-nav-patreon" onclick="game.helyx.import_nav_tab('patreon');">
+                Patreon
+            </a>
         </nav>
     </aside>
     <form class="categories flexcol helyx-import-tab-space">
@@ -34,12 +37,14 @@
 
                     <div class="'form-group">
                         <h3>Warning !</h3>
-                        <p>Although the module is tested every time it's released, bugs and errors exists.
-                           Save yourself from despair : if you import an adventure into an existing world, 
-                           backup this world before importing any PDF.   
+                        <p>Even though the module is thoroughly tested before each release, bugs and errors may still occur. 
+                        To avoid the loss of your world, it is recommended to backup your existing world before importing any PDFs into it. 
                         </p> 
                     </div>
 
+            </section>
+            <section class="tab category helyx-import-tab hidden" id="helyx-tab-faq">
+                {{> "modules/pf2-pdf-en-import/templates/exported/faq.hbs"}}
             </section>
             <section class="tab category helyx-import-tab hidden" id="helyx-tab-pdf-list">
                 <h2 class="category-title">Supported PDFs</h2>
@@ -47,12 +52,20 @@
             </section>
             <section class="tab category helyx-import-tab hidden" id="helyx-tab-discord">
                 <h2 class="category-title">Discord</h2>
-                <p>There is a discord channel at https://discord.gg/FdKzgYWd for this import module.
+                <p>There is a discord channel at <a href="https://discord.gg/XryTbnxWVq">https://discord.gg/XryTbnxWVq</a> for this import module.
                     You can use it to drop issues, get the latest news, submit ideas, or just say 'hi'.
                 </p>
             </section>
-            <section class="tab category helyx-import-tab hidden" id="helyx-tab-faq">
-                {{> "modules/pf2-pdf-en-import/templates/exported/faq.hbs"}}
+            <section class="tab category helyx-import-tab hidden" id="helyx-tab-patreon">
+                <p>A Patreon is a way to support free software like this module. </p>
+                <p>You can provide a small amount of money to help purchase new PDFs for new imports 
+                    or simply because you support free software like this at the following Patreon web page: 
+                    <br/> <a href="https://www.patreon.com/deidril">https://www.patreon.com/deidril</a> 
+                </p>
+
+                <p>There is no special content for Patreon supporters. However, I may set up votes to decide on extra imported content. </p>
+
+                <p>My plan is to continue importing PF2e stand-alone adventures and PFS adventures and to release new versions of this module for free.</p>
             </section>
         </div>
     </form>
