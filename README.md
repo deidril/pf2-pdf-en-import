@@ -15,8 +15,11 @@ images in ~/datas/images are generated through Midjourney by Deidril, and are co
 - Crown of the Kobold King
 
 ## Free Adventures
-- A Fistfull of Flowers
+- A Fistful of Flowers
 - Threshold of Knowledge
+
+## Bounties
+- #19 : Grim Tidings
 
 ## Pathfinder Society Season 3
 - Episode 12 : Fury's Toll
@@ -30,6 +33,7 @@ images in ~/datas/images are generated through Midjourney by Deidril, and are co
 - Episode 03 : Linnorm's Legacy
 - Episode 04 : To Seek the Heart of Calamity
 - Episode 05 : The Arclord Who Never Was
+- Episode 06 : Signal from the Electric Laboratory
 
 # Known issues
 

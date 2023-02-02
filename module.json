@@ -1,7 +1,7 @@
 {
   "name": "pf2-pdf-en-import",
   "title": "Deidril's Pathfinder 2 PDF Import",
-  "description": "Allow to import Pathfinder 2nd PDFs from Paizo into foundry'",
+  "description": "Allow to import Pathfinder 2nd PDFs from Paizo into foundry",
   "authors": [ 
     {
       "name": "Deidril",
@@ -12,7 +12,7 @@
       "flags": {}
     }
   ],
-  "version": "1.23",
+  "version": "1.24",
   "compatibility": {
     "minimum": "10.276",
     "verified": "10.291",
@@ -21,10 +21,17 @@
   "styles": [
     "css/dialogs.css",
     "css/helyx.css", "css/helyx-conversions.css", "css/helyx-sections.css", 
-    "css/pfs3.css", "css/pfs4.css","css/adventures.css"
+    "css/pfs3.css", "css/pfs4.css","css/adventures.css", "css/bounties.css"
+  ],
+  "system": [
+    "pf2e"
   ],
   "relationships": {
-    "system":
+    "systems":
+    [
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.6.8" } }
+    ],
+    "requires": 
     [
       { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.6.8" } }
     ]
@@ -48,5 +55,5 @@
   ],
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.23/pf2-pdf-en-import-1.23.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.24/pf2-pdf-en-import-1.24.zip"
 }
