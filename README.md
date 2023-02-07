@@ -20,6 +20,7 @@ images in ~/datas/images are generated through Midjourney by Deidril, and are co
 
 ## Bounties
 - #19 : Grim Tidings
+- #20 : Burden in Bloodcove
 
 ## Pathfinder Society Season 3
 - Episode 12 : Fury's Toll
