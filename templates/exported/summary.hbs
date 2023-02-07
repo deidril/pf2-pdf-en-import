@@ -1,0 +1,42 @@
+<form class="flexrow">    
+<section class="helyx-summary-content">
+    <h1 class="helyx-summary-title">{{title}}</h1>
+
+    <div>
+        <div style="width: 600px; height: 300px; border-radius: 5px; border: 1px solid;
+            background-image: url('{{cover.filename}}'); 
+            background-repeat: no-repeat; 
+            background-position-x: {{cover.css_x}}; 
+            background-position-y: {{cover.css_y}};
+            background-size: {{cover.css_size}};
+            margin-left: auto;
+            margin-right: auto;" />
+        </div>      
+    </div>
+
+    <section class="helyx-summary-overview">
+        <h2>Overview</h2>
+        <div class="helyx-summary-summary">{{{summary_html}}}</div>
+    </section>
+
+    <hr/>
+
+    <section class="helyx-summary-options" style="display: {{options.midjourney_content}}">
+        <div class="form-group">
+            <label for="helyx-accept-midjourney-content">Use MidJourney generated content</label>
+            <div class="form-fields" style="display:block;">
+                <input type="checkbox" id="helyx-accept-midjourney-content" />
+            </div>
+        </div>  
+
+        <div class="form-group" style="display: {{options.deidril_maps}}">
+            <label for="helyx-accept-deidril-maps">Use Deidril's Maps</label>
+            <div class="form-fields" style="display:block;">
+                <input type="checkbox" id="helyx-accept-deidril-maps" />
+            </div>
+        </div>  
+
+     </div>
+
+</section>
+</form>
