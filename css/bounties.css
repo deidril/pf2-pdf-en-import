@@ -47,3 +47,28 @@
     font-size: 31px;
     font-weight: 400;   
 }
+
+.window-content .journal-entry-content header.helyx-pf2eb21-journal-title
+{
+    background: url(/helyx/pf2e-bounty-21-against-the-unliving/assets/banner.webp);
+
+    border: 2px solid white;
+    box-shadow:10px 5px 5px #b16b3e;
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+    color: white;    
+
+    font-family: Taroca;
+    font-size: 31px;
+    font-weight: 400;   
+}
+
+.window-content .journal-entry-content header.helyx-pf2eb21-journal-title h1
+{
+ 
+    color: white;    
+    font-family: Taroca;
+    font-size: 31px;
+    font-weight: 400;   
+}
