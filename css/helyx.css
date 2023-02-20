@@ -20,6 +20,7 @@
     height: 30px;
 }
 
+
 .helyx-statblock
 {
     padding-right: 5px;
@@ -84,6 +85,19 @@
 {
     border-bottom: none;
     text-align: center;
+    width: 100%;
+}
+
+.window-content .journal-entry-content header.helyx-journal-title span
+{
+    float: right;
+    font-size: medium;
+    font-weight: bold;
+    margin-top:4px;
+    color: rgb(94,0,0);
+    background-color:rgb(227,227,217);
+    padding:4px;
+    border: 4px solid;
 }
 
 .window-content .helyx-content div.helyx-read-section
@@ -215,13 +229,25 @@
 
 .window-content .helyx-content div.helyx-room-cr
 {
-    flex-flow: column wrap;
+
     margin-bottom: 30px;
     display: flex;
-    align-content: flex-end;
+    margin-top: -20px;
 }
 
 .window-content .helyx-content div.helyx-room-cr span
+{
+    float: right;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 4px;
+    background-color: rgb(94,0,0);
+    color: rgb(227,227,217);
+    padding: 6px;
+    margin-right: 10px;
+}
+
+.window-content .helyx-content div.helyx-room-crold span
 {
     background-color: var(--primary);
     color: white;
@@ -724,4 +750,8 @@ label.helyx-inline
 
 .event-dialog .event-question {
     font-style: italic;
+}
+
+.helyx-table td {
+    text-align: center;
 }
