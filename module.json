@@ -29,11 +29,11 @@
   "relationships": {
     "systems":
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.6.8" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.7.4" } }
     ],
     "requires": 
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.6.8" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.7.4" } }
     ]
   },
   "scripts": [

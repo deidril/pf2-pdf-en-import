@@ -66,26 +66,27 @@
 
 .window-content .journal-entry-content header.helyx-journal-title-default
 {
-
-    border: 2px solid white;
-    background-color: var(--primary);
-    box-shadow:10px 5px 5px #b16b3e;
     padding: 8px;
     margin-bottom: 25px;
     position: relative;     
-    color: white;    
+    background-color: rgb(94,0,0);
 
-    font-family: "Roboto Condensed", Roboto, sans-serif;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    color: var(--primary);    
+    font-family: "Vollkorn";
     font-variant: small-caps;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 14px;
 }
 
 .window-content .journal-entry-content header.helyx-journal-title h1
 {
+    color: white;
     border-bottom: none;
-    text-align: center;
-    width: 100%;
 }
 
 .window-content .journal-entry-content header.helyx-journal-title span
