@@ -21,29 +21,6 @@
 }
 
 
-.helyx-statblock
-{
-    padding-right: 5px;
-}
-
-.helyx-statblock .helyx-action-details
-{
-    padding-top: 10px;
-    border-left: var(--primary) 4px dotted;
-    margin-left: 25px;
-    padding-left: 0;
-    padding-bottom: 10px;
-}
-
-.helyx-content .helyx-statblock .helyx-action-details p.helyx-p
-{
-    text-indent: 0px;
-    padding-left: 5px;
-    padding-bottom: 5px;
-    margin: 0px;
-}
-
-
 
 .helyx-inline
 {
@@ -435,6 +412,9 @@
 {
     padding-top: 15px;
     font-size: large;
+    position: relative;
+    top: -8px;
+    left: 8px;
 }
 
 .window-content .helyx-content .helyx-block-box h3 span.helyx-block-box-cr
@@ -583,25 +563,6 @@
     position: relative;  
 }
 
-.window-content .helyx-content .helyx-stat-block-section-title
-{
-    color: #917340;
-    border-top: 2px solid  #917340;
-    border-bottom: 2px solid  #917340;
-    text-transform: uppercase;
-}
-
-.window-content .helyx-content .statblock .helyx-p
-{
-    text-indent: -15px;
-    padding-left: 15px;
-}
-
-.window-content .helyx-content .statblock .stat-description .helyx-p
-{
-    text-indent: 15px;
-    padding-left: 0px;
-}
 
 .helyx-pf2-encounter
 {
@@ -753,6 +714,10 @@ label.helyx-inline
     font-style: italic;
 }
 
+.helyx-table th {
+    text-align: left;
+}
+
 .helyx-table td {
-    text-align: center;
+    text-align: left;
 }

@@ -19,9 +19,10 @@
     "maximum": "10"
   },
   "styles": [
-    "css/dialogs.css", "css/summary.css",
-    "css/helyx.css", "css/helyx-conversions.css", "css/helyx-sections.css", 
-    "css/pfs3.css", "css/pfs4.css","css/adventures.css", "css/bounties.css"
+    "css/common/dialogs.css", "css/common/helyx.css", "css/common/helyx-conversions.css", "css/common/helyx-sections.css", 
+    "css/common/summary.css",
+    "css/pdfs/adventures.css", "css/pdfs/bounties.css", "css/pdfs/pfs3.css", "css/pdfs/pfs4.css",
+    "css/pf2e/statblock.css"
   ],
   "system": [
     "pf2e"
