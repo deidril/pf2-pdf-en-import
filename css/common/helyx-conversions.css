@@ -1,0 +1,58 @@
+
+.helyx-block-conversions
+{
+    visibility: hidden; 
+    max-width: 0px;
+    max-height: 0px;
+}
+
+.helyx-converted {
+    border: 1px solid black;
+    background-color: rgb(221,221,221);
+    color: rgb(28,28,28);
+    max-height: 22px;
+    padding-right: 4px;
+    white-space: nowrap;
+    word-break: break-all;
+    border-radius: 2px;
+  }
+
+  .helyx-converted i.fas
+  {
+    margin-right: 4px;
+  }
+  
+  .helyx-converted .helyx-tooltip  {
+    visibility: hidden; 
+    max-width: 0px;
+    max-height: 0px;
+  }
+  
+.helyx-convert-notes {
+    border: 4px solid #5d0000;
+    background-color: rgb(248,248,235);
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    margin: 0 0 0 0px;
+}
+
+.helyx-convert-notes-close
+{
+    position: absolute;
+    top: 0;
+    right: 4px;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.helyx-content span.helyx-converted
+{
+    text-indent: 0px;
+}

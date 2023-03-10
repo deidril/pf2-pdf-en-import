@@ -12,16 +12,17 @@
       "flags": {}
     }
   ],
-  "version": "1.28",
+  "version": "1.29",
   "compatibility": {
     "minimum": "10.276",
     "verified": "10.291",
     "maximum": "10"
   },
   "styles": [
-    "css/dialogs.css", "css/summary.css",
-    "css/helyx.css", "css/helyx-conversions.css", "css/helyx-sections.css", 
-    "css/pfs3.css", "css/pfs4.css","css/adventures.css", "css/bounties.css"
+    "css/common/dialogs.css", "css/common/helyx.css", "css/common/helyx-conversions.css", "css/common/helyx-sections.css", 
+    "css/common/summary.css",
+    "css/pdfs/adventures.css", "css/pdfs/bounties.css", "css/pdfs/pfs3.css", "css/pdfs/pfs4.css",
+    "css/pf2e/statblock.css"
   ],
   "system": [
     "pf2e"
@@ -29,11 +30,11 @@
   "relationships": {
     "systems":
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.7.4" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.8.3" } }
     ],
     "requires": 
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.7.4" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.6.0", "verified": "4.8.3" } }
     ]
   },
   "scripts": [
@@ -55,5 +56,5 @@
   ],
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.28/pf2-pdf-en-import-1.28.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.29/pf2-pdf-en-import-1.29.zip"
 }

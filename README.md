@@ -5,7 +5,7 @@ This foundry vtt plugin allows to import PDFs into the current world.
 helyx.bundle.js code is under the MIT license
 pdf.worker.min.js code is under the apache license
 
-images in ~/datas/images are generated through Midjourney by Deidril, and are copyrighted (c) Deidril as far as AI generated content could be. Their use is restricted to this module scope.
+images in ~/datas/images are generated through Midjourney by Deidril. Their use is restricted to this module scope.
 
 
 # Supported PDFs 
@@ -36,6 +36,7 @@ images in ~/datas/images are generated through Midjourney by Deidril, and are co
 - Episode 04 : To Seek the Heart of Calamity
 - Episode 05 : The Arclord Who Never Was
 - Episode 06 : Signal from the Electric Laboratory
+- Episode 07 : A Most Wondrous Exchange
 
 # Known issues
 

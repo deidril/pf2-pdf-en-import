@@ -1,0 +1,723 @@
+.helyx-tags {
+    --unique: #54166e;
+    --rare: #191813;
+    --uncommon: #98513d;
+    --common: #323232;
+
+    --alignment: #566193;
+
+    --size : #3a7a58;
+
+    --ancestry: #5d0000;
+
+}
+  
+.helyx-version {
+    visibility: hidden;
+}
+
+.import-dialog .dialog-buttons {
+    height: 30px;
+}
+
+
+
+.helyx-inline
+{
+    flex-shrink: 1;
+    vertical-align: middle;
+}
+
+
+.helyx-no-overflow
+{
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+.window-content .helyx-content th.w20
+{
+    width: 20%;
+}
+
+.window-content .journal-entry-content header.helyx-journal-title-default
+{
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+    background-color: rgb(94,0,0);
+
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    color: var(--primary);    
+    font-family: "Vollkorn";
+    font-variant: small-caps;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.window-content .journal-entry-content header.helyx-journal-title h1
+{
+    color: white;
+    border-bottom: none;
+}
+
+.window-content .journal-entry-content header.helyx-journal-title span
+{
+    float: right;
+    font-size: medium;
+    font-weight: bold;
+    margin-top:4px;
+    color: rgb(94,0,0);
+    background-color:rgb(227,227,217);
+    padding:4px;
+    border: 4px solid;
+}
+
+.window-content .helyx-content div.helyx-read-section
+{
+    background: #f8f8eb;
+    border-top: 2px solid #C5A924;
+    border-bottom: 2px solid #C5A924;
+    border-left: 1px solid #C5A924;
+    border-right: 1px solid #C5A924;
+    box-shadow: 12px 5px 5px grey;
+    padding: 1em;
+    text-indent: 20px;
+    font-family: Roboto;
+    color: var(--primary);
+}
+
+.window-content .helyx-content div.helyx-block-read-section
+{
+    background: #f8f8eb;
+    border-top: 2px solid #C5A924;
+    border-bottom: 2px solid #C5A924;
+    border-left: 1px solid #C5A924;
+    border-right: 1px solid #C5A924;
+    box-shadow: 12px 5px 5px grey;
+    padding: 1em;
+    text-indent: 20px;
+    font-family: Roboto;
+    color: var(--primary);
+}
+
+.window-content .helyx-content table caption
+{
+    background: var(--primary);
+    color: white;
+    border: 1px solid black;
+}
+
+.window-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table
+{
+    border: 0px;
+}
+
+.window-content .helyx-content .helyx-block-conversions .helyx-conversions table.helyx-conversion-table tbody
+{
+    border: 0px;
+}
+
+.window-content .helyx-content div.helyx-block-section
+{
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.window-content .helyx-content div.helyx-block-section div.helyx-block-section-header
+{
+    display: flex;
+    margin-bottom: 20px;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+}
+
+
+.window-content .helyx-content div.helyx-block-section div.helyx-block-section-body
+{
+    margin: 15px;
+}
+
+.window-content .helyx-content div.helyx-block-section-icon
+{
+    padding-bottom: 10px;
+    display: block;
+    height: 50px;
+}
+
+.window-content .helyx-content .helyx-block-section h3
+{
+    color: white;
+    text-transform: uppercase;
+    font-size: medium;
+    border-bottom: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.window-content .helyx-content div.helyx-block-section img.helyx-exploration-icon
+{
+    border-radius: 50%;
+    width: 70px;
+    position: relative;
+    left: -14px;
+    top: -10px;
+}
+
+.window-content .helyx-content h2.helyx-journal-title
+{
+    background: url(/systems/pf2e/assets/sheet/header.webp);
+    border: 2px solid var(--primary); 
+    border-radius: 10px;
+    box-shadow:10px 5px 5px #2d0000;
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+    color: white;
+}
+
+.window-content .helyx-content h2.helyx-exploration-title
+{
+    background: #5E6A4D;
+    border: 2px solid black; 
+    border-radius: 10px;
+    box-shadow:10px 5px 5px #2d2d2d;
+    padding: 8px;
+    margin-bottom: 25px;
+    position: relative;     
+    color: white;
+}
+
+.window-content .helyx-content div.helyx-block-box-title img.helyx-exploration-icon
+{
+    border-radius: 50%;
+    width: 60px;
+    position: relative;
+    left: -19px;
+    margin-left: 20px;
+}
+
+.window-content .helyx-content div.helyx-room-cr
+{
+
+    margin-bottom: 30px;
+    display: flex;
+    margin-top: -20px;
+}
+
+.window-content .helyx-content div.helyx-room-cr span
+{
+    float: right;
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 4px;
+    background-color: rgb(94,0,0);
+    color: rgb(227,227,217);
+    padding: 6px;
+    margin-right: 10px;
+}
+
+.window-content .helyx-content div.helyx-room-crold span
+{
+    background-color: var(--primary);
+    color: white;
+    font-size: x-large;
+    padding: 10px;
+    font-variant: all-small-caps;
+
+    position: relative;
+    right: 20px;
+    border: 2px white solid;
+    height: 60px;
+
+}
+
+.helyx-background-tint-dark {
+    background-color: rgba(24, 20, 15, 0.5); /* Tint color */
+    background-blend-mode: multiply;
+  }
+
+.helyx-content .helyx-block-p
+{
+    text-indent: 20px;
+    font-family: 'Vollkorn';
+    font-size: 15px;
+}
+
+.helyx-content .helyx-block-p a
+{
+    text-indent: 0px;
+}
+
+.helyx-block-box
+{
+    background: #f8f8eb;
+    border: 2px solid black; 
+    border-radius: 10px;
+}
+
+.helyx-block-encounter
+{
+    background: #f8f8eb;
+    border: 2px solid black; 
+    border-radius: 10px;
+}
+
+.helyx-block-equipment
+{
+    background: #f8f8eb;
+    border: 2px solid black; 
+    border-radius: 10px;
+}
+
+.helyx-block-map
+{
+    background:  #f8f8eb;
+    border: 2px solid black; 
+    border-radius: 10px;
+}
+
+.helyx-block-trap
+{
+    background: #e43906;
+    border: 2px solid black; 
+    border-radius: 10px;
+}
+
+.helyx-block-feat
+{
+    background: #026939;
+    border: 2px solid black; 
+    border-radius: 10px;
+}
+
+.window-content .helyx-content .helyx-block-box
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.window-content .helyx-content .helyx-block-box img.helyx-token-icon
+{
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+
+/*                              Generic BOX CSS  */
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title
+{
+    color: white;
+    padding: 8px;
+    display: flex;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-block-exploration-title
+{
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+    margin-top: 0px;
+}
+
+
+
+.window-content .helyx-content .helyx-block-box div.helyx-creature
+{
+    background: url(/systems/pf2e/assets/sheet/header.webp);
+    background-color:rgba(30, 30, 30, .5);
+    background-blend-mode: multiply;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-hazard
+{
+    background: url(/systems/pf2e/assets/sheet/header.webp);
+    background-color:rgba(30, 30, 30, .5);
+    background-blend-mode: multiply;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-equipment
+{
+    background-color:#1b1b0b;
+}
+
+.window-content .helyx-content .helyx-block-box div.helyx-activity
+{
+    background-color:#1b1b0b;
+}
+
+.window-content .helyx-content .helyx-block-box div.helyx-location
+{
+    background-color:#004d29;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-feat
+{
+    background-color:#004d29;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-background
+{
+    background-color:#004d29;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-settlement
+{
+    background-color:#004d29;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-treasure
+{
+    background-color:#5E6A4D;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-icon
+{
+    flex: 25%;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-listing
+{
+    flex: 50%;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-listing span
+{
+    margin-top: 0px;
+    margin-left: 5px;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title h3
+{
+    color: white;
+    margin-bottom: 5px;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-cr
+{
+    flex: 25%;
+    position: relative;
+}
+
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title div.helyx-block-box-title-cr .helyx-cr
+{
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    right: 6px;
+    top: 15px;
+}
+
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title span.helyx-creature-amount
+{
+    padding-top: 15px;
+    font-size: large;
+    position: relative;
+    top: -8px;
+    left: 8px;
+}
+
+.window-content .helyx-content .helyx-block-box h3 span.helyx-block-box-cr
+{
+    position: absolute; 
+    right: 25px;
+    top: -15px;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title span.entity-name
+{
+    background: var(--light);
+    border: 2px solid black;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.window-content .helyx-content .helyx-block-box div.helyx-block-box-title a.content-link
+{
+    background: var(--light);
+    border: 2px solid black;
+}
+
+/*                  Specific */ 
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title
+{
+    background: url(/systems/pf2e/assets/sheet/header.webp);
+    background-color:rgba(30, 30, 30, .5);
+    background-blend-mode: multiply;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title
+{
+    background-color:#1b1b0b;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-activity-title
+{
+    background-color:#1b1b0b;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-location-title
+{
+    background-color:#1b1b0b;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+}
+
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-icon
+{
+    flex: 15%;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-icon
+{
+    flex: 15%;
+}
+
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-listing
+{
+    flex: 70%;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-listing
+{
+    flex: 70%;
+}
+
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title h3
+{
+    color: white;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title h3
+{
+    color: white;
+}
+
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title div.helyx-block-encounter-title-cr
+{
+    flex: 30%;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title div.helyx-block-equipment-title-cr
+{
+    flex: 30%;
+}
+
+.window-content .helyx-content .helyx-block-encounter h3 span.helyx-block-encounter-cr
+{
+    position: absolute; 
+    right: 25px;
+    top: -15px;
+}
+
+.window-content .helyx-content .helyx-block-equipment h3 span.helyx-block-equipment-cr
+{
+    position: absolute; 
+    right: 25px;
+    top: -15px;
+}
+
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title span.entity-name
+{
+    background: var(--light);
+    border: 2px solid black;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.window-content .helyx-content .helyx-block-encounter div.helyx-block-encounter-title a.content-link
+{
+    background: var(--light);
+    border: 2px solid black;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-equipment-title a.content-link
+{
+    background: var(--light);
+    border: 2px solid black;
+}
+
+
+
+.window-content .helyx-content .helyx-block-encounter h3.helyx-block-stat-title
+{
+    background: url(/systems/pf2e/assets/sheet/header.webp);
+    background-color:rgba(30, 30, 30, .5);
+    background-blend-mode: multiply;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    position: relative;  
+}
+
+
+.helyx-pf2-encounter
+{
+    border-bottom: 2px solid black; 
+    position: relative; 
+    color: black;
+}
+
+.helyx-pf2-feat
+{
+    border-bottom: 2px solid black; 
+    position: relative; 
+    color: black;
+}
+
+.helyx-pf2-item
+{
+    border-bottom: 2px solid black; 
+    position: relative; 
+    color: black;
+}
+
+
+.helyx-pf2-cr
+{
+    position: absolute; 
+    top: -20px; 
+    right: 25px;
+}
+
+.helyx-tags
+{
+    flex-wrap: wrap;
+    gap: 2px;
+    list-style-type: none;
+    margin-bottom: 2px;    
+}
+
+.helyx-tags .helyx-tag
+{
+    text-rendering: optimizeLegibility;
+    background-color: var(--primary);
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.5);
+    color: #fff;
+    font-family: var(--sans-serif);
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: .05em;
+    line-height: 1;
+    padding: 3px 4px;
+    text-transform: uppercase;
+}
+
+button.helyx-inline
+{
+    width: 50%;
+} 
+
+label.helyx-inline
+{
+    padding: 5px;
+}
+
+
+.gmhelyx.portrait {
+    width: 80px;
+    height: 80px;
+}
+
+.read-this {
+    background: #e8e8ef;
+    border: 1px dotted;
+    box-sizing: border-box;
+    margin-bottom: 4px;
+    padding: 0 3px
+}
+
+.event-dialog .event-section .event-block ::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    border: 1px solid #7a7971;
+}
+
+.event-dialog .event-section .event-block ::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.event-dialog .dialog-buttons {
+    display: none;
+}
+
+.revent-dialog .window-resizable-handle {
+    bottom: none;
+    top: 0px;
+}
+
+
+.event-dialog .event-section .event-block {
+    float: left;
+    width: calc(100% - 320px);
+    height: calc(100% - 34px);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+    overflow: auto;
+
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.event-dialog .event-section .event-name {
+    float: left;
+    width: 150px;
+    height: calc(100% - 34px); 
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.event-dialog .event-section .event-portrait {
+    width: 100%;
+    height: 100%;
+    max-height: calc(100% -40px);
+}
+
+.event-dialog .event-section .event-portrait-name {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+}
+
+.event-dialog .event-section .event-noportrait-name {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.event-dialog .event-section .event-actor {
+    float: left;
+    width: 150px;
+    height: calc(100% - 34px);  
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.event-dialog .event-question {
+    font-style: italic;
+}
+
+.helyx-table th {
+    text-align: left;
+}
+
+.helyx-table td {
+    text-align: left;
+}
