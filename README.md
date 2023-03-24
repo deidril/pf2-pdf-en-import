@@ -14,9 +14,10 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Shadows at Sundown
 - Crown of the Kobold King
 
-## Free Adventures
+## Free RPG Day Adventures
 - A Fistful of Flowers
 - Threshold of Knowledge
+- Little Trouble in big Absalom
 
 ## Bounties
 - #19 : Grim Tidings
@@ -41,7 +42,6 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 # Known issues
 
       + Initial import of images may freeze foundry for up to a minute
-      + Sometimes the import just fail after importing images. Cancel and retry.
 
       + Gender of creatures using the stat block of another creature, aren't set. Issue is on the todo list"
       + Foundry ids of imported entries are not static. Entries will not be correctly overwritten if you reimport the PDF.
