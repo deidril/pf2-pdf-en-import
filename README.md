@@ -41,8 +41,6 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 
 # Known issues
 
-      + Initial import of images may freeze foundry for up to a minute
-
       + Gender of creatures using the stat block of another creature, aren't set. Issue is on the todo list"
       + Foundry ids of imported entries are not static. Entries will not be correctly overwritten if you reimport the PDF.
 
