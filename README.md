@@ -38,6 +38,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Episode 05 : The Arclord Who Never Was
 - Episode 06 : Signal from the Electric Laboratory
 - Episode 07 : A Most Wondrous Exchange
+- Episode 08 : Battle Star’s Fate
 
 # Known issues
 
