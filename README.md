@@ -24,6 +24,9 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - #20 : Burden in Bloodcove
 - #21 : Against the Unliving
 
+## Pathfinder Society Quests
+- #14 : The Swordlord’s Challenge
+
 ## Pathfinder Society Season 3
 - Episode 12 : Fury's Toll
 - Episode 13 : Guardian's Covenant
