@@ -36,6 +36,19 @@
     white-space: nowrap;
 }
 
+.helyx-h1
+{
+    padding: 6px;
+    margin-bottom: 20px;
+    background-color: rgb(94,0,0);
+
+    color: white;    
+    font-family: "Vollkorn";
+    font-weight: 400;
+    font-size: 17px;
+
+}
+
 .window-content .helyx-content th.w20
 {
     width: 20%;
@@ -370,6 +383,10 @@
 {
     background-color:#004d29;
 }
+.window-content .helyx-content .helyx-block-box div.helyx-activity
+{
+    background-color:#004d29;
+}
 .window-content .helyx-content .helyx-block-box div.helyx-treasure
 {
     background-color:#5E6A4D;
@@ -405,7 +422,7 @@
     text-transform: uppercase;
     position: absolute;
     right: 6px;
-    top: 15px;
+    top: 20%;
 }
 
 .window-content .helyx-content .helyx-block-box div.helyx-block-box-title span.helyx-creature-amount
