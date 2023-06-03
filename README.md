@@ -14,6 +14,9 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Shadows at Sundown
 - Crown of the Kobold King
 
+## Core Books
+- Dark Archive (adventures only)
+
 ## Free RPG Day Adventures
 - A Fistful of Flowers
 - Threshold of Knowledge
