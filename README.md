@@ -15,7 +15,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Crown of the Kobold King
 
 ## Core Books
-- Dark Archive (adventures only)
+- Dark Archive (adventures only) + the extra content pdf
 
 ## Free RPG Day Adventures
 - A Fistful of Flowers
