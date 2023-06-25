@@ -21655,7 +21655,10 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
         textRunBreakAllowed: false,
         transform: null,
         fontName: null,
-        color: [1,2,3]
+        color: [1,2,3],
+        desc: "null",
+        savedColor: [1,2,3],
+        savedDesc: "null"
       };
       var SPACE_FACTOR = 0.3;
       var MULTI_SPACE_FACTOR = 1.5;
@@ -21760,7 +21763,8 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
           height: textChunk.height,
           transform: textChunk.transform,
           fontName: textChunk.fontName,
-          color: textChunk.color
+          color: textChunk.savedColor,
+          desc: textChunk.savedDesc
         };
       }
 
@@ -21832,6 +21836,8 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
           textChunk.height += Math.abs(height);
         }
 
+        textChunk.savedColor  = textChunk.color;
+        textChunk.savedDesc = textChunk.desc;
         return textChunk;
       }
 
@@ -21852,7 +21858,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
         }
       }
 
-      function flushTextContentItem() {
+      function flushTextContentItem(reason_ = "undefined") {
         if (!textContentItem.initialized) {
           return;
         }
@@ -21862,6 +21868,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
         } else {
           textContentItem.height *= textContentItem.textAdvanceScale;
         }
+        //console.log("Push " +reason_ + JSON.stringify(textContentItem));
 
         textContent.items.push(runBidiTransform(textContentItem));
         textContentItem.initialized = false;
@@ -21878,6 +21885,14 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
         }
       }
 
+      function col2hex(col)
+      {
+         let h = col.toString(16);
+         if(h.length == 1) 
+         h = "0" + h;
+         return h;
+      }
+
       function handleColorOp(operation)
       {
         let fn = operation.fn;
@@ -21891,12 +21906,14 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
             if(state.myColorSpace)
             {
               textContentItem.color = state.myColorSpace + JSON.stringify(args);
+              textContentItem.desc = "setFillColor myColorSpace "
             }
             else
             {
               cs = state.fillColorSpace;
               let largs = cs.getRgb(args, 0);
               textContentItem.color = "setFillColor " + JSON.stringify([ largs[0], largs[1], largs[2] ]);
+              textContentItem.desc = "setFillColor " + JSON.stringify([ largs[0], largs[1], largs[2] ]);
             }
             break;
           }
@@ -21906,7 +21923,9 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
             delete state.myColorSpace;
             state.fillColorSpace = _colorspace.ColorSpace.singletons.rgb;
             let largs = _colorspace.ColorSpace.singletons.rgb.getRgb(args, 0);
-            textContentItem.color = "setFillRGBColor " + JSON.stringify([ largs[0], largs[1], largs[2] ]);
+            textContentItem.desc = "setFillRGBColor " + JSON.stringify([ largs[0], largs[1], largs[2] ]) + " args : " + JSON.stringify(args);
+            textContentItem.color = "#" + col2hex(largs[0]) + col2hex(largs[1]) + col2hex(largs[2]);
+
             break; 
           }
 
@@ -21915,14 +21934,15 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
             delete state.myColorSpace;
             state.fillColorSpace = _colorspace.ColorSpace.singletons.cmyk;
             let largs = _colorspace.ColorSpace.singletons.cmyk.getRgb(args, 0);
-            textContentItem.color = "setFillCMYKColor " + JSON.stringify([ largs[0], largs[1], largs[2] ]);
+            textContentItem.color = "#" + col2hex(largs[0]) + col2hex(largs[1]) + col2hex(largs[2]);
+            textContentItem.desc = "setFillCMYKColor " + JSON.stringify([ largs[0], largs[1], largs[2] ]) + " args : " + JSON.stringify(args);
             break;
           }
 
           case _util.OPS.setFillColorSpace:
             try 
             {
-              state.myColorSpace = JSON.stringify(args);
+              state.myColorSpace = "setFillColorSpace " + JSON.stringify(args);
               // state.fillColorSpace = _colorspace.ColorSpace.parse(args[0], xref, resources);
               //textContentItem.color = {...args};
             } catch(reason)
@@ -21934,11 +21954,12 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
           case _util.OPS.setFillGray:
             delete state.myColorSpace;
             state.fillColorSpace = _colorspace.ColorSpace.singletons.gray;
-            let largs = state.fillColorSpace.getRgb(args, 0);
-            textContentItem.color = "setFillGrayColor " + JSON.stringify(args);
-            // textContentItem.color = "setFillGrayColor " + JSON.stringify([ largs[0], largs[1], largs[2] ]);
+            textContentItem.desc = "setFillGrayColor " + JSON.stringify(args);
+            let gray_color = Math.round(args[0] * 256.0);
+            textContentItem.color = "#" + col2hex(gray_color) + col2hex(gray_color) + col2hex(gray_color);
           break;
 
+          /*
           case _util.OPS.setStrokeColorSpace: 
           case _util.OPS.setStrokeColor:
           case _util.OPS.setStrokeColorN: 
@@ -21949,8 +21970,9 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
           textContentItem.color = 
             ( state.myColorSpace ? (state.myColorSpace + " ") : "") 
               + fn + " " + JSON.stringify(args); 
+          textContentItem.desc = "setStroke ";
           break;
-
+            */
         }
      }
 
@@ -22015,24 +22037,24 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
                 break;
               }
 
-              flushTextContentItem();
+              flushTextContentItem("setFont");
               textState.fontName = fontNameArg;
               textState.fontSize = fontSizeArg;
               next(handleSetFont(fontNameArg, null));
               return;
 
             case _util.OPS.setTextRise:
-              flushTextContentItem();
+              flushTextContentItem("setTextRise");
               textState.textRise = args[0];
               break;
 
             case _util.OPS.setHScale:
-              flushTextContentItem();
+              flushTextContentItem("setHScale");
               textState.textHScale = args[0] / 100;
               break;
 
             case _util.OPS.setLeading:
-              flushTextContentItem();
+              flushTextContentItem("setLeading");
               textState.leading = args[0];
               break;
 
@@ -22049,20 +22071,20 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
                 break;
               }
 
-              flushTextContentItem();
+              flushTextContentItem("moveText");
               textState.translateTextLineMatrix(args[0], args[1]);
               textState.textMatrix = textState.textLineMatrix.slice();
               break;
 
             case _util.OPS.setLeadingMoveText:
-              flushTextContentItem();
+              flushTextContentItem("setLeadingMoveText");
               textState.leading = -args[1];
               textState.translateTextLineMatrix(args[0], args[1]);
               textState.textMatrix = textState.textLineMatrix.slice();
               break;
 
             case _util.OPS.nextLine:
-              flushTextContentItem();
+              flushTextContentItem("nextLine");
               textState.carriageReturn();
               break;
 
@@ -22078,7 +22100,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
                 break;
               }
 
-              flushTextContentItem();
+              flushTextContentItem("setTextMatrix");
               textState.setTextMatrix(args[0], args[1], args[2], args[3], args[4], args[5]);
               textState.setTextLineMatrix(args[0], args[1], args[2], args[3], args[4], args[5]);
               break;
@@ -22092,7 +22114,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
               break;
 
             case _util.OPS.beginText:
-              flushTextContentItem();
+              flushTextContentItem("beginText");
               textState.textMatrix = _util.IDENTITY_MATRIX.slice();
               textState.textLineMatrix = _util.IDENTITY_MATRIX.slice();
               break;
@@ -22134,7 +22156,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
                   }
 
                   if (breakTextRun) {
-                    flushTextContentItem();
+                    flushTextContentItem("showSpacedText");
                   } else if (advance > 0) {
                     addFakeSpaces(advance, textContentItem.str);
                   }
@@ -22158,7 +22180,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
                 continue;
               }
 
-              flushTextContentItem();
+              flushTextContentItem("nextLineShowText");
               textState.carriageReturn();
               buildTextContentItem(args[0]);
               break;
@@ -22169,7 +22191,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
                 continue;
               }
 
-              flushTextContentItem();
+              flushTextContentItem("nextLineSetSpacingShowText");
               textState.wordSpacing = args[0];
               textState.charSpacing = args[1];
               textState.carriageReturn();
@@ -22177,7 +22199,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
               break;
 
             case _util.OPS.paintXObject:
-              flushTextContentItem();
+              flushTextContentItem("paintXObject");
 
               if (!xobjs) {
                 xobjs = resources.get("XObject") || _primitives.Dict.empty;
@@ -22283,7 +22305,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
               return;
 
             case _util.OPS.setGState:
-              flushTextContentItem();
+              flushTextContentItem("setGState");
               var dictName = args[0];
               var extGState = resources.get("ExtGState");
 
@@ -22320,7 +22342,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
           return;
         }
 
-        flushTextContentItem();
+        flushTextContentItem("end loop");
         enqueueChunk();
         resolve();
       }).catch(reason => {
@@ -22330,7 +22352,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
 
         if (this.options.ignoreErrors) {
           (0, _util.warn)(`getTextContent - ignoring errors during "${task.name}" ` + `task: "${reason}".`);
-          flushTextContentItem();
+          flushTextContentItem("ignoreErrors");
           enqueueChunk();
           return;
         }
