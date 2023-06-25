@@ -13,6 +13,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 ## Adventures
 - Shadows at Sundown
 - Crown of the Kobold King
+- The enmity's cycle
 
 ## Core Books
 - Dark Archive (adventures only) + the extra content pdf
