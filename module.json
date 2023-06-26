@@ -12,11 +12,11 @@
       "flags": {}
     }
   ],
-  "version": "1.36",
+  "version": "2.37",
   "compatibility": {
-    "minimum": "10.276",
-    "verified": "10.291",
-    "maximum": "10"
+    "minimum": "11",
+    "verified": "11",
+    "maximum": "11"
   },
   "styles": [
     "css/common/dialogs.css", "css/common/helyx.css", "css/common/helyx-conversions.css", "css/common/helyx-sections.css", 
@@ -30,11 +30,11 @@
   "relationships": {
     "systems":
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.12.1", "verified": "4.12.9" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "5.0.2", "verified": "5.0.2" } }
     ],
     "requires": 
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "4.12.1", "verified": "4.12.9" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "5.0.2", "verified": "5.0.2" } }
     ]
   },
   "scripts": [
@@ -57,5 +57,5 @@
   "url": "https://github.com/deidril/pf2-pdf-en-import",
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/1.36/pf2-pdf-en-import-1.36.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/2.37/pf2-pdf-en-import-2.37.zip"
 }
