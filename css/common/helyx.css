@@ -54,24 +54,7 @@
     width: 20%;
 }
 
-.window-content .journal-entry-content header.helyx-journal-title-default
-{
-    padding: 8px;
-    margin-bottom: 25px;
-    position: relative;     
-    background-color: rgb(94,0,0);
 
-
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    color: var(--primary);    
-    font-family: "Vollkorn";
-    font-variant: small-caps;
-    font-weight: 600;
-    font-size: 14px;
-}
 
 .window-content .journal-entry-content header.helyx-journal-title h1
 {
@@ -218,25 +201,7 @@
     margin-left: 20px;
 }
 
-.window-content .helyx-content div.helyx-room-cr
-{
 
-    margin-bottom: 30px;
-    display: flex;
-    margin-top: -20px;
-}
-
-.window-content .helyx-content div.helyx-room-cr span
-{
-    float: right;
-    font-size: medium;
-    font-weight: bold;
-    margin-top: 4px;
-    background-color: rgb(94,0,0);
-    color: rgb(227,227,217);
-    padding: 6px;
-    margin-right: 10px;
-}
 
 .window-content .helyx-content div.helyx-room-crold span
 {
