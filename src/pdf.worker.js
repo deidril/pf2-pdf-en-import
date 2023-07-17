@@ -21951,13 +21951,16 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
             }
             break;
 
+            // Below doesn't affect text color normally
+            /*
           case _util.OPS.setFillGray:
             delete state.myColorSpace;
             state.fillColorSpace = _colorspace.ColorSpace.singletons.gray;
             textContentItem.desc = "setFillGrayColor " + JSON.stringify(args);
             let gray_color = Math.round(args[0] * 256.0);
             textContentItem.color = "#" + col2hex(gray_color) + col2hex(gray_color) + col2hex(gray_color);
-          break;
+          brea;
+          */
 
           /*
           case _util.OPS.setStrokeColorSpace: 
@@ -22023,7 +22026,7 @@ var PartialEvaluator = function PartialEvaluatorClosure() {
             case _util.OPS.setFillCMYKColor:
             case _util.OPS.setFillRGBColor:
             case _util.OPS.setFillColorSpace:
-            case _util.OPS.setFillGray:
+            //case _util.OPS.setFillGray:
               {
                 handleColorOp(operation);
                 break;
