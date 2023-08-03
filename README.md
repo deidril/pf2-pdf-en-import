@@ -48,6 +48,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Episode 08 : Battle Star’s Fate
 - Episode 09 : Killer in the Golden Mask
 - Episode 10 : Arclord’s Abode
+- Episode 11 : Prisoners of the Electric Castle
 
 # Known issues
 
