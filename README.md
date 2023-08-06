@@ -22,6 +22,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - A Fistful of Flowers
 - Threshold of Knowledge
 - Little Trouble in big Absalom
+- A Few Flowers More
 
 ## Bounties
 - #19 : Grim Tidings

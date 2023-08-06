@@ -500,9 +500,21 @@
     background: linear-gradient(rgb(100, 100, 100),rgb(24, 24, 24));
 }
 
-form .editor-content .helyx-content div.helyx-block-section-darkness
+.window-content .helyx-content div.helyx-block-section-darkness
 {
     border: 4px solid #000000;
+    background: #f8f8eb    
+}
+
+.helyx-header-healing
+{
+    border-bottom: 4px solid #026939;
+    background: linear-gradient(green,black);
+}
+
+.window-content .helyx-content div.helyx-block-section-healing
+{
+    border: 4px solid #026939;
     background: #f8f8eb    
 }
 
