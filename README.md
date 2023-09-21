@@ -50,6 +50,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Episode 09 : Killer in the Golden Mask
 - Episode 10 : Arclord’s Abode
 - Episode 11 : Prisoners of the Electric Castle
+- Episode 12 : Negociations for the Star Gun
 
 # Known issues
 

@@ -43,3 +43,13 @@
     padding: 6px;
     margin-right: 10px;
 }
+
+.window-content span.activity-icon
+{
+    align-self: center;
+    display: inline;
+    font-family: "Pathfinder2eActions", sans-serif;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+}
