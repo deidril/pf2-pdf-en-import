@@ -37,6 +37,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Episode 13 : Guardian's Covenant
 - Episode 14 : The tomb between worlds
 - Episode 15 : Cavern of the Sundered Song
+- Episode 17 : Dreams of a Dustbound Isle
 
 ## Pathfinder Society Season 4
 - Episode 01 : Year of Boundless Wonder
