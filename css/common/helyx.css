@@ -149,6 +149,14 @@
     height: 50px;
 }
 
+.window-content .helyx-content div.helyx-block-section-token
+{
+    border: none;
+    padding-bottom: 10px;
+    display: block;
+    height: 50px;
+}
+
 .window-content .helyx-content .helyx-block-section h3
 {
     color: white;
@@ -162,6 +170,15 @@
 .window-content .helyx-content div.helyx-block-section img.helyx-exploration-icon
 {
     border-radius: 50%;
+    width: 70px;
+    position: relative;
+    left: -14px;
+    top: -10px;
+}
+
+.window-content .helyx-content div.helyx-block-section img.helyx-exploration-token
+{
+    border: none;
     width: 70px;
     position: relative;
     left: -14px;
@@ -331,7 +348,10 @@
 {
     background-color:#1b1b0b;
 }
-
+.window-content .helyx-content .helyx-block-box div.helyx-disease
+{
+    background-color:#1b1b0b;
+}
 .window-content .helyx-content .helyx-block-box div.helyx-location
 {
     background-color:#004d29;
