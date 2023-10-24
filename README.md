@@ -14,6 +14,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Shadows at Sundown
 - Crown of the Kobold King
 - The enmity's cycle
+- Rusthenge
 
 ## Core Books
 - Dark Archive (adventures only) + the extra content pdf
@@ -31,6 +32,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 
 ## Pathfinder Society Quests
 - #14 : The Swordlord’s Challenge
+- #15 : In the Footsteps of Horror
 
 ## Pathfinder Society Season 3
 - Episode 12 : Fury's Toll
