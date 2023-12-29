@@ -33,6 +33,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 ## Pathfinder Society Quests
 - #14 : The Swordlord’s Challenge
 - #15 : In the Footsteps of Horror
+- #16 : The Winter Queen's Dollhouse
 
 ## Pathfinder Society Season 3
 - Episode 12 : Fury's Toll
