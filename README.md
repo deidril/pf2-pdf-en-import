@@ -42,6 +42,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Episode 15 : Cavern of the Sundered Song
 - Episode 16 : Escape from Oppara
 - Episode 17 : Dreams of a Dustbound Isle
+- Episode 18 : Dacilane Academy's Delightful Disaster
 
 ## Pathfinder Society Season 4
 - Episode 01 : Year of Boundless Wonder
