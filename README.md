@@ -34,6 +34,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - #14 : The Swordlord’s Challenge
 - #15 : In the Footsteps of Horror
 - #16 : The Winter Queen's Dollhouse
+- #17 : Escorting a Mirage
 
 ## Pathfinder Society Season 3
 - Episode 12 : Fury's Toll
