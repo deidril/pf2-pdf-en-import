@@ -12,11 +12,11 @@
       "flags": {}
     }
   ],
-  "version": "3.58",
+  "version": "4.59",
   "compatibility": {
-    "minimum": "11",
-    "verified": "11",
-    "maximum": "11"
+    "minimum": "12",
+    "verified": "12",
+    "maximum": "12"
   },
   "styles": [
     "css/common/dialogs.css", "css/common/helyx.css", "css/common/helyx-conversions.css", "css/common/helyx-sections.css", 
@@ -30,7 +30,7 @@
   "relationships": {
     "systems":
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "5.15.1", "verified": "5.15.1" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "6", "verified": "6" } }
     ]
   },
   "scripts": [
@@ -53,5 +53,5 @@
   "url": "https://github.com/deidril/pf2-pdf-en-import",
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/3.58/pf2-pdf-en-import-3.58.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/4.59/pf2-pdf-en-import-4.59.zip"
 }
