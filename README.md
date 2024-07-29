@@ -37,27 +37,28 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - #17 : Escorting a Mirage
 
 ## Pathfinder Society Season 3
-- Episode 12 : Fury's Toll
-- Episode 13 : Guardian's Covenant
-- Episode 14 : The tomb between worlds
-- Episode 15 : Cavern of the Sundered Song
-- Episode 16 : Escape from Oppara
-- Episode 17 : Dreams of a Dustbound Isle
-- Episode 18 : Dacilane Academy's Delightful Disaster
+- #12 : Fury's Toll
+- #13 : Guardian's Covenant
+- #14 : The tomb between worlds
+- #15 : Cavern of the Sundered Song
+- #16 : Escape from Oppara
+- #17 : Dreams of a Dustbound Isle
+- #18 : Dacilane Academy's Delightful Disaster
+- #19 : Mean Streets of Shadow Absalom
 
 ## Pathfinder Society Season 4
-- Episode 01 : Year of Boundless Wonder
-- Episode 02 : Return to the Grave
-- Episode 03 : Linnorm's Legacy
-- Episode 04 : To Seek the Heart of Calamity
-- Episode 05 : The Arclord Who Never Was
-- Episode 06 : Signal from the Electric Laboratory
-- Episode 07 : A Most Wondrous Exchange
-- Episode 08 : Battle Star’s Fate
-- Episode 09 : Killer in the Golden Mask
-- Episode 10 : Arclord’s Abode
-- Episode 11 : Prisoners of the Electric Castle
-- Episode 12 : Negociations for the Star Gun
+- #01 : Year of Boundless Wonder
+- #02 : Return to the Grave
+- #03 : Linnorm's Legacy
+- #04 : To Seek the Heart of Calamity
+- #05 : The Arclord Who Never Was
+- #06 : Signal from the Electric Laboratory
+- #07 : A Most Wondrous Exchange
+- #08 : Battle Star’s Fate
+- #09 : Killer in the Golden Mask
+- #10 : Arclord’s Abode
+- #11 : Prisoners of the Electric Castle
+- #12 : Negociations for the Star Gun
 
 # Known issues
 
