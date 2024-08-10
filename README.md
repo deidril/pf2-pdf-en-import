@@ -35,6 +35,7 @@ images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - #15 : In the Footsteps of Horror
 - #16 : The Winter Queen's Dollhouse
 - #17 : Escorting a Mirage
+- #18 : Student Exchange
 
 ## Pathfinder Society Season 3
 - #12 : Fury's Toll
