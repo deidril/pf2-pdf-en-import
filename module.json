@@ -12,7 +12,7 @@
       "flags": {}
     }
   ],
-  "version": "4.63",
+  "version": "4.64",
   "compatibility": {
     "minimum": "12",
     "verified": "12",
@@ -30,7 +30,7 @@
   "relationships": {
     "systems":
     [
-      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "6.7", "verified": "6.7.2" } }
+      { "id": "pf2e", "type": "system", "compatibility": { "minimum": "6.8", "verified": "6.8.4" } }
     ]
   },
   "scripts": [
@@ -53,5 +53,5 @@
   "url": "https://github.com/deidril/pf2-pdf-en-import",
   "issues": "https://github.com/deidril/pf2-pdf-en-import/issues",
   "manifest": "https://github.com/deidril/pf2-pdf-en-import/releases/latest/download/module.json",
-  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/4.63/pf2-pdf-en-import-4.63.zip"
+  "download": "https://github.com/deidril/pf2-pdf-en-import/releases/download/4.64/pf2-pdf-en-import-4.64.zip"
 }
