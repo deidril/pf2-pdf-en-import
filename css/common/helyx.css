@@ -333,6 +333,11 @@
     background-color:rgba(30, 30, 30, .5);
     background-blend-mode: multiply;
 }
+.window-content .helyx-content .helyx-block-box div.helyx-creature div.helyx-block-box-title-listing a.content-link
+{
+    color: var(--light);
+}
+
 .window-content .helyx-content .helyx-block-box div.helyx-hazard
 {
     background: url(/systems/pf2e/assets/sheet/header.webp);
