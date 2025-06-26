@@ -300,12 +300,20 @@
     margin-bottom: 10px;
 }
 
+.window-content .helyx-content .helyx-block-box div
+{
+    position: relative;
+}
+
 
 .window-content .helyx-content .helyx-block-box img.helyx-token-icon
 {
-    width: 40px;
-    height: 40px;
+width: 90px;
+    height: 90px;
     border: none;
+    position: absolute;
+    top: -12px;
+    left: -12px;
 }
 
 
@@ -332,10 +340,18 @@
     background: url(/systems/pf2e/assets/sheet/header.webp);
     background-color:rgba(30, 30, 30, .5);
     background-blend-mode: multiply;
+    min-height: 100px;
 }
 .window-content .helyx-content .helyx-block-box div.helyx-creature div.helyx-block-box-title-listing a.content-link
 {
     color: var(--light);
+    background: darkred;
+    font-size: 20px;
+    margin-left: 85px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    height: min-content;
 }
 
 .window-content .helyx-content .helyx-block-box div.helyx-hazard
@@ -353,7 +369,15 @@
 {
     background-color:#1b1b0b;
 }
+.window-content .helyx-content .helyx-block-box div.helyx-chase
+{
+    background-color:#1b1b0b;
+}
 .window-content .helyx-content .helyx-block-box div.helyx-disease
+{
+    background-color:#1b1b0b;
+}
+.window-content .helyx-content .helyx-block-box div.helyx-infiltration
 {
     background-color:#1b1b0b;
 }
@@ -370,10 +394,6 @@
     background-color:#004d29;
 }
 .window-content .helyx-content .helyx-block-box div.helyx-settlement
-{
-    background-color:#004d29;
-}
-.window-content .helyx-content .helyx-block-box div.helyx-activity
 {
     background-color:#004d29;
 }
@@ -466,6 +486,24 @@
 }
 
 .window-content .helyx-content .helyx-block-equipment div.helyx-block-activity-title
+{
+    background-color:#1b1b0b;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-chase-title
+{
+    background-color:#1b1b0b;
+    color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    display: flex;
+}
+
+.window-content .helyx-content .helyx-block-equipment div.helyx-block-infiltration-title
 {
     background-color:#1b1b0b;
     color: white;
@@ -611,6 +649,7 @@
     gap: 2px;
     list-style-type: none;
     margin-bottom: 2px;    
+    margin-left: 80px;
 }
 
 .helyx-tags .helyx-tag
