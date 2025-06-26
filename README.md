@@ -44,6 +44,7 @@ Images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - #16 : The Winter Queen's Dollhouse
 - #17 : Escorting a Mirage
 - #18 : Student Exchange
+- #19 : The Elsewhere Feast
 
 ## Pathfinder Society Season 3
 
