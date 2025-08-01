@@ -30,6 +30,7 @@ Images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - Little Trouble in Big Absalom
 - A Few Flowers More
 - The Great Toy Heist
+- The Scourge of Sheerleaf
 
 ## Bounties
 
