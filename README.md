@@ -77,6 +77,7 @@ Images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 ## Flip Mat
 
 - Kingmaker Camp Sites
+- Kingmaker River Kingdom Ruins
 - Classics Forest
 
 # Known issues
