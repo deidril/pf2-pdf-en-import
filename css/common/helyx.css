@@ -360,6 +360,18 @@ width: 90px;
     background-color:rgba(30, 30, 30, .5);
     background-blend-mode: multiply;
 }
+.window-content .helyx-content .helyx-block-box div.helyx-hazard div.helyx-block-box-title-listing a.content-link
+{
+    color: var(--light);
+    background: darkred;
+    font-size: 20px;
+    margin-left: 85px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    height: min-content;
+}
+
 .window-content .helyx-content .helyx-block-box div.helyx-equipment
 {
     background-color:#1b1b0b;
