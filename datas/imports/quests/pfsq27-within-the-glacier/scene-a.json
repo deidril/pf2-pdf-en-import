@@ -82,7 +82,44 @@
   },
   "drawings": [],
   "tokens": [],
-  "lights": [],
+  "lights": [
+    {
+      "_id": "gb9PkK2AwaKubJWh",
+      "x": 1850,
+      "y": 1650,
+      "elevation": 0,
+      "rotation": 0,
+      "walls": true,
+      "vision": false,
+      "config": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 5,
+        "color": "#b8f3ff",
+        "coloration": 1,
+        "dim": 40,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": "hexa",
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "hidden": false,
+      "flags": {}
+    }
+  ],
   "notes": [],
   "sounds": [],
   "regions": [],
@@ -3335,8 +3372,8 @@
       "sound": 20,
       "move": 20,
       "c": [
-        1475,
-        1575,
+        1450,
+        1625,
         1388,
         1675
       ],
@@ -3361,8 +3398,8 @@
       "c": [
         1488,
         1488,
-        1475,
-        1575
+        1450,
+        1625
       ],
       "_id": "EWd7rvGLJZNIpyGZ",
       "dir": 0,
@@ -8872,6 +8909,96 @@
       },
       "animation": null,
       "flags": {}
+    },
+    {
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "door": 2,
+      "c": [
+        2600,
+        2413,
+        2688,
+        2413
+      ],
+      "_id": "Of2WgglowP1i3ttj",
+      "dir": 0,
+      "ds": 0,
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "animation": null,
+      "flags": {}
+    },
+    {
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "door": 1,
+      "c": [
+        1450,
+        1625,
+        2288,
+        1625
+      ],
+      "_id": "qXGKeKhgc4CcSRBw",
+      "dir": 0,
+      "ds": 2,
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "animation": {
+        "type": "",
+        "texture": null,
+        "flip": false,
+        "double": false,
+        "direction": 1,
+        "duration": 750,
+        "strength": 1
+      },
+      "flags": {},
+      "doorSound": ""
+    },
+    {
+      "light": 20,
+      "sight": 0,
+      "sound": 20,
+      "move": 20,
+      "door": 1,
+      "c": [
+        1388,
+        1675,
+        2288,
+        1663
+      ],
+      "_id": "SnmhfIGjFblUByEd",
+      "dir": 0,
+      "ds": 2,
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "animation": {
+        "type": "",
+        "texture": null,
+        "flip": false,
+        "double": false,
+        "direction": 1,
+        "duration": 750,
+        "strength": 1
+      },
+      "flags": {},
+      "doorSound": ""
     }
   ],
   "playlist": null,
