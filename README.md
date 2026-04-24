@@ -47,6 +47,7 @@ Images in ~/datas/images are generated through Midjourney by Deidril. Their use 
 - #18 : Student Exchange
 - #19 : The Elsewhere Feast
 - #20 : The Dacilane Academy’s Show Must Go On
+- #27 : Within the Glacier
 
 ## Pathfinder Society Season 3
 
