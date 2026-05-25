@@ -2,31 +2,15 @@
   "name": "F2",
   "navigation": true,
   "navOrder": 0,
-  "background": {
-    "src": "helyx/flip-mat-forest/forest_2.webp",
-    "anchorX": 0,
-    "anchorY": 0,
-    "offsetX": 39,
-    "offsetY": 47,
-    "fit": "fill",
-    "scaleX": 1,
-    "scaleY": 1,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": null,
-  "thumb": "worlds/devpf2572/assets/scenes/tJcZJiL30Kx675TX-thumb.webp",
+  "thumb": "worlds/pf2-dev/assets/scenes/thumb-jl0Ud8RS4xV7Yb5JAoh-_g.webp",
   "width": 3605,
   "height": 4506,
   "padding": 0.25,
   "initial": {
     "x": 3050,
     "y": 3476,
-    "scale": 0.1901010547118524
+    "scale": 0.19
   },
-  "backgroundColor": "#000000",
   "grid": {
     "type": 1,
     "size": 147,
@@ -39,12 +23,11 @@
   },
   "tokenVision": true,
   "fog": {
-    "exploration": true,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
   "environment": {
     "darknessLevel": 0,
@@ -86,7 +69,6 @@
   "notes": [],
   "sounds": [],
   "regions": [],
-  "templates": [],
   "tiles": [],
   "walls": [
     {
@@ -111,7 +93,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -135,7 +118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -159,7 +143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -183,7 +168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     }
   ],
   "playlist": null,
@@ -191,31 +177,88 @@
   "journal": null,
   "journalEntryPage": null,
   "weather": "",
-  "folder": null,
+  "folder": "X8RgGyRMyIKoPMbe",
   "flags": {
     "pf2e": {
       "rulesBasedVision": null,
       "hearingRange": null,
       "environmentTypes": [],
       "syncDarkness": "default"
+    },
+    "helyx-maker-3": {
+      "config": {
+        "idname": "fmforest_2",
+        "version": "7.87",
+        "source": "flip-mat-forest"
+      }
     }
   },
   "_stats": {
-    "coreVersion": "13.348",
+    "coreVersion": "14.360",
     "systemId": "pf2e",
-    "systemVersion": "7.4.3",
-    "createdTime": 1757967095553,
-    "modifiedTime": 1757967530414,
-    "lastModifiedBy": "OfPXtcP2j6tRzgBq",
+    "systemVersion": "8.1.2",
+    "createdTime": 1779726383659,
+    "modifiedTime": 1779726591964,
+    "lastModifiedBy": "iKamIDKUopOGGQFX",
     "exportSource": {
-      "worldId": "devpf2572",
-      "uuid": "Scene.tJcZJiL30Kx675TX",
-      "coreVersion": "13.348",
+      "worldId": "pf2-dev",
+      "uuid": "Scene.0paarOgVMiYMP7TP",
+      "coreVersion": "14.360",
       "systemId": "pf2e",
-      "systemVersion": "7.4.3"
-    }
+      "systemVersion": "8.1.2"
+    },
+    "compendiumSource": null,
+    "duplicateSource": null
   },
   "navName": "",
+  "shiftX": 39,
+  "shiftY": 47,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Level",
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "background": {
+        "color": "#999999",
+        "src": "helyx/flip-mat-forest/forest_2.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {}
+    }
+  ],
   "ownership": {
     "default": 0
   }
