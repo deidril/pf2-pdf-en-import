@@ -1,24 +1,9 @@
 {
-  "name": "Q14 A",
+  "name": "Scene",
   "navigation": true,
   "navOrder": 0,
   "navName": "",
-  "background": {
-    "src": "helyx/pfsq14-the-swordlord-s-challenge/scenes/hall.webp",
-    "scaleX": 1,
-    "scaleY": 1,
-    "offsetX": 50,
-    "offsetY": 50,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "anchorX": 0,
-    "anchorY": 0,
-    "fit": "fill",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": 20,
-  "thumb": "worlds/pf2576dev/assets/scenes/5wdafqTXkDYBkC2r-thumb.webp",
+  "thumb": "worlds/pf2-dev/assets/scenes/thumb-GIn2yu-WRWJj_zk1n4KI3w.webp",
   "width": 2500,
   "height": 3100,
   "padding": 0.25,
@@ -27,7 +12,6 @@
     "y": null,
     "scale": null
   },
-  "backgroundColor": "#999999",
   "grid": {
     "type": 1,
     "size": 100,
@@ -44,7 +28,6 @@
   "lights": [],
   "notes": [],
   "sounds": [],
-  "templates": [],
   "tiles": [],
   "walls": [
     {
@@ -69,7 +52,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "0s0lk0nz4l8G8nWj",
@@ -93,7 +77,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "09wjX5D4ITcU6xnI",
@@ -117,7 +102,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "UhbuilYIkrE1eONU",
@@ -141,7 +127,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "1rUBkDVHmWTBn90f",
@@ -165,7 +152,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "mKSMSN6RnUojlKS8",
@@ -189,7 +177,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "VrFSnzaNSY0w589k",
@@ -213,7 +202,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "Hczjci8wkdC3YHDk",
@@ -237,7 +227,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "SMksBfosyZqclVZ2",
@@ -261,7 +252,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "rUgcZEJ2VG9AqtXE",
@@ -285,7 +277,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "wSHeEpt7wMbGAz1g",
@@ -309,7 +302,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "dGqTL9dfTlBzsFKC",
@@ -333,7 +327,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "tFZYm0EKME6LDcwo",
@@ -357,7 +352,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "WZzOEvQqhB626IhQ",
@@ -381,7 +377,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "ia4oR4ryQsysaJ0N",
@@ -405,7 +402,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "Aithw8DAeoN0ShBQ",
@@ -429,7 +427,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "ORQpd95C9F1bxypF",
@@ -453,7 +452,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "RLtdgDmaqd69OhRK",
@@ -477,7 +477,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "SkLe8Fn3qFOiXSMI",
@@ -501,7 +502,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "j9sPgapPPbKQNc4c",
@@ -525,7 +527,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "wE8ZZIc2tESNzLmo",
@@ -549,7 +552,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "tNpi4slMHDtPy0bl",
@@ -573,7 +577,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "YFnt8et3C0QrhMzT",
@@ -597,7 +602,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "MzEqtrBC7pKaS3Zk",
@@ -621,7 +627,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "7pAN1yaC7jaxMGEn",
@@ -645,7 +652,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "PoAr1JiXPIZPe5ML",
@@ -669,7 +677,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "7dh6Wep3HPPFZuZ8",
@@ -693,7 +702,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "PfSoKNa3HL7KKCon",
@@ -717,7 +727,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "Ja15m1raErfaqtsw",
@@ -741,7 +752,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "ilv2xcrarYIlUd6r",
@@ -765,7 +777,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "5LpVR7e6dCBzRJWj",
@@ -789,7 +802,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "4u4MhpNpnPOBtlNO",
@@ -813,7 +827,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "mlksFhkEa8TYfikr",
@@ -837,7 +852,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "Te7tijDqOH00qi4k",
@@ -861,7 +877,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "JwNtRjMYkDhIw5gU",
@@ -885,7 +902,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "jJGJ5qWWxZlrc1C0",
@@ -909,7 +927,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "bJBbMerjFg2WMzvZ",
@@ -933,7 +952,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "QesB8fFgsyIo2MOF",
@@ -957,7 +977,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "XAy2t2LCkI6ZMgOC",
@@ -981,7 +1002,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "tO7XHYoBXsGGw7uw",
@@ -1005,7 +1027,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "HKROaLgslaTZa6t4",
@@ -1029,7 +1052,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "Hj6yPul6aAksk9OM",
@@ -1053,7 +1077,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "uhGt8OiIKbHMv30M",
@@ -1077,7 +1102,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "43C3dVcXZKOlZiVs",
@@ -1101,7 +1127,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "xTrVD8bLfyAFZh54",
@@ -1125,7 +1152,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "df9eUvF0Iw52h0mS",
@@ -1149,7 +1177,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "KMHuVncxWSCLaEC8",
@@ -1173,7 +1202,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "nxzuTJlEH9xia4iG",
@@ -1197,7 +1227,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "bM7FpxA0uq70cCJQ",
@@ -1221,7 +1252,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "y7bVr6Zwwt1GXSVc",
@@ -1245,7 +1277,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "B3RZsYEhmldSROuI",
@@ -1269,7 +1302,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "TXBrVbkwA5J7wHi1",
@@ -1293,7 +1327,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "Jqx10oiZiAISBNw3",
@@ -1317,7 +1352,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "n9f75Ca5FgLi4qkm",
@@ -1341,7 +1377,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "r7QIeC26yu0D4XZB",
@@ -1365,7 +1402,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "N3X3riJ6eVjAEJvD",
@@ -1389,7 +1427,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "VnHwS7c2SLUJiZ1L",
@@ -1413,7 +1452,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "qJLU4P6Kd5tm1zdx",
@@ -1437,7 +1477,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "kwcPdIYfMtmnvd3c",
@@ -1461,7 +1502,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "BVWGaZ1fbuaUMxGq",
@@ -1485,7 +1527,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "sn7kXiryhmjQplDg",
@@ -1509,7 +1552,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "ffIbBjR6dpBbUq4Q",
@@ -1533,7 +1577,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "GsvUGFO5yLYc3tbG",
@@ -1557,7 +1602,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "4VvKIknnIyCv2Mk4",
@@ -1581,7 +1627,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "BgWDKsLu49xSW4bu",
@@ -1605,7 +1652,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "Yr9kwnwDJePtl90S",
@@ -1629,7 +1677,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "oLzVqc015XKvs5qm",
@@ -1653,7 +1702,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "l1JsrN1O2mIzjpqf",
@@ -1677,7 +1727,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "I1hM4bANzkIZUtSq",
@@ -1701,7 +1752,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "8HblC1moR85rlP4m",
@@ -1725,7 +1777,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "CGYqeUMLrWnzFMCy",
@@ -1749,7 +1802,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "kW00YPI51g0xeZYr",
@@ -1773,7 +1827,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "qqMDeyZqvv7SgzRh",
@@ -1797,7 +1852,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "DM4aqFANUBSZCsCm",
@@ -1821,7 +1877,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "SLUBbOdgkLEen9oa",
@@ -1845,7 +1902,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "lvBvv5sZz42FR75W",
@@ -1869,7 +1927,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "BQnxac8ooPPjqgDx",
@@ -1893,7 +1952,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "l3ClBuvWE9o60VBR",
@@ -1917,7 +1977,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "9JRUHcuM8BXvx6Yr",
@@ -1941,7 +2002,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     },
     {
       "_id": "vffptwKKBWbTIIVt",
@@ -1965,7 +2027,8 @@
         "sound": null,
         "attenuation": false
       },
-      "animation": null
+      "animation": null,
+      "levels": []
     }
   ],
   "playlist": null,
@@ -1974,33 +2037,45 @@
   "journalEntryPage": null,
   "weather": "",
   "flags": {
+    "helyx-maker-3": {
+      "config": {
+        "idname": "pfsq14_scene-a",
+        "version": "7.87",
+        "source": "pfsq14-the-swordlord-s-challenge"
+      }
+    },
+    "pf2e": {
+      "rulesBasedVision": null,
+      "hearingRange": null,
+      "environmentTypes": [],
+      "syncDarkness": "default"
+    }
   },
   "_stats": {
     "exportSource": {
-      "worldId": "pf2576dev",
-      "uuid": "Scene.5wdafqTXkDYBkC2r",
-      "coreVersion": "13.350",
+      "worldId": "pf2-dev",
+      "uuid": "Scene.CsV7sqsjrKXfEctE",
+      "coreVersion": "14.360",
       "systemId": "pf2e",
-      "systemVersion": "7.6.3"
+      "systemVersion": "8.2.0"
     },
     "compendiumSource": null,
     "duplicateSource": null,
-    "coreVersion": "13.350",
+    "coreVersion": "14.360",
     "systemId": "pf2e",
-    "systemVersion": "7.6.3",
-    "createdTime": 1761823446682,
-    "modifiedTime": 1761823446830,
-    "lastModifiedBy": "WpxlnoHQY3mvVMGg"
+    "systemVersion": "8.2.0",
+    "createdTime": 1781451909923,
+    "modifiedTime": 1781452359741,
+    "lastModifiedBy": "iKamIDKUopOGGQFX"
   },
-  "folder": "T0mIOILkUAtFyDUb",
+  "folder": "QAU9ElqYZgFdZUVo",
   "fog": {
-    "exploration": true,
     "reset": 1683532975452,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
   "environment": {
     "globalLight": {
@@ -2037,6 +2112,54 @@
     }
   },
   "regions": [],
+  "shiftX": 50,
+  "shiftY": 50,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Level",
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "background": {
+        "color": "#999999",
+        "src": "helyx/pfsq14-the-swordlord-s-challenge/scenes/hall.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {}
+    }
+  ],
   "ownership": {
     "default": 0
   }
