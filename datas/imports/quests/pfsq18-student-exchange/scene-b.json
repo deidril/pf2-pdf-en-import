@@ -1,24 +1,10 @@
 {
-  "name": "B",
+  "name": "Scene",
+  "drawings": [ ],
   "navigation": true,
   "navOrder": 0,
   "navName": "",
-  "background": {
-    "src": "helyx/pfsq18-student-exchange/scenes/scene-b.webp",
-    "anchorX": 0,
-    "anchorY": 0,
-    "offsetX": -15,
-    "offsetY": -7,
-    "fit": "fill",
-    "scaleX": 1,
-    "scaleY": 1,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": 20,
-  "thumb": "worlds/pf2-v460/assets/scenes/htzEHboXZnC4723U-thumb.webp",
+  "thumb": "worlds/pf2-dev/assets/scenes/thumb-IBYpmf-EBubXUK38t2UUrQ.webp",
   "width": 1987,
   "height": 690,
   "padding": 0.25,
@@ -27,7 +13,6 @@
     "y": null,
     "scale": 0.5
   },
-  "backgroundColor": "#000000",
   "grid": {
     "type": 1,
     "size": 100,
@@ -40,12 +25,11 @@
   },
   "tokenVision": true,
   "fog": {
-    "exploration": true,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
   "environment": {
     "darknessLevel": 0,
@@ -81,13 +65,11 @@
       "shadows": 0
     }
   },
-  "drawings": [],
   "tokens": [],
   "lights": [],
   "notes": [],
   "sounds": [],
   "regions": [],
-  "templates": [],
   "tiles": [],
   "walls": [
     {
@@ -111,7 +93,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -134,7 +118,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -157,7 +143,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -180,7 +168,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -203,7 +193,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -226,7 +218,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -249,7 +243,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -272,7 +268,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -295,7 +293,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -318,7 +318,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -341,7 +343,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -364,7 +368,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -387,7 +393,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -410,7 +418,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -433,7 +443,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     }
   ],
   "playlist": null,
@@ -441,26 +453,88 @@
   "journal": null,
   "journalEntryPage": null,
   "weather": "",
-  "folder": null,
+  "folder": "2iRcaiATyHrZUpow",
   "flags": {
     "pf2e": {
       "rulesBasedVision": null,
       "hearingRange": null,
-      "environmentTypes": []
+      "environmentTypes": [],
+      "syncDarkness": "default"
     },
-    "exportSource": {
-      "world": "pf2-v460",
-      "system": "pf2e",
-      "coreVersion": "12.329",
-      "systemVersion": "6.1.3"
+    "helyx-maker-3": {
+      "config": {
+        "idname": "pfsq18_scene-b",
+        "version": "7.87",
+        "source": "pfsq18-student-exchange"
+      }
     }
   },
   "_stats": {
-    "coreVersion": "12.329",
+    "coreVersion": "14.360",
     "systemId": "pf2e",
-    "systemVersion": "6.1.3",
-    "createdTime": 1723275133087,
-    "modifiedTime": 1723275614354,
-    "lastModifiedBy": "Yyz9ccAXJgvgbKKf"
+    "systemVersion": "8.2.0",
+    "createdTime": 1781469938771,
+    "modifiedTime": 1781470378637,
+    "lastModifiedBy": "iKamIDKUopOGGQFX",
+    "exportSource": {
+      "worldId": "pf2-dev",
+      "uuid": "Scene.FZtok9jcc0Em7V9g",
+      "coreVersion": "14.360",
+      "systemId": "pf2e",
+      "systemVersion": "8.2.0"
+    },
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "shiftX": -15,
+  "shiftY": -7,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Level",
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "background": {
+        "color": "#999999",
+        "src": "helyx/pfsq18-student-exchange/scenes/scene-b.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {}
+    }
+  ],
+  "ownership": {
+    "default": 0
   }
 }
