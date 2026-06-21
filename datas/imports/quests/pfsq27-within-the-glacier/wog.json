@@ -1,23 +1,9 @@
 {
-  "name": "wig",
+  "name": "Map",
+  "drawings": [ ],
   "navigation": true,
   "navOrder": 0,
-  "background": {
-    "src": "helyx/pfsq27-within-the-glacier/scenes/wig.webp",
-    "anchorX": 0,
-    "anchorY": 0,
-    "offsetX": 0,
-    "offsetY": 0,
-    "fit": "fill",
-    "scaleX": 1,
-    "scaleY": 1,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": null,
-  "thumb": "worlds/devpf2/assets/scenes/JcHRfVi47xquvSnw-thumb.webp",
+  "thumb": "worlds/pf2-dev/assets/scenes/thumb-IZzZ6qskT6NmZEsHNIauaw.webp",
   "width": 846,
   "height": 555,
   "padding": 0.25,
@@ -26,7 +12,6 @@
     "y": null,
     "scale": null
   },
-  "backgroundColor": "#000000",
   "grid": {
     "type": 0,
     "size": 100,
@@ -39,12 +24,11 @@
   },
   "tokenVision": true,
   "fog": {
-    "exploration": true,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
   "environment": {
     "darknessLevel": 0,
@@ -85,7 +69,6 @@
   "notes": [],
   "sounds": [],
   "regions": [],
-  "templates": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
@@ -93,33 +76,88 @@
   "journal": null,
   "journalEntryPage": null,
   "weather": "",
-  "folder": null,
+  "folder": "1ZFBRlf5Bwczyk6g",
   "flags": {
     "pf2e": {
       "rulesBasedVision": null,
       "hearingRange": null,
       "environmentTypes": [],
       "syncDarkness": "default"
+    },
+    "helyx-maker-3": {
+      "config": {
+        "idname": "pfsq27_scene_wog",
+        "version": "7.87",
+        "source": "pfsq27-within-the-glacier"
+      }
     }
   },
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": {
-      "worldId": "devpf2",
-      "uuid": "Scene.JcHRfVi47xquvSnw",
-      "coreVersion": "13.351",
+      "worldId": "pf2-dev",
+      "uuid": "Scene.0dKxTx8q6BOWEBqK",
+      "coreVersion": "14.360",
       "systemId": "pf2e",
-      "systemVersion": "7.12.1"
+      "systemVersion": "8.2.0"
     },
-    "coreVersion": "13.351",
+    "coreVersion": "14.360",
     "systemId": "pf2e",
-    "systemVersion": "7.12.1",
-    "createdTime": 1775924970116,
-    "modifiedTime": 1775925014603,
-    "lastModifiedBy": "4b08vHvv9hvSDjmf"
+    "systemVersion": "8.2.0",
+    "createdTime": 1782048961040,
+    "modifiedTime": 1782049044048,
+    "lastModifiedBy": "iKamIDKUopOGGQFX"
   },
   "navName": "",
+  "shiftX": 0,
+  "shiftY": 0,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Level",
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "background": {
+        "color": "#999999",
+        "src": "helyx/pfsq27-within-the-glacier/scenes/wig.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {}
+    }
+  ],
   "ownership": {
     "default": 0
   }
