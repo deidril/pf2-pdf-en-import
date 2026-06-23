@@ -483861,7 +483861,7 @@ Hooks.on("ready", async function ()
     Deid.Log.FILTER.report = false;
     Deid.Log.FILTER.error  = false;
     Deid.Log.FILTER.debug = false;
-    h.config.moduleDirectory = "modules/pf2-pdf-en-import";   
+    h.config.moduleDirectory = "modules/pf2e-pdf-enporter";
     h.config.templatesDirectory = h.config.moduleDirectory + "/templates/exported";
     h.config.bundled = true;
 
