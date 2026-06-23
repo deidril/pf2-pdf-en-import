@@ -17381,7 +17381,8 @@ export class Deidril_FileSystem_API
  */
 static async explore(options_ = {})
 {
-    mergeObject(options_, {source: 'data', type: '*'}, {overwrite:false});    
+    options_.source ??= 'data';
+    options_.type ??= '*';    
 
     const f = new foundry.applications.apps.FilePicker({ activeSource : options_.source, current: options_.target});
     const exploration = await f.constructor.browse(options_.source,options_.target,{});
@@ -22368,7 +22369,7 @@ export class HelyxEquipmentSystem
 
         system.runes = runes;
     
-        foundry.utils.mergeObject(target_, system);
+        foundry.utils.mergeDeep(target_, system);
     }
 
     apply(target_)
@@ -23141,7 +23142,7 @@ export class HelyxPart
     async createFolder(datas) 
     {
         Deid.Log.debug('createFolder ' + JSON.stringify(datas));
-        let f = await Folder.create(datas);
+        let [f] = await Folder.createDocuments([datas]);
         Deid.Log.debug(' => ' + JSON.stringify(f));
         return f._id;
     }
@@ -23266,7 +23267,7 @@ static async create_helyx_folder()
     if(current != null)
     { return current; }
 
-    return Folder.create({ name: "Helyx", type: "JournalEntry" });
+    return (await Folder.createDocuments([{ name: "Helyx", type: "JournalEntry" }]))[0];
 }
 
 /**
@@ -23285,7 +23286,7 @@ static async need_helyx_subfolder(_folder_name)
     if (child)
     { return child.folder; }
 
-    return await Folder.create({name:_folder_name, type: "JournalEntry", folder: root_folder._id});  
+    return (await Folder.createDocuments([{name:_folder_name, type: "JournalEntry", folder: root_folder._id}]))[0];  
     
     
 }
@@ -23439,7 +23440,7 @@ static save_fonts(fonts_, name_)
     HelyxFolderAPI.need_helyx_subfolder('FONT ' + name_)
     .then( (m) =>
     {
-        JournalEntry.create({ name: 'FONT ' + name_, pages: [ { name: 'FONT ' + name_,  text: {format: 1, content: html}}], folder: m._id });
+        JournalEntry.createDocuments([{ name: 'FONT ' + name_, pages: [ { name: 'FONT ' + name_,  text: {format: 1, content: html}}], folder: m._id }]);
     });
 }
     
@@ -23676,7 +23677,7 @@ export class HelyxActors extends HelyxPart
 
             model.folder = this.getTargetFolderId(b.target);
 
-            let actor = await Actor.create(model);
+            let [actor] = await Actor.createDocuments([model]);
 
             if(ex.token && ex.token.img)
             { 
@@ -24748,7 +24749,7 @@ export class HelyxBlockJournalTitle extends HelyxPart
         let merges = { flags: {}};
         merges.flags[ this.module_name ] = {title:{ title: title, cr: cr, css_style: style } };
         
-        foundry.utils.mergeObject(datas_, merges);
+        foundry.utils.mergeDeep(datas_, merges);
     }
 
     render(ex)
@@ -26456,9 +26457,9 @@ get_child(parent, name)
  * }
  * 
 **/
-async create(datas) 
+async create(datas)
 {
-    let f = await Folder.create(datas);
+    let [f] = await Folder.createDocuments([datas]);
     return f._id;
 }
 
@@ -26571,7 +26572,7 @@ export class HelyxPF2 extends HelyxPart
         { Deid.Log.error('Failed to find folder target ' + b.helyx.target); return; }
         model.folder = folderEntry._id;
 
-        let res = await Item.create(model);
+        let [res] = await Item.createDocuments([model]);
         this.entities().flag(res, b.helyx.idname);
 
         b._id = res._id;
@@ -26630,7 +26631,7 @@ export class HelyxPF2 extends HelyxPart
         { template.img = Deid.compile(ex.img); }
         
         if(ex.system)
-        { mergeObject(template.system, ex.system); }
+        { foundry.utils.mergeObject(template.system, ex.system); }
     }
 
     async import(ex)
@@ -26667,7 +26668,7 @@ export class HelyxPF2 extends HelyxPart
             model.folder = this.getTargetFolderId(ex.helyx.target);
             this.completeModel(model, ex);
 
-            let res = await Item.create(model);
+            let [res] = await Item.createDocuments([model]);
             ex.finalName = model.name;
             ex._id = res._id;
             await this.entities().flag(res, ex.helyx.idname);
@@ -26702,7 +26703,7 @@ export class HelyxPF2 extends HelyxPart
         template.folder = folderEntry._id;
 
         console.log(JSON.stringify(template));
-        let res = await Item.create(template);
+        let [res] = await Item.createDocuments([template]);
         await this.entities().flag(res, ex.helyx.idname);
 
         ex._id = res._id;
@@ -27260,7 +27261,7 @@ export class HelyxContext
                     after: after
                 }};
 
-                foundry.utils.mergeObject(datas_, {
+                foundry.utils.mergeDeep(datas_, {
                     type: "image",
                     image: { caption: datas_.name },
                     src:  this.resolve_image(ex_.img),
@@ -29180,7 +29181,7 @@ async #import_from_compendium(item_, source_, entity_type_)
         Deid.Log.error("Failed to find " + entity_type_ +" #" + item_.helyx.idname + " in compendiums");
         return null;
     }
-    return this.#generic_model(source.toCompendium(null,{}), item_);
+    return this.#generic_model(source.toObject(), item_);
 }
 
     async #update_journal_entry(_entry, _entity)
@@ -29274,8 +29275,7 @@ async #import_from_compendium(item_, source_, entity_type_)
         else 
         { this.context.compile_content(_item, datas); }
 
-        let res = await JournalEntry.create(datas);
-  
+        let [res] = await JournalEntry.createDocuments([datas]);
 
         _item._id = res._id;
         this.adventure.entries.set(_item.helyx.idname, _item);
@@ -29288,7 +29288,7 @@ async #import_from_compendium(item_, source_, entity_type_)
                 p._id = res._source.pages[i]._id;
                 p.journal = _item._id;
 
-                let page = res.collections.pages.get(p._id);
+                let page = res.pages.get(p._id);
                 await this.context.flag_item(page, p.helyx.idname);
             }
 
@@ -29306,10 +29306,10 @@ async #import_from_compendium(item_, source_, entity_type_)
         {
             if(_item.helyx.type == "Actor")
             {
-                foundry.utils.mergeObject
+                foundry.utils.mergeDeep
                 (
-                    _model.prototypeToken, 
-                    { 
+                    _model.prototypeToken,
+                    {
                         flags:
                         {
                             pf2e: { autoscale: !1 }
@@ -29416,7 +29416,7 @@ async #import_from_compendium(item_, source_, entity_type_)
     {
         if(_item.alignment)
         {
-            mergeObject(_model, {system: {details: {alignment: { value: _item.alignment}}}});
+            foundry.utils.mergeObject(_model, {system: {details: {alignment: { value: _item.alignment}}}});
         }
         if(_item.traits)
         {
@@ -29461,7 +29461,7 @@ async #import_from_compendium(item_, source_, entity_type_)
         }
 
         this.#complete_actor_model(model, _item);
-        let imported = await Actor.implementation.create(model);
+        let [imported] = await Actor.implementation.createDocuments([model]);
 
         await this.#complete_import(imported, _item);
 
@@ -29569,7 +29569,7 @@ async #import_from_compendium(item_, source_, entity_type_)
         {
             let model = await this.#import_from_compendium(_item, source, 'Item');
             this.#complete_item_model(model, _item);
-            let imported = await Item.create(model);
+            let [imported] = await Item.createDocuments([model]);
             await imported.prepareBaseData();
             await this.#complete_import(imported, _item);
     
@@ -29600,7 +29600,7 @@ async #import_from_compendium(item_, source_, entity_type_)
         }    
 
 
-        let imported = await Item.create(template);
+        let [imported] = await Item.createDocuments([template]);
         await this.#complete_import(imported, _item);
 
         let message = game.i18n.format("Helyx.Advance.ItemCreated", { name : _item.finalName});
@@ -29665,8 +29665,8 @@ async #import_from_compendium(item_, source_, entity_type_)
                 token.name = this.contents(actor.name);
             }
 
-            // 3. Create the token
-            await token.constructor.create(token, {parent: scene_});
+            // 3. Create the token via V14 embedded document API
+            await scene_.createEmbeddedDocuments("Token", [token.toObject()]);
         }
 
     }
@@ -29718,10 +29718,10 @@ async #import_from_compendium(item_, source_, entity_type_)
         if(!game.scenes.active ) 
         { model.active = true; }
 
-        let res = await Scene.create(model);
+        let [res] = await Scene.createDocuments([model]);
 
-        res.createThumbnail().then(data => {
-            res.update({thumb: data.thumb}, {diff: false});
+        res.createSceneThumbnail().then(data => {
+            res.update({thumb: data.thumb});
         });
 
         if(model.active)
@@ -483813,7 +483813,7 @@ async init_tokens()
 }
 Hooks.on("renderSettings", function(app_, html_)
 {
-    if(!(game.release.generation>=13))
+    if(!(game.release.generation>=14))
     { return; }
 
     if(!(app_ instanceof CONFIG.ui.settings))
@@ -483869,9 +483869,13 @@ Hooks.on("ready", async function ()
 
 })
 
-Hooks.on("renderJournalEntryPageSheet",function(page_,dialog_,doc_)
+Hooks.on("renderJournalEntryPageSheet",function(app,html,data)
 {
-    const flags = page_?.page?.flags;
+    // V14: app is an ApplicationV2 instance, app.document is the JournalEntryPage
+    const page = app.document;
+    if(!page) return;
+
+    const flags = page.flags;
     if(!flags) return;
 
     const hm = flags[ game.helyx.module_name ];
@@ -483880,7 +483884,10 @@ Hooks.on("renderJournalEntryPageSheet",function(page_,dialog_,doc_)
     const title = hm.title;
     if(!title) return;
 
-    dialog_.children[0].className += " helyx-journal-title "
+    // V14: ApplicationV2 element is app.element
+    const el = app.element;
+    if(!el || !el[0]) return;
+    el[0].className += " helyx-journal-title "
         + (hm.title.css_style ?? "helyx-journal-title-default");
 
 })
