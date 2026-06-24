@@ -435100,7 +435100,7 @@ export class HelyxTheScourgeOfSheerleaf
 	},
 	"name": "{{{xlf 2009 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/the-scourge-of-sheerleaf/scene.json"
+		"modules/pf2-pdf-en-import/datas/imports/the-scourge-of-sheerleaf/scene.json"
 	],
 	"tokens": [
 		{
@@ -464319,7 +464319,7 @@ export class HelyxPFSQuest14
 	},
 	"name": "{{{xlf 11029 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq14-the-swordlord-s-challenge/scene-a.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq14-the-swordlord-s-challenge/scene-a.json"
 	]
 }]
 ,[ "pfsq14_wog" ,{
@@ -464330,7 +464330,7 @@ export class HelyxPFSQuest14
 	},
 	"name": "{{{xlf 3012 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq14-the-swordlord-s-challenge/wog.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq14-the-swordlord-s-challenge/wog.json"
 	],
 	"drawings": [
 		{
@@ -466942,7 +466942,7 @@ export class HelyxPFSQuest15
 	},
 	"name": "{{{xlf 5009 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq15-in-the-footsteps-of-horror/scene-a.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq15-in-the-footsteps-of-horror/scene-a.json"
 	]
 }]
 ]);
@@ -469049,7 +469049,7 @@ export class HelyxPFSQuest16
 	},
 	"name": "{{{xlf 7013 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq16-the-winter-queen-s-dollhouse/scene-a.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq16-the-winter-queen-s-dollhouse/scene-a.json"
 	]
 }]
 ,[ "pfsq16_scene-b" ,{
@@ -469060,7 +469060,7 @@ export class HelyxPFSQuest16
 	},
 	"name": "{{{xlf 5013 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq16-the-winter-queen-s-dollhouse/scene-b.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq16-the-winter-queen-s-dollhouse/scene-b.json"
 	]
 }]
 ]);
@@ -472566,7 +472566,7 @@ export class HelyxPFSQuest17
 	},
 	"name": "{{{xlf 7013 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq17-escorting-a-mirage/scene-b.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq17-escorting-a-mirage/scene-b.json"
 	],
 	"drawings": [
 		{
@@ -472641,7 +472641,7 @@ export class HelyxPFSQuest17
 	},
 	"name": "{{{xlf 10013 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq17-escorting-a-mirage/scene-d.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq17-escorting-a-mirage/scene-d.json"
 	],
 	"drawings": [
 		{
@@ -475103,7 +475103,7 @@ export class HelyxPFSQuest18
 	},
 	"name": "{{{xlf 7074 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq18-student-exchange/scene-a.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq18-student-exchange/scene-a.json"
 	],
 	"drawings": [
 		{
@@ -475248,7 +475248,7 @@ export class HelyxPFSQuest18
 	},
 	"name": "{{{xlf 10096 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq18-student-exchange/scene-b.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq18-student-exchange/scene-b.json"
 	],
 	"drawings": [
 		{
@@ -478149,7 +478149,7 @@ export class HelyxPFSQuest19
 	},
 	"name": "{{{xlf 6013 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq19-the-elsewhere-feast/scene.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq19-the-elsewhere-feast/scene.json"
 	],
 	"drawings": [
 		{
@@ -480891,7 +480891,7 @@ export class HelyxPFSQuest20
 	},
 	"name": "{{{xlf 3013 0 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq20-show-must-go-on/wog.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq20-show-must-go-on/wog.json"
 	],
 	"drawings": [
 		{
@@ -480970,7 +480970,7 @@ export class HelyxPFSQuest20
 	},
 	"name": "Stage",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq20-show-must-go-on/stage.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq20-show-must-go-on/stage.json"
 	],
 	"tokens": [
 		{
@@ -483237,7 +483237,7 @@ export class HelyxPFSQuest27
 	},
 	"name": "Glacier",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq27-within-the-glacier/scene-a.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq27-within-the-glacier/scene-a.json"
 	]
 }]
 ,[ "pfsq27_scene_b" ,{
@@ -483248,7 +483248,7 @@ export class HelyxPFSQuest27
 	},
 	"name": "Outside",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq27-within-the-glacier/scene-b.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq27-within-the-glacier/scene-b.json"
 	]
 }]
 ,[ "pfsq27_scene_wog" ,{
@@ -483259,7 +483259,7 @@ export class HelyxPFSQuest27
 	},
 	"name": "{{{xylf 3 344 611 1 'an'}}}",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/quests/pfsq27-within-the-glacier/wog.json"
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq27-within-the-glacier/wog.json"
 	],
 	"drawings": [
 		{
@@ -483390,7 +483390,7 @@ export class HelyxKingmakerCampsiteMultiPack
 	},
 	"name": "Camp 1",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-kingmaker-campsite-multi-pack/camp_1.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-kingmaker-campsite-multi-pack/camp_1.json"
 	]
 }]
 ,[ "fmkmcamp_2" ,{
@@ -483401,7 +483401,7 @@ export class HelyxKingmakerCampsiteMultiPack
 	},
 	"name": "Camp 2",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-kingmaker-campsite-multi-pack/camp_2.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-kingmaker-campsite-multi-pack/camp_2.json"
 	]
 }]
 ,[ "fmkmcamp_3" ,{
@@ -483412,7 +483412,7 @@ export class HelyxKingmakerCampsiteMultiPack
 	},
 	"name": "Camp 3",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-kingmaker-campsite-multi-pack/camp_3.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-kingmaker-campsite-multi-pack/camp_3.json"
 	]
 }]
 ,[ "fmkmcamp_4" ,{
@@ -483423,7 +483423,7 @@ export class HelyxKingmakerCampsiteMultiPack
 	},
 	"name": "Camp 4",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-kingmaker-campsite-multi-pack/camp_4.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-kingmaker-campsite-multi-pack/camp_4.json"
 	]
 }]
 ]);
@@ -483488,7 +483488,7 @@ export class HelyxFlipMatForest
 	},
 	"name": "Forest 1",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-forest/forest_1.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-forest/forest_1.json"
 	]
 }]
 ,[ "fmforest_2" ,{
@@ -483499,7 +483499,7 @@ export class HelyxFlipMatForest
 	},
 	"name": "Forest 2",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-forest/forest_2.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-forest/forest_2.json"
 	]
 }]
 ]);
@@ -483562,7 +483562,7 @@ export class HelyxKingmakerRiverKingdomRuinsMultiPack
 	},
 	"name": "Ruins 1",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruin_1.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruin_1.json"
 	]
 }]
 ,[ "fmkmrkr_ruin_2" ,{
@@ -483573,7 +483573,7 @@ export class HelyxKingmakerRiverKingdomRuinsMultiPack
 	},
 	"name": "Ruins 2",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruin_2.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruin_2.json"
 	]
 }]
 ,[ "fmkmrkr_ruin_3" ,{
@@ -483584,7 +483584,7 @@ export class HelyxKingmakerRiverKingdomRuinsMultiPack
 	},
 	"name": "Ruins 3",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruin_3.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruin_3.json"
 	]
 }]
 ,[ "fmkmrkr_ruin_4" ,{
@@ -483595,7 +483595,7 @@ export class HelyxKingmakerRiverKingdomRuinsMultiPack
 	},
 	"name": "Ruins 4",
 	"includes": [
-		"modules/pf2e-pdf-enporter/datas/imports/flip-mats/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruin_4.json"
+		"modules/pf2-pdf-en-import/datas/imports/flip-mats/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruin_4.json"
 	]
 }]
 ]);
@@ -483639,53 +483639,53 @@ constructor()
     this.adventures = [];
     this.tokens = new Map();
 
-            this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxShadowsAtSundown, idname: "shadows-at-sundown", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "shadows-at-sundown"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxCrownOfTheKoboldKing, idname: "crown-of-the-kobold-king", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "crown-of-the-kobold-king"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxEnmityCycle, idname: "the-enmity-cycle", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "the-enmity-cycle"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxRustHenge, idname: "rusthenge", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "rusthenge"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E12, idname: "pfs3e12-fury-s-toll", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e12-fury-s-toll"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E13, idname: "pfs3e13-guardian-s-covenant", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e13-guardian-s-covenant"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E14, idname: "pfs3e14-the-tombs-between-worlds", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e14-the-tombs-between-worlds"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E15, idname: "pfs3e15-cavern-of-the-sundered-song", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e15-cavern-of-the-sundered-song"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E16, idname: "pfs3e16-escape-from-oppara", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e16-escape-from-oppara"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E17, idname: "pfs3e17-dreams-of-a-dustbound-isle", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e17-dreams-of-a-dustbound-isle"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E18, idname: "pfs3e18-dacilane-academy-s-delightful-disaster", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e18-dacilane-academy-s-delightful-disaster"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E19, idname: "pfs3e19-mean-streets-of-shadow-absalom", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e19-mean-streets-of-shadow-absalom"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E01, idname: "pfs4e01-year-of-the-boundless-wonder", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e01-year-of-the-boundless-wonder"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E02, idname: "pfs4e02-return-to-the-grave", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e02-return-to-the-grave"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E03, idname: "pfs4e03-linnorm-s-legacy", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e03-linnorm-s-legacy"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E04, idname: "pfs4e04-to-seek-the-hearth-of-calamity", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e04-to-seek-the-hearth-of-calamity"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E05, idname: "pfs4e05-the-arclord-who-never-was", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e05-the-arclord-who-never-was"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E06, idname: "pfs4e06-signal-from-the-electric-laboratory", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e06-signal-from-the-electric-laboratory"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E07, idname: "pfs4e07-a-most-wondrous-exchange", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e07-a-most-wondrous-exchange"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E08, idname: "pfs4e08-battle-star-s-fate", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e08-battle-star-s-fate"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E09, idname: "pfs4e09-killer-in-the-golden-mask", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e09-killer-in-the-golden-mask"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E10, idname: "pfs4e10-arclord-s-abode", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e10-arclord-s-abode"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E11, idname: "pfs4e11-prisoners-of-the-electric-castle", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e11-prisoners-of-the-electric-castle"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E12, idname: "pfs4e12-negotiations-for-the-star-gun", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e12-negotiations-for-the-star-gun"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPF2B19, idname: "pf2e-bounty-19-grim-tidings", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pf2e-bounty-19-grim-tidings"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPF2B20, idname: "pf2e-bounty-20-burden-in-bloodcove", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pf2e-bounty-20-burden-in-bloodcove"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPF2B21, idname: "pf2e-bounty-21-against-the-unliving", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pf2e-bounty-21-against-the-unliving"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxAFistfulOfFlowers, idname: "a-fistful-of-flowers", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "a-fistful-of-flowers"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxAFewFlowersMore, idname: "a-few-flowers-more", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "a-few-flowers-more"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxThresholdOfKnowledge, idname: "threshold-of-knowledge", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "threshold-of-knowledge"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxLittleTroubleInBigAbsalom, idname: "little-trouble-in-big-absalom", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "little-trouble-in-big-absalom"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxTheGreatToyHeist, idname: "the-great-toy-heist", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "the-great-toy-heist"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxTheScourgeOfSheerleaf, idname: "the-scourge-of-sheerleaf", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "the-scourge-of-sheerleaf"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxDarkArchive, idname: "dark-archive", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "dark-archive"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxDarkArchiveNinthCase, idname: "dark-archive-ninth-case", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "dark-archive-ninth-case"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest14, idname: "pfsq14-the-swordlord-s-challenge", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq14-the-swordlord-s-challenge"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest15, idname: "pfsq15-in-the-footsteps-of-horror", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq15-in-the-footsteps-of-horror"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest16, idname: "pfsq16-the-winter-queen-s-dollhouse", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq16-the-winter-queen-s-dollhouse"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest17, idname: "pfsq17-escorting-a-mirage", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq17-escorting-a-mirage"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest18, idname: "pfsq18-student-exchange", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq18-student-exchange"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest19, idname: "pfsq19-the-elsewhere-feast", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq19-the-elsewhere-feast"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest20, idname: "pfsq20-show-must-go-on", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq20-show-must-go-on"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest21, idname: "pfsq21-infernal-infiltration", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq21-infernal-infiltration"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest27, idname: "pfsq27-within-the-glacier", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq27-within-the-glacier"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxKingmakerCampsiteMultiPack, idname: "flip-mat-kingmaker-campsite-multi-pack", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "flip-mat-kingmaker-campsite-multi-pack"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxFlipMatForest, idname: "flip-mat-forest", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "flip-mat-forest"}));
-        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxKingmakerRiverKingdomRuinsMultiPack, idname: "flip-mat-kingmaker-river-kingdom-ruins-multi-pack", datas_directory: "modules/pf2e-pdf-enporter/datas", shared_resources_directory: "modules/pf2e-pdf-enporter/datas", origin: "pf2-pdf-en-import", export_directory: "flip-mat-kingmaker-river-kingdom-ruins-multi-pack"}));
+            this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxShadowsAtSundown, idname: "shadows-at-sundown", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "shadows-at-sundown"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxCrownOfTheKoboldKing, idname: "crown-of-the-kobold-king", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "crown-of-the-kobold-king"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxEnmityCycle, idname: "the-enmity-cycle", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "the-enmity-cycle"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxRustHenge, idname: "rusthenge", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "rusthenge"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E12, idname: "pfs3e12-fury-s-toll", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e12-fury-s-toll"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E13, idname: "pfs3e13-guardian-s-covenant", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e13-guardian-s-covenant"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E14, idname: "pfs3e14-the-tombs-between-worlds", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e14-the-tombs-between-worlds"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E15, idname: "pfs3e15-cavern-of-the-sundered-song", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e15-cavern-of-the-sundered-song"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E16, idname: "pfs3e16-escape-from-oppara", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e16-escape-from-oppara"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E17, idname: "pfs3e17-dreams-of-a-dustbound-isle", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e17-dreams-of-a-dustbound-isle"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E18, idname: "pfs3e18-dacilane-academy-s-delightful-disaster", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e18-dacilane-academy-s-delightful-disaster"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS3E19, idname: "pfs3e19-mean-streets-of-shadow-absalom", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs3e19-mean-streets-of-shadow-absalom"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E01, idname: "pfs4e01-year-of-the-boundless-wonder", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e01-year-of-the-boundless-wonder"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E02, idname: "pfs4e02-return-to-the-grave", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e02-return-to-the-grave"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E03, idname: "pfs4e03-linnorm-s-legacy", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e03-linnorm-s-legacy"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E04, idname: "pfs4e04-to-seek-the-hearth-of-calamity", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e04-to-seek-the-hearth-of-calamity"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E05, idname: "pfs4e05-the-arclord-who-never-was", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e05-the-arclord-who-never-was"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E06, idname: "pfs4e06-signal-from-the-electric-laboratory", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e06-signal-from-the-electric-laboratory"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E07, idname: "pfs4e07-a-most-wondrous-exchange", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e07-a-most-wondrous-exchange"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E08, idname: "pfs4e08-battle-star-s-fate", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e08-battle-star-s-fate"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E09, idname: "pfs4e09-killer-in-the-golden-mask", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e09-killer-in-the-golden-mask"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E10, idname: "pfs4e10-arclord-s-abode", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e10-arclord-s-abode"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E11, idname: "pfs4e11-prisoners-of-the-electric-castle", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e11-prisoners-of-the-electric-castle"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFS4E12, idname: "pfs4e12-negotiations-for-the-star-gun", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfs4e12-negotiations-for-the-star-gun"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPF2B19, idname: "pf2e-bounty-19-grim-tidings", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pf2e-bounty-19-grim-tidings"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPF2B20, idname: "pf2e-bounty-20-burden-in-bloodcove", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pf2e-bounty-20-burden-in-bloodcove"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPF2B21, idname: "pf2e-bounty-21-against-the-unliving", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pf2e-bounty-21-against-the-unliving"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxAFistfulOfFlowers, idname: "a-fistful-of-flowers", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "a-fistful-of-flowers"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxAFewFlowersMore, idname: "a-few-flowers-more", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "a-few-flowers-more"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxThresholdOfKnowledge, idname: "threshold-of-knowledge", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "threshold-of-knowledge"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxLittleTroubleInBigAbsalom, idname: "little-trouble-in-big-absalom", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "little-trouble-in-big-absalom"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxTheGreatToyHeist, idname: "the-great-toy-heist", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "the-great-toy-heist"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxTheScourgeOfSheerleaf, idname: "the-scourge-of-sheerleaf", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "the-scourge-of-sheerleaf"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxDarkArchive, idname: "dark-archive", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "dark-archive"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxDarkArchiveNinthCase, idname: "dark-archive-ninth-case", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "dark-archive-ninth-case"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest14, idname: "pfsq14-the-swordlord-s-challenge", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq14-the-swordlord-s-challenge"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest15, idname: "pfsq15-in-the-footsteps-of-horror", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq15-in-the-footsteps-of-horror"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest16, idname: "pfsq16-the-winter-queen-s-dollhouse", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq16-the-winter-queen-s-dollhouse"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest17, idname: "pfsq17-escorting-a-mirage", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq17-escorting-a-mirage"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest18, idname: "pfsq18-student-exchange", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq18-student-exchange"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest19, idname: "pfsq19-the-elsewhere-feast", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq19-the-elsewhere-feast"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest20, idname: "pfsq20-show-must-go-on", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq20-show-must-go-on"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest21, idname: "pfsq21-infernal-infiltration", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq21-infernal-infiltration"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest27, idname: "pfsq27-within-the-glacier", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq27-within-the-glacier"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxKingmakerCampsiteMultiPack, idname: "flip-mat-kingmaker-campsite-multi-pack", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "flip-mat-kingmaker-campsite-multi-pack"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxFlipMatForest, idname: "flip-mat-forest", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "flip-mat-forest"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxKingmakerRiverKingdomRuinsMultiPack, idname: "flip-mat-kingmaker-river-kingdom-ruins-multi-pack", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "flip-mat-kingmaker-river-kingdom-ruins-multi-pack"}));
         
 
     
@@ -483867,8 +483867,8 @@ Hooks.on("renderSettings", function(app_, html_)
 
 Hooks.on("init", function()
 {
-    foundry.applications.handlebars.loadTemplates([ "modules/pf2e-pdf-enporter/templates/exported/pdfList.hbs" ]);
-    foundry.applications.handlebars.loadTemplates([ "modules/pf2e-pdf-enporter/templates/exported/faq.hbs" ]);
+    foundry.applications.handlebars.loadTemplates([ "modules/pf2-pdf-en-import/templates/exported/pdfList.hbs" ]);
+    foundry.applications.handlebars.loadTemplates([ "modules/pf2-pdf-en-import/templates/exported/faq.hbs" ]);
 })
 
 Hooks.on("ready", async function () 
@@ -483883,7 +483883,7 @@ Hooks.on("ready", async function ()
     Deid.Log.FILTER.report = false;
     Deid.Log.FILTER.error  = false;
     Deid.Log.FILTER.debug = false;
-    h.config.moduleDirectory = "modules/pf2e-pdf-enporter";
+    h.config.moduleDirectory = "modules/pf2-pdf-en-import";
     h.config.templatesDirectory = h.config.moduleDirectory + "/templates/exported";
     h.config.bundled = true;
 
