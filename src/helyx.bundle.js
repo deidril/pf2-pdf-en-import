@@ -29718,6 +29718,28 @@ async #import_from_compendium(item_, source_, entity_type_)
         if(!game.scenes.active ) 
         { model.active = true; }
 
+        // Foundry v14 moved backgrounds to Level embedded documents.
+        // Convert the deprecated background field to a Level inline.
+        if(model.background?.src)
+        {
+            model.levels = [{
+                name: "Ground",
+                elevation: { bottom: 0, top: 20 },
+                background: {
+                    src: model.background.src,
+                    color: model.backgroundColor ?? "#999999"
+                },
+                textures: {
+                    offsetX: model.background.offsetX ?? 0,
+                    offsetY: model.background.offsetY ?? 0,
+                    scaleX: model.background.scaleX ?? 1,
+                    scaleY: model.background.scaleY ?? 1,
+                    rotation: model.background.rotation ?? 0
+                }
+            }];
+        }
+        delete model.background;
+
         let [res] = await Scene.createDocuments([model]);
 
         res.createSceneThumbnail().then(data => {
