@@ -1,17 +1,9 @@
 {
-  "name": "B",
+  "name": "Scene",
+  "drawings": [],
   "navigation": true,
   "navOrder": 0,
   "navName": "",
-  "background": {
-    "src": "helyx/pfsq17-escorting-a-mirage/scenes/scene-b.webp",
-    "scaleX": 1,
-    "scaleY": 1,
-    "offsetX": 10,
-    "offsetY": 6,
-    "rotation": 0
-  },
-  "foregroundElevation": 20,
   "width": 2516,
   "height": 3012,
   "padding": 0.25,
@@ -20,27 +12,21 @@
     "y": null,
     "scale": null
   },
-  "backgroundColor": "#999999",
   "grid": {
     "type": 1,
     "size": 100,
     "color": "#000000",
     "alpha": 1,
     "distance": 5,
-    "units": "ft"
+    "units": "ft",
+    "style": "solidLines",
+    "thickness": 1
   },
   "tokenVision": true,
-  "fogExploration": true,
-  "fogReset": 1710937247243,
-  "globalLight": false,
-  "globalLightThreshold": null,
-  "darkness": 0,
-  "drawings": [],
   "tokens": [],
   "lights": [],
   "notes": [],
   "sounds": [],
-  "templates": [],
   "tiles": [],
   "walls": [
     {
@@ -64,7 +50,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -87,7 +75,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -110,7 +100,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -133,7 +125,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -156,7 +150,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -179,7 +175,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -202,7 +200,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -225,7 +225,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -248,7 +250,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -271,7 +275,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -294,7 +300,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -317,7 +325,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -340,7 +350,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -363,7 +375,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -386,7 +400,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -409,7 +425,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -432,7 +450,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -455,7 +475,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -478,7 +500,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -501,7 +525,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -524,7 +550,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -547,7 +575,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -570,7 +600,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -593,7 +625,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -616,7 +650,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -639,7 +675,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -662,7 +700,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -685,7 +725,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -708,7 +750,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -731,7 +775,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -754,7 +800,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -777,7 +825,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -800,7 +850,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -823,7 +875,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -846,7 +900,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -869,7 +925,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -892,7 +950,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -915,7 +975,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -938,7 +1000,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -961,7 +1025,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -984,7 +1050,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1007,7 +1075,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1030,7 +1100,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1053,7 +1125,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1076,7 +1150,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1099,7 +1175,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1122,7 +1200,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1145,7 +1225,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1168,7 +1250,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1191,7 +1275,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -1214,7 +1300,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1237,7 +1325,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1260,7 +1350,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1283,7 +1375,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1306,7 +1400,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1329,7 +1425,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1352,7 +1450,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1375,7 +1475,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1398,7 +1500,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1421,7 +1525,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1444,7 +1550,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1467,7 +1575,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1490,7 +1600,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1513,7 +1625,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1536,7 +1650,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1559,7 +1675,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1582,7 +1700,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1605,7 +1725,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1628,7 +1750,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1651,7 +1775,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1674,7 +1800,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1697,7 +1825,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1720,7 +1850,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1743,7 +1875,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1766,7 +1900,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1789,7 +1925,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1812,7 +1950,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1835,7 +1975,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1858,7 +2000,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1881,7 +2025,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1904,7 +2050,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1927,7 +2075,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1950,7 +2100,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1973,7 +2125,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -1996,7 +2150,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2019,7 +2175,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2042,7 +2200,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2065,7 +2225,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2088,7 +2250,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2111,7 +2275,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2134,7 +2300,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2157,7 +2325,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2180,7 +2350,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2203,7 +2375,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2226,7 +2400,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2249,7 +2425,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2272,7 +2450,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2295,7 +2475,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2318,7 +2500,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2341,7 +2525,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2364,7 +2550,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2387,7 +2575,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2410,7 +2600,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2433,7 +2625,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2456,7 +2650,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -2479,7 +2675,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2502,7 +2700,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2525,7 +2725,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2548,7 +2750,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2571,7 +2775,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2594,7 +2800,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2617,7 +2825,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -2640,7 +2850,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2663,7 +2875,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2686,7 +2900,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2709,7 +2925,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2732,7 +2950,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2755,7 +2975,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2778,7 +3000,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2801,7 +3025,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2824,7 +3050,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2847,7 +3075,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2870,7 +3100,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2893,7 +3125,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2916,7 +3150,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2939,7 +3175,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2962,7 +3200,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -2985,7 +3225,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3008,7 +3250,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3031,7 +3275,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3054,7 +3300,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3077,7 +3325,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3100,7 +3350,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3123,7 +3375,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3146,7 +3400,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3169,7 +3425,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3192,7 +3450,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3215,7 +3475,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3238,7 +3500,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3261,7 +3525,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3284,7 +3550,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3307,7 +3575,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3330,7 +3600,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3353,7 +3625,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3376,7 +3650,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3399,7 +3675,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3422,7 +3700,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3445,7 +3725,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3468,7 +3750,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3491,7 +3775,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3514,7 +3800,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3537,7 +3825,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3560,7 +3850,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3583,7 +3875,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3606,7 +3900,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3629,7 +3925,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3652,7 +3950,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3675,7 +3975,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3698,7 +4000,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3721,7 +4025,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3744,7 +4050,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3767,7 +4075,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3790,7 +4100,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3813,7 +4125,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3836,7 +4150,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3859,7 +4175,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3882,7 +4200,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3905,7 +4225,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3928,7 +4250,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3951,7 +4275,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3974,7 +4300,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -3997,7 +4325,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4020,7 +4350,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4043,7 +4375,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4066,7 +4400,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4089,7 +4425,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4112,7 +4450,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4135,7 +4475,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4158,7 +4500,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4181,7 +4525,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4204,7 +4550,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4227,7 +4575,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4250,7 +4600,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4273,7 +4625,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4296,7 +4650,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -4319,7 +4675,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4342,7 +4700,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4365,7 +4725,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4388,7 +4750,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4411,7 +4775,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4434,7 +4800,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4457,7 +4825,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4480,7 +4850,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4503,7 +4875,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4526,7 +4900,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4549,7 +4925,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4572,7 +4950,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4595,7 +4975,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4618,7 +5000,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4641,7 +5025,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4664,7 +5050,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4687,7 +5075,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4710,7 +5100,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4733,7 +5125,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4756,7 +5150,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4779,7 +5175,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4802,7 +5200,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4825,7 +5225,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4848,7 +5250,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4871,7 +5275,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4894,7 +5300,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4917,7 +5325,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4940,7 +5350,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4963,7 +5375,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -4986,7 +5400,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5009,7 +5425,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5032,7 +5450,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5055,7 +5475,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5078,7 +5500,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5101,7 +5525,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5124,7 +5550,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5147,7 +5575,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5170,7 +5600,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5193,7 +5625,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5216,7 +5650,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5239,7 +5675,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5262,7 +5700,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5285,7 +5725,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5308,7 +5750,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5331,7 +5775,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5354,7 +5800,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5377,7 +5825,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5400,7 +5850,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5423,7 +5875,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5446,7 +5900,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5469,7 +5925,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5492,7 +5950,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5515,7 +5975,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -5538,7 +6000,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -5561,7 +6025,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -5584,7 +6050,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -5607,7 +6075,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -5630,7 +6100,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -5653,7 +6125,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -5676,7 +6150,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -5699,7 +6175,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -5722,7 +6200,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 20,
@@ -5745,7 +6225,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5768,7 +6250,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5791,7 +6275,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5814,7 +6300,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5837,7 +6325,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5860,7 +6350,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5883,7 +6375,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5906,7 +6400,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5929,7 +6425,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5952,7 +6450,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5975,7 +6475,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -5998,7 +6500,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6021,7 +6525,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6044,7 +6550,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6067,7 +6575,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6090,7 +6600,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6113,7 +6625,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6136,7 +6650,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6159,7 +6675,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6182,7 +6700,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6205,7 +6725,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6228,7 +6750,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6251,7 +6775,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6274,7 +6800,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6297,7 +6825,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6320,7 +6850,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6343,7 +6875,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6366,7 +6900,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6389,7 +6925,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6412,7 +6950,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6435,7 +6975,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6458,7 +7000,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6481,7 +7025,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6504,7 +7050,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6527,7 +7075,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6550,7 +7100,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6573,7 +7125,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6596,7 +7150,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6619,7 +7175,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6642,7 +7200,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6665,7 +7225,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6688,7 +7250,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6711,7 +7275,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6734,7 +7300,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "c": [
@@ -6757,7 +7325,9 @@
         "sight": null,
         "sound": null,
         "attenuation": false
-      }
+      },
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -6780,7 +7350,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -6803,7 +7375,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -6826,7 +7400,9 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     },
     {
       "light": 10,
@@ -6849,38 +7425,141 @@
         "sound": null,
         "attenuation": false
       },
-      "flags": {}
+      "flags": {},
+      "levels": [],
+      "animation": null
     }
   ],
   "playlist": null,
   "playlistSound": null,
   "journal": null,
   "journalEntryPage": null,
-  "folder": null,
+  "folder": "GXg0IIgSYYhCANMA",
   "flags": {
     "pf2e": {
       "rulesBasedVision": null,
-      "hearingRange": null
+      "hearingRange": null,
+      "environmentTypes": [],
+      "syncDarkness": "default"
     },
-    "exportSource": {
-      "world": "quest17",
-      "system": "pf2e",
-      "coreVersion": "11.315",
-      "systemVersion": "5.14.4"
+    "helyx-maker-3": {
+      "config": {
+        "idname": "pfsq17_scene-b",
+        "version": "7.87",
+        "source": "pfsq17-escorting-a-mirage"
+      }
     }
   },
   "_stats": {
     "systemId": "pf2e",
-    "systemVersion": "5.14.3",
-    "coreVersion": "11.315",
-    "createdTime": 1710937247246,
-    "modifiedTime": 1710939579997,
-    "lastModifiedBy": "mPsCZSyRdXCmjOAK"
+    "systemVersion": "8.2.0",
+    "coreVersion": "14.360",
+    "createdTime": 1781455406022,
+    "modifiedTime": 1781455563337,
+    "lastModifiedBy": "iKamIDKUopOGGQFX",
+    "exportSource": {
+      "worldId": "pf2-dev",
+      "uuid": "Scene.80S4EPSlTolvaNz3",
+      "coreVersion": "14.360",
+      "systemId": "pf2e",
+      "systemVersion": "8.2.0"
+    },
+    "compendiumSource": null,
+    "duplicateSource": null
   },
-  "foreground": null,
-  "thumb": "worlds/quest17/assets/scenes/bAILDCzAoLzc490v-thumb.webp",
-  "fogOverlay": null,
-  "fogExploredColor": null,
-  "fogUnexploredColor": null,
-  "weather": ""
+  "thumb": "worlds/pf2-dev/assets/scenes/thumb-eBOYq02UeU-4TM3ZFqtQuw.webp",
+  "weather": "",
+  "shiftX": 10,
+  "shiftY": 6,
+  "initialLevel": "defaultLevel0000",
+  "fog": {
+    "mode": 1,
+    "colors": {
+      "explored": null,
+      "unexplored": null
+    }
+  },
+  "environment": {
+    "darknessLevel": 0,
+    "darknessLock": false,
+    "globalLight": {
+      "enabled": false,
+      "alpha": 0.5,
+      "bright": false,
+      "color": null,
+      "coloration": 1,
+      "luminosity": 0,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "darkness": {
+        "min": 0,
+        "max": 1
+      }
+    },
+    "cycle": true,
+    "base": {
+      "hue": 0,
+      "intensity": 0,
+      "luminosity": 0,
+      "saturation": 0,
+      "shadows": 0
+    },
+    "dark": {
+      "hue": 0.7138888888888889,
+      "intensity": 0,
+      "luminosity": -0.25,
+      "saturation": 0,
+      "shadows": 0
+    }
+  },
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Level",
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "background": {
+        "color": "#999999",
+        "src": "helyx/pfsq17-escorting-a-mirage/scenes/scene-b.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {}
+    }
+  ],
+  "regions": [],
+  "ownership": {
+    "default": 0
+  }
 }

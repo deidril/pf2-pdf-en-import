@@ -1,1 +1,1 @@
-Here are stored datas files for adventures pdfs
+Here are stored datas files for bounties pdfs

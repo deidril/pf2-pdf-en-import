@@ -1,23 +1,8 @@
 {
-  "name": "C2",
+  "name": "Camp 2",
   "navigation": true,
   "navOrder": 0,
-  "background": {
-    "src": "helyx/flip-mat-kingmaker-campsite-multi-pack/camp_2.webp",
-    "anchorX": 0,
-    "anchorY": 0,
-    "offsetX": 1,
-    "offsetY": 2,
-    "fit": "fill",
-    "scaleX": 1,
-    "scaleY": 1,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": null,
-  "thumb": "worlds/test573/assets/scenes/8je7BzrOURMohHi1-thumb.webp",
+  "thumb": "worlds/pf2-dev/assets/scenes/thumb-awdbB4AsqKRx_UOUEIK03A.webp",
   "width": 3605,
   "height": 4505,
   "padding": 0.25,
@@ -26,7 +11,6 @@
     "y": null,
     "scale": null
   },
-  "backgroundColor": "#000000",
   "grid": {
     "type": 1,
     "size": 150,
@@ -39,12 +23,11 @@
   },
   "tokenVision": true,
   "fog": {
-    "exploration": true,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
   "environment": {
     "darknessLevel": 0,
@@ -86,7 +69,6 @@
   "notes": [],
   "sounds": [],
   "regions": [],
-  "templates": [],
   "tiles": [],
   "walls": [
     {
@@ -111,7 +93,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -135,7 +118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -159,7 +143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -183,7 +168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -207,7 +193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -231,7 +218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -255,7 +243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -279,7 +268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -303,7 +293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -327,7 +318,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -351,7 +343,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -375,7 +368,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -399,7 +393,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -423,7 +418,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -447,7 +443,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -471,7 +468,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -495,7 +493,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -519,7 +518,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -543,7 +543,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -567,7 +568,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -591,7 +593,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -615,7 +618,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -639,7 +643,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -663,7 +668,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -687,7 +693,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -711,7 +718,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -735,7 +743,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -759,7 +768,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -783,7 +793,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -807,7 +818,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -831,7 +843,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -855,7 +868,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -879,7 +893,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -903,7 +918,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -927,7 +943,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -951,7 +968,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -975,7 +993,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -999,7 +1018,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1023,7 +1043,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1047,7 +1068,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1071,7 +1093,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1095,7 +1118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1119,7 +1143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1143,7 +1168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1167,7 +1193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1191,7 +1218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1215,7 +1243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1239,7 +1268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1263,7 +1293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1287,7 +1318,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1311,7 +1343,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1335,7 +1368,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1359,7 +1393,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1383,7 +1418,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1407,7 +1443,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1431,7 +1468,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1455,7 +1493,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1479,7 +1518,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1503,7 +1543,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1527,7 +1568,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1551,7 +1593,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1575,7 +1618,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1599,7 +1643,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1623,7 +1668,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1647,7 +1693,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1671,7 +1718,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1695,7 +1743,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1719,7 +1768,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1743,7 +1793,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1767,7 +1818,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1791,7 +1843,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1815,7 +1868,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1839,7 +1893,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1863,7 +1918,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1887,7 +1943,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1911,7 +1968,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1935,7 +1993,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1959,7 +2018,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -1983,7 +2043,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2007,7 +2068,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2031,7 +2093,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2055,7 +2118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2079,7 +2143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2103,7 +2168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2127,7 +2193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2151,7 +2218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2175,7 +2243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2199,7 +2268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2223,7 +2293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2247,7 +2318,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2271,7 +2343,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2295,7 +2368,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2319,7 +2393,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2343,7 +2418,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2367,7 +2443,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2391,7 +2468,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2415,7 +2493,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2439,7 +2518,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2463,7 +2543,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2487,7 +2568,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2511,7 +2593,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2535,7 +2618,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2559,7 +2643,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2583,7 +2668,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2607,7 +2693,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2631,7 +2718,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2655,7 +2743,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2679,7 +2768,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2703,7 +2793,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2727,7 +2818,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2751,7 +2843,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2775,7 +2868,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2799,7 +2893,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2823,7 +2918,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2847,7 +2943,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2871,7 +2968,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2895,7 +2993,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2919,7 +3018,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2943,7 +3043,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2967,7 +3068,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -2991,7 +3093,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3015,7 +3118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3039,7 +3143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3063,7 +3168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3087,7 +3193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3111,7 +3218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3135,7 +3243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3159,7 +3268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3183,7 +3293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3207,7 +3318,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3231,7 +3343,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3255,7 +3368,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3279,7 +3393,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3303,7 +3418,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3327,7 +3443,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3351,7 +3468,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3375,7 +3493,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3399,7 +3518,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3423,7 +3543,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3447,7 +3568,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3471,7 +3593,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3495,7 +3618,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3519,7 +3643,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3543,7 +3668,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3567,7 +3693,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3591,7 +3718,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3615,7 +3743,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3639,7 +3768,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3663,7 +3793,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3687,7 +3818,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3711,7 +3843,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3735,7 +3868,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3759,7 +3893,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3783,7 +3918,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3807,7 +3943,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3831,7 +3968,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3855,7 +3993,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3879,7 +4018,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3903,7 +4043,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3927,7 +4068,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3951,7 +4093,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3975,7 +4118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -3999,7 +4143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4023,7 +4168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4047,7 +4193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4071,7 +4218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4095,7 +4243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4119,7 +4268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4143,7 +4293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4167,7 +4318,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4191,7 +4343,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4215,7 +4368,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4239,7 +4393,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4263,7 +4418,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4287,7 +4443,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4311,7 +4468,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4335,7 +4493,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4359,7 +4518,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4383,7 +4543,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4407,7 +4568,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4431,7 +4593,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4455,7 +4618,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4479,7 +4643,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4503,7 +4668,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4527,7 +4693,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4551,7 +4718,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4575,7 +4743,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4599,7 +4768,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4623,7 +4793,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4647,7 +4818,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4671,7 +4843,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4695,7 +4868,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4719,7 +4893,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -4743,7 +4918,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     }
   ],
   "playlist": null,
@@ -4751,12 +4927,13 @@
   "journal": null,
   "journalEntryPage": null,
   "weather": "",
-  "folder": "CI2vQ6O3rXDxf5Px",
+  "folder": "CQuB4Vn2GElbI7Hw",
   "flags": {
     "pf2e": {
       "rulesBasedVision": null,
       "hearingRange": null,
-      "environmentTypes": []
+      "environmentTypes": [],
+      "syncDarkness": "default"
     },
     "pf2-pdf-en-import": {
       "config": {
@@ -4764,24 +4941,81 @@
         "version": "3.53",
         "source": "flip-mat-kingmaker-campsite-multi-pack"
       }
+    },
+    "helyx-maker-3": {
+      "config": {
+        "idname": "fmkmcamp_2",
+        "version": "7.87",
+        "source": "flip-mat-kingmaker-campsite-multi-pack"
+      }
     }
   },
   "_stats": {
-    "coreVersion": "13.348",
+    "coreVersion": "14.360",
     "systemId": "pf2e",
-    "systemVersion": "7.5.0",
-    "createdTime": 1758396174747,
-    "modifiedTime": 1758396175846,
-    "lastModifiedBy": "blVZCxzspU8joFUa",
+    "systemVersion": "8.1.2",
+    "createdTime": 1779980223542,
+    "modifiedTime": 1779993049950,
+    "lastModifiedBy": "iKamIDKUopOGGQFX",
     "exportSource": {
-      "worldId": "test573",
-      "uuid": "Scene.8je7BzrOURMohHi1",
-      "coreVersion": "13.348",
+      "worldId": "pf2-dev",
+      "uuid": "Scene.QUpeAwPfKf9uxrDq",
+      "coreVersion": "14.360",
       "systemId": "pf2e",
-      "systemVersion": "7.5.0"
-    }
+      "systemVersion": "8.1.2"
+    },
+    "compendiumSource": null,
+    "duplicateSource": null
   },
   "navName": "",
+  "shiftX": 0,
+  "shiftY": 0,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Level",
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "background": {
+        "color": "#999999",
+        "src": "helyx/flip-mat-kingmaker-campsite-multi-pack/camp_2.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {}
+    }
+  ],
   "ownership": {
     "default": 0
   }

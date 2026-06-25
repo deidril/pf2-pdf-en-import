@@ -1,23 +1,8 @@
 {
-  "name": "ruin 4",
+  "name": "Ruins 4",
   "navigation": true,
   "navOrder": 0,
-  "background": {
-    "src": "helyx/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruins_4.webp",
-    "anchorX": 0,
-    "anchorY": 0,
-    "offsetX": 2,
-    "offsetY": 2,
-    "fit": "fill",
-    "scaleX": 1,
-    "scaleY": 1,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": null,
-  "thumb": "worlds/pf2576dev/assets/scenes/mWzjNWRCRbltne5d-thumb.webp",
+  "thumb": "worlds/pf2-dev/assets/scenes/thumb-WAM9gOAUXAW52tfa7ScDOA.webp",
   "width": 3605,
   "height": 4505,
   "padding": 0.25,
@@ -26,7 +11,6 @@
     "y": null,
     "scale": null
   },
-  "backgroundColor": "#999999",
   "grid": {
     "type": 1,
     "size": 150,
@@ -39,12 +23,11 @@
   },
   "tokenVision": true,
   "fog": {
-    "exploration": true,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
   "environment": {
     "darknessLevel": 0,
@@ -86,7 +69,6 @@
   "notes": [],
   "sounds": [],
   "regions": [],
-  "templates": [],
   "tiles": [],
   "walls": [
     {
@@ -111,7 +93,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -135,7 +118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -159,7 +143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -183,7 +168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -207,7 +193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -231,7 +218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -255,7 +243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 20,
@@ -279,7 +268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -303,7 +293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -327,7 +318,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -351,7 +343,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -375,7 +368,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -399,7 +393,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -423,7 +418,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -447,7 +443,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -471,7 +468,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -495,7 +493,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -519,7 +518,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -543,7 +543,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -567,7 +568,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -591,7 +593,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -615,7 +618,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -639,7 +643,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -663,7 +668,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -687,7 +693,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -711,7 +718,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -735,7 +743,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -759,7 +768,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -783,7 +793,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -807,7 +818,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -831,7 +843,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -855,7 +868,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -879,7 +893,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -903,7 +918,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -927,7 +943,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -951,7 +968,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -975,7 +993,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -999,7 +1018,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1023,7 +1043,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1047,7 +1068,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1071,7 +1093,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1095,7 +1118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1119,7 +1143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1143,7 +1168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1167,7 +1193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1191,7 +1218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1215,7 +1243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1239,7 +1268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1263,7 +1293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1287,7 +1318,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1311,7 +1343,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1335,7 +1368,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1359,7 +1393,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1383,7 +1418,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1407,7 +1443,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1431,7 +1468,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1455,7 +1493,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1479,7 +1518,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1503,7 +1543,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1527,7 +1568,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1551,7 +1593,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1575,7 +1618,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1599,7 +1643,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1623,7 +1668,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1647,7 +1693,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1671,7 +1718,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1695,7 +1743,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1719,7 +1768,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1743,7 +1793,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1767,7 +1818,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1791,7 +1843,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1815,7 +1868,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1839,7 +1893,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1863,7 +1918,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1887,7 +1943,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1911,7 +1968,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1935,7 +1993,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1959,7 +2018,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -1983,7 +2043,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2007,7 +2068,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2031,7 +2093,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2055,7 +2118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2079,7 +2143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2103,7 +2168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2127,7 +2193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2151,7 +2218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2175,7 +2243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2199,7 +2268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2223,7 +2293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2247,7 +2318,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2271,7 +2343,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2295,7 +2368,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2319,7 +2393,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2343,7 +2418,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2367,7 +2443,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2391,7 +2468,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2415,7 +2493,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2439,7 +2518,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2463,7 +2543,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2487,7 +2568,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2511,7 +2593,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2535,7 +2618,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2559,7 +2643,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2583,7 +2668,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2607,7 +2693,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2631,7 +2718,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2655,7 +2743,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2679,7 +2768,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2703,7 +2793,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2727,7 +2818,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2751,7 +2843,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2775,7 +2868,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2799,7 +2893,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2823,7 +2918,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2847,7 +2943,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2871,7 +2968,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2895,7 +2993,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2919,7 +3018,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2943,7 +3043,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2967,7 +3068,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -2991,7 +3093,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -3015,7 +3118,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -3039,7 +3143,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -3063,7 +3168,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -3087,7 +3193,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -3111,7 +3218,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -3135,7 +3243,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -3159,7 +3268,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     },
     {
       "light": 10,
@@ -3183,7 +3293,8 @@
         "attenuation": false
       },
       "animation": null,
-      "flags": {}
+      "flags": {},
+      "levels": []
     }
   ],
   "playlist": null,
@@ -3191,33 +3302,88 @@
   "journal": null,
   "journalEntryPage": null,
   "weather": "",
-  "folder": null,
+  "folder": "GNzcT2xTKTIxms4L",
   "flags": {
     "pf2e": {
       "rulesBasedVision": null,
       "hearingRange": null,
       "environmentTypes": [],
       "syncDarkness": "default"
+    },
+    "helyx-maker-3": {
+      "config": {
+        "idname": "fmkmrkr_ruin_4",
+        "version": "7.87",
+        "source": "flip-mat-kingmaker-river-kingdom-ruins-multi-pack"
+      }
     }
   },
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": {
-      "worldId": "pf2576dev",
-      "uuid": "Scene.mWzjNWRCRbltne5d",
-      "coreVersion": "13.350",
+      "worldId": "pf2-dev",
+      "uuid": "Scene.dcwV8MujnRRZrLg2",
+      "coreVersion": "14.360",
       "systemId": "pf2e",
-      "systemVersion": "7.6.3"
+      "systemVersion": "8.1.2"
     },
-    "coreVersion": "13.350",
+    "coreVersion": "14.360",
     "systemId": "pf2e",
-    "systemVersion": "7.6.3",
-    "createdTime": 1761734409109,
-    "modifiedTime": 1761734462365,
-    "lastModifiedBy": "WpxlnoHQY3mvVMGg"
+    "systemVersion": "8.1.2",
+    "createdTime": 1779993640250,
+    "modifiedTime": 1779993776406,
+    "lastModifiedBy": "iKamIDKUopOGGQFX"
   },
   "navName": "",
+  "shiftX": 1,
+  "shiftY": 1,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Level",
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "background": {
+        "color": "#999999",
+        "src": "helyx/flip-mat-kingmaker-river-kingdom-ruins-multi-pack/ruins_4.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {}
+    }
+  ],
   "ownership": {
     "default": 0
   }

@@ -1,23 +1,9 @@
 {
-  "name": "wod_q14",
+  "name": "Where On Golarion?",
+  "drawings": [],
   "navigation": true,
   "navOrder": 0,
-  "background": {
-    "src": "helyx/pfsq14-the-swordlord-s-challenge/scenes/where_in_golarion.webp",
-    "anchorX": 0,
-    "anchorY": 0,
-    "offsetX": 0,
-    "offsetY": 0,
-    "fit": "fill",
-    "scaleX": 1,
-    "scaleY": 1,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": null,
-  "thumb": "worlds/pf2576dev/assets/scenes/3p5Jkz9QVKBeL0p1-thumb.webp",
+  "thumb": "worlds/pf2-dev/assets/scenes/thumb-Y5s1tcHhVzioncxM-iX4LA.webp",
   "width": 461,
   "height": 298,
   "padding": 0.25,
@@ -26,7 +12,6 @@
     "y": null,
     "scale": null
   },
-  "backgroundColor": "#000000",
   "grid": {
     "type": 0,
     "size": 25,
@@ -39,12 +24,11 @@
   },
   "tokenVision": true,
   "fog": {
-    "exploration": true,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
   "environment": {
     "darknessLevel": 0,
@@ -80,13 +64,11 @@
       "shadows": 0
     }
   },
-  "drawings": [],
   "tokens": [],
   "lights": [],
   "notes": [],
   "sounds": [],
   "regions": [],
-  "templates": [],
   "tiles": [],
   "walls": [],
   "playlist": null,
@@ -94,33 +76,88 @@
   "journal": null,
   "journalEntryPage": null,
   "weather": "",
-  "folder": null,
+  "folder": "QAU9ElqYZgFdZUVo",
   "flags": {
     "pf2e": {
       "rulesBasedVision": null,
       "hearingRange": null,
       "environmentTypes": [],
       "syncDarkness": "default"
+    },
+    "helyx-maker-3": {
+      "config": {
+        "idname": "pfsq14_wog",
+        "version": "7.87",
+        "source": "pfsq14-the-swordlord-s-challenge"
+      }
     }
   },
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": {
-      "worldId": "pf2576dev",
-      "uuid": "Scene.3p5Jkz9QVKBeL0p1",
-      "coreVersion": "13.350",
+      "worldId": "pf2-dev",
+      "uuid": "Scene.Ryh8mrSwH870KiOA",
+      "coreVersion": "14.360",
       "systemId": "pf2e",
-      "systemVersion": "7.6.3"
+      "systemVersion": "8.2.0"
     },
-    "coreVersion": "13.350",
+    "coreVersion": "14.360",
     "systemId": "pf2e",
-    "systemVersion": "7.6.3",
-    "createdTime": 1761822352178,
-    "modifiedTime": 1761822409195,
-    "lastModifiedBy": "WpxlnoHQY3mvVMGg"
+    "systemVersion": "8.2.0",
+    "createdTime": 1781451910029,
+    "modifiedTime": 1781452630523,
+    "lastModifiedBy": "iKamIDKUopOGGQFX"
   },
   "navName": "",
+  "shiftX": 0,
+  "shiftY": 0,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Level",
+      "elevation": {
+        "bottom": 0,
+        "top": 20
+      },
+      "background": {
+        "color": "#999999",
+        "src": "helyx/pfsq14-the-swordlord-s-challenge/scenes/where_in_golarion.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null,
+        "tint": "#ffffff"
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {}
+    }
+  ],
   "ownership": {
     "default": 0
   }
