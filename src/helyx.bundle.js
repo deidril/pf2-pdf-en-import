@@ -20340,6 +20340,9 @@ export class HelyxEntity
     /// @brief      Redefinition of the name
     #name           = null;
 
+    /// @brief     External model name if artwork/token is not defined
+    #model          = null;
+
     /// @brief      Redefinition of the artwork image
     #img            = null;
 
@@ -20372,6 +20375,7 @@ export class HelyxEntity
     get name  ()     { return this.#name; }
     get img()        { return this.#img; }
     get token()      { return this.#token; }
+    get model()      { return this.#model; }
     get description() { return this.#description; }
     get rarity()     { return this.#rarity; }
 
@@ -20382,6 +20386,7 @@ export class HelyxEntity
             case 'helyx': this.#helyx = Deid.build(HelyxHeader, value_ ); break;
             case 'img' :  this.#img = Deid.build(HelyxImageReference, value_ ); break;
             case 'token' : this.#token = Deid.build(HelyxImageReference, value_ ); break;
+            case 'model' : this.#model = value_; break;
             case 'name'  : this.#name   = HelyxContent.build(value_); break;
             case 'description' : this.#description = HelyxContent.build(value_); break;
             case 'rarity' : this.#rarity = value_; break;
@@ -20403,6 +20408,7 @@ export class HelyxEntity
         output_.any('description',this.#description);
         output_.field('img', this.#img);
         output_.field('token', this.#token);
+        output_.field('model', this.#model);
         return output_.inlined_attributes(this,  ['rarity']);
     }      
 }
@@ -24996,12 +25002,12 @@ export class HelyxBlockRoomSection extends HelyxPart
 
             case 'skill-arcana' : return "icons/magic/symbols/runes-triangle-blue.webp";
             case 'skill-athletism' : return "icons/skills/melee/unarmed-punch-fist-yellow-red.webp";
-            case 'skill-computer' : return Deid.compile("{{{imgsrc 'shared' 'icons/computer.webp'}}}");
+            case 'skill-computer' : return "icons/tools/tech/mouse-computer.webp";
             case 'skill-crafting' : return "icons/skills/trades/smithing-anvil-silver-red.webp";
             case 'skill-culture' : return "icons/sundries/books/book-stack.webp";
             case 'skill-diplomacy' : return "icons/skills/social/diplomacy-handshake-yellow.webp";
             case "skill-intimidation" : return "icons/skills/social/intimidation-impressing.webp";
-            case "skill-life-science" : return Deid.compile("{{{imgsrc 'shared' 'icons/life-science.webp'}}}");
+            case "skill-life-science" : return "icons/tools/medical/mouse-medication-pills-bottle.webp"
             case "skill-nature": return "icons/environment/wilderness/tree-ash.webp";
             case "skill-perception": return "icons/magic/perception/eye-ringed-green.webp"
             case "skill-performance" : return "icons/tools/instruments/harp-yellow-teal.webp";
@@ -25034,8 +25040,8 @@ export class HelyxBlockRoomSection extends HelyxPart
             case 'healing' : return "icons/magic/life/ankh-gold-blue.webp";
             case 'darkness': return "icons/magic/unholy/silhouette-evil-horned-giant.webp";
 
-            case 'streamed' : return Deid.compile("{{{imgsrc 'shared' 'icons/online-avatar.webp'}}}");
-            case 'starship' : return Deid.compile("{{{imgsrc 'shared' 'icons/starship.webp'}}}");
+            case 'streamed' : return"icons/tools/tech/camera.webp";
+            case 'starship' : return "icons/commodities/tech/engine-thrust-jet.webp";
 
 
             default: 
@@ -27008,6 +27014,7 @@ export class HelyxContext
     import_images = true;
     import_mode = "normal";        // Values are normal or raw
     extract_all_images = false;
+    model = null;
     
     pdf = {};
     helyx = {};
@@ -27305,6 +27312,19 @@ export class HelyxContext
         if(!datas.title) { datas.title = {}; }
 
         return datas;
+    }
+
+    resolve_model(model_, type_)
+    {
+        
+        if(this.model)
+        {
+            let m = game.helyx_externals?.tokens?.[this.model];
+            if(m)
+            if(m[model_])    
+            { return m.directory + "/" + m[model_][type_]; }
+        }
+        return null;
     }
 
     resolve_image(img_)
@@ -29331,8 +29351,6 @@ async #import_from_compendium(item_, source_, entity_type_)
             let other_names = [ _item.helyx.sourceName ];
             if(_item.img_name)
             { other_names.push(_item.img_name); }
-
-            //await this.setPDF2FoundryToken(model, other_names); 
         }
         
 
@@ -29352,6 +29370,16 @@ async #import_from_compendium(item_, source_, entity_type_)
             {
                 _model.prototypeToken.height = _item.height;
             }
+        }
+
+        // Model
+        if(_item.model != null) 
+        {             
+            let img = this.context.resolve_model(_item.model, "img"); 
+            if(img != null) { _model.img = img; }
+        
+            let texture = this.context.resolve_model(_item.model, "token"); 
+            { _model.prototypeToken.texture.src = texture; }
         }
 
         let folderEntry = this.adventure.folder(_item.helyx.target);
@@ -29426,9 +29454,13 @@ async #import_from_compendium(item_, source_, entity_type_)
 
     async #import_actor(_item)
     {
-        const source = _item.helyx.source(game.system.id);
+        let source = _item.helyx.source(game.system.id);
 
         let model = null;
+        if(source == null)
+        {
+            source = { type: "json", includes: [ this.adventure.datas_directory + "/bestiaries/empty.json" ]};
+        }
         switch(source.type)
         {
             case "compendium": 
@@ -30042,6 +30074,23 @@ export class StateAdventureSummary extends HelyxState
         this.context.accept_tokens_on_maps = $('#helyx-accept-tokens-on-maps').is(':checked');
         Deid.Log.report( 'Tokens on maps used : ' + this.context.accept_tokens_on_maps);
 
+        const adventure_flags = this.context.adventure.flags ?? {};
+        if(adventure_flags.external_mapping)
+        {
+            const model = $('#helyx-external-art-mapping').find(":selected").val();
+            if(game.helyx_externals)
+            if(game.helyx_externals.tokens)
+            if(game.helyx_externals.tokens[model])
+            {
+                this.context.model = model;
+                Deid.Log.report( 'Art Mapping used : ' + game.helyx_externals.tokens[model].name);
+            }
+            else 
+            { this.context.model = null; }
+        }
+        else
+        { this.context.model = null; }
+
         this.#dialog.close();
         this.#dialog = null;
 
@@ -30097,10 +30146,24 @@ export class StateAdventureSummary extends HelyxState
         summary.options = 
         { 
             midjourney_content : adventure_flags.midjourney_content ? "normal" : "none" ,
+            use_external_art_mappings : adventure_flags.external_mapping ? "normal" : "none" ,
             midjourney_content_description : adventure_flags.midjourney_content_description ?? "",
             deidril_maps : adventure_flags.deidril_maps ? "normal" : "none" ,
             tokens_on_maps : adventure_flags.tokens_on_maps ? "normal" : "none"
         };
+
+        if(adventure_flags.external_mapping)
+        if(game.helyx_externals)
+        if(game.helyx_externals.tokens)
+        {
+            summary.options.external_art_mappings = [];
+            for(const name in game.helyx_externals.tokens)
+            {
+                 const collection = game.helyx_externals.tokens[name];
+                 summary.options.external_art_mappings.push( { name: collection.name, idname : name} );
+            }
+        }
+
     }
 
     #dialog_missing_dependencies()
@@ -30413,7 +30476,7 @@ async #find_source(entry_, pack_name_)
     return null;
 }
 
-async #generate_art_map()
+async #generate_art_map(arts_)
 {
     let raw_art_map = this.adventure.descriptor.art_map;
     
@@ -30422,7 +30485,6 @@ async #generate_art_map()
 
     const actor_directory = '/helyx/' + this.adventure.export_directory + '/actors/';
 
-    let arts = {};
     for(const entry of raw_art_map)
     {
         if(entry.ignore)
@@ -30447,40 +30509,57 @@ async #generate_art_map()
         const token_art_filename = actor_directory + entry.token + '.webp';
         
         let art = {};
+        art[ 'name' ] = entry.name;
         art[ this.#type_keyword(entry.type) ] = main_art_filename;
-        art[ 'token' ] =  token_art_filename;
+        art[ 'token' ] =  { texture: { src: token_art_filename}};
 
-        let index_pack = pack_name.replace('sfrpg.','');
-
-        if(!arts[index_pack])
-        { arts[index_pack] = {}; }
+        if(!arts_[pack_name])
+        { arts_[pack_name] = {}; }
         
-        arts [index_pack] [source.id ] = art;
+        arts_ [pack_name] [source.id ] = art;
 
         this.advance("art", "Generated art mapping for " + entry.name);
     }
 
-    return arts;
+    return arts_;
 }
 
 async #generate_art_map_file()
 {
-    const art_map = await this.#generate_art_map();
+    // Retrieve current global art map
+    const art_map_filename = '/helyx/art_maps/sfrpg/alien_archives.json';
+    let arts = {}; 
+    try
+    {
+        let arts_string = await Deid.FS.file2string(art_map_filename);
+        arts = JSON.parse(arts_string);
+    }
+    catch(e)
+    {
+        arts = {}; 
+    }
+
+    const art_map = await this.#generate_art_map(arts);
     if((art_map == undefined) || (art_map.length == 0))
     {
         Deid.Log.report("No art map defined for this pdf");
         return;
     }
 
-    const exported_art_map_filename = this.adventure.idname + '_art-map';
+    //const exported_art_map_filename = this.adventure.idname;
+    const exported_art_map_filename = "alien_archives";
     const exported_art_map = JSON.stringify(art_map, null, "\t");
 
     const blob = new Blob([exported_art_map], {type: "application/json"} )
 
-    await Deid.upload(blob, '/helyx', exported_art_map_filename); 
-    Deid.Log.report("Art map generated into '/helyx/" + exported_art_map_filename);
+    await Deid.mkdir('data', '/helyx');
+    await Deid.mkdir('data', '/helyx/art_maps');
+    await Deid.mkdir('data', '/helyx/art_maps/sfrpg');
 
-    await game.sfrpg.compendiumArt.refresh();
+    await Deid.upload(blob, '/helyx/art_maps/sfrpg', exported_art_map_filename); 
+    Deid.Log.report("Art map generated into '/helyx/art_maps/sfrpg" + exported_art_map_filename);
+
+    // await game.sfrpg.compendiumArt.refresh();
     this.advance("art", "Refreshed global art mapping");
 }
 
@@ -30510,7 +30589,7 @@ export class HelyxShadowsAtSundown
     static drm = "FREE" ; 
     static dependencies = [  ];
     static system = "pf2e";
-    static flags = { midjourney_content: true, tokens_on_maps: true };
+    static flags = { midjourney_content: false, external_mapping: true, tokens_on_maps: true };
     static family = "adventures";
 
     static summary = 
@@ -30646,14 +30725,7 @@ export class HelyxShadowsAtSundown
 		}
 	},
 	"name": "{{{xylf 17 68 303 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/strigoi_01.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/strigoi_01.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Strigoi, Male"
 }]
 ,[ "_a17057" ,{
 	"helyx": {
@@ -30669,14 +30741,7 @@ export class HelyxShadowsAtSundown
 		}
 	},
 	"name": "{{{xylf 17 68 255 1 'ntxyz'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human-guard_01.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human-guard_01.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Guard"
 }]
 ,[ "_a17105" ,{
 	"helyx": {
@@ -30732,14 +30797,7 @@ export class HelyxShadowsAtSundown
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human_dominated-priest-00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human_dominated-priest-00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human, Dark Priest"
 }]
 ,[ "sats_raja-rakshasa" ,{
 	"helyx": {
@@ -30754,14 +30812,7 @@ export class HelyxShadowsAtSundown
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/rakshasas/rakshasa_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/rakshasas/rakshasa_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Rakshasa",
 	"adjustment": "elite"
 }]
 ,[ "_a27064" ,{
@@ -30817,14 +30868,7 @@ export class HelyxShadowsAtSundown
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/demons/glabrezu_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/demons/glabrezu_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Glabrezu"
 }]
 ,[ "_a28134" ,{
 	"helyx": {
@@ -30860,14 +30904,7 @@ export class HelyxShadowsAtSundown
 		}
 	},
 	"name": "{{{xylf 33 295 507 1 'nt'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/asuras/nikaramsa_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/asuras/nikaramsa_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Nikaramsa"
 }]
 ,[ "_a34030" ,{
 	"helyx": {
@@ -30936,14 +30973,7 @@ export class HelyxShadowsAtSundown
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human_acolyte-pharasma_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human_acolyte-pharasma_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human, Dark Acolyte"
 }]
 ,[ "_a38093" ,{
 	"helyx": {
@@ -31090,14 +31120,7 @@ export class HelyxShadowsAtSundown
 		}
 	},
 	"name": "{{{xylf 48 99 387 1 'nt'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/strigoi_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/strigoi_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Strigoi, Male"
 }]
 ,[ "_a48057" ,{
 	"helyx": {
@@ -31112,14 +31135,7 @@ export class HelyxShadowsAtSundown
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/runes/living-rune_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/runes/living-rune_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Rune, Living"
 }]
 ,[ "_a49037" ,{
 	"helyx": {
@@ -31154,14 +31170,7 @@ export class HelyxShadowsAtSundown
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/demons/omox_01.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/demons/omox_01.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Omox"
 }]
 ,[ "_a51107" ,{
 	"helyx": {
@@ -37637,7 +37646,7 @@ export class HelyxCrownOfTheKoboldKing
     static drm = "FREE" ;
     static system="pf2e";
     static content = { from: 6, to: 125};
-    static flags = { midjourney_content: true, tokens_on_maps: true };
+    static flags = { external_mapping: true, tokens_on_maps: true };
     static family = "adventures";
 
     static summary = 
@@ -37924,14 +37933,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/wyverns/wyvern_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/wyverns/wyvern_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Wyvern"
 }]
 ,[ "cotkk_kolmokmurk" ,{
 	"helyx": {
@@ -37995,14 +37997,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human_hunter_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human_hunter_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Hunter"
 }]
 ,[ "cotkk_bloodseeker" ,{
 	"helyx": {
@@ -38017,14 +38012,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bloodseekers/bloodseeker_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bloodseekers/bloodseeker_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Bloodseeker"
 }]
 ,[ "cotkk_giant-moorsnake" ,{
 	"helyx": {
@@ -38041,15 +38029,8 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 26 295 531 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/snakes/giant-moorsnake_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/snakes/giant-moorsnake_00.token.webp'}}}",
-		"origin": "MJ"
-	},
-	"adjustment": "elite"
+	"adjustment": "elite",
+	"model": "Snake, Giant Moorsnake"
 }]
 ,[ "cotkk_wolf" ,{
 	"helyx": {
@@ -38064,14 +38045,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/wolves/wolf_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/wolves/wolf_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Wolf"
 }]
 ,[ "cotkk_ulizmila-s-cauldron" ,{
 	"helyx": {
@@ -38107,15 +38081,8 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 30 68 195 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/hobgoblins/hobgoblin_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/hobgoblins/hobgoblin_00.token.webp'}}}",
-		"origin": "MJ"
-	},
-	"adjustment": "elite"
+	"adjustment": "elite",
+	"model": "Hobgoblin"
 }]
 ,[ "cotkk_tatzlwyrm" ,{
 	"helyx": {
@@ -38130,14 +38097,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/tatzlwyrms/tatzlwyrm_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/tatzlwyrms/tatzlwyrm_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Tatzlwyrm"
 }]
 ,[ "cotkk_hunting-spider" ,{
 	"helyx": {
@@ -38152,14 +38112,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/spiders/hunting-spider_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/spiders/hunting-spider_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Spider, Hunting"
 }]
 ,[ "cotkk_unsafe-stairs" ,{
 	"helyx": {
@@ -38236,14 +38189,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bats/bat-swarm_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bats/bat-swarm_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Swarm, Bats"
 }]
 ,[ "cotkk_skeleton-guard" ,{
 	"helyx": {
@@ -38258,14 +38204,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeleton_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeleton_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Skeleton, Guard"
 }]
 ,[ "cotkk_graypelt" ,{
 	"helyx": {
@@ -38302,14 +38241,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-warrior_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-warrior_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Kobold Warrior"
 }]
 ,[ "cotkk_shocker-lizard" ,{
 	"helyx": {
@@ -38324,14 +38256,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/lizards/shocker-lizard_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/lizards/shocker-lizard_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Lizard, Shocker"
 }]
 ,[ "cotkk_gelatinous-cube" ,{
 	"helyx": {
@@ -38346,14 +38271,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/slimes/gelatinous-cube_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/slimes/gelatinous-cube_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Gelatinous Cube"
 }]
 ,[ "cotkk_giant-rat" ,{
 	"helyx": {
@@ -38368,14 +38286,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/rats/giant-rat_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/rats/giant-rat_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Rat, Giant"
 }]
 ,[ "cotkk_lodestone-trap" ,{
 	"helyx": {
@@ -38424,14 +38335,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/homunculus/homunculus_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/homunculus/homunculus_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Homunculus, Candle"
 }]
 ,[ "cotkk_animated-anvil-pounder" ,{
 	"helyx": {
@@ -38447,14 +38351,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 49 326 531 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/giant-anvil-pounder_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/giant-anvil-pounder_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Giant Anvil Pounder"
 }]
 ,[ "cotkk_gristogar" ,{
 	"helyx": {
@@ -38470,14 +38367,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 50 295 195 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/shadows/shadow_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/shadows/shadow_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Shadow"
 }]
 ,[ "cotkk_ygrik" ,{
 	"helyx": {
@@ -38533,14 +38423,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 53 326 411 1 'aenz'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeleton_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeleton_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Skeleton, Guard",
 	"adjustment": "elite"
 }]
 ,[ "cotkk_barlus-chortun" ,{
@@ -38577,14 +38460,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/ghouls/ghoul_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/ghouls/ghoul_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Ghoul"
 }]
 ,[ "cotkk_kerrdremak" ,{
 	"helyx": {
@@ -38619,14 +38495,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-scout_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-scout_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Kobold Scout"
 }]
 ,[ "cotkk_trapped-elevator" ,{
 	"helyx": {
@@ -38655,14 +38524,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/hellhounds/hellhound_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/hellhounds/hellhound_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Hell Hound"
 }]
 ,[ "cotkk_slurk" ,{
 	"helyx": {
@@ -38677,14 +38539,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/frogs/slurk_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/frogs/slurk_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Slurk"
 }]
 ,[ "cotkk_skirrsh" ,{
 	"helyx": {
@@ -38700,14 +38555,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 57 326 159 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/chokers/choker_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/chokers/choker_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Choker",
 	"adjustment": "elite"
 }]
 ,[ "cotkk_lekmek" ,{
@@ -38723,14 +38571,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-bully_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-bully_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Kobold Bully"
 }]
 ,[ "cotkk_reglos" ,{
 	"helyx": {
@@ -38746,14 +38587,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 60 68 339 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/gargoyles/gargoyle_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/gargoyles/gargoyle_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Gargoyle",
 	"adjustment": "elite"
 }]
 ,[ "cotkk_dark-talon-kobold" ,{
@@ -38769,14 +38603,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-dark-talon_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-dark-talon_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Kobold Dark Talon"
 }]
 ,[ "cotkk_grugaruk" ,{
 	"helyx": {
@@ -38792,14 +38619,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 60 295 195 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-dark-talon_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-dark-talon_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Kobold Dark Talon"
 }]
 ,[ "cotkk_colbrin-jabbs" ,{
 	"helyx": {
@@ -38835,14 +38655,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-kennel-master_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-kennel-master_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Kobold Kennel Master"
 }]
 ,[ "cotkk_shriekers" ,{
 	"helyx": {
@@ -38893,14 +38706,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 64 68 603 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-mage_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/kobolds/kobold-mage_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Kobold Mage"
 }]
 ,[ "cotkk_shambler-troop" ,{
 	"helyx": {
@@ -38915,14 +38721,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/shambler-troop_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/shambler-troop_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Zombie, Shambler Troop"
 }]
 ,[ "cotkk_festrog" ,{
 	"helyx": {
@@ -38937,14 +38736,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/festrogs/festrog_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/festrogs/festrog_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Festrog"
 }]
 ,[ "cotkk_elite-skeleton-guard" ,{
 	"helyx": {
@@ -38960,14 +38752,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "Elite Skeleton Guard",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeleton_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeleton_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Skeleton, Guard",
 	"adjustment": "elite"
 }]
 ,[ "cotkk_revenant" ,{
@@ -38983,14 +38768,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/revenants/revenant_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/revenants/revenant_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Revenant"
 }]
 ,[ "cotkk_shadow" ,{
 	"helyx": {
@@ -39005,14 +38783,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/shadows/shadow_02.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/shadows/shadow_02.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Shadow"
 }]
 ,[ "cotkk_squirming-swill" ,{
 	"helyx": {
@@ -39027,14 +38798,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/aberrations/squirming-swill_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/aberrations/squirming-swill_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Squirming Swill"
 }]
 ,[ "cotkk_ghast" ,{
 	"helyx": {
@@ -39049,14 +38813,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/ghasts/ghast_02.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/ghasts/ghast_02.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Ghast"
 }]
 ,[ "cotkk_pendulum-blades" ,{
 	"helyx": {
@@ -39189,14 +38946,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/bloody-skeleton_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/bloody-skeleton_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Skeleton, Bloody",
 	"adjustment": "elite"
 }]
 ,[ "cotkk_pit-of-toil" ,{
@@ -39325,14 +39075,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 91 99 207 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/mummies/mummy_01.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/mummies/mummy_01.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Mummy",
 	"adjustment": "elite"
 }]
 ,[ "cotkk_explosive-crystal-spheres" ,{
@@ -39382,14 +39125,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/shadows/shadow_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/shadows/shadow_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Shadow, Huge"
 }]
 ,[ "cotkk_yurkyurk" ,{
 	"helyx": {
@@ -39461,14 +39197,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/demons/dretch_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/demons/dretch_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Dretch"
 }]
 ,[ "cotkk_salamander" ,{
 	"helyx": {
@@ -39483,14 +39212,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/salamanders/salamander_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/salamanders/salamander_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Salamander"
 }]
 ,[ "cotkk_dismemberment-table" ,{
 	"helyx": {
@@ -39525,14 +39247,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/poltergeist_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/poltergeist_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Poltergeist"
 }]
 ,[ "cotkk_kieragan-skross" ,{
 	"helyx": {
@@ -39588,14 +39303,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "{{{xylf 108 295 507 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/spectre_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/spectre_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Spectre"
 }]
 ,[ "cotkk_albino-giant-bat" ,{
 	"helyx": {
@@ -39610,14 +39318,7 @@ export class HelyxCrownOfTheKoboldKing
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bats/giant-albino-bat_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bats/giant-albino-bat_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Bat, Giant Albino"
 }]
 ,[ "cotkk_king-merlokrep" ,{
 	"helyx": {
@@ -39653,14 +39354,7 @@ export class HelyxCrownOfTheKoboldKing
 		}
 	},
 	"name": "\"Vreggma\"",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/beetles/giant-stag-beetle_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/beetles/giant-stag-beetle_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Beetle, Giant Stag"
 }]
 ,[ "cotkk_darkmantle" ,{
 	"helyx": {
@@ -54700,7 +54394,7 @@ export class HelyxEnmityCycle
     static content = { from: 5, to: 66};
     static language = 'en';
     static color_assign = "default";
-    static flags ={ midjourney_content: true, tokens_on_maps: true };
+    static flags ={ midjourney_content: false, external_mapping: true, tokens_on_maps: true };
     static family = "adventures";
 
     static summary = 
@@ -54852,14 +54546,7 @@ export class HelyxEnmityCycle
 		}
 	},
 	"name": "{{{xylf 12 326 375 1 'aenyz'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/desert-bandit_000.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/humans/desert-bandit_000.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 1"
 }]
 ,[ "ency_sand-wolf" ,{
 	"helyx": {
@@ -55003,14 +54690,7 @@ export class HelyxEnmityCycle
 		}
 	},
 	"name": "{{{xylf 20 342 99 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/undeads/zombie-priest_000.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/undeads/zombie-priest_000.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Zombie, Priest"
 }]
 ,[ "ency_elite-poltergeist" ,{
 	"helyx": {
@@ -55026,14 +54706,7 @@ export class HelyxEnmityCycle
 		}
 	},
 	"name": "{{{xylf 21 295 651 1 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/poltergeist_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/ghosts/poltergeist_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Poltergeist",
 	"adjustment": "elite"
 }]
 ,[ "ency_entangling-shredder-trap" ,{
@@ -55270,14 +54943,7 @@ export class HelyxEnmityCycle
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/clockworks/clockwork-soldier_003.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/clockworks/clockwork-soldier_003.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Clockwork Soldier"
 }]
 ,[ "ency_weak-clockwork-soldier" ,{
 	"helyx": {
@@ -55293,14 +54959,7 @@ export class HelyxEnmityCycle
 		}
 	},
 	"name": "{{{xylf 48 326 99 1 'aenyz'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/clockworks/clockwork-soldier_003.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/clockworks/clockwork-soldier_003.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Clockwork Soldier",
 	"adjustment": "weak"
 }]
 ,[ "ency_mechanical-assistant" ,{
@@ -55514,14 +55173,7 @@ export class HelyxEnmityCycle
 		}
 	},
 	"name": "{{{slicexylf 49 295 699 1 'an' 0 5}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/muse-phantom_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/ghosts/muse-phantom_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Muse Phantom"
 }]
 ,[ "ency_amina" ,{
 	"helyx": {
@@ -55537,14 +55189,7 @@ export class HelyxEnmityCycle
 		}
 	},
 	"name": "{{{slicexylf 49 295 699 1 'an' 10 5}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/muse-phantom_000.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/ghosts/muse-phantom_000.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Muse Phantom"
 }]
 ,[ "ency_agash" ,{
 	"helyx": {
@@ -107499,7 +107144,7 @@ export class HelyxPFS4E02
     static system="pf2e";
     static content = { from: 3, to: 31};
     static color_assign = "reader";
-    static flags = { midjourney_content: true };
+    static flags = { external_mapping: true };
     static family = "pfs4";
 
     static summary = 
@@ -107624,14 +107269,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 1"
 }]
 ,[ "pfs4e02_grommel_1" ,{
 	"helyx": {
@@ -107647,14 +107285,7 @@ export class HelyxPFS4E02
 		}
 	},
 	"name": "Grommel",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 1"
 }]
 ,[ "pfs4e02_storvek_1" ,{
 	"helyx": {
@@ -107670,14 +107301,7 @@ export class HelyxPFS4E02
 		}
 	},
 	"name": "Storvek",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_01.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_01.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 2"
 }]
 ,[ "pfs4e02_xandir_1" ,{
 	"helyx": {
@@ -107693,14 +107317,7 @@ export class HelyxPFS4E02
 		}
 	},
 	"name": "Xandir",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_02.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_02.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 3"
 }]
 ,[ "pfs4e02_grim-rictus-bridge-guard" ,{
 	"helyx": {
@@ -107715,14 +107332,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 1"
 }]
 ,[ "pfs4e02_grommel_2" ,{
 	"helyx": {
@@ -107738,14 +107348,7 @@ export class HelyxPFS4E02
 		}
 	},
 	"name": "Grommel",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 1"
 }]
 ,[ "pfs4e02_storvek_2" ,{
 	"helyx": {
@@ -107761,14 +107364,7 @@ export class HelyxPFS4E02
 		}
 	},
 	"name": "Storvek",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_01.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_01.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 2"
 }]
 ,[ "pfs4e02_xandir_2" ,{
 	"helyx": {
@@ -107784,14 +107380,7 @@ export class HelyxPFS4E02
 		}
 	},
 	"name": "Xandir",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_02.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/bandits/bandit_02.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Bandit 3"
 }]
 ,[ "pfs4e02_zombie-shambler" ,{
 	"helyx": {
@@ -107806,14 +107395,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/zombie_shambler_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/zombie_shambler_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Zombie, Shambler"
 }]
 ,[ "pfs4e02_featherfall_cr2" ,{
 	"helyx": {
@@ -107829,14 +107411,7 @@ export class HelyxPFS4E02
 		}
 	},
 	"name": "Featherfall",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/zombie_owlbear_01.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/zombie_owlbear_01.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Zombie, Owlbear"
 }]
 ,[ "pfs4e02_plague-zombie" ,{
 	"helyx": {
@@ -107851,14 +107426,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/zombie_shambler_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/zombie_shambler_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Zombie, Shambler"
 }]
 ,[ "pfs4e02_featherfall_cr3" ,{
 	"helyx": {
@@ -107874,14 +107442,7 @@ export class HelyxPFS4E02
 		}
 	},
 	"name": "Featherfall",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/zombie_owlbear_01.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/zombies/zombie_owlbear_01.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Zombie, Owlbear"
 }]
 ,[ "pfs4e02_broken-promise_cr2" ,{
 	"helyx": {
@@ -107896,14 +107457,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/pfs4e02/broken-promise.hazard.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/pfs4e02/broken-promise.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Hazard, Broken Promise"
 }]
 ,[ "pfs4e02_broken-promise_cr4" ,{
 	"helyx": {
@@ -107918,14 +107472,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/pfs4e02/broken-promise.hazard.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/pfs4e02/broken-promise.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Hazard, Broken Promise"
 }]
 ,[ "pfs4e02_skeletal-pathfinder" ,{
 	"helyx": {
@@ -107980,14 +107527,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeletal_wolf_00.token.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeletal_wolf_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Skeletal Wolf"
 }]
 ,[ "pfs4e02_skeletal-horse" ,{
 	"helyx": {
@@ -108002,14 +107542,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeletal_horse_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeletal_horse_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Skeletal Horse"
 }]
 ,[ "pfs4e02_seldrick-dralston_cr2" ,{
 	"helyx": {
@@ -108064,14 +107597,7 @@ export class HelyxPFS4E02
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeleton_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/skeleton_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Skeleton, Guard"
 }]
 ,[ "pfs4e02_evni-zongnoss.actor" ,{
 	"helyx": {
@@ -109033,16 +108559,6 @@ export class HelyxPFS4E02
 					]
 				}
 			]
-		},
-		{
-			"helyx": {
-				"idname": "pfs4e02_010076_img",
-				"type": "Page"
-			},
-			"name": "Broken Promise - Vision of Desecration [Image]",
-			"img": {
-				"src": "{{{imgsrc 'shared' 'images/pfs4e02/broken-promise.hazard.webp'}}}"
-			}
 		},
 		{
 			"helyx": {
@@ -111116,7 +110632,7 @@ export class HelyxPFS4E03
     static system="pf2e";
     static content = { from: 3, to: 23};
     static color_assign = "reader";
-    static flags = { midjourney_content: true };
+    static flags = { external_mapping: true };
     static family = "pfs4";
 
     static summary = 
@@ -113610,7 +113126,7 @@ export class HelyxPFS4E04
     static system="pf2e";
     static content = { from: 3, to: 35};
     static color_assign = "reader";
-    static flags = { midjourney_content: true };
+    static flags = { external_mapping: true };
     static family = "pfs4";
 
     static summary = 
@@ -113635,14 +113151,7 @@ export class HelyxPFS4E04
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/scorpions/cave-scorpion_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/scorpions/cave-scorpion_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Scorpion, Cave"
 }]
 ,[ "pfs4e04_giant-scorpion" ,{
 	"helyx": {
@@ -113657,14 +113166,7 @@ export class HelyxPFS4E04
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/scorpions/giant-scorpion_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/scorpions/giant-scorpion_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Scorpion, Giant"
 }]
 ,[ "pfs4e04_mutated-scorpion" ,{
 	"helyx": {
@@ -113679,14 +113181,7 @@ export class HelyxPFS4E04
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/scorpions/giant-scorpion_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/scorpions/giant-scorpion_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Scorpion, Giant"
 }]
 ,[ "pfs4e04_quicksand" ,{
 	"helyx": {
@@ -113701,10 +113196,7 @@ export class HelyxPFS4E04
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/hazards/quicksand.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Hazard, Quicksand"
 }]
 ,[ "pfs4e04_deep-quicksand" ,{
 	"helyx": {
@@ -113719,10 +113211,7 @@ export class HelyxPFS4E04
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/hazards/quicksand.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Hazard, Quicksand"
 }]
 ,[ "pfs4e04_sounrel-lvl3-4" ,{
 	"helyx": {
@@ -116929,7 +116418,7 @@ export class HelyxPFS4E05
     static system="pf2e";
     static content = { from: 3, to: 32};
     static color_assign = "reader";
-    static flags = { midjourney_content: true };
+    static flags = { external_mapping: true };
     static family = "pfs4";
 
     
@@ -116954,14 +116443,7 @@ export class HelyxPFS4E05
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human-dancer_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human-dancer_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human, Dancer"
 }]
 ,[ "pfs4e05_server" ,{
 	"helyx": {
@@ -116976,14 +116458,7 @@ export class HelyxPFS4E05
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human-server_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human-server_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Server"
 }]
 ,[ "pfs4e05_charlatan" ,{
 	"helyx": {
@@ -117065,14 +116540,7 @@ export class HelyxPFS4E05
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/flying-broom_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/flying-broom_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Flying Broom"
 }]
 ,[ "pfs4e05_vrisk" ,{
 	"helyx": {
@@ -117107,14 +116575,7 @@ export class HelyxPFS4E05
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/animated-statue_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/animated-statue_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Animated Statue"
 }]
 ,[ "pfs4e05_skulk-raider" ,{
 	"helyx": {
@@ -120654,7 +120115,7 @@ export class HelyxPFS4E06
     static system="pf2e";
     static content = { from: 3, to: 32};
     static color_assign = "reader";
-    static flags = { midjourney_content: true };
+    static flags = { external_mapping: true };
     static family = "pfs4";
 
     static summary = 
@@ -120714,14 +120175,7 @@ export class HelyxPFS4E06
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/slimes/ochre-jelly_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/slimes/ochre-jelly_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Ochre Jelly"
 }]
 ,[ "pfs4e06_roiling-incant" ,{
 	"helyx": {
@@ -120756,14 +120210,7 @@ export class HelyxPFS4E06
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/slimes/black-pudding_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/slimes/black-pudding_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Black Pudding"
 }]
 ,[ "pfs4e06_harpy-forager" ,{
 	"helyx": {
@@ -120778,14 +120225,7 @@ export class HelyxPFS4E06
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/harpies/harpy_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/harpies/harpy_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Harpy"
 }]
 ,[ "pfs4e06_harpy" ,{
 	"helyx": {
@@ -120800,14 +120240,7 @@ export class HelyxPFS4E06
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/harpies/harpy_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/harpies/harpy_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Harpy"
 }]
 ,[ "pfs4e06_harpy-wailer" ,{
 	"helyx": {
@@ -120822,14 +120255,7 @@ export class HelyxPFS4E06
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/harpies/harpy_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/harpies/harpy_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Harpy"
 }]
 ,[ "pfs4e06_infested-clockwork-vessel" ,{
 	"helyx": {
@@ -124309,7 +123735,7 @@ export class HelyxPFS4E07
     static system="pf2e";
     static content = { from: 3, to: 46};
     static color_assign = "reader";
-    static flags = { midjourney_content: true, midjourney_content_description: "Minus a few hard to do with AI" };
+    static flags = { external_mapping: true, midjourney_content_description: "Minus a few hard to do with AI" };
     static family = "pfs4";
 
     static summary = 
@@ -124665,14 +124091,7 @@ export class HelyxPFS4E07
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/demons/barbazu_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/demons/barbazu_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Barbazu"
 }]
 ,[ "pfs4e07_larcius" ,{
 	"helyx": {
@@ -124687,14 +124106,7 @@ export class HelyxPFS4E07
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/magician_002.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/humans/magician_002.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human, Magicien 2"
 }]
 ,[ "pfs4e07_levaloch" ,{
 	"helyx": {
@@ -124709,14 +124121,7 @@ export class HelyxPFS4E07
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/demons/levaloch_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/demons/levaloch_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Levaloch"
 }]
 ,[ "pfs4e07_grizzly-bear" ,{
 	"helyx": {
@@ -124731,14 +124136,7 @@ export class HelyxPFS4E07
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bears/grizzly_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/bears/grizzly_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Bear"
 }]
 ,[ "pfs4e07_hippopotamus" ,{
 	"helyx": {
@@ -124753,14 +124151,7 @@ export class HelyxPFS4E07
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/hippopotamus/hippopotamus_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/hippopotamus/hippopotamus_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Hippopotamus"
 }]
 ,[ "pfs4e07_elite-cave-bear" ,{
 	"helyx": {
@@ -124776,14 +124167,7 @@ export class HelyxPFS4E07
 		}
 	},
 	"name": "{{{xlf 20068 0 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/bears/cave-bear_002.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/bears/cave-bear_002.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Bear",
 	"adjustment": "elite"
 }]
 ,[ "pfs4e07_nightgaunt" ,{
@@ -131763,7 +131147,7 @@ export class HelyxPFS4E09
     static content = { from: 3, to: 27};
     static language = 'en';
     static color_assign = "default";
-    static flags = { midjourney_content: true };
+    static flags = { external_mapping: true };
     static family = "pfs4";
 
     static summary = 
@@ -131872,14 +131256,7 @@ export class HelyxPFS4E09
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/vampire-spawn_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/vampires/vampire-spawn_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Vampire, Spawn"
 }]
 ,[ "pfs4e09-elite-cunning-vampire-spawn" ,{
 	"helyx": {
@@ -131895,14 +131272,7 @@ export class HelyxPFS4E09
 		}
 	},
 	"name": "Elite Cunning Vampire Spawn",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/vampire-spawn_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/vampires/vampire-spawn_001.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Vampire, Spawn",
 	"adjustment": "elite"
 }]
 ,[ "pfs4e09-cunning-vampire-spawn" ,{
@@ -131918,14 +131288,7 @@ export class HelyxPFS4E09
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/vampire-spawn_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/vampires/vampire-spawn_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Vampire, Spawn"
 }]
 ,[ "pfs4e09-fireball-rune" ,{
 	"helyx": {
@@ -131940,14 +131303,7 @@ export class HelyxPFS4E09
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/runes/fire-rune_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/runes/fire-rune_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Rune, Fire"
 }]
 ,[ "pfs4e09-greater-fireball-rune" ,{
 	"helyx": {
@@ -131962,14 +131318,7 @@ export class HelyxPFS4E09
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/runes/fire-rune_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/runes/fire-rune_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Rune, Fire"
 }]
 ,[ "pfs4e09-major-fireball-rune" ,{
 	"helyx": {
@@ -131984,14 +131333,7 @@ export class HelyxPFS4E09
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/runes/fire-rune_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/runes/fire-rune_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Rune, Fire"
 }]
 ,[ "pfs4e09-basidirond" ,{
 	"helyx": {
@@ -132158,14 +131500,7 @@ export class HelyxPFS4E09
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/vampire_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/vampires/vampire_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Vampire, 001"
 }]
 ,[ "pfs4e09-evasive-vampire-count" ,{
 	"helyx": {
@@ -132180,14 +131515,7 @@ export class HelyxPFS4E09
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/vampire_002.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/vampires/vampire_002.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Vampire, 002"
 }]
 ,[ "pfs4e09-elite-evasive-vampire-count" ,{
 	"helyx": {
@@ -132203,14 +131531,7 @@ export class HelyxPFS4E09
 		}
 	},
 	"name": "Elite Evasive Vampire Count",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/vampires/strigoi_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/vampires/strigoi_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Strigoi, Male",
 	"adjustment": "elite"
 }]
 ,[ "pfs4e09_narsen" ,{
@@ -143998,7 +143319,7 @@ export class HelyxPF2B19
     static title = "pf2eb19";
     static prefix = "pf2eb19";
     static nbPages = 33;
-    static identification = { page: 1, block: 13, value: 'Grim Tidings' };
+    static identification = {position : { page:1,  x:222, y:153}, page: 1, block: 13, value: 'Grim Tidings' };
 
     static resources_directories = [ "actors", "scenes", "items", "assets"];
     static drm = "FREE" ;
@@ -144025,8 +143346,8 @@ export class HelyxPF2B19
     static summary = 
     {
         cover: { image: "cover", x: 0, y: 154, width: 1257, height: 628 },
-        title: "Bounty 19 - {{{xlf 1013 0 'any'}}}",
-        summary: "{{{pxl 3021 7}}} {{{pxl 3029 7}}}"
+        title: "Bounty 19 - {{{xylf 1 222 153 1 'any'}}}",
+        summary: "{{{pxyl 3 72 543 8}}} {{{pxyl 3 81 447 8}}}"
     };
 
 
@@ -144085,7 +143406,7 @@ export class HelyxPF2B19
 		"type": "JournalEntry",
 		"target": "pf2eb19_journals"
 	},
-	"name": "00 {{{xlf 1013 0 'any'}}}",
+	"name": "00 {{{xylf 1 222 153 1 'any'}}}",
 	"pages": [
 		{
 			"helyx": {
@@ -144112,19 +143433,19 @@ export class HelyxPF2B19
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xlf 2018 0 'b'}}} {{{xl 2020 0}}}",
-						"{{{xlf 2021 0 'b'}}} {{{xl 2023 0}}}",
-						"{{{xlf 2024 0 'b'}}} {{{xl 2026 0}}}",
-						"{{{xlf 2027 0 'b'}}} {{{xl 2029 0}}}",
-						"{{{xlf 2030 0 'b'}}} {{{xl 2032 0}}}",
-						"{{{xlf 2033 0 'b'}}} {{{xl 2035 0}}}",
-						"{{{xlf 2036 0 'b'}}} {{{xl 2038 0}}}",
-						"{{{xlf 2039 0 'b'}}} {{{xl 2041 0}}}",
-						"{{{xlf 2042 0 'b'}}} {{{xl 2044 0}}}",
-						"{{{xlf 2045 0 'b'}}} {{{xl 2047 0}}}",
-						"{{{xlf 2048 0 'b'}}} {{{xl 2050 0}}}",
-						"{{{xlf 2051 0 'b'}}} {{{xl 2053 0}}}",
-						"{{{xlf 2054 0 'b'}}} {{{xl 2056 0}}}"
+						"{{{xylf 2 22 680 1 'b'}}} {{{xyl 2 22 671 1}}}",
+						"{{{xylf 2 22 654 1 'b'}}} {{{xyl 2 22 645 1}}}",
+						"{{{xylf 2 22 628 1 'b'}}} {{{xyl 2 22 619 1}}}",
+						"{{{xylf 2 22 602 1 'b'}}} {{{xyl 2 22 593 1}}}",
+						"{{{xylf 2 22 576 1 'b'}}} {{{xyl 2 22 567 1}}}",
+						"{{{xylf 2 22 550 1 'b'}}} {{{xyl 2 22 541 1}}}",
+						"{{{xylf 2 22 524 1 'b'}}} {{{xyl 2 22 515 1}}}",
+						"{{{xylf 2 22 498 1 'b'}}} {{{xyl 2 22 489 1}}}",
+						"{{{xylf 2 22 472 1 'b'}}} {{{xyl 2 22 463 1}}}",
+						"{{{xylf 2 22 446 1 'b'}}} {{{xyl 2 22 437 1}}}",
+						"{{{xylf 2 22 420 1 'b'}}} {{{xyl 2 22 411 1}}}",
+						"{{{xylf 2 22 394 1 'b'}}} {{{xyl 2 22 385 1}}}",
+						"{{{xylf 2 22 368 1 'b'}}} {{{xyl 2 22 359 1}}}"
 					]
 				}
 			]
@@ -144135,23 +143456,23 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "HOW TO PLAY"
 			},
-			"name": "{{{xlf 2013 0 'an'}}}",
+			"name": "{{{xylf 2 51 267 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 2013 0 'an'}}}"
+					"title": "{{{xylf 2 51 267 1 'an'}}}"
 				},
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xf 2013 'an'}}}",
+					"title": "{{{xylf 2 51 267 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xf 2017 'tn'}}}",
-								"{{{xf 2016 'tn'}}}",
-								"{{{xf 2015 'tn'}}}"
+								"{{{xylf 2 58 230 1 'nt'}}}",
+								"{{{xylf 2 58 188 1 'nt'}}}",
+								"{{{xylf 2 58 140 1 'nt'}}}"
 							]
 						}
 					]
@@ -144159,14 +143480,14 @@ export class HelyxPF2B19
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xf 2069 'an'}}}",
+					"title": "{{{xylf 2 353 567 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 2070 6}}}",
-								"{{{xl 2077 2}}}",
-								"{{{xl 2080 2}}}"
+								"{{{xyl 2 232 556 7}}}",
+								"{{{xyl 2 232 545 3}}}",
+								"{{{xyl 2 232 535 3}}}"
 							]
 						}
 					]
@@ -144174,14 +143495,14 @@ export class HelyxPF2B19
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xf 2083 'an'}}}",
+					"title": "{{{xylf 2 333 483 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 2084 5}}}",
-								"{{{xl 2090 9}}}",
-								"{{{xl 2100 6}}}"
+								"{{{xyl 2 327 471 6}}}",
+								"{{{xyl 2 327 399 10}}}",
+								"{{{xyl 2 241 279 7}}}"
 							]
 						}
 					]
@@ -144189,12 +143510,12 @@ export class HelyxPF2B19
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xf 2107 'an'}}}",
+					"title": "{{{xylf 2 348 195 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 2108 9}}}"
+								"{{{xyl 2 343 183 10}}}"
 							]
 						}
 					]
@@ -144217,16 +143538,16 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "Where On Golarion?"
 			},
-			"name": "{{{xlf 3012 0 'an'}}}",
+			"name": "{{{xylf 3 358 548 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 3012 0 'an'}}}"
+					"title": "{{{xylf 3 358 548 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3013 6}}}"
+						"{{{xyl 3 321 531 7}}}"
 					]
 				}
 			]
@@ -144237,17 +143558,17 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "Adventure Background"
 			},
-			"name": "{{{xlf 3020 0 'an'}}}",
+			"name": "{{{xylf 3 72 555 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 3020 0 'an'}}}"
+					"title": "{{{xylf 3 72 555 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3021 7}}}",
-						"{{{xl 3029 7}}}"
+						"{{{xyl 3 72 543 8}}}",
+						"{{{xyl 3 81 447 8}}}"
 					]
 				}
 			]
@@ -144258,16 +143579,16 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "Summary"
 			},
-			"name": "{{{xlf 3037 0 'an'}}}",
+			"name": "{{{xylf 3 72 339 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 3037 0 'an'}}}"
+					"title": "{{{xylf 3 72 339 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3038 6}}}"
+						"{{{xyl 3 72 327 7}}}"
 					]
 				}
 			]
@@ -144278,45 +143599,45 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "Getting Started"
 			},
-			"name": "{{{xlf 3045 0 'an'}}}",
+			"name": "{{{xylf 3 72 231 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 3045 0 'an'}}}"
+					"title": "{{{xylf 3 72 231 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3046 4}}}",
-						"{{{xl 3051 0}}}"
+						"{{{xyl 3 72 219 5}}}",
+						"{{{xyl 3 81 159 1}}}"
 					]
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 3052 4}}}",
-						"{{{xl 3057 0}}}",
-						"{{{xl 3058 3}}}"
+						"{{{xyl 3 72 135 5}}}",
+						"{{{xyl 3 81 75 1}}}",
+						"{{{xyl 3 321 303 4}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3062 6}}}",
-						"{{{xl 3069 7}}}",
-						"{{{xl 4021 1}}}"
+						"{{{xyl 3 321 243 7}}}",
+						"{{{xyl 3 321 159 8}}}",
+						"{{{xyl 4 81 519 2}}}"
 					]
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 4023 1}}}"
+						"{{{xyl 4 72 483 2}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 4025 6}}}"
+						"{{{xyl 4 81 447 7}}}"
 					]
 				}
 			]
@@ -144327,11 +143648,11 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "the Bounty"
 			},
-			"name": "{{{xlf 4011 0 'an'}}}",
+			"name": "{{{xylf 4 148 669 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 4011 0 'an'}}}"
+					"title": "{{{xylf 4 148 669 1 'an'}}}"
 				},
 				{
 					"type": "raw",
@@ -144349,29 +143670,29 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "the Sign of the Blooming Branch"
 			},
-			"name": "{{{xlf 4032 0 'an'}}}",
+			"name": "{{{xylf 4 72 375 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 4032 0 'an'}}}"
+					"title": "{{{xylf 4 72 375 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 4033 5}}}",
-						"{{{xl 4039 4}}}"
+						"{{{xyl 4 72 363 6}}}",
+						"{{{xyl 4 81 291 5}}}"
 					]
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 4044 2}}}"
+						"{{{xyl 4 72 219 3}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 4047 10}}}"
+						"{{{xyl 4 81 171 11}}}"
 					]
 				}
 			]
@@ -144382,27 +143703,27 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "Ask And Answer"
 			},
-			"name": "{{{xlf 4058 0 'an'}}}",
+			"name": "{{{xylf 4 312 651 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 4058 0 'an'}}}"
+					"title": "{{{xylf 4 312 651 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 4059 7}}}"
+						"{{{xyl 4 312 639 8}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "development",
-					"title": "{{{xlf 4067 0 'nd'}}}",
+					"title": "{{{xylf 4 321 567 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 4068 12}}}"
+								"{{{xyl 4 484 567 13}}}"
 							]
 						}
 					]
@@ -144410,12 +143731,12 @@ export class HelyxPF2B19
 				{
 					"type": "section",
 					"section": "development",
-					"title": "{{{xlf 4081 0 'nd'}}}",
+					"title": "{{{xylf 4 321 411 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 4082 13}}}"
+								"{{{xyl 4 452 411 14}}}"
 							]
 						}
 					]
@@ -144423,12 +143744,12 @@ export class HelyxPF2B19
 				{
 					"type": "section",
 					"section": "development",
-					"title": "{{{xlf 4096 0 'nd'}}}",
+					"title": "{{{xylf 4 321 255 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 4097 8}}}"
+								"{{{xyl 4 484 255 9}}}"
 							]
 						}
 					]
@@ -144441,16 +143762,16 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "A. the Narrow Paths"
 			},
-			"name": "{{{xlf 4106 0 'an'}}}",
+			"name": "{{{xylf 4 312 147 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 4106 0 'an'}}}"
+					"title": "{{{xylf 4 312 147 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 4107 5}}}"
+						"{{{xyl 4 312 135 6}}}"
 					]
 				}
 			]
@@ -144461,27 +143782,27 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "A1  Timber!"
 			},
-			"name": "{{{xlf 5011 2 'an'}}}",
+			"name": "{{{xylf 5 72 687 3 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 5011 2 'an'}}}"
+					"title": "{{{xylf 5 72 687 3 'an'}}}"
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 5014 1}}}"
+						"{{{xyl 5 72 663 2}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "hazard",
-					"title": "{{{xlf 5016 0 'nd'}}}",
+					"title": "{{{xylf 5 81 627 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 5017 4}}}"
+								"{{{xyl 5 117 627 5}}}"
 							]
 						}
 					]
@@ -144489,13 +143810,13 @@ export class HelyxPF2B19
 				{
 					"type": "hazard",
 					"ref": "pf2eb19_falling-tree",
-					"cr": "{{{xlf 5024 0 'n'}}}",
-					"tags": "{{{pf2tags 5025 'ancestry'}}}",
+					"cr": "{{{xylf 5 250 555 1 'n'}}}",
+					"tags": "{{{xytags 5 79 542 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 5026 1}}}",
-						"{{{pxl 5028 1}}}<hr/>",
-						"{{{pxl 5030 2}}}",
-						"{{{pxl 5033 8}}}"
+						"{{{pxyl 5 72 531 2}}}",
+						"{{{pxyl 5 72 519 2}}}<hr/>",
+						"{{{pxyl 5 72 507 3}}}",
+						"{{{pxyl 5 72 483 9}}}"
 					]
 				}
 			]
@@ -144506,22 +143827,22 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "A2  Rocky Outcropping"
 			},
-			"name": "{{{xlf 5042 2 'an'}}}",
+			"name": "{{{xylf 5 72 435 3 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 5042 2 'an'}}}"
+					"title": "{{{xylf 5 72 435 3 'an'}}}"
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 5045 1}}}"
+						"{{{xyl 5 72 411 2}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 5047 4}}}"
+						"{{{xyl 5 81 375 5}}}"
 					]
 				}
 			]
@@ -144532,34 +143853,34 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "A3  Grim Kingdom "
 			},
-			"name": "{{{xlf 5052 2 'an'}}}",
+			"name": "{{{xylf 5 72 327 3 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 5052 2 'an'}}}",
-					"cr": "{{{xlf 5056 0 'n'}}}"
+					"title": "{{{xylf 5 72 327 3 'an'}}}",
+					"cr": "{{{xylf 5 217 327 1 'n'}}}"
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 5057 4}}}"
+						"{{{xyl 5 72 303 5}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 5062 7}}}"
+						"{{{xyl 5 81 231 8}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "encounter",
-					"title": "{{{xlf 5070 0 'nd'}}}",
+					"title": "{{{xylf 5 81 135 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 5071 5}}}"
+								"{{{xyl 5 125 135 6}}}"
 							]
 						}
 					]
@@ -144567,34 +143888,34 @@ export class HelyxPF2B19
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 5077 11}}}{{{xl 7011 7}}}",
-						"{{{xl 7019 6}}}"
+						"{{{xyl 5 321 687 12}}}{{{xyl 7 72 687 8}}}",
+						"{{{xyl 7 81 591 7}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pf2eb19_grimstalker",
-					"cr": "{{{slicexlf 7026 2 'n' 12 11}}}",
-					"tags": "{{{pf2tags 7029 'alignment' 7030 'size' 7031 'ancestry'}}}",
+					"cr": "{{{slicexylf 7 72 495 3 'n' 12 11}}}",
+					"tags": "{{{xytags 7 77 482 'alignment'}}}{{{xytags 7 95 482 'size'}}}{{{xytags 7 132 482 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 7032 1}}} {{{pxl 7034 1}}} {{{pxl 7036 2}}} {{{pxl 7039 11}}} {{{pxl 7051 2}}}<hr/>",
-						"{{{pxl 7054 7}}} {{{pxl 7062 3}}}<hr/>",
-						"{{{pxl 7066 1}}} {{{pxl 7068 5}}} {{{pxl 7074 8}}} {{{pxl 7083 12}}} {{{pxl 7096 5}}}"
+						"{{{pxyl 7 72 471 2}}} {{{pxyl 7 72 459 2}}} {{{pxyl 7 72 447 3}}} {{{pxyl 7 72 423 12}}} {{{pxyl 7 72 411 3}}}<hr/>",
+						"{{{pxyl 7 72 387 8}}} {{{pxyl 7 72 375 4}}}<hr/>",
+						"{{{pxyl 7 72 363 2}}} {{{pxyl 7 72 351 6}}} {{{pxyl 7 72 327 9}}} {{{pxyl 7 72 291 13}}} {{{pxyl 7 72 243 6}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pf2eb19_assassin-vine",
 					"amount": "(0)",
-					"cr": "{{{slicexlf 7102 2 'n' 18 11}}}",
-					"tags": "{{{pf2tags 7105 'alignment' 7106 'size' 7107 'ancestry'}}}",
+					"cr": "{{{slicexylf 7 72 171 3 'n' 18 11}}}",
+					"tags": "{{{xytags 7 77 158 'alignment'}}}{{{xytags 7 95 158 'size'}}}{{{xytags 7 132 158 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 7108 1}}}",
-						"{{{xl 7110 1}}}",
-						"{{{xl 7112 11}}}",
-						"{{{pxl 7124 3}}}<hr/>",
-						"{{{pxl 7128 7}}} {{{pxl 7136 3}}} {{{pxl 7140 14}}}<hr/>",
-						"{{{pxl 7155 1}}} {{{pxl 7157 5}}} {{{pxl 7162 3}}}"
+						"{{{pxyl 7 72 147 2}}}",
+						"{{{xyl 7 72 135 2}}}",
+						"{{{xyl 7 72 123 12}}}",
+						"{{{pxyl 7 72 111 4}}}<hr/>",
+						"{{{pxyl 7 72 87 8}}} {{{pxyl 7 72 75 4}}} {{{pxyl 7 312 555 15}}}<hr/>",
+						"{{{pxyl 7 312 435 2}}} {{{pxyl 7 312 423 6}}} {{{pxyl 7 321 411 4}}}"
 					]
 				}
 			]
@@ -144605,29 +143926,29 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "Conclusion"
 			},
-			"name": "{{{xlf 7166 0 'an'}}}",
+			"name": "{{{xylf 7 312 375 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 7166 0 'an'}}}"
+					"title": "{{{xylf 7 312 375 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 7167 7}}}",
-						"{{{xl 7175 4}}}",
-						"{{{xl 7180 3}}}"
+						"{{{xyl 7 312 363 8}}}",
+						"{{{xyl 7 321 267 5}}}",
+						"{{{xyl 7 321 207 4}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "success",
-					"title": "{{{xlf 7184 0 'an'}}}",
+					"title": "{{{xylf 7 312 147 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 7185 5}}}"
+								"{{{xyl 7 312 135 6}}}"
 							]
 						}
 					]
@@ -144642,14 +143963,14 @@ export class HelyxPF2B19
 		"type": "JournalEntry",
 		"target": "pf2eb19_journals"
 	},
-	"name": "02 {{{xlf 8011 0 'an'}}}",
+	"name": "02 {{{xylf 8 224 699 1 'an'}}}",
 	"pages": [
 		{
 			"helyx": {
 				"idname": "pf2eb19_apx1_img1",
 				"type": "Page"
 			},
-			"name": "{{{xlf 8013 0 'an'}}} [Image]",
+			"name": "{{{xylf 8 81 417 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'leaflet'}}}"
 			}
@@ -144659,7 +143980,7 @@ export class HelyxPF2B19
 				"idname": "pf2eb19_apx1_img2",
 				"type": "Page"
 			},
-			"name": "{{{xlf 8012 0 'an'}}} [Image]",
+			"name": "{{{xylf 8 370 417 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'winter-forest-grimstalker.actor'}}}"
 			}
@@ -144680,21 +144001,21 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "organized play"
 			},
-			"name": "{{{xlf 9011 0 'an'}}}",
+			"name": "{{{xylf 9 72 687 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 9011 0 'an'}}}"
+					"title": "{{{xylf 9 72 687 1 'an'}}}"
 				},
 				{
 					"type": "section",
 					"section": "development",
-					"title": "{{{xlf 9012 0 'an'}}}",
+					"title": "{{{xylf 9 72 663 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 9013 3}}}"
+								"{{{xyl 9 72 651 4}}}"
 							]
 						}
 					]
@@ -144702,7 +144023,7 @@ export class HelyxPF2B19
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 9017 7}}}"
+						"{{{xyl 9 81 603 8}}}"
 					]
 				}
 			]
@@ -144713,68 +144034,68 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "PAIZO INC "
 			},
-			"name": "{{{xlf 11122 0 'an'}}}",
+			"name": "{{{xylf 11 317 694 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 11122 0 'an'}}}"
+					"title": "{{{xylf 11 317 694 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 11123 1}}}",
-						"{{{xl 11125 1}}}",
-						"{{{xl 11127 1}}}",
-						"{{{xl 11129 1}}}",
-						"{{{xl 11131 3}}}",
-						"{{{xl 11135 2}}}",
-						"{{{xl 11138 1}}}",
-						"{{{xl 11140 1}}}",
-						"{{{xl 11142 1}}}",
-						"{{{xl 11144 1}}}",
-						"{{{xl 11146 1}}}",
-						"{{{xl 11148 1}}}",
-						"{{{xl 11150 1}}}",
-						"{{{xl 11152 1}}}",
-						"{{{xl 11154 1}}}",
-						"{{{xl 11156 1}}}",
-						"{{{xl 11158 1}}}",
-						"{{{xl 11160 1}}}",
-						"{{{xl 11162 1}}}",
-						"{{{xl 11164 1}}}",
-						"{{{xl 11166 1}}}",
-						"{{{xl 11168 1}}}",
-						"{{{xl 11170 1}}}",
-						"{{{xl 11172 1}}}",
-						"{{{xl 11174 1}}}",
-						"{{{xl 11176 1}}}",
-						"{{{xl 11178 1}}}",
-						"{{{xl 11180 1}}}",
-						"{{{xl 11182 1}}}",
-						"{{{xl 11184 1}}}",
-						"{{{xl 11186 1}}}",
-						"{{{xl 11188 1}}}",
-						"{{{xl 11190 1}}}",
-						"{{{xl 11192 1}}}",
-						"{{{xl 11194 1}}}",
-						"{{{xl 11196 1}}}",
-						"{{{xl 11198 1}}}",
-						"{{{xl 11200 1}}}",
-						"{{{xl 11202 1}}}",
-						"{{{xl 11204 1}}}",
-						"{{{xl 11206 1}}}",
-						"{{{xl 11208 1}}}",
-						"{{{xl 11210 1}}}",
-						"{{{xl 11212 1}}}",
-						"{{{xl 11214 1}}}",
-						"{{{xl 11216 1}}}",
-						"{{{xl 11218 1}}}",
-						"{{{xl 11220 1}}}",
-						"{{{xl 11222 2}}}",
-						"{{{xl 11225 1}}}",
-						"{{{xl 11227 1}}}",
-						"{{{xl 11229 1}}}",
-						"{{{xl 11231 2}}}"
+						"{{{xyl 11 317 686 2}}}",
+						"{{{xyl 11 317 678 2}}}",
+						"{{{xyl 11 317 671 2}}}",
+						"{{{xyl 11 317 663 2}}}",
+						"{{{xyl 11 317 655 4}}}",
+						"{{{xyl 11 317 640 3}}}",
+						"{{{xyl 11 317 624 2}}}",
+						"{{{xyl 11 317 617 2}}}",
+						"{{{xyl 11 317 609 2}}}",
+						"{{{xyl 11 317 601 2}}}",
+						"{{{xyl 11 317 594 2}}}",
+						"{{{xyl 11 317 586 2}}}",
+						"{{{xyl 11 317 578 2}}}",
+						"{{{xyl 11 317 570 2}}}",
+						"{{{xyl 11 317 563 2}}}",
+						"{{{xyl 11 317 555 2}}}",
+						"{{{xyl 11 317 547 2}}}",
+						"{{{xyl 11 317 540 2}}}",
+						"{{{xyl 11 317 532 2}}}",
+						"{{{xyl 11 317 524 2}}}",
+						"{{{xyl 11 317 517 2}}}",
+						"{{{xyl 11 317 509 2}}}",
+						"{{{xyl 11 317 501 2}}}",
+						"{{{xyl 11 317 493 2}}}",
+						"{{{xyl 11 317 486 2}}}",
+						"{{{xyl 11 317 478 2}}}",
+						"{{{xyl 11 317 470 2}}}",
+						"{{{xyl 11 317 463 2}}}",
+						"{{{xyl 11 317 455 2}}}",
+						"{{{xyl 11 317 447 2}}}",
+						"{{{xyl 11 317 440 2}}}",
+						"{{{xyl 11 317 432 2}}}",
+						"{{{xyl 11 317 424 2}}}",
+						"{{{xyl 11 317 416 2}}}",
+						"{{{xyl 11 317 409 2}}}",
+						"{{{xyl 11 317 401 2}}}",
+						"{{{xyl 11 317 393 2}}}",
+						"{{{xyl 11 317 386 2}}}",
+						"{{{xyl 11 317 378 2}}}",
+						"{{{xyl 11 317 370 2}}}",
+						"{{{xyl 11 317 363 2}}}",
+						"{{{xyl 11 317 355 2}}}",
+						"{{{xyl 11 317 347 2}}}",
+						"{{{xyl 11 317 339 2}}}",
+						"{{{xyl 11 317 332 2}}}",
+						"{{{xyl 11 317 324 2}}}",
+						"{{{xyl 11 317 316 2}}}",
+						"{{{xyl 11 317 309 2}}}",
+						"{{{xyl 11 317 301 3}}}",
+						"{{{xyl 11 317 286 2}}}",
+						"{{{xyl 11 317 278 2}}}",
+						"{{{xyl 11 317 270 2}}}",
+						"{{{xyl 11 317 262 3}}}"
 					]
 				}
 			]
@@ -144785,34 +144106,34 @@ export class HelyxPF2B19
 				"type": "Page",
 				"notes": "Open Game License Version 1.0a"
 			},
-			"name": "{{{xlf 11011 0 'an'}}}",
+			"name": "{{{xylf 11 72 694 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 11011 0 'an'}}}"
+					"title": "{{{xylf 11 72 694 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 11012 27}}}",
-						"{{{xl 11040 5}}}",
-						"{{{xl 11046 1}}}",
-						"{{{xl 11048 2}}}",
-						"{{{xl 11051 2}}}",
-						"{{{xl 11054 4}}}",
-						"{{{xl 11059 9}}}",
-						"{{{xl 11069 1}}}",
-						"{{{xl 11071 3}}}",
-						"{{{xl 11075 1}}}",
-						"{{{xl 11077 2}}}",
-						"{{{xl 11080 2}}}",
-						"{{{xl 11083 2}}}",
-						"{{{xl 11086 1}}}",
-						"{{{xl 11088 2}}}",
-						"{{{xl 11091 3}}}",
-						"{{{xl 11095 2}}}",
-						"{{{xl 11098 1}}} {{{xl 11100 1}}}",
-						"{{{xl 11102 6}}} {{{xl 11109 4}}} {{{xl 11114 7}}}"
+						"{{{xyl 11 81 687 28}}}",
+						"{{{xyl 11 81 482 6}}}",
+						"{{{xyl 11 81 438 2}}}",
+						"{{{xyl 11 81 424 3}}}",
+						"{{{xyl 11 81 402 3}}}",
+						"{{{xyl 11 81 380 5}}}",
+						"{{{xyl 11 81 343 10}}}",
+						"{{{xyl 11 81 270 2}}}",
+						"{{{xyl 11 81 256 4}}}",
+						"{{{xyl 11 81 227 2}}}",
+						"{{{xyl 11 81 212 3}}}",
+						"{{{xyl 11 81 190 3}}}",
+						"{{{xyl 11 81 168 3}}}",
+						"{{{xyl 11 81 146 2}}}",
+						"{{{xyl 11 81 132 3}}}",
+						"{{{xyl 11 81 117 4}}}",
+						"{{{xyl 11 81 95 3}}}",
+						"{{{xyl 11 81 81 2}}} {{{xyl 11 312 195 2}}}",
+						"{{{xyl 11 312 179 7}}} {{{xyl 11 312 139 5}}} {{{xyl 11 312 111 8}}}"
 					]
 				}
 			]
@@ -144825,7 +144146,7 @@ export class HelyxPF2B19
 		"target": "pf2eb19_scenes",
 		"type": "Scene"
 	},
-	"name": "{{{xlf 4106 0 'an'}}}",
+	"name": "{{{xylf 4 312 147 1 'an'}}}",
 	"includes": [
 		"modules/pf2-pdf-en-import/datas/imports/bounties/pf2e-bounty-19-grim-tidings/scene_a.json"
 	],
@@ -144918,13 +144239,13 @@ export class HelyxPF2B19
     static folders = 
     [ 
         // Journal
-        { idname: "pf2eb19_journals", name: 'Bounty 19 - {{{xlf 1013 0 "any"}}}', type: "JournalEntry" },  
+        { idname: "pf2eb19_journals", name: 'Bounty 19 - {{{xylf 1 222 153 1 "any"}}}', type: "JournalEntry" },  
       
         // Actors
-        { idname: "pf2eb19_actors", name: 'Bounty 19 - {{{xlf 1013 0 "any"}}}', type: "Actor" },        
+        { idname: "pf2eb19_actors", name: 'Bounty 19 - {{{xylf 1 222 153 1 "any"}}}', type: "Actor" },        
       
         // Scenes
-        { idname: "pf2eb19_scenes", name: 'Bounty 19 - {{{xlf 1013 0 "any"}}}', type: "Scene" },  
+        { idname: "pf2eb19_scenes", name: 'Bounty 19 - {{{xylf 1 222 153 1 "any"}}}', type: "Scene" },  
     ];
 
     static fonts = [{"position":2070,"roles":["paragraph"],"flags":{"bold":true}}
@@ -145006,10 +144327,9 @@ export class HelyxPF2B19
 
   static itemsFiles =     
   [ 
-     "actors", "journals/00_cover", "journals/01_adventure", "journals/02_apx1", "journals/03_backmatter", "scenes/scene_a"
+     "actors_v6", "journals/00_cover_v6", "journals/01_adventure_v6", "journals/02_apx1_v6", "journals/03_backmatter_v6", "scenes/scene_a"
   ]; 
 }
-
 export class HelyxPF2B20
 {
     static idname = "pf2e-bounty-20-burden-in-bloodcove";
@@ -147579,7 +146899,7 @@ export class HelyxAFistfulOfFlowers
     static system="pf2e";
     static language="en";
     static content = { from: 4, to: 17};
-    static flags = { midjourney_content: true, tokens_on_maps: true };
+    static flags = { midjourney_content: false, tokens_on_maps: true, external_mapping: true };
     static family = "freebies";
 
     static summary = 
@@ -147678,14 +146998,7 @@ export class HelyxAFistfulOfFlowers
 		}
 	},
 	"name": "{{{slicexylf 11 72 687 1 'an' 0 25}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/homunculus/homunculus_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/homunculus/homunculus_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Homunculus, Candle"
 }]
 ,[ "afof_darius" ,{
 	"helyx": {
@@ -149362,7 +148675,7 @@ s
     static system="pf2e";
     static language="en";
     static content = { from: 4, to: 18};
-    static flags = { midjourney_content: true, tokens_on_maps: true };
+    static flags = { midjourney_content: false, tokens_on_maps: true, external_mapping: true };
     static family = "freebies";
 
     static summary = 
@@ -149562,14 +148875,7 @@ s
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/dogs/black-dog_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' '/images/dogs/black-dog_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Dog, Black Companion"
 }]
 ,[ "affm_fluff-fang" ,{
 	"helyx": {
@@ -151238,7 +150544,7 @@ export class HelyxThresholdOfKnowledge
     static language="en";
     static content = { from: 2, to: 18};
     static color_assign = "reader";
-    static flags = { midjourney_content: true, tokens_on_maps: true };
+    static flags = { midjourney_content: false, external_mapping: true, tokens_on_maps: true };
     static family = "freebies";
 
     static summary = 
@@ -151342,14 +150648,7 @@ export class HelyxThresholdOfKnowledge
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/beetles/flash-beetle_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/beetles/flash-beetle_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Beetle, Flash"
 }]
 ,[ "tokn_gusa" ,{
 	"helyx": {
@@ -151364,17 +150663,7 @@ export class HelyxThresholdOfKnowledge
 			}
 		}
 	},
-	"name": [
-		{
-			"op": "xylf",
-			"src": {
-				"page": 9,
-				"x": 312,
-				"y": 291
-			},
-			"flags": "'an'"
-		}
-	],
+	"name": "{{{xylf 9 312 291 -1 'an'}}}",
 	"img": {
 		"src": "{{{imgsrc 'shared' 'images/leshies/fungus-leshy_00.actor.webp'}}}",
 		"origin": "MJ"
@@ -151397,17 +150686,7 @@ export class HelyxThresholdOfKnowledge
 			}
 		}
 	},
-	"name": [
-		{
-			"op": "xylf",
-			"src": {
-				"page": 10,
-				"x": 72,
-				"y": 483
-			},
-			"flags": "'anzye'"
-		}
-	],
+	"name": "{{{xylf 10 72 483 -1 'aenyz'}}}",
 	"img": {
 		"src": "{{{imgsrc 'shared' 'images/sea-devils/sea-devil_00.actor.webp'}}}",
 		"origin": "MJ"
@@ -151431,25 +150710,8 @@ export class HelyxThresholdOfKnowledge
 			}
 		}
 	},
-	"name": [
-		{
-			"op": "xylf",
-			"src": {
-				"page": 10,
-				"x": 72,
-				"y": 123
-			},
-			"flags": "'an'"
-		}
-	],
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/crocodiles/crocodile_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/crocodiles/crocodile_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"name": "{{{xylf 10 72 123 -1 'an'}}}",
+	"model": "Crocodile"
 }]
 ,[ "tokn_ngaja" ,{
 	"helyx": {
@@ -151464,17 +150726,7 @@ export class HelyxThresholdOfKnowledge
 			}
 		}
 	},
-	"name": [
-		{
-			"op": "xylf",
-			"src": {
-				"page": 10,
-				"x": 312,
-				"y": 411
-			},
-			"flags": "'an'"
-		}
-	],
+	"name": "{{{xylf 10 312 411 -1 'an'}}}",
 	"img": {
 		"src": "{{{imgpath 'ngaja.actor'}}}"
 	},
@@ -153414,7 +152666,7 @@ export class HelyxLittleTroubleInBigAbsalom
     static system="pf2e";
     static content = { from: 4, to: 18};
     static color_assign = "reader";
-    static flags = { midjourney_content: true, tokens_on_maps: true };
+    static flags = { external_mapping: true, tokens_on_maps: true };
     static family = "freebies";
 
     static summary = 
@@ -153632,14 +152884,7 @@ export class HelyxLittleTroubleInBigAbsalom
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/beetles/flash-beetle_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/beetles/flash-beetle_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Beetle, Flash"
 }]
 ,[ "ltba_precarious-pile" ,{
 	"helyx": {
@@ -153690,14 +152935,7 @@ export class HelyxLittleTroubleInBigAbsalom
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/taxidermic-dog_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/taxidermic-dog_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Taxidermic Dog"
 }]
 ,[ "ltba_princess-sunset" ,{
 	"helyx": {
@@ -153712,14 +152950,7 @@ export class HelyxLittleTroubleInBigAbsalom
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/animated-rocking-horse_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animated-items/animated-rocking-horse_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Animated Rocking Horse"
 }]
 ,[ "ltba_camilla" ,{
 	"helyx": {
@@ -159267,6 +158498,123 @@ export class HelyxTheScourgeOfSheerleaf
 }
 
 
+export class HelyxThingsGoToHell
+{
+    static idname = "things-go-to-hell";
+
+    static title = "tgth";
+    static prefix = "tgth";
+    static nbPages = 20;
+    static identification = {position : { page:1,  x:92, y:511}, value: 'Things Go to Hell ' };
+
+    static resources_directories = [ "actors", "scenes", "items", "assets"];
+    static drm = "FREE" ;
+    static system="pf2e";
+    static content = { from: 3, to: 20};
+    static language = 'en';
+    static color_assign = "default";
+    static flags = { midjourney_content: false, tokens_on_maps: true };
+    static midsize = 300;
+    static family = "freebies";
+
+    static summary = 
+    {
+        cover: { image: "cover", x: 0, y: 984, width: 3553, height: 1924 },
+        title: "{{{xylf 1 92 511 1 'any'}}}",
+        summary: "{{{pxyl 1 92 623 7}}}  {{{pxyl 1 92 511 5}}}"
+    };
+
+    static contents = 
+    {
+        pfs_how_to_play: { locations: { page: 2, bounds: { left: 40, top: 300, right: 200, bottom: 170}}},
+        front_credits: { locations: { page: 2, bounds: { left: 11, top: 710, right: 200, bottom: 300 } } },
+        credits: { locations: { page: 25, bounds: { left: 311, top: 700, right: 500, bottom: 230 } } },
+        license: { locations: { page: 25, bounds:
+          [
+            { left: 70, top: 694, right: 300, bottom: 95 },
+            { left: 310, top: 178, right: 300, bottom: 95 }
+          ] 
+        
+        }} 
+    };
+
+    static fonts = [{"position":3000,"flags":{},"roles":["journal-title"],"index":0}
+,{"position":3001,"flags":{"skip":true},"roles":["unknow"],"index":1}
+,{"position":3007,"flags":{"italic":true},"roles":["paragraph"],"index":2}
+,{"position":3008,"flags":{},"roles":["paragraph"],"index":3}
+,{"position":3019,"flags":{"bold":true},"roles":["paragraph"],"index":4}
+,{"position":3021,"flags":{"bold":true},"roles":["paragraph"],"index":5}
+,{"position":3022,"flags":{},"roles":["paragraph"],"index":6}
+,{"position":3050,"flags":{"bold":true},"roles":["paragraph"],"index":7}
+,{"position":3051,"flags":{},"roles":["paragraph"],"index":8}
+,{"position":3054,"flags":{"skip":true},"roles":["unknow"],"index":9}
+,{"position":4000,"flags":{"skip":true},"roles":["page-number"],"index":10}
+,{"position":4002,"flags":{},"roles":["paragraph"],"index":11}
+,{"position":5016,"flags":{},"roles":["read-section"],"index":12}
+,{"position":5078,"flags":{"sideblock":true},"roles":["journal-title"],"index":13}
+,{"position":5079,"flags":{"sideblock":true},"roles":["paragraph"],"index":14}
+,{"position":5082,"flags":{"bold":true,"sideblock":true},"roles":["paragraph"],"index":15}
+,{"position":6018,"flags":{},"roles":["journal-title"],"index":16}
+,{"position":6039,"flags":{},"roles":["read-section"],"index":17}
+,{"position":6044,"flags":{"bold":true},"roles":["paragraph","section"],"index":18}
+,{"position":6048,"flags":{"bold":true,"italic":true},"roles":["paragraph"],"index":19}
+,{"position":6061,"flags":{},"roles":["creature-title"],"index":20}
+,{"position":6082,"flags":{"sideblock":true},"roles":["image-name","journal-title"],"index":21}
+,{"position":8066,"flags":{},"roles":["stat-block","pf2-tags"],"index":22}
+,{"position":9012,"flags":{},"roles":["read-section"],"index":23}
+,{"position":9107,"flags":{"glyphs":true},"roles":["stat-block"],"index":24,"glyphs":{"[[reaction]]":"<span class='activity-icon'>R</span>","[reaction]":"<span class='activity-icon'>R</span>","[one-action]":"<span class='activity-icon'>A</span>","[two-actions]":"<span class='activity-icon'>D</span>","[three-actions]":"<span class='activity-icon'>T</span>","[free-action]":"<span class='activity-icon'>F</span>"}}
+,{"position":11089,"flags":{},"roles":["paragraph"],"index":25}
+,{"position":18001,"flags":{"italic":true},"roles":["paragraph"],"index":26}
+,{"position":18002,"flags":{},"roles":["paragraph"],"index":27}
+,{"position":18016,"flags":{"bold":true,"italic":true},"roles":["paragraph"],"index":28}
+,{"position":19000,"flags":{"skip":true},"roles":["map"],"index":29}
+,{"position":19001,"flags":{"skip":true},"roles":["map"],"index":30}
+,{"position":20000,"flags":{"skip":true},"roles":["title"],"index":31}
+,{"position":20001,"flags":{"skip":true},"roles":["author"],"index":32}
+,{"position":20002,"flags":{},"roles":["paragraph"],"index":33}
+,{"position":20009,"flags":{"italic":true},"roles":["paragraph"],"index":34}
+,{"position":20014,"flags":{"skip":true},"roles":["title"],"index":35}
+,{"position":20015,"flags":{"skip":true},"roles":["title"],"index":36}
+,{"position":20018,"flags":{"skip":true},"roles":["unknow"],"index":37}
+];
+    static fonts_files = [ "fonts" ];
+
+    static images = [{"position":{"page":2,"index":30,"x":603,"y":-1},"idname":"cover","target":"assets"}
+,{"position":{"page":4,"index":11,"x":-1,"y":333},"idname":"main","target":"assets"}
+,{"position":{"page":6,"index":695,"x":384,"y":57},"idname":"gosterion.actor","target":"actors"}
+,{"position":{"page":8,"index":815,"x":391,"y":39},"idname":"yrdris.actor","target":"actors"}
+,{"position":{"page":10,"index":650,"x":-1,"y":64},"idname":"hila.actor","target":"actors"}
+,{"position":{"page":12,"index":670,"x":353,"y":49},"idname":"klixi.actor","target":"actors"}
+,{"position":{"page":14,"index":598,"x":398,"y":41},"idname":"tiberius.actor","target":"actors"}
+,{"position":{"page":16,"index":743,"x":423,"y":56},"idname":"yrdris_veloch.actor","target":"actors"}
+,{"position":{"page":19,"index":19,"x":27,"y":26},"name":"scene","idname":"raw_p19_i19","target":"scenes"}
+];
+    static images_files = [ "images" ];
+
+    static import_order = [];
+    static items = new Map([]);
+    static itemsFiles =     
+    [ 
+        "actors", "journals/00_intro", "journals/01_adventure", "journals/02_pcs", "journals/03_backmatter"
+    ]; 
+
+    static folders = 
+    [ 
+        { idname: "tgth_journals", name: "{{{xylf 1 92 511 1 'any'}}}", type: "JournalEntry" },
+        { idname: "tgth_actors", name: "{{{xylf 1 92 511 1 'any'}}}", type: "Actor" },    
+        { idname: "tgth_bestiary", name: 'Bestiary', parent: "tgth_actors" },   
+        { idname: "tgth_pcs", name: 'PCs', parent: "tgth_actors" },        
+        { idname: "tgth_hazards", name: 'Hazards', parent: "tgth_actors" },           
+        { idname: "tgth_scenes", name: "{{{xylf 1 92 511 1 'any'}}}", type: "Scene" },  
+    ];
+
+    static fixes(str, index)
+    {
+        return str.replace("�", ".").replace("�", ".");
+    }  
+}
+
+
 export class HelyxDarkArchive
 {
     static idname = "dark-archive";
@@ -159284,7 +158632,7 @@ export class HelyxDarkArchive
     static color_assign = "none";
     static flags = 
     { 
-        midjourney_content: true, 
+        external_mapping: true, 
         tokens_on_maps: true,
         skip_pages_without_images: true
     };
@@ -159524,14 +158872,7 @@ export class HelyxDarkArchive
 		}
 	},
 	"name": "{{{xlf 92089 0 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human-server_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/human-server_00.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Human Server"
 }]
 ,[ "darc-jaynt" ,{
 	"helyx": {
@@ -159909,14 +159250,7 @@ export class HelyxDarkArchive
 		}
 	},
 	"name": "{{{xlf 133035 0 'an'}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/poltergeist_00.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/ghosts/poltergeist_00.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Poltergeist",
 	"adjustment": "elite"
 }]
 ,[ "darc-bodak" ,{
@@ -160047,14 +159381,7 @@ export class HelyxDarkArchive
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/shadows/shadow_02.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/shadows/shadow_02.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Shadow"
 }]
 ,[ "darc-magical-matryoshka-6foot" ,{
 	"helyx": {
@@ -160179,14 +159506,7 @@ export class HelyxDarkArchive
 		}
 	},
 	"name": "{{{slicexlf 196084 0 'an' 0 2}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/tian-cook_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/tian-cook_001.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Human, Tian Cook 1",
 	"adjustment": "elite"
 }]
 ,[ "darc-kuen" ,{
@@ -160203,14 +159523,7 @@ export class HelyxDarkArchive
 		}
 	},
 	"name": "{{{slicexlf 196084 0 'an' 7 5}}}",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/humans/tian-cook_002.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/humans/tian-cook_002.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Human, Tian Cook 2",
 	"adjustment": "elite"
 }]
 ,[ "darc-elite-shining-child" ,{
@@ -180320,7 +179633,7 @@ export class HelyxDarkArchiveNinthCase
     static color_assign = "none";
     static flags = 
     { 
-        midjourney_content: true, 
+        external_mapping: true, 
         tokens_on_maps: true,
         skip_pages_without_images: true
     };
@@ -188548,7 +187861,7 @@ export class HelyxPFSQuest15
     static content = { from: 2, to: 24};
     static language = 'en';
     static color_assign = "default";
-    static flags = { midjourney_content: true };
+    static flags = { midjourney_content: false, external_mapping: true };
     static midsize = 300;
     static family = "quests";
 
@@ -188697,14 +188010,7 @@ export class HelyxPFSQuest15
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/draugr_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/draugr_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Draugr"
 }]
 ,[ "pfsq15_weak-shadow-draugr" ,{
 	"helyx": {
@@ -188719,14 +188025,7 @@ export class HelyxPFSQuest15
 			}
 		}
 	},
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/draugr_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/skeletons/draugr_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Draugr"
 }]
 ,[ "pfsq15_shadowborn-stalker" ,{
 	"helyx": {
@@ -191095,7 +190394,7 @@ export class HelyxPFSQuest16
     static content = { from: 3, to: 20};
     static language = 'en';
     static color_assign = "default";
-    static flags = { midjourney_content: true };
+    static flags = { midjourney_content: false, external_mapping: true };
     static midsize = 300;
     static family = "quests";
 
@@ -191197,14 +190496,7 @@ export class HelyxPFSQuest16
 		}
 	},
 	"name": "Giant Mice",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animals/mice_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animals/mice_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Mice"
 }]
 ,[ "pfsq16_weak-giant-mice" ,{
 	"helyx": {
@@ -191220,14 +190512,7 @@ export class HelyxPFSQuest16
 		}
 	},
 	"name": "Weak Giant Mice",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animals/mice_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animals/mice_001.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Mice",
 	"adjustment": "weak"
 }]
 ,[ "pfsq16_giant-er-mice" ,{
@@ -191244,14 +190529,7 @@ export class HelyxPFSQuest16
 		}
 	},
 	"name": "Giant-er Mice",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animals/mice_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animals/mice_001.token.webp'}}}",
-		"origin": "MJ"
-	}
+	"model": "Mice"
 }]
 ,[ "pfsq16_weak-giant-er-mice" ,{
 	"helyx": {
@@ -191267,14 +190545,7 @@ export class HelyxPFSQuest16
 		}
 	},
 	"name": "Weak Giant-er Mice",
-	"img": {
-		"src": "{{{imgsrc 'shared' 'images/animals/mice_001.actor.webp'}}}",
-		"origin": "MJ"
-	},
-	"token": {
-		"src": "{{{imgsrc 'shared' 'images/animals/mice_001.token.webp'}}}",
-		"origin": "MJ"
-	},
+	"model": "Mice",
 	"adjustment": "weak"
 }]
 ,[ "pfsq16_animated-broom" ,{
@@ -196889,7 +196160,7 @@ export class HelyxPFSQuest18
     static content = { from: 3, to: 25};
     static language = 'en';
     static color_assign = "default";
-    static flags = { midjourney_content: true };
+    static flags = { midjourney_content: false, external_mapping: true };
     static midsize = 300;
     static family = "quests";
 
@@ -205343,7 +204614,7 @@ export class HelyxPFSQuest27
     static content = { from: 3, to: 18};
     static language = 'en';
     static color_assign = "default";
-    static flags = { midjourney_content: false, tokens_on_maps: false };
+    static flags = { external_mapping: true, tokens_on_maps: false };
     static midsize = 300;
     static family = "quests";
 
@@ -205457,7 +204728,8 @@ export class HelyxPFSQuest27
 				"compendium": "pf2e.pfs-season-7-bestiary"
 			}
 		}
-	}
+	},
+	"model": "Skeletal Wolf"
 }]
 ,[ "pfsq27_skeletal_giant" ,{
 	"helyx": {
@@ -207960,10 +207232,10 @@ export class HelyxKingmakerCampsiteMultiPack
     static fonts = [];
     static fonts_files = [];
 
-    static images = [{"position":{"page":1,"index":35},"idname":"camp_1","target":"","transformation":{"rotation":-90}}
-,{"position":{"page":2,"index":35},"idname":"camp_2","target":""}
-,{"position":{"page":3,"index":35},"idname":"camp_3","target":"","transformation":{"rotation":90}}
-,{"position":{"page":4,"index":8},"idname":"camp_4","target":""}
+    static images = [{"position":{"page":1,"index":35,"x":1729,"y":-1},"idname":"camp_1","target":"","transformation":{"rotation":-90}}
+,{"position":{"page":2,"index":35,"x":-1,"y":-1},"idname":"camp_2","target":""}
+,{"position":{"page":3,"index":35,"x":-1,"y":2161},"idname":"camp_3","target":"","transformation":{"rotation":90}}
+,{"position":{"page":4,"index":8,"x":-1,"y":-1},"idname":"camp_4","target":""}
 ];
     static images_files = [ "images" ];
 
@@ -207983,7 +207255,7 @@ export class HelyxFlipMatForest
     static title = "Flip Mat : Forest";
     static prefix = "fmforest";
     static nbPages = 2;
-    static identification = { page: 1, block: 9, value: "Forest" };
+    static identification = {position : { page:1,  x:77, y:2086}, value: "Forest" };
 
     static resources_directories = [ "" ];
     static drm = "FREE" ;
@@ -208037,8 +207309,8 @@ export class HelyxFlipMatForest
     static fonts = [];
     static fonts_files = [];
 
-    static images = [{"position":{"page":1,"index":35},"idname":"forest_1","target":"","transformation":{"rotation":180}}
-,{"position":{"page":2,"index":8},"idname":"forest_2","target":"","transformation":{"rotation":180}}
+    static images = [{"position":{"page":1,"index":35,"x":1729,"y":2161},"idname":"forest_1","target":"","transformation":{"rotation":180}}
+,{"position":{"page":2,"index":8,"x":1729,"y":2161},"idname":"forest_2","target":"","transformation":{"rotation":180}}
 ];
     static images_files = [ "images" ];
 
@@ -208134,10 +207406,10 @@ export class HelyxKingmakerRiverKingdomRuinsMultiPack
     static fonts = [];
     static fonts_files = [];
 
-    static images = [{"position":{"page":1,"index":35},"idname":"ruins_1","target":"","transformation":{"rotation":-90}}
-,{"position":{"page":2,"index":35},"idname":"ruins_2","target":"","transformation":{"rotation":90}}
-,{"position":{"page":3,"index":35},"idname":"ruins_3","target":"","transformation":{"rotation":90}}
-,{"position":{"page":4,"index":8},"idname":"ruins_4","target":"","transformation":{"rotation":90}}
+    static images = [{"position":{"page":1,"index":35,"x":1729,"y":-1},"idname":"ruins_1","target":"","transformation":{"rotation":-90}}
+,{"position":{"page":2,"index":35,"x":-1,"y":2161},"idname":"ruins_2","target":"","transformation":{"rotation":90}}
+,{"position":{"page":3,"index":35,"x":-1,"y":2161},"idname":"ruins_3","target":"","transformation":{"rotation":90}}
+,{"position":{"page":4,"index":8,"x":-1,"y":2161},"idname":"ruins_4","target":"","transformation":{"rotation":90}}
 ];
     static images_files = [ "images" ];
 
@@ -208197,6 +207469,7 @@ constructor()
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxLittleTroubleInBigAbsalom, idname: "little-trouble-in-big-absalom", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "little-trouble-in-big-absalom"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxTheGreatToyHeist, idname: "the-great-toy-heist", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "the-great-toy-heist"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxTheScourgeOfSheerleaf, idname: "the-scourge-of-sheerleaf", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "the-scourge-of-sheerleaf"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxThingsGoToHell, idname: "things-go-to-hell", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "things-go-to-hell"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxDarkArchive, idname: "dark-archive", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "dark-archive"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxDarkArchiveNinthCase, idname: "dark-archive-ninth-case", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "dark-archive-ninth-case"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest14, idname: "pfsq14-the-swordlord-s-challenge", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq14-the-swordlord-s-challenge"}));
@@ -208340,7 +207613,7 @@ async load_art_map_file(descriptor_)
 // Initialize the array of tokens from token_files
 async init_tokens()
 {
-
+    /*
     const adventures = this.config.modeMaker ? game.helyx_settings.descriptors.values() : this.adventures;
     const mode_maker = this.config.modeMaker ?? false;
 
@@ -208351,6 +207624,7 @@ async init_tokens()
         const descriptor   = mode_maker ? adv.jsclass : adv.descriptor;
         await this.load_art_map_file(descriptor);
     }
+    */
 
     //let my_declaration = game.modules.entries().get(this.config.moduleName);
     //my_declaration.flags.[this.config.moduleName]["sfrpg-art"] = global_art_map;

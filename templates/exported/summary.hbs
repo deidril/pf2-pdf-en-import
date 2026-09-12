@@ -22,21 +22,18 @@
     <hr/>
 
     <section class="helyx-summary-options" style="normal">
-        <div class="form-group" style="display: {{options.midjourney_content}}">
-            <label for="helyx-accept-midjourney-content">Use MidJourney generated content
-                <br/><i>{{options.midjourney_content_description}}</i>
-            </label>
-            <div class="form-fields" style="display:block;">
-                <input type="checkbox" id="helyx-accept-midjourney-content" />
-            </div>
-        </div>  
 
-        <div class="form-group" style="display: {{options.deidril_maps}}">
-            <label for="helyx-accept-deidril-maps">Use Deidril's Maps</label>
+        <div class="form-group" style="display: {{options.use_external_art_mappings}};">
+            <label for="helyx-external-art-mapping">External Art Mapping</label>
             <div class="form-fields" style="display:block;">
-                <input type="checkbox" id="helyx-accept-deidril-maps" />
+                <select name="helyx-external-art-mapping" id="helyx-external-art-mapping">
+                    <option value="">--None--</option>
+                    {{#each options.external_art_mappings}}
+                        <option value="{{this.idname}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
             </div>
-        </div>  
+        </div>      
 
         <div class="form-group" style="display: {{options.tokens_on_maps}}">
             <label for="helyx-accept-tokens-on-maps">Put tokens on maps</label>
@@ -45,7 +42,5 @@
             </div>
         </div>  
 
-     </div>
-
-</section>
+    </section>
 </form>
