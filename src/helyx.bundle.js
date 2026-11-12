@@ -20139,6 +20139,9 @@ export class HelyxToken
     ///@brief       Shape
     #shape = null;
 
+    ///@brief       Color
+    #color = null;
+
     /** @} **/ /*****************************************************************/
     /** \name   Constructors
     **/ /** @{ ******************************************************************/
@@ -20166,6 +20169,7 @@ export class HelyxToken
     get model()   { return this.#model; }
     get background() { return this.#background; }
     get shape() { return this.#shape; }
+    get color() { return this.#color; }
 
     set(attribute_, value_)
     {
@@ -20180,6 +20184,7 @@ export class HelyxToken
             case 'model'   : this.#model = value_; break;
             case 'background' : this.#background = value_; break;
             case 'shape': this.#shape = value_; break;
+            case 'color': this.#color = value_; break;
 
             default: throw "Unimplemented attribute '" + attribute_ + "' in HelyxToken ";
         }
@@ -20193,7 +20198,7 @@ export class HelyxToken
 
     write(output_)
     {
-        output_.inlined_attributes(this,  ['x','y','w','h','idname','target','background','shape','model']);
+        output_.inlined_attributes(this,  ['x','y','w','h','idname','target','background','shape','model','color']);
     }     
 
 }    
@@ -185681,7 +185686,7 @@ export class HelyxPFSQuest14
     static title = "Pathfinder Society Quest #14: The Swordlord’s Challenge";
     static prefix = "pfsq14";
     static nbPages = 47;
-    static identification = { page: 23, block: 127, value: 'Pathfinder  Society  Quest  #14:  The  Swordlord’s  Challenge' };
+    static identification = {position : { page:23,  x:312, y:131}, value: 'Pathfinder  Society  Quest  #14:  The  Swordlord’s  Challenge' };
 
     static resources_directories = [ "actors", "scenes", "items", "assets"];
     static drm = "FREE" ;
@@ -185695,8 +185700,8 @@ export class HelyxPFSQuest14
     static summary = 
     {
         cover: { image: "cover", x: 0, y: 0, width: 1262, height: 649 },
-        title: "PFS Quest #14 - {{{xlf 1010 1 'any'}}}",
-        summary: "{{{xl 2083 3}}}"
+        title: "PFS Quest #14 - {{{xylf 1 66 146 2 'any'}}}",
+        summary: "{{{xyl 2 248 315 4}}}"
     };
 
     static contents = 
@@ -185713,57 +185718,57 @@ export class HelyxPFSQuest14
         }} 
     };
 
-    static fonts = [{"position":2019,"flags":{},"roles":["paragraph"],"index":0}
-,{"position":3000,"flags":{"skip":true},"roles":["watermark"],"index":0}
-,{"position":3002,"flags":{"skip":true},"roles":["watermark"],"index":1}
-,{"position":3008,"flags":{"skip":true},"roles":["author"],"index":2}
-,{"position":3010,"flags":{"skip":true},"roles":["title"],"index":3}
-,{"position":3013,"flags":{},"roles":["paragraph"],"index":4}
-,{"position":3018,"flags":{"italic":true},"roles":["paragraph"],"index":5}
-,{"position":3023,"flags":{},"roles":["journal-title"],"index":6}
-,{"position":3024,"flags":{"bold":true},"roles":["paragraph","section"],"index":7}
-,{"position":3025,"flags":{},"roles":["paragraph"],"index":8}
-,{"position":3075,"flags":{},"roles":["read-section","stat-block"],"index":9}
-,{"position":3091,"flags":{"skip":true},"roles":["page-number"],"index":10}
-,{"position":3094,"flags":{"skip":true},"roles":["map"],"index":11}
-,{"position":3096,"flags":{"skip":true},"roles":["map"],"index":12}
-,{"position":4008,"flags":{"sideblock":true},"roles":["image-name","journal-title"],"index":13}
-,{"position":4012,"flags":{"skip":true},"roles":["title"],"index":14}
-,{"position":4018,"flags":{"italic":true},"roles":["read-section","stat-block"],"index":15}
-,{"position":5014,"flags":{},"roles":["section"],"index":16}
-,{"position":5020,"flags":{"bold":true},"roles":["stat-block"],"index":17}
-,{"position":11069,"flags":{},"roles":["section"],"index":18}
-,{"position":11070,"flags":{},"roles":["creature-title"],"index":19}
-,{"position":11107,"flags":{"italic":true},"roles":["paragraph"],"index":20}
-,{"position":13025,"flags":{},"roles":["stat-block","pf2-tags"],"index":21}
-,{"position":13066,"flags":{"glyphs":true},"roles":["stat-block"],"index":22,"glyphs":{"[[reaction]]":"<span class='activity-icon'>R</span>","[reaction]":"<span class='activity-icon'>R</span>","[one-action]":"<span class='activity-icon'>A</span>","[two-actions]":"<span class='activity-icon'>D</span>","[three-actions]":"<span class='activity-icon'>T</span>","[free-action]":"<span class='activity-icon'>F</span>"}}
-,{"position":13161,"flags":{"bold":true},"roles":["paragraph"],"index":23}
-,{"position":14120,"flags":{},"roles":["stat-block"],"index":24}
-,{"position":21016,"flags":{},"roles":["paragraph"],"index":25}
-,{"position":21044,"flags":{},"roles":["paragraph"],"index":26}
-,{"position":22030,"flags":{},"roles":["paragraph"]}
-,{"position":23138,"flags":{"bold":"true"},"roles":["paragraph"],"index":26}
-,{"position":23101,"flags":{"bold":true},"roles":["paragraph"],"index":34}
-,{"position":23107,"flags":{"bold":true,"italic":true},"roles":["paragraph"],"index":35}
-,{"position":23113,"flags":{},"roles":["paragraph"],"index":36}
-,{"position":23115,"flags":{"bold":true},"roles":["paragraph"],"index":37}
-,{"position":23127,"flags":{"bold":true,"italic":true},"roles":["paragraph"],"index":38}
-,{"position":23139,"flags":{},"roles":["paragraph"],"index":39}
+    static fonts = [{"src":{"page":2,"index":2019,"x":113,"y":636},"position":2019,"flags":{},"roles":["paragraph"],"index":0}
+,{"src":{"page":3,"index":3000,"x":172,"y":2},"position":3000,"flags":{"skip":true},"roles":["watermark"],"index":0}
+,{"src":{"page":3,"index":3002,"x":0,"y":0},"position":3002,"flags":{"skip":true},"roles":["watermark"],"index":1}
+,{"src":{"page":3,"index":3008,"x":232,"y":690},"position":3008,"flags":{"skip":true},"roles":["author"],"index":2}
+,{"src":{"page":3,"index":3010,"x":123,"y":718},"position":3010,"flags":{"skip":true},"roles":["title"],"index":3}
+,{"src":{"page":3,"index":3013,"x":321,"y":579},"position":3013,"flags":{},"roles":["paragraph"],"index":4}
+,{"src":{"page":3,"index":3018,"x":321,"y":519},"position":3018,"flags":{"italic":true},"roles":["paragraph"],"index":5}
+,{"src":{"page":3,"index":3023,"x":72,"y":627},"position":3023,"flags":{},"roles":["journal-title"],"index":6}
+,{"src":{"page":3,"index":3024,"x":72,"y":615},"position":3024,"flags":{"bold":true},"roles":["paragraph","section"],"index":7}
+,{"src":{"page":3,"index":3025,"x":144,"y":615},"position":3025,"flags":{},"roles":["paragraph"],"index":8}
+,{"src":{"page":3,"index":3075,"x":312,"y":279},"position":3075,"flags":{},"roles":["read-section","stat-block"],"index":9}
+,{"src":{"page":3,"index":3091,"x":299,"y":16},"position":3091,"flags":{"skip":true},"roles":["page-number"],"index":10}
+,{"src":{"page":3,"index":3094,"x":321,"y":472},"position":3094,"flags":{"skip":true},"roles":["map"],"index":11}
+,{"src":{"page":3,"index":3096,"x":479,"y":385},"position":3096,"flags":{"skip":true},"roles":["map"],"index":12}
+,{"src":{"page":4,"index":4008,"x":110,"y":87},"position":4008,"flags":{"sideblock":true},"roles":["image-name","journal-title"],"index":13}
+,{"src":{"page":4,"index":4012,"x":152,"y":736},"position":4012,"flags":{"skip":true},"roles":["title"],"index":14}
+,{"src":{"page":4,"index":4018,"x":185,"y":651},"position":4018,"flags":{"italic":true},"roles":["read-section","stat-block"],"index":15}
+,{"src":{"page":5,"index":5014,"x":72,"y":687},"position":5014,"flags":{},"roles":["section"],"index":16}
+,{"src":{"page":5,"index":5020,"x":72,"y":615},"position":5020,"flags":{"bold":true},"roles":["stat-block"],"index":17}
+,{"src":{"page":11,"index":11069,"x":366,"y":627},"position":11069,"flags":{},"roles":["section"],"index":18}
+,{"src":{"page":11,"index":11070,"x":365,"y":603},"position":11070,"flags":{},"roles":["creature-title"],"index":19}
+,{"src":{"page":11,"index":11107,"x":362,"y":243},"position":11107,"flags":{"italic":true},"roles":["paragraph"],"index":20}
+,{"src":{"page":13,"index":13025,"x":78,"y":530},"position":13025,"flags":{},"roles":["stat-block","pf2-tags"],"index":21}
+,{"src":{"page":13,"index":13066,"x":154,"y":423},"position":13066,"flags":{"glyphs":true},"roles":["stat-block"],"glyphs":{"[[reaction]]":"<span class='activity-icon'>R</span>","[reaction]":"<span class='activity-icon'>R</span>","[one-action]":"<span class='activity-icon'>A</span>","[two-actions]":"<span class='activity-icon'>D</span>","[three-actions]":"<span class='activity-icon'>T</span>","[free-action]":"<span class='activity-icon'>F</span>"},"index":22}
+,{"src":{"page":13,"index":13161,"x":330,"y":615},"position":13161,"flags":{"bold":true},"roles":["paragraph"],"index":23}
+,{"src":{"page":14,"index":14120,"x":231,"y":330},"position":14120,"flags":{},"roles":["stat-block"],"index":24}
+,{"src":{"page":21,"index":21016,"x":72,"y":546},"position":21016,"flags":{},"roles":["paragraph"],"index":25}
+,{"src":{"page":21,"index":21044,"x":77,"y":638},"position":21044,"flags":{},"roles":["paragraph"],"index":26}
+,{"src":{"page":22,"index":22030,"x":142,"y":583},"position":22030,"flags":{},"roles":["paragraph"]}
+,{"src":{"page":23,"index":23138,"x":312,"y":685},"position":23138,"flags":{"bold":"true"},"roles":["paragraph"],"index":26}
+,{"src":{"page":23,"index":23101,"x":81,"y":121},"position":23101,"flags":{"bold":true},"roles":["paragraph"],"index":34}
+,{"src":{"page":23,"index":23107,"x":81,"y":95},"position":23107,"flags":{"bold":true,"italic":true},"roles":["paragraph"],"index":35}
+,{"src":{"page":23,"index":23113,"x":312,"y":215},"position":23113,"flags":{},"roles":["paragraph"],"index":36}
+,{"src":{"page":23,"index":23115,"x":312,"y":199},"position":23115,"flags":{"bold":true},"roles":["paragraph"],"index":37}
+,{"src":{"page":23,"index":23127,"x":312,"y":131},"position":23127,"flags":{"bold":true,"italic":true},"roles":["paragraph"],"index":38}
+,{"src":{"page":23,"index":23139,"x":370,"y":685},"position":23139,"flags":{},"roles":["paragraph"],"index":39}
 ];
-    static fonts_files = [ "fonts" ];
+    static fonts_files = [ "fonts_v6" ];
 
-    static images = [{"position":{"page":1,"index":106},"idname":"cover","target":"assets"}
-,{"position":{"page":3,"index":877},"idname":"where_in_golarion","target":"scenes"}
-,{"position":{"page":4,"index":120},"idname":"marco-farabellus.actor","target":"actors","tokens":[{"x":196,"y":174,"w":178,"h":178,"idname":"marco-farabellus.token","target":"actors","color":"green"}]}
-,{"position":{"page":5,"index":120},"idname":"orlaelia-aldori.actor","target":"actors","transformation":{"flip":"H"},"tokens":[{"x":155,"y":77,"w":174,"h":174,"idname":"orlaelia-aldori.token","target":"actors","color":"green"}]}
-,{"position":{"page":6,"index":288},"idname":"dura.actor","target":"actors","tokens":[{"x":256,"y":1,"w":312,"h":312,"idname":"dura.token","target":"actors","color":"green"}]}
-,{"position":{"page":7,"index":120},"idname":"hall","target":"scenes","transformation":{"rotation":-90}}
-,{"position":{"page":8,"index":288},"idname":"halran.actor","target":"actors","tokens":[{"x":302,"y":2,"w":280,"h":280,"idname":"halran.token","target":"actors","color":"green"}]}
-,{"position":{"page":9,"index":116},"idname":"rhenei.actor","target":"actors","tokens":[{"x":275,"y":81,"w":257,"h":257,"idname":"rhenei.token","target":"actors","color":"green"}]}
-,{"position":{"page":10,"index":284},"idname":"thisnabel.actor","target":"actors","tokens":[{"x":278,"y":31,"w":350,"h":350,"idname":"thisnabel.token","target":"actors","color":"green"}]}
-,{"position":{"page":11,"index":120},"idname":"aldori-dueling-sword","target":"items"}
+    static images = [{"position":{"page":1,"index":106,"x":-1,"y":254},"idname":"cover","target":"assets"}
+,{"position":{"page":3,"index":877,"x":310,"y":353},"idname":"where_in_golarion","target":"scenes"}
+,{"position":{"page":4,"index":120,"x":-1,"y":5},"idname":"marco-farabellus.actor","target":"actors","tokens":[{"x":196,"y":174,"w":178,"h":178,"idname":"marco-farabellus.token","target":"actors","color":"green"}]}
+,{"position":{"page":5,"index":120,"x":405,"y":44},"idname":"orlaelia-aldori.actor","target":"actors","transformation":{"flip":"H"},"tokens":[{"x":155,"y":77,"w":174,"h":174,"idname":"orlaelia-aldori.token","target":"actors","color":"green"}]}
+,{"position":{"page":6,"index":288,"x":92,"y":345},"idname":"dura.actor","target":"actors","tokens":[{"x":256,"y":1,"w":312,"h":312,"idname":"dura.token","target":"actors","color":"green"}]}
+,{"position":{"page":7,"index":120,"x":531,"y":130},"idname":"hall","target":"scenes","transformation":{"rotation":-90}}
+,{"position":{"page":8,"index":288,"x":91,"y":311},"idname":"halran.actor","target":"actors","tokens":[{"x":302,"y":2,"w":280,"h":280,"idname":"halran.token","target":"actors","color":"green"}]}
+,{"position":{"page":9,"index":116,"x":90,"y":361},"idname":"rhenei.actor","target":"actors","tokens":[{"x":275,"y":81,"w":257,"h":257,"idname":"rhenei.token","target":"actors","color":"green"}]}
+,{"position":{"page":10,"index":284,"x":90,"y":330},"idname":"thisnabel.actor","target":"actors","tokens":[{"x":278,"y":31,"w":350,"h":350,"idname":"thisnabel.token","target":"actors","color":"green"}]}
+,{"position":{"page":11,"index":120,"x":268,"y":260},"idname":"aldori-dueling-sword","target":"items"}
 ];
-    static images_files = [ "images" ];
+    static images_files = [ "images_v6" ];
 
     static import_order = [ "pfsq14_marco", "pfsq14_orlaelia", "pfsq14_dura_lvl1-2", "pfsq14_dura_lvl3-4", "pfsq14_determined-dura_lvl1-2", "pfsq14_determined-dura_lvl3-4", "pfsq14_halran_lvl1-2", "pfsq14_halran_lvl3-4", "pfsq14_determined-halran_lvl1-2", "pfsq14_determined-halran_lvl3-4", "pfsq14_rhenei_lvl1-2", "pfsq14_determined-rhenei_lvl1-2", "pfsq14_rhenei_lvl3-4", "pfsq14_determined-rhenei_lvl3-4", "pfsq14_thisnabel_lvl1-2", "pfsq14_determined-thisnabel_lvl1-2", "pfsq14_thisnabel_lvl3-4", "pfsq14_determined-thisnabel_lvl3-4", "pfsq14_cover_j", "pfsq14_adventure", "pfsq14_apx1", "pfsq14_apx2", "pfsq14_apx3", "pfsq14_oplay", "pfsq14_scene-a", "pfsq14_wog"];
     static items = new Map([[ "pfsq14_marco" ,{
@@ -185779,7 +185784,7 @@ export class HelyxPFSQuest14
 			}
 		}
 	},
-	"name": "{{{xlf 4008 0 'an'}}}",
+	"name": "{{{xylf 4 110 87 1 'an'}}}",
 	"img": {
 		"src": "{{{imgpath 'marco-farabellus.actor'}}}"
 	},
@@ -185800,7 +185805,7 @@ export class HelyxPFSQuest14
 			}
 		}
 	},
-	"name": "{{{xlf 5008 0 'an'}}}",
+	"name": "{{{xylf 5 119 87 1 'an'}}}",
 	"img": {
 		"src": "{{{imgpath 'orlaelia-aldori.actor'}}}"
 	},
@@ -185901,7 +185906,7 @@ export class HelyxPFSQuest14
 			}
 		}
 	},
-	"name": "{{{xlf 13090 0 'an'}}} (1-2)",
+	"name": "{{{xylf 13 315 459 1 'an'}}} (1-2)",
 	"img": {
 		"src": "{{{imgpath 'halran.actor'}}}"
 	},
@@ -185922,7 +185927,7 @@ export class HelyxPFSQuest14
 			}
 		}
 	},
-	"name": "{{{xlf 13090 0 'an'}}} (3-4)",
+	"name": "{{{xylf 13 315 459 1 'an'}}} (3-4)",
 	"img": {
 		"src": "{{{imgpath 'halran.actor'}}}"
 	},
@@ -185943,7 +185948,7 @@ export class HelyxPFSQuest14
 			}
 		}
 	},
-	"name": "Determined {{{xlf 13090 0 'an'}}} (1-2)",
+	"name": "Determined {{{xylf 13 315 459 1 'an'}}} (1-2)",
 	"img": {
 		"src": "{{{imgpath 'halran.actor'}}}"
 	},
@@ -185964,7 +185969,7 @@ export class HelyxPFSQuest14
 			}
 		}
 	},
-	"name": "Determined {{{xlf 13090 0 'an'}}} (3-4)",
+	"name": "Determined {{{xylf 13 315 459 1 'an'}}} (3-4)",
 	"img": {
 		"src": "{{{imgpath 'halran.actor'}}}"
 	},
@@ -186138,7 +186143,7 @@ export class HelyxPFSQuest14
 		"type": "JournalEntry",
 		"target": "pfsq14_journals"
 	},
-	"name": "00 {{{xlf 1010 1 'any'}}}",
+	"name": "00 {{{xylf 1 66 146 2 'any'}}}",
 	"pages": [
 		{
 			"helyx": {
@@ -186165,20 +186170,20 @@ export class HelyxPFSQuest14
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xlf 2012 0 'b'}}} {{{xl 2014 0}}}",
-						"{{{xlf 2015 0 'b'}}} {{{xl 2017 0}}}",
-						"{{{xlf 2018 0 'b'}}} {{{xl 2020 0}}}",
-						"{{{xlf 2021 0 'b'}}} {{{xl 2023 0}}}",
-						"{{{xlf 2024 0 'b'}}} {{{xl 2026 0}}}",
-						"{{{xlf 2027 0 'b'}}} {{{xl 2029 0}}}",
-						"{{{xlf 2030 0 'b'}}} {{{xl 2032 0}}}",
-						"{{{xlf 2033 0 'b'}}} {{{xl 2035 0}}}",
-						"{{{xlf 2036 0 'b'}}} {{{xl 2038 0}}}",
-						"{{{xlf 2039 0 'b'}}} {{{xl 2041 0}}}",
-						"{{{xlf 2042 0 'b'}}} {{{xl 2044 0}}}",
-						"{{{xlf 2045 0 'b'}}} {{{xl 2047 0}}}",
-						"{{{xlf 2048 0 'b'}}} {{{xl 2050 0}}}",
-						"{{{xlf 2051 0 'b'}}} {{{xl 2053 0}}}"
+						"{{{xylf 2 12 690 1 'b'}}} {{{xyl 2 12 680 1}}}",
+						"{{{xylf 2 12 663 1 'b'}}} {{{xyl 2 12 653 1}}}",
+						"{{{xylf 2 12 636 1 'b'}}} {{{xyl 2 12 626 1}}}",
+						"{{{xylf 2 12 609 1 'b'}}} {{{xyl 2 12 599 1}}}",
+						"{{{xylf 2 12 582 1 'b'}}} {{{xyl 2 12 572 1}}}",
+						"{{{xylf 2 12 555 1 'b'}}} {{{xyl 2 12 544 1}}}",
+						"{{{xylf 2 12 527 1 'b'}}} {{{xyl 2 12 517 1}}}",
+						"{{{xylf 2 12 500 1 'b'}}} {{{xyl 2 12 490 1}}}",
+						"{{{xylf 2 12 473 1 'b'}}} {{{xyl 2 12 463 1}}}",
+						"{{{xylf 2 12 446 1 'b'}}} {{{xyl 2 12 436 1}}}",
+						"{{{xylf 2 12 419 1 'b'}}} {{{xyl 2 12 409 1}}}",
+						"{{{xylf 2 12 392 1 'b'}}} {{{xyl 2 12 382 1}}}",
+						"{{{xylf 2 12 365 1 'b'}}} {{{xyl 2 12 355 1}}}",
+						"{{{xylf 2 12 338 1 'b'}}} {{{xyl 2 12 328 1}}}"
 					]
 				}
 			]
@@ -186189,23 +186194,23 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "HOW TO PLAY"
 			},
-			"name": "{{{xlf 2054 0 'an'}}}",
+			"name": "{{{xylf 2 49 218 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 2054 0 'an'}}}"
+					"title": "{{{xylf 2 49 218 1 'an'}}}"
 				},
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xf 2054 'an'}}}",
+					"title": "{{{xylf 2 49 218 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xlf 2055 2 'tn'}}}",
-								"{{{xlf 2058 2 'tn'}}}",
-								"{{{xlf 2061 2 'tn'}}}"
+								"{{{xylf 2 51 185 3 'nt'}}}",
+								"{{{xylf 2 51 147 3 'nt'}}}",
+								"{{{xylf 2 51 108 3 'nt'}}}"
 							]
 						}
 					]
@@ -186213,15 +186218,15 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xf 2093 'an'}}}",
+					"title": "{{{xylf 2 248 543 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xlf 2094 1 'x'}}}",
-								"{{{xlf 2096 4 ''}}}",
-								"{{{xlf 2101 2 ''}}}",
-								"{{{xlf 2104 4 'x'}}}"
+								"{{{xylf 2 248 531 2 'x'}}}",
+								"{{{xylf 2 248 519 5 ''}}}",
+								"{{{xylf 2 248 495 3 ''}}}",
+								"{{{xylf 2 248 483 5 'x'}}}"
 							]
 						}
 					]
@@ -186229,13 +186234,13 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xf 2087 'an'}}}",
+					"title": "{{{xylf 2 248 435 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xlf 2088 3 'n'}}}",
-								"[X] {{{xlf 2092 0 'an'}}}"
+								"{{{xylf 2 248 423 4 'n'}}}",
+								"[X] {{{xylf 2 274 388 1 'an'}}}"
 							]
 						}
 					]
@@ -186243,12 +186248,12 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "development",
-					"title": "{{{xf 2082 'an'}}}",
+					"title": "{{{xylf 2 248 327 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 2083 3}}}"
+								"{{{xyl 2 248 315 4}}}"
 							]
 						}
 					]
@@ -186271,16 +186276,16 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Where On Golarion?"
 			},
-			"name": "{{{xlf 3012 0 'an'}}}",
+			"name": "{{{xylf 3 344 599 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 3012 0 'an'}}}"
+					"title": "{{{xylf 3 344 599 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3013 9}}}"
+						"{{{xyl 3 321 579 10}}}"
 					]
 				}
 			]
@@ -186291,18 +186296,18 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Adventure Background"
 			},
-			"name": "{{{xlf 3023 0 'an'}}}",
+			"name": "{{{xylf 3 72 627 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 3023 0 'an'}}}"
+					"title": "{{{xylf 3 72 627 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3024 20}}}",
-						"{{{xl 3045 10}}}",
-						"{{{xl 3056 12}}}"
+						"{{{xyl 3 72 615 21}}}",
+						"{{{xyl 3 81 399 11}}}",
+						"{{{xyl 3 81 291 13}}}"
 					]
 				}
 			]
@@ -186312,7 +186317,7 @@ export class HelyxPFSQuest14
 				"idname": "pfsq14_imgp4",
 				"type": "Page"
 			},
-			"name": "{{{xf 4008 'an'}}} [Image]",
+			"name": "{{{xylf 4 110 87 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'marco-farabellus.actor'}}}"
 			}
@@ -186323,55 +186328,55 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Getting Started"
 			},
-			"name": "{{{xlf 3069 0 'an'}}}",
+			"name": "{{{xylf 3 72 123 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 3069 0 'an'}}}"
+					"title": "{{{xylf 3 72 123 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3070 3}}}",
-						"{{{xl 3074 0}}}"
+						"{{{xyl 3 72 111 4}}}",
+						"{{{xyl 3 321 303 1}}}"
 					]
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 3075 6}}}"
+						"{{{xyl 3 312 279 7}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 3082 3}}}"
+						"{{{xyl 3 321 183 4}}}"
 					]
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 3086 4}}}{{{xl 4014 11}}}",
-						"{{{xl 4026 5}}}",
-						"{{{xl 4032 8}}}",
-						"{{{xl 4041 3}}}"
+						"{{{xyl 3 312 123 5}}}{{{xyl 4 72 687 12}}}",
+						"{{{xyl 4 81 567 6}}}",
+						"{{{xyl 4 321 663 9}}}",
+						"{{{xyl 4 321 555 4}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 4045 6}}}"
+						"{{{xyl 4 321 495 7}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "question",
-					"title": "{{{xlf 4052 0 'nd'}}}",
+					"title": "{{{xylf 4 321 411 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 4053 4}}}"
+								"{{{xyl 4 459 411 5}}}"
 							]
 						}
 					]
@@ -186379,12 +186384,12 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "question",
-					"title": "{{{xlf 4058 0 'nd'}}}",
+					"title": "{{{xylf 4 321 351 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 4059 10}}}"
+								"{{{xyl 4 492 351 11}}}"
 							]
 						}
 					]
@@ -186392,12 +186397,12 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "question",
-					"title": "{{{xlf 4070 0 'nd'}}}",
+					"title": "{{{xylf 4 321 219 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 4071 3}}}"
+								"{{{xyl 4 467 219 4}}}"
 							]
 						}
 					]
@@ -186405,12 +186410,12 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "question",
-					"title": "{{{xlf 4075 1 'nd'}}}",
+					"title": "{{{xylf 4 359 171 2 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 4077 7}}}"
+								"{{{xyl 4 404 159 8}}}"
 							]
 						}
 					]
@@ -186418,20 +186423,20 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xlf 5014 1 'nd'}}}",
+					"title": "{{{xylf 5 72 687 2 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 5016 3}}}"
+								"{{{xyl 5 72 663 4}}}"
 							]
 						},
 						{
 							"type": "statblock",
 							"statblock": [
-								"{{{pxl 5020 9}}}",
-								"{{{pxl 5030 8}}}",
-								"{{{pxl 5039 5}}}"
+								"{{{pxyl 5 72 615 10}}}",
+								"{{{pxyl 5 312 651 9}}}",
+								"{{{pxyl 5 312 555 6}}}"
 							]
 						}
 					]
@@ -186443,7 +186448,7 @@ export class HelyxPFSQuest14
 				"idname": "pfsq14_imgp5",
 				"type": "Page"
 			},
-			"name": "{{{xf 5008 'an'}}} [Image]",
+			"name": "{{{xylf 5 119 87 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'orlaelia-aldori.actor'}}}"
 			}
@@ -186453,7 +186458,7 @@ export class HelyxPFSQuest14
 				"idname": "pfsq14_imgp6",
 				"type": "Page"
 			},
-			"name": "{{{xf 6008 'an'}}} [Image]",
+			"name": "{{{xylf 6 287 339 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'dura.actor'}}}"
 			}
@@ -186463,7 +186468,7 @@ export class HelyxPFSQuest14
 				"idname": "pfsq14_imgp8",
 				"type": "Page"
 			},
-			"name": "{{{xf 8008 'an'}}} [Image]",
+			"name": "{{{xylf 8 281 327 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'halran.actor'}}}"
 			}
@@ -186473,7 +186478,7 @@ export class HelyxPFSQuest14
 				"idname": "pfsq14_imgp9",
 				"type": "Page"
 			},
-			"name": "{{{xf 9008 'an'}}} [Image]",
+			"name": "{{{xylf 9 283 399 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'rhenei.actor'}}}"
 			}
@@ -186483,7 +186488,7 @@ export class HelyxPFSQuest14
 				"idname": "pfsq14_imgp10",
 				"type": "Page"
 			},
-			"name": "{{{xf 10008 'an'}}} [Image]",
+			"name": "{{{xylf 10 274 339 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'thisnabel.actor'}}}"
 			}
@@ -186494,22 +186499,22 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "a Challenger Approaches"
 			},
-			"name": "{{{xlf 5045 0 'an'}}}",
+			"name": "{{{xylf 5 312 483 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 5045 0 'an'}}}"
+					"title": "{{{xylf 5 312 483 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 5046 5}}}",
-						"{{{xl 5052 15}}}",
-						"{{{xl 5068 8}}}",
-						"{{{xl 5077 2}}}{{{xl 6043 4}}}",
-						"{{{xl 6048 6}}}",
-						"{{{xl 6055 13}}}",
-						"{{{xl 6069 15}}}"
+						"{{{xyl 5 312 471 6}}}",
+						"{{{xyl 5 321 399 16}}}",
+						"{{{xyl 5 321 207 9}}}",
+						"{{{xyl 5 321 99 3}}}{{{xyl 6 72 687 5}}}",
+						"{{{xyl 6 72 627 7}}}",
+						"{{{xyl 6 81 543 14}}}",
+						"{{{xyl 6 81 375 16}}}"
 					]
 				}
 			]
@@ -186520,29 +186525,29 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Adding Insult to Injury"
 			},
-			"name": "{{{xlf 6085 0 'an'}}}",
+			"name": "{{{xylf 6 72 171 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 6085 0 'an'}}}"
+					"title": "{{{xylf 6 72 171 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 6086 7}}}",
-						"{{{xl 6014 11}}}",
-						"{{{xl 6026 4}}}"
+						"{{{xyl 6 72 159 8}}}",
+						"{{{xyl 6 417 411 12}}}",
+						"{{{xyl 6 321 267 5}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "development",
-					"title": "{{{xlf 6031 0 'nd'}}}",
+					"title": "{{{xylf 6 321 207 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 6032 1}}}"
+								"{{{xyl 6 375 207 2}}}"
 							]
 						}
 					]
@@ -186555,18 +186560,18 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "SKILLS, LORE, AND BONUSES"
 			},
-			"name": "{{{xlf 6094 0 'an'}}}",
+			"name": "{{{xylf 6 323 671 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 6085 0 'an'}}}"
+					"title": "{{{xylf 6 72 171 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 6095 4}}}",
-						"{{{xl 6100 3}}}",
-						"{{{xl 6104 6}}}"
+						"{{{xyl 6 321 651 5}}}",
+						"{{{xyl 6 339 591 4}}}",
+						"{{{xyl 6 364 543 7}}}"
 					]
 				}
 			]
@@ -186577,38 +186582,38 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "a Rose By Any Other Name"
 			},
-			"name": "{{{xlf 6034 0 'an'}}}",
+			"name": "{{{xylf 6 312 171 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 6034 0 'an'}}}"
+					"title": "{{{xylf 6 312 171 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 6035 5}}}",
-						"{{{xl 6041 1}}}{{{xl 8014 2}}}",
-						"{{{xl 8017 30}}}",
-						"{{{xl 8048 1}}}"
+						"{{{xyl 6 312 159 6}}}",
+						"{{{xyl 6 321 87 2}}}{{{xyl 8 72 687 3}}}",
+						"{{{xyl 8 81 651 31}}}",
+						"{{{xyl 8 81 279 2}}}"
 					]
 				},
 				{
 					"type": "statblock",
 					"statblock": [
-						"{{{pxl 8050 1}}}",
-						"{{{pxl 8052 1}}}",
-						"{{{pxl 8054 1}}}"
+						"{{{pxyl 8 72 255 2}}}",
+						"{{{pxyl 8 72 243 2}}}",
+						"{{{pxyl 8 72 231 2}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "development",
-					"title": "{{{xlf 8056 0 'nd'}}}",
+					"title": "{{{xylf 8 81 219 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 8057 3}}}"
+								"{{{xyl 8 137 219 4}}}"
 							]
 						}
 					]
@@ -186621,16 +186626,16 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Sabotage"
 			},
-			"name": "{{{xlf 8105 0 'an'}}}",
+			"name": "{{{xylf 8 387 671 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 8105 0 'an'}}}"
+					"title": "{{{xylf 8 387 671 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 8106 12}}}"
+						"{{{xyl 8 321 651 13}}}"
 					]
 				}
 			]
@@ -186641,32 +186646,32 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Tug of War"
 			},
-			"name": "{{{xlf 8061 0 'an'}}}",
+			"name": "{{{xylf 8 72 159 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 8061 0 'an'}}}"
+					"title": "{{{xylf 8 72 159 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 8062 7}}}",
-						"{{{xl 8070 2}}}",
-						"{{{xl 8073 16}}}"
+						"{{{xyl 8 72 147 8}}}",
+						"{{{xyl 8 411 447 3}}}",
+						"{{{xyl 8 438 411 17}}}"
 					]
 				},
 				{
 					"type": "statblock",
 					"statblock": [
-						"{{{pxl 8090 1}}}",
-						"{{{pxl 8092 1}}}",
-						"{{{pxl 8094 1}}}"
+						"{{{pxyl 8 312 207 2}}}",
+						"{{{pxyl 8 312 195 2}}}",
+						"{{{pxyl 8 312 183 2}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 8096 8}}}"
+						"{{{xyl 8 321 171 9}}}"
 					]
 				}
 			]
@@ -186677,20 +186682,20 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Medic"
 			},
-			"name": "{{{xlf 9014 0 'an'}}}",
+			"name": "{{{xylf 9 72 675 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 9014 0 'an'}}}"
+					"title": "{{{xylf 9 72 675 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 9015 8}}}",
-						"{{{xl 9024 10}}}",
-						"{{{xl 9035 7}}}",
-						"{{{xl 9043 15}}}",
-						"{{{xl 9059 1}}}"
+						"{{{xyl 9 72 663 9}}}",
+						"{{{xyl 9 81 555 11}}}",
+						"{{{xyl 9 81 423 8}}}",
+						"{{{xyl 9 81 327 16}}}",
+						"{{{xyl 9 81 135 2}}}"
 					]
 				}
 			]
@@ -186701,18 +186706,18 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Cat-calling"
 			},
-			"name": "{{{xlf 9061 0 'an'}}}",
+			"name": "{{{xylf 9 72 99 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 9061 0 'an'}}}"
+					"title": "{{{xylf 9 72 99 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 9062 4}}}",
-						"{{{xl 9067 7}}}",
-						"{{{xl 9075 40}}}"
+						"{{{xyl 9 72 87 5}}}",
+						"{{{xyl 9 312 651 8}}}",
+						"{{{xyl 9 416 555 41}}}"
 					]
 				}
 			]
@@ -186723,39 +186728,39 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "SIGHT UNSEEN"
 			},
-			"name": "{{{xlf 10014 0 'an'}}}",
+			"name": "{{{xylf 10 72 675 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 10014 0 'an'}}}"
+					"title": "{{{xylf 10 72 675 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 10015 7}}}",
-						"{{{xl 10023 9}}}",
-						"{{{xl 10033 7}}}",
-						"{{{xl 10041 7}}}",
-						"{{{xl 10049 1}}}"
+						"{{{xyl 10 72 663 8}}}",
+						"{{{xyl 10 81 567 10}}}",
+						"{{{xyl 10 81 447 8}}}",
+						"{{{xyl 10 81 351 8}}}",
+						"{{{xyl 10 81 255 2}}}"
 					]
 				},
 				{
 					"type": "statblock",
 					"statblock": [
-						"{{{pxl 10051 1}}}",
-						"{{{pxl 10053 1}}}",
-						"{{{pxl 10055 1}}}"
+						"{{{pxyl 10 72 231 2}}}",
+						"{{{pxyl 10 72 219 2}}}",
+						"{{{pxyl 10 72 207 2}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "development",
-					"title": "{{{xlf 10057 0 'nd'}}}",
+					"title": "{{{xylf 10 81 195 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 10058 4}}}"
+								"{{{xyl 10 132 195 5}}}"
 							]
 						}
 					]
@@ -186768,18 +186773,18 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "PORTRAYING BOTH MASTERS"
 			},
-			"name": "{{{xlf 10077 0 'an'}}}",
+			"name": "{{{xylf 10 323 671 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 10077 0 'an'}}}"
+					"title": "{{{xylf 10 323 671 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 10078 12}}}",
-						"{{{xl 10091 7}}}",
-						"{{{xl 10099 15}}}"
+						"{{{xyl 10 321 651 13}}}",
+						"{{{xyl 10 396 495 8}}}",
+						"{{{xyl 10 412 399 16}}}"
 					]
 				}
 			]
@@ -186790,18 +186795,18 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "the Final Challenge"
 			},
-			"name": "{{{xlf 10063 0 'an'}}}",
+			"name": "{{{xylf 10 72 123 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 10063 0 'an'}}}"
+					"title": "{{{xylf 10 72 123 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 10064 7}}}",
-						"{{{xl 10072 4}}}{{{xl 11014 2}}}",
-						"{{{xl 11017 11}}}"
+						"{{{xyl 10 72 111 8}}}",
+						"{{{xyl 10 321 123 5}}}{{{xyl 11 72 687 3}}}",
+						"{{{xyl 11 81 651 12}}}"
 					]
 				}
 			]
@@ -186811,7 +186816,7 @@ export class HelyxPFSQuest14
 				"idname": "pfsq14_imgp11",
 				"type": "Page"
 			},
-			"name": "{{{xf 11008 'an'}}} [Image]",
+			"name": "{{{xylf 11 243 339 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'aldori-dueling-sword'}}}"
 			}
@@ -186822,69 +186827,69 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Sparring Hall  Moderate Or Severe"
 			},
-			"name": "{{{xlf 11029 0 'an'}}}",
+			"name": "{{{xylf 11 72 497 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 11029 0 'an'}}}",
-					"cr": "{{{xlf 11032 0 'un'}}}"
+					"title": "{{{xylf 11 72 497 1 'an'}}}",
+					"cr": "{{{xylf 11 124 483 1 'nu'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 11033 1}}}"
+						"{{{xyl 11 72 471 2}}}"
 					]
 				},
 				{
 					"type": "read-section",
 					"paragraphs": [
-						"{{{xl 11035 6}}}",
-						"{{{xl 11042 5}}}",
-						"{{{xl 11048 11}}}"
+						"{{{xyl 11 72 435 7}}}",
+						"{{{xyl 11 81 351 6}}}",
+						"{{{xyl 11 81 279 12}}}"
 					]
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 11060 5}}}",
-						"{{{xl 11066 2}}}"
+						"{{{xyl 11 81 123 6}}}",
+						"{{{xyl 11 312 675 3}}}"
 					]
 				},
 				{
 					"type": "section",
 					"section": "bylevel",
-					"title": "{{{xlf 11069 0 'nd'}}}",
+					"title": "{{{xylf 11 366 627 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "creature",
 							"ref": "pfsq14_dura_lvl1-2",
-							"cr": "{{{xlf 11072 0 'n'}}}",
+							"cr": "{{{xylf 11 474 603 1 'n'}}}",
 							"statblock": [
-								"{{{pxl 11073 0}}}"
+								"{{{pxyl 11 353 591 1}}}"
 							]
 						},
 						{
 							"type": "creature",
 							"ref": "pfsq14_halran_lvl1-2",
-							"cr": "{{{xlf 11074 0 'n'}}}",
+							"cr": "{{{xylf 11 344 567 1 'n'}}}",
 							"statblock": [
-								"{{{pxl 11077 0}}}"
+								"{{{pxyl 11 334 555 1}}}"
 							]
 						},
 						{
 							"type": "creature",
 							"ref": "pfsq14_rhenei_lvl1-2",
-							"cr": "{{{xlf 11080 0 'n'}}}",
+							"cr": "{{{xylf 11 474 531 1 'n'}}}",
 							"statblock": [
-								"{{{pxl 11081 0}}}"
+								"{{{pxyl 11 320 519 1}}}"
 							]
 						},
 						{
 							"type": "creature",
 							"ref": "pfsq14_thisnabel_lvl1-2",
-							"cr": "{{{xlf 11084 0 'n'}}}",
+							"cr": "{{{xylf 11 474 495 1 'n'}}}",
 							"statblock": [
-								"{{{pxl 11085 0}}}"
+								"{{{pxyl 11 312 483 1}}}"
 							]
 						}
 					]
@@ -186892,38 +186897,38 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "bylevel",
-					"title": "{{{xlf 11086 0 'nd'}}}",
+					"title": "{{{xylf 11 312 459 1 'dn'}}}",
 					"blocks": [
 						{
 							"type": "creature",
 							"ref": "pfsq14_dura_lvl3-4",
-							"cr": "{{{xlf 11089 0 'n'}}}",
+							"cr": "{{{xylf 11 477 435 1 'n'}}}",
 							"statblock": [
-								"{{{pxl 11090 0}}}"
+								"{{{pxyl 11 312 423 1}}}"
 							]
 						},
 						{
 							"type": "creature",
 							"ref": "pfsq14_halran_lvl3-4",
-							"cr": "{{{xlf 11091 0 'n'}}}",
+							"cr": "{{{xylf 11 315 399 1 'n'}}}",
 							"statblock": [
-								"{{{pxl 11094 0}}}"
+								"{{{pxyl 11 355 387 1}}}"
 							]
 						},
 						{
 							"type": "creature",
 							"ref": "pfsq14_rhenei_lvl3-4",
-							"cr": "{{{xlf 11097 0 'n'}}}",
+							"cr": "{{{xylf 11 477 363 1 'n'}}}",
 							"statblock": [
-								"{{{pxl 11098 0}}}"
+								"{{{pxyl 11 374 351 1}}}"
 							]
 						},
 						{
 							"type": "creature",
 							"ref": "pfsq14_thisnabel_lvl3-4",
-							"cr": "{{{xlf 11100 0 'n'}}}",
+							"cr": "{{{xylf 11 477 327 1 'n'}}}",
 							"statblock": [
-								"{{{pxl 11101 0}}}"
+								"{{{pxyl 11 312 315 1}}}"
 							]
 						}
 					]
@@ -186936,18 +186941,18 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Conclusion"
 			},
-			"name": "{{{xlf 11102 0 'an'}}}",
+			"name": "{{{xylf 11 312 291 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 11102 0 'an'}}}"
+					"title": "{{{xylf 11 312 291 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 11103 7}}}",
-						"{{{xl 11111 7}}}",
-						"{{{xl 11119 3}}}"
+						"{{{xyl 11 312 279 8}}}",
+						"{{{xyl 11 321 207 8}}}",
+						"{{{xyl 11 321 111 4}}}"
 					]
 				}
 			]
@@ -186958,16 +186963,16 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Objectives"
 			},
-			"name": "{{{xlf 12013 0 'an'}}}",
+			"name": "{{{xylf 12 72 675 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 12013 0 'an'}}}"
+					"title": "{{{xylf 12 72 675 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 12014 2}}}"
+						"{{{xyl 12 72 663 3}}}"
 					]
 				}
 			]
@@ -186980,7 +186985,7 @@ export class HelyxPFSQuest14
 		"type": "JournalEntry",
 		"target": "pfsq14_journals"
 	},
-	"name": "02 {{{xlf 13013 0 'an'}}}",
+	"name": "02 {{{xylf 13 72 675 1 'an'}}}",
 	"pages": [
 		{
 			"helyx": {
@@ -186988,16 +186993,16 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "APPENDIX 1: LEVEL 1–2 ENCOUNTERS"
 			},
-			"name": "{{{xlf 13013 0 'an'}}}",
+			"name": "{{{xylf 13 72 675 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 13013 0 'an'}}}"
+					"title": "{{{xylf 13 72 675 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 13014 6}}}"
+						"{{{xyl 13 72 663 7}}}"
 					]
 				}
 			]
@@ -187008,25 +187013,25 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "ENCOUNTER A (LEVELS 1–2)"
 			},
-			"name": "{{{xlf 13021 0 'an'}}}",
+			"name": "{{{xylf 13 72 567 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 13021 0 'an'}}}"
+					"title": "{{{xylf 13 72 567 1 'an'}}}"
 				},
 				{
 					"type": "section",
 					"section": "balance",
-					"title": "{{{xlf 13157 0 'an'}}}",
+					"title": "{{{xylf 13 344 671 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 13158 2}}}",
-								"{{{xl 13161 2}}}",
-								"{{{xl 13164 2}}}",
-								"{{{xl 13167 3}}}",
-								"{{{xl 13171 3}}}"
+								"{{{xyl 13 321 651 3}}}",
+								"{{{xyl 13 330 615 3}}}",
+								"{{{xyl 13 330 591 3}}}",
+								"{{{xyl 13 330 567 4}}}",
+								"{{{xyl 13 330 531 4}}}"
 							]
 						}
 					]
@@ -187034,159 +187039,159 @@ export class HelyxPFSQuest14
 				{
 					"type": "creature",
 					"ref": "pfsq14_dura_lvl1-2",
-					"cr": "{{{xlf 13024 0 'n'}}}",
-					"tags": "{{{pf2tags 13025 'unique' 13026 'alignment' 13027 'size' 13028 'ancestry' 13029 'ancestry' 13030 'ancestry'}}}",
+					"cr": "{{{xylf 13 235 543 1 'n'}}}",
+					"tags": "{{{xytags 13 78 530 'unique'}}}{{{xytags 13 105 530 'alignment'}}}{{{xytags 13 120 530 'size'}}}{{{xytags 13 151 530 'ancestry'}}}{{{xytags 13 182 530 'ancestry'}}}{{{xytags 13 222 530 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 13031 1}}}",
-						"{{{pxl 13033 1}}}",
-						"{{{pxl 13035 1}}}",
-						"{{{pxl 13037 11}}}",
-						"{{{pxl 13049 4}}}<hr/>",
-						"{{{pxl 13054 7}}}",
-						"{{{pxl 13062 1}}}",
-						"{{{pxl 13064 2}}}<hr/>",
-						"{{{pxl 13067 1}}}",
-						"{{{pxl 13069 7}}}",
-						"{{{pxl 13077 12}}}"
+						"{{{pxyl 13 72 519 2}}}",
+						"{{{pxyl 13 72 507 2}}}",
+						"{{{pxyl 13 72 495 2}}}",
+						"{{{pxyl 13 72 483 12}}}",
+						"{{{pxyl 13 72 471 5}}}<hr/>",
+						"{{{pxyl 13 72 447 8}}}",
+						"{{{pxyl 13 72 435 2}}}",
+						"{{{pxyl 13 72 423 3}}}<hr/>",
+						"{{{pxyl 13 72 411 2}}}",
+						"{{{pxyl 13 72 399 8}}}",
+						"{{{pxyl 13 72 375 13}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_halran_lvl1-2",
-					"cr": "{{{slicexlf 13090 2 'n' 7 12}}}",
-					"tags": "{{{pf2tags 13093 'unique' 13094 'alignment' 13095 'size' 13096 'ancestry' 13097 'ancestry'}}}",
+					"cr": "{{{slicexylf 13 315 459 3 'n' 7 12}}}",
+					"tags": "{{{xytags 13 317 446 'unique'}}}{{{xytags 13 344 446 'alignment'}}}{{{xytags 13 359 446 'size'}}}{{{xytags 13 390 446 'ancestry'}}}{{{xytags 13 421 446 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 13098 1}}}",
-						"{{{pxl 13100 1}}}",
-						"{{{pxl 13102 1}}}",
-						"{{{pxl 13104 11}}}",
-						"{{{pxl 13116 4}}}<hr/>",
-						"{{{pxl 13121 7}}}",
-						"{{{pxl 13129 1}}}",
-						"{{{pxl 13131 2}}}<hr/>",
-						"{{{pxl 13134 1}}}",
-						"{{{pxl 13136 7}}}",
-						"{{{pxl 13144 12}}}"
+						"{{{pxyl 13 312 435 2}}}",
+						"{{{pxyl 13 312 423 2}}}",
+						"{{{pxyl 13 312 411 2}}}",
+						"{{{pxyl 13 312 399 12}}}",
+						"{{{pxyl 13 312 387 5}}}<hr/>",
+						"{{{pxyl 13 312 363 8}}}",
+						"{{{pxyl 13 312 351 2}}}",
+						"{{{pxyl 13 312 339 3}}}<hr/>",
+						"{{{pxyl 13 312 327 2}}}",
+						"{{{pxyl 13 312 315 8}}}",
+						"{{{pxyl 13 312 291 13}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_rhenei_lvl1-2",
-					"cr": "{{{slicexlf 14013 2 'n' 7 12}}}",
-					"tags": "{{{pf2tags 14016 'unique' 14017 'alignment' 14018 'size' 14019 'ancestry' 14020 'ancestry'}}}",
+					"cr": "{{{slicexylf 14 75 687 3 'n' 7 12}}}",
+					"tags": "{{{xytags 14 78 674 'unique'}}}{{{xytags 14 105 674 'alignment'}}}{{{xytags 14 121 674 'size'}}}{{{xytags 14 151 674 'ancestry'}}}{{{xytags 14 193 674 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 14021 1}}}",
-						"{{{pxl 14023 1}}}",
-						"{{{pxl 14025 2}}}",
-						"{{{pxl 14028 11}}}",
-						"{{{pxl 14040 4}}}<hr/>",
-						"{{{pxl 14045 7}}}",
-						"{{{pxl 14053 1}}}<hr/>",
-						"{{{pxl 14055 1}}}",
-						"{{{pxl 14057 5}}}",
-						"{{{pxl 14063 4}}}",
-						"{{{pxl 14068 13}}}",
-						"{{{pxl 14082 8}}}"
+						"{{{pxyl 14 72 663 2}}}",
+						"{{{pxyl 14 72 651 2}}}",
+						"{{{pxyl 14 72 639 3}}}",
+						"{{{pxyl 14 72 615 12}}}",
+						"{{{pxyl 14 72 603 5}}}<hr/>",
+						"{{{pxyl 14 72 579 8}}}",
+						"{{{pxyl 14 72 567 2}}}<hr/>",
+						"{{{pxyl 14 72 555 2}}}",
+						"{{{pxyl 14 72 543 6}}}",
+						"{{{pxyl 14 72 519 5}}}",
+						"{{{pxyl 14 72 495 14}}}",
+						"{{{pxyl 14 72 459 9}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_thisnabel_lvl1-2",
-					"cr": "{{{xlf 14093 0 'n'}}}",
-					"tags": "{{{pf2tags 14094 'unique' 14095 'alignment' 14096 'size' 14097 'ancestry' 14098 'ancestry'}}}",
+					"cr": "{{{xylf 14 235 411 1 'n'}}}",
+					"tags": "{{{xytags 14 78 398 'unique'}}}{{{xytags 14 105 398 'alignment'}}}{{{xytags 14 121 398 'size'}}}{{{xytags 14 149 398 'ancestry'}}}{{{xytags 14 179 398 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 14099 1}}}",
-						"{{{pxl 14101 1}}}",
-						"{{{pxl 14103 2}}}",
-						"{{{pxl 14106 11}}}",
-						"{{{pxl 14118 6}}}<hr/>",
-						"{{{pxl 14125 7}}}",
-						"{{{pxl 14133 1}}}<hr/>",
-						"{{{pxl 14135 1}}}",
-						"{{{pxl 14137 5}}}",
-						"{{{pxl 14143 4}}}",
-						"{{{pxl 14148 2}}}"
+						"{{{pxyl 14 72 387 2}}}",
+						"{{{pxyl 14 72 375 2}}}",
+						"{{{pxyl 14 72 363 3}}}",
+						"{{{pxyl 14 72 339 12}}}",
+						"{{{pxyl 14 72 327 7}}}<hr/>",
+						"{{{pxyl 14 72 303 8}}}",
+						"{{{pxyl 14 72 291 2}}}<hr/>",
+						"{{{pxyl 14 72 279 2}}}",
+						"{{{pxyl 14 72 267 6}}}",
+						"{{{pxyl 14 72 243 5}}}",
+						"{{{pxyl 14 72 219 3}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_determined-dura_lvl1-2",
 					"amount": "[O]",
-					"cr": "{{{slicexlf 14151 2 'n' 20 11}}}",
-					"tags": "{{{pf2tags 14154 'unique' 14155 'alignment' 14156 'size' 14157 'ancestry' 14158 'ancestry' 14159 'ancestry'}}}",
+					"cr": "{{{slicexylf 14 315 687 3 'n' 20 11}}}",
+					"tags": "{{{xytags 14 317 674 'unique'}}}{{{xytags 14 344 674 'alignment'}}}{{{xytags 14 358 674 'size'}}}{{{xytags 14 389 674 'ancestry'}}}{{{xytags 14 422 674 'ancestry'}}}{{{xytags 14 463 674 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 14160 1}}}",
-						"{{{pxl 14162 1}}}",
-						"{{{pxl 14164 1}}}",
-						"{{{pxl 14166 11}}}",
-						"{{{pxl 14178 6}}}<hr/>",
-						"{{{pxl 14185 7}}}",
-						"{{{pxl 14193 1}}}<hr/>",
-						"{{{pxl 14195 2}}}",
-						"{{{pxl 14198 1}}}",
-						"{{{pxl 14200 5}}}",
-						"{{{pxl 14206 11}}}"
+						"{{{pxyl 14 312 663 2}}}",
+						"{{{pxyl 14 312 651 2}}}",
+						"{{{pxyl 14 312 639 2}}}",
+						"{{{pxyl 14 312 627 12}}}",
+						"{{{pxyl 14 312 615 7}}}<hr/>",
+						"{{{pxyl 14 312 591 8}}}",
+						"{{{pxyl 14 312 579 2}}}<hr/>",
+						"{{{pxyl 14 312 567 3}}}",
+						"{{{pxyl 14 312 555 2}}}",
+						"{{{pxyl 14 312 543 6}}}",
+						"{{{pxyl 14 312 519 12}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_determined-halran_lvl1-2",
 					"amount": "[O]",
-					"cr": "{{{slicexlf 14218 2 'n' 22 11}}}",
-					"tags": "{{{pf2tags 14221 'unique' 14222 'alignment' 14223 'size' 14224 'ancestry' 14225 'ancestry'}}}",
+					"cr": "{{{slicexylf 14 315 435 3 'n' 22 11}}}",
+					"tags": "{{{xytags 14 317 422 'unique'}}}{{{xytags 14 344 422 'alignment'}}}{{{xytags 14 359 422 'size'}}}{{{xytags 14 389 422 'ancestry'}}}{{{xytags 14 419 422 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 14226 1}}}",
-						"{{{pxl 14228 1}}}",
-						"{{{pxl 14230 1}}}",
-						"{{{pxl 14232 11}}}",
-						"{{{pxl 14244 4}}}<hr/>",
-						"{{{pxl 14249 7}}}",
-						"{{{pxl 14257 1}}}<hr/>",
-						"{{{pxl 14259 2}}}",
-						"{{{pxl 14262 1}}}",
-						"{{{pxl 14264 5}}}",
-						"{{{pxl 14270 11}}}"
+						"{{{pxyl 14 312 411 2}}}",
+						"{{{pxyl 14 312 399 2}}}",
+						"{{{pxyl 14 312 387 2}}}",
+						"{{{pxyl 14 312 375 12}}}",
+						"{{{pxyl 14 312 363 5}}}<hr/>",
+						"{{{pxyl 14 312 339 8}}}",
+						"{{{pxyl 14 312 327 2}}}<hr/>",
+						"{{{pxyl 14 312 315 3}}}",
+						"{{{pxyl 14 312 303 2}}}",
+						"{{{pxyl 14 312 291 6}}}",
+						"{{{pxyl 14 312 267 12}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_determined-rhenei_lvl1-2",
 					"amount": "[O]",
-					"cr": "{{{slicexlf 15013 2 'n' 22 11}}}",
-					"tags": "{{{pf2tags 15016 'unique' 15017 'alignment' 15018 'size' 15019 'ancestry' 15020 'ancestry'}}}",
+					"cr": "{{{slicexylf 15 75 687 3 'n' 22 11}}}",
+					"tags": "{{{xytags 15 78 674 'unique'}}}{{{xytags 15 105 674 'alignment'}}}{{{xytags 15 120 674 'size'}}}{{{xytags 15 148 674 'ancestry'}}}{{{xytags 15 189 674 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 15021 1}}}",
-						"{{{pxl 15023 1}}}",
-						"{{{pxl 15025 2}}}",
-						"{{{pxl 15028 11}}}",
-						"{{{pxl 15040 4}}}<hr/>",
-						"{{{pxl 15045 7}}}",
-						"{{{pxl 15053 1}}}<hr/>",
-						"{{{pxl 15055 1}}}",
-						"{{{pxl 15057 5}}}",
-						"{{{pxl 15063 4}}}",
-						"{{{pxl 15068 23}}}",
-						"{{{pxl 15092 7}}}"
+						"{{{pxyl 15 72 663 2}}}",
+						"{{{pxyl 15 72 651 2}}}",
+						"{{{pxyl 15 72 639 3}}}",
+						"{{{pxyl 15 72 615 12}}}",
+						"{{{pxyl 15 72 603 5}}}<hr/>",
+						"{{{pxyl 15 72 579 8}}}",
+						"{{{pxyl 15 72 567 2}}}<hr/>",
+						"{{{pxyl 15 72 555 2}}}",
+						"{{{pxyl 15 72 543 6}}}",
+						"{{{pxyl 15 72 519 5}}}",
+						"{{{pxyl 15 72 495 24}}}",
+						"{{{pxyl 15 72 447 8}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_determined-thisnabel_lvl1-2",
 					"amount": "[O]",
-					"cr": "{{{slicexlf 15100 2 'n' 25 11}}}",
-					"tags": "{{{pf2tags 15103 'unique' 15104 'alignment' 15105 'size' 15106 'ancestry' 15107 'ancestry'}}}",
+					"cr": "{{{slicexylf 15 315 687 3 'n' 25 11}}}",
+					"tags": "{{{xytags 15 317 674 'unique'}}}{{{xytags 15 344 674 'alignment'}}}{{{xytags 15 360 674 'size'}}}{{{xytags 15 390 674 'ancestry'}}}{{{xytags 15 423 674 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 15108 1}}}",
-						"{{{pxl 15110 1}}}",
-						"{{{pxl 15112 2}}}",
-						"{{{pxl 15115 11}}}",
-						"{{{pxl 15127 4}}}<hr/>",
-						"{{{pxl 15132 7}}}",
-						"{{{pxl 15140 1}}}<hr/>",
-						"{{{pxl 15142 1}}}",
-						"{{{pxl 15144 5}}}",
-						"{{{pxl 15150 4}}}",
-						"{{{pxl 15155 2}}}"
+						"{{{pxyl 15 312 663 2}}}",
+						"{{{pxyl 15 312 651 2}}}",
+						"{{{pxyl 15 312 639 3}}}",
+						"{{{pxyl 15 312 615 12}}}",
+						"{{{pxyl 15 312 603 5}}}<hr/>",
+						"{{{pxyl 15 312 579 8}}}",
+						"{{{pxyl 15 312 567 2}}}<hr/>",
+						"{{{pxyl 15 312 555 2}}}",
+						"{{{pxyl 15 312 543 6}}}",
+						"{{{pxyl 15 312 519 5}}}",
+						"{{{pxyl 15 312 495 3}}}"
 					]
 				}
 			]
@@ -187199,7 +187204,7 @@ export class HelyxPFSQuest14
 		"type": "JournalEntry",
 		"target": "pfsq14_journals"
 	},
-	"name": "03 {{{xlf 16013 0 'an'}}}",
+	"name": "03 {{{xylf 16 72 687 1 'an'}}}",
 	"pages": [
 		{
 			"helyx": {
@@ -187207,16 +187212,16 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "APPENDIX 2: LEVEL 3–4 ENCOUNTERS"
 			},
-			"name": "{{{xlf 16013 0 'an'}}}",
+			"name": "{{{xylf 16 72 687 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 16013 0 'an'}}}"
+					"title": "{{{xylf 16 72 687 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 16014 6}}}"
+						"{{{xyl 16 72 675 7}}}"
 					]
 				}
 			]
@@ -187227,25 +187232,25 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "ENCOUNTER A (LEVELS 3–4)"
 			},
-			"name": "{{{xlf 16021 0 'an'}}}",
+			"name": "{{{xylf 16 72 579 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 16021 0 'an'}}}"
+					"title": "{{{xylf 16 72 579 1 'an'}}}"
 				},
 				{
 					"type": "section",
 					"section": "balance",
-					"title": "{{{xlf 16153 0 'an'}}}",
+					"title": "{{{xylf 16 344 671 1 'an'}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 16154 2}}}",
-								"{{{xl 16157 2}}}",
-								"{{{xl 16160 2}}}",
-								"{{{xl 16163 3}}}",
-								"{{{xl 16167 4}}}"
+								"{{{xyl 16 321 651 3}}}",
+								"{{{xyl 16 330 615 3}}}",
+								"{{{xyl 16 330 591 3}}}",
+								"{{{xyl 16 330 567 4}}}",
+								"{{{xyl 16 330 531 5}}}"
 							]
 						}
 					]
@@ -187253,159 +187258,159 @@ export class HelyxPFSQuest14
 				{
 					"type": "creature",
 					"ref": "pfsq14_dura_lvl3-4",
-					"cr": "{{{slicexlf 16022 2 'n' 5 11}}}",
-					"tags": "{{{pf2tags 16025 'unique' 16026 'alignment' 16027 'size' 16028 'ancestry' 16029 'ancestry' 16030 'ancestry'}}}",
+					"cr": "{{{slicexylf 16 75 555 3 'n' 5 11}}}",
+					"tags": "{{{xytags 16 78 542 'unique'}}}{{{xytags 16 105 542 'alignment'}}}{{{xytags 16 121 542 'size'}}}{{{xytags 16 153 542 'ancestry'}}}{{{xytags 16 185 542 'ancestry'}}}{{{xytags 16 227 542 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 16031 1}}}",
-						"{{{pxl 16033 1}}}",
-						"{{{pxl 16035 1}}}",
-						"{{{pxl 16037 11}}}",
-						"{{{pxl 16049 4}}}<hr/>",
-						"{{{pxl 16054 7}}}",
-						"{{{pxl 16062 1}}}",
-						"{{{pxl 16064 2}}}<hr/>",
-						"{{{pxl 16067 1}}}",
-						"{{{pxl 16069 5}}}",
-						"{{{pxl 16075 12}}}"
+						"{{{pxyl 16 72 531 2}}}",
+						"{{{pxyl 16 72 519 2}}}",
+						"{{{pxyl 16 72 507 2}}}",
+						"{{{pxyl 16 72 495 12}}}",
+						"{{{pxyl 16 72 483 5}}}<hr/>",
+						"{{{pxyl 16 72 459 8}}}",
+						"{{{pxyl 16 72 447 2}}}",
+						"{{{pxyl 16 72 435 3}}}<hr/>",
+						"{{{pxyl 16 72 423 2}}}",
+						"{{{pxyl 16 72 411 6}}}",
+						"{{{pxyl 16 72 387 13}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_halran_lvl3-4",
-					"cr": "{{{xlf 16090 0 'n'}}}",
-					"tags": "{{{pf2tags 16091 'unique' 16092 'alignment' 16093 'size' 16094 'ancestry' 16095 'ancestry'}}}",
+					"cr": "{{{xylf 16 477 447 1 'n'}}}",
+					"tags": "{{{xytags 16 317 434 'unique'}}}{{{xytags 16 344 434 'alignment'}}}{{{xytags 16 360 434 'size'}}}{{{xytags 16 392 434 'ancestry'}}}{{{xytags 16 425 434 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 16096 1}}}",
-						"{{{pxl 16098 1}}}",
-						"{{{pxl 16100 1}}}",
-						"{{{pxl 16102 11}}}",
-						"{{{pxl 16114 4}}}<hr/>",
-						"{{{pxl 16119 7}}}",
-						"{{{pxl 16127 1}}}",
-						"{{{pxl 16129 2}}}<hr/>",
-						"{{{pxl 16132 1}}}",
-						"{{{pxl 16134 5}}}",
-						"{{{pxl 16140 12}}}"
+						"{{{pxyl 16 312 423 2}}}",
+						"{{{pxyl 16 312 411 2}}}",
+						"{{{pxyl 16 312 399 2}}}",
+						"{{{pxyl 16 312 387 12}}}",
+						"{{{pxyl 16 312 375 5}}}<hr/>",
+						"{{{pxyl 16 312 351 8}}}",
+						"{{{pxyl 16 312 339 2}}}",
+						"{{{pxyl 16 312 327 3}}}<hr/>",
+						"{{{pxyl 16 312 315 2}}}",
+						"{{{pxyl 16 312 303 6}}}",
+						"{{{pxyl 16 312 279 13}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_rhenei_lvl3-4",
-					"cr": "{{{xlf 17015 0 'n'}}}",
-					"tags": "{{{pf2tags 17016 'unique' 17017 'alignment' 17018 'size' 17019 'ancestry' 17020 'ancestry'}}}",
+					"cr": "{{{xylf 17 237 687 1 'n'}}}",
+					"tags": "{{{xytags 17 78 674 'unique'}}}{{{xytags 17 105 674 'alignment'}}}{{{xytags 17 121 674 'size'}}}{{{xytags 17 155 674 'ancestry'}}}{{{xytags 17 198 674 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 17021 1}}}",
-						"{{{pxl 17023 1}}}",
-						"{{{pxl 17025 1}}}",
-						"{{{pxl 17027 11}}}",
-						"{{{pxl 17039 4}}}<hr/>",
-						"{{{pxl 17044 7}}}",
-						"{{{pxl 17052 1}}}<hr/>",
-						"{{{pxl 17054 1}}}",
-						"{{{pxl 17056 5}}}",
-						"{{{pxl 17062 4}}}",
-						"{{{pxl 17067 14}}}",
-						"{{{pxl 17082 7}}}"
+						"{{{pxyl 17 72 663 2}}}",
+						"{{{pxyl 17 72 651 2}}}",
+						"{{{pxyl 17 72 639 2}}}",
+						"{{{pxyl 17 72 627 12}}}",
+						"{{{pxyl 17 72 615 5}}}<hr/>",
+						"{{{pxyl 17 72 591 8}}}",
+						"{{{pxyl 17 72 579 2}}}<hr/>",
+						"{{{pxyl 17 72 567 2}}}",
+						"{{{pxyl 17 72 555 6}}}",
+						"{{{pxyl 17 72 531 5}}}",
+						"{{{pxyl 17 72 507 15}}}",
+						"{{{pxyl 17 72 459 8}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_thisnabel_lvl3-4",
-					"cr": "{{{xlf 17091 0 'n'}}}",
-					"tags": "{{{pf2tags 17092 'unique' 17093 'alignment' 17094 'size' 17095 'ancestry' 17096 'ancestry'}}}",
+					"cr": "{{{xylf 17 237 423 1 'n'}}}",
+					"tags": "{{{xytags 17 78 410 'unique'}}}{{{xytags 17 105 410 'alignment'}}}{{{xytags 17 121 410 'size'}}}{{{xytags 17 149 410 'ancestry'}}}{{{xytags 17 181 410 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 17097 1}}}",
-						"{{{pxl 17099 1}}}",
-						"{{{pxl 17101 1}}}",
-						"{{{pxl 17103 11}}}",
-						"{{{pxl 17115 4}}}<hr/>",
-						"{{{pxl 17120 7}}}",
-						"{{{pxl 17128 1}}}<hr/>",
-						"{{{pxl 17130 1}}}",
-						"{{{pxl 17132 5}}}",
-						"{{{pxl 17138 4}}}",
-						"{{{pxl 17143 2}}}"
+						"{{{pxyl 17 72 399 2}}}",
+						"{{{pxyl 17 72 387 2}}}",
+						"{{{pxyl 17 72 375 2}}}",
+						"{{{pxyl 17 72 363 12}}}",
+						"{{{pxyl 17 72 351 5}}}<hr/>",
+						"{{{pxyl 17 72 327 8}}}",
+						"{{{pxyl 17 72 315 2}}}<hr/>",
+						"{{{pxyl 17 72 303 2}}}",
+						"{{{pxyl 17 72 291 6}}}",
+						"{{{pxyl 17 72 267 5}}}",
+						"{{{pxyl 17 72 243 3}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_determined-dura_lvl3-4",
 					"amount": "[O]",
-					"cr": "{{{xlf 17148 0 'n'}}}",
-					"tags": "{{{pf2tags 17149 'unique' 17150 'alignment' 17151 'size' 17152 'ancestry' 17153 'ancestry' 17154 'ancestry'}}}",
+					"cr": "{{{xylf 17 477 687 1 'n'}}}",
+					"tags": "{{{xytags 17 317 674 'unique'}}}{{{xytags 17 344 674 'alignment'}}}{{{xytags 17 360 674 'size'}}}{{{xytags 17 392 674 'ancestry'}}}{{{xytags 17 425 674 'ancestry'}}}{{{xytags 17 468 674 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 17155 1}}}",
-						"{{{pxl 17157 1}}}",
-						"{{{pxl 17159 1}}}",
-						"{{{pxl 17161 11}}}",
-						"{{{pxl 17173 6}}}<hr/>",
-						"{{{pxl 17180 7}}}",
-						"{{{pxl 17188 1}}}",
-						"{{{pxl 17190 2}}}<hr/>",
-						"{{{pxl 17193 1}}}",
-						"{{{pxl 17195 8}}}",
-						"{{{pxl 17204 12}}}"
+						"{{{pxyl 17 312 663 2}}}",
+						"{{{pxyl 17 312 651 2}}}",
+						"{{{pxyl 17 312 639 2}}}",
+						"{{{pxyl 17 312 627 12}}}",
+						"{{{pxyl 17 312 615 7}}}<hr/>",
+						"{{{pxyl 17 312 591 8}}}",
+						"{{{pxyl 17 312 579 2}}}",
+						"{{{pxyl 17 312 567 3}}}<hr/>",
+						"{{{pxyl 17 312 555 2}}}",
+						"{{{pxyl 17 312 543 9}}}",
+						"{{{pxyl 17 312 519 13}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_determined-halran_lvl3-4",
 					"amount": "[O]",
-					"cr": "{{{xlf 17219 0 'n'}}}",
-					"tags": "{{{pf2tags 17220 'unique' 17221 'alignment' 17222 'size' 17223 'ancestry' 17224 'ancestry'}}}",
+					"cr": "{{{xylf 17 476 435 1 'n'}}}",
+					"tags": "{{{xytags 17 317 422 'unique'}}}{{{xytags 17 344 422 'alignment'}}}{{{xytags 17 360 422 'size'}}}{{{xytags 17 393 422 'ancestry'}}}{{{xytags 17 427 422 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 17225 1}}}",
-						"{{{pxl 17227 1}}}",
-						"{{{pxl 17229 1}}}",
-						"{{{pxl 17231 11}}}",
-						"{{{pxl 17243 5}}}<hr/>",
-						"{{{pxl 17249 7}}}",
-						"{{{pxl 17257 1}}}",
-						"{{{pxl 17259 2}}}<hr/>",
-						"{{{pxl 17262 1}}}",
-						"{{{pxl 17264 8}}}",
-						"{{{pxl 17273 12}}}"
+						"{{{pxyl 17 312 411 2}}}",
+						"{{{pxyl 17 312 399 2}}}",
+						"{{{pxyl 17 312 387 2}}}",
+						"{{{pxyl 17 312 375 12}}}",
+						"{{{pxyl 17 312 363 6}}}<hr/>",
+						"{{{pxyl 17 312 339 8}}}",
+						"{{{pxyl 17 312 327 2}}}",
+						"{{{pxyl 17 312 315 3}}}<hr/>",
+						"{{{pxyl 17 312 303 2}}}",
+						"{{{pxyl 17 312 291 9}}}",
+						"{{{pxyl 17 312 267 13}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_determined-rhenei_lvl3-4",
 					"amount": "[O]",
-					"cr": "{{{xlf 18015 0 'n'}}}",
-					"tags": "{{{pf2tags 18016 'unique' 18017 'alignment' 18018 'size' 18019 'ancestry' 18020 'ancestry'}}}",
+					"cr": "{{{xylf 18 237 687 1 'n'}}}",
+					"tags": "{{{xytags 18 78 674 'unique'}}}{{{xytags 18 105 674 'alignment'}}}{{{xytags 18 121 674 'size'}}}{{{xytags 18 155 674 'ancestry'}}}{{{xytags 18 198 674 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 18021 1}}}",
-						"{{{pxl 18023 1}}}",
-						"{{{pxl 18025 1}}}",
-						"{{{pxl 18027 11}}}",
-						"{{{pxl 18039 5}}}<hr/>",
-						"{{{pxl 18045 7}}}",
-						"{{{pxl 18053 1}}}<hr/>",
-						"{{{pxl 18055 1}}}",
-						"{{{pxl 18057 8}}}",
-						"{{{pxl 18066 4}}}",
-						"{{{pxl 18071 24}}}",
-						"{{{pxl 18096 7}}}"
+						"{{{pxyl 18 72 663 2}}}",
+						"{{{pxyl 18 72 651 2}}}",
+						"{{{pxyl 18 72 639 2}}}",
+						"{{{pxyl 18 72 627 12}}}",
+						"{{{pxyl 18 72 615 6}}}<hr/>",
+						"{{{pxyl 18 72 591 8}}}",
+						"{{{pxyl 18 72 579 2}}}<hr/>",
+						"{{{pxyl 18 72 567 2}}}",
+						"{{{pxyl 18 72 555 9}}}",
+						"{{{pxyl 18 72 531 5}}}",
+						"{{{pxyl 18 72 507 25}}}",
+						"{{{pxyl 18 72 447 8}}}"
 					]
 				},
 				{
 					"type": "creature",
 					"ref": "pfsq14_determined-thisnabel_lvl3-4",
 					"amount": "[O]",
-					"cr": "{{{xlf 18106 0 'n'}}}",
-					"tags": "{{{pf2tags 18107 'unique' 18108 'alignment' 18109 'size' 18110 'ancestry' 18111 'ancestry'}}}",
+					"cr": "{{{xylf 18 477 687 1 'n'}}}",
+					"tags": "{{{xytags 18 317 674 'unique'}}}{{{xytags 18 344 674 'alignment'}}}{{{xytags 18 362 674 'size'}}}{{{xytags 18 393 674 'ancestry'}}}{{{xytags 18 425 674 'ancestry'}}}",
 					"statblock": [
-						"{{{pxl 18112 1}}}",
-						"{{{pxl 18114 1}}}",
-						"{{{pxl 18116 2}}}",
-						"{{{pxl 18119 11}}}",
-						"{{{pxl 18131 5}}}<hr/>",
-						"{{{pxl 18137 7}}}",
-						"{{{pxl 18145 1}}}<hr/>",
-						"{{{pxl 18147 1}}}",
-						"{{{pxl 18149 8}}}",
-						"{{{pxl 18158 4}}}",
-						"{{{pxl 18163 2}}}"
+						"{{{pxyl 18 312 663 2}}}",
+						"{{{pxyl 18 312 651 2}}}",
+						"{{{pxyl 18 312 639 3}}}",
+						"{{{pxyl 18 312 615 12}}}",
+						"{{{pxyl 18 312 603 6}}}<hr/>",
+						"{{{pxyl 18 312 579 8}}}",
+						"{{{pxyl 18 312 567 2}}}<hr/>",
+						"{{{pxyl 18 312 555 2}}}",
+						"{{{pxyl 18 312 543 9}}}",
+						"{{{pxyl 18 312 519 5}}}",
+						"{{{pxyl 18 312 495 3}}}"
 					]
 				}
 			]
@@ -187418,7 +187423,7 @@ export class HelyxPFSQuest14
 		"type": "JournalEntry",
 		"target": "pfsq14_journals"
 	},
-	"name": "04 {{{xlf 19013 0 'an'}}}",
+	"name": "04 {{{xylf 19 267 687 1 'an'}}}",
 	"pages": [
 		{
 			"helyx": {
@@ -187426,7 +187431,7 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "MARCOS FARABELLUS"
 			},
-			"name": "{{{xlf 19014 0 'an'}}} [Image]",
+			"name": "{{{xylf 19 111 399 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'marco-farabellus.actor'}}}"
 			}
@@ -187437,7 +187442,7 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Dura"
 			},
-			"name": "{{{xlf 19015 0 'an'}}} [Image]",
+			"name": "{{{xylf 19 163 375 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'dura.actor'}}}"
 			}
@@ -187448,7 +187453,7 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "ORLAELIA ALDOR"
 			},
-			"name": "{{{xlf 19016 0 'an'}}} [Image]",
+			"name": "{{{xylf 19 363 399 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'orlaelia-aldori.actor'}}}"
 			}
@@ -187459,7 +187464,7 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Halran"
 			},
-			"name": "{{{xlf 19017 0 'an'}}} [Image]",
+			"name": "{{{xylf 19 394 375 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'halran.actor'}}}"
 			}
@@ -187470,7 +187475,7 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "rhenei"
 			},
-			"name": "{{{xlf 20014 0 'an'}}} [Image]",
+			"name": "{{{xylf 20 158 399 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'rhenei.actor'}}}"
 			}
@@ -187481,7 +187486,7 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "ALDORI DUELING SWORD"
 			},
-			"name": "{{{xlf 20015 0 'an'}}} [Image]",
+			"name": "{{{xylf 20 99 375 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'aldori-dueling-sword'}}}"
 			}
@@ -187492,7 +187497,7 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "thisnabel"
 			},
-			"name": "{{{xlf 20016 0 'an'}}} [Image]",
+			"name": "{{{xylf 20 386 399 1 'an'}}} [Image]",
 			"img": {
 				"src": "{{{imgpath 'thisnabel.actor'}}}"
 			}
@@ -187505,47 +187510,47 @@ export class HelyxPFSQuest14
 		"type": "JournalEntry",
 		"target": "pfsq14_journals"
 	},
-	"name": "05 {{{xlf 21013 0 'any'}}}",
+	"name": "05 {{{xylf 21 72 687 1 'any'}}}",
 	"pages": [
 		{
 			"helyx": {
 				"idname": "pfsq14_oplay_01",
 				"type": "Page"
 			},
-			"name": "{{{xlf 21013 0 'an'}}}",
+			"name": "{{{xylf 21 72 687 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 21013 0 'an'}}}"
+					"title": "{{{xylf 21 72 687 1 'an'}}}"
 				},
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xl 21014 0}}}",
+					"title": "{{{xyl 21 72 663 1}}}",
 					"blocks": [
 						{
 							"type": "table",
 							"columns": "2",
 							"headers": [
-								"{{{xlf 21044 0 'an'}}}",
-								"{{{xf 21045 'an'}}}"
+								"{{{xylf 21 77 638 1 'an'}}}",
+								"{{{xylf 21 138 638 1 'an'}}}"
 							],
 							"lines": [
 								[
-									"{{{pxl 21046 0}}}",
-									"{{{pxlf 21047 0 'x'}}}"
+									"{{{pxyl 21 77 622 1}}}",
+									"{{{pxylf 21 138 622 1 'x'}}}"
 								],
 								[
-									"{{{pxl 21048 0}}}",
-									"{{{pxlf 21049 0 'x'}}}"
+									"{{{pxyl 21 77 608 1}}}",
+									"{{{pxylf 21 138 608 1 'x'}}}"
 								],
 								[
-									"{{{pxl 21050 0}}}",
-									"{{{pxlf 21051 0 'x'}}}"
+									"{{{pxyl 21 77 594 1}}}",
+									"{{{pxylf 21 138 594 1 'x'}}}"
 								],
 								[
-									"{{{pxl 21052 0}}}",
-									"{{{pxlf 21053 0 'x'}}}"
+									"{{{pxyl 21 77 580 1}}}",
+									"{{{pxylf 21 138 580 1 'x'}}}"
 								]
 							]
 						}
@@ -187554,16 +187559,16 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "treasure",
-					"title": "{{{xl 21015 0}}}",
+					"title": "{{{xyl 21 72 557 1}}}",
 					"blocks": [
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 21016 2}}}",
-								"{{{xl 21019 2}}}",
-								"{{{xl 21022 1}}}",
-								"{{{xl 21024 2}}}",
-								"{{{xl 21027 3}}}"
+								"{{{xyl 21 72 546 3}}}",
+								"{{{xyl 21 72 525 3}}}",
+								"{{{xyl 21 72 503 2}}}",
+								"{{{xyl 21 84 503 3}}}",
+								"{{{xyl 21 72 481 4}}}"
 							]
 						}
 					]
@@ -187571,43 +187576,43 @@ export class HelyxPFSQuest14
 				{
 					"type": "section",
 					"section": "dices",
-					"title": "{{{xl 21031 0}}}",
+					"title": "{{{xyl 21 312 687 1}}}",
 					"blocks": [
 						{
 							"type": "table",
 							"columns": "2",
 							"headers": [
-								"{{{xlf 21054 0 'an'}}}",
-								"{{{xf 21055 'an'}}}"
+								"{{{xylf 21 317 662 1 'an'}}}",
+								"{{{xylf 21 425 662 1 'an'}}}"
 							],
 							"lines": [
 								[
-									"{{{pxl 21056 0}}}",
-									"{{{pxlf 21057 0 'x'}}}"
+									"{{{pxyl 21 317 646 1}}}",
+									"{{{pxylf 21 425 646 1 'x'}}}"
 								],
 								[
-									"{{{pxl 21058 0}}}",
-									"{{{pxlf 21059 0 'x'}}}"
+									"{{{pxyl 21 317 632 1}}}",
+									"{{{pxylf 21 425 632 1 'x'}}}"
 								],
 								[
-									"{{{pxl 21060 0}}}",
-									"{{{pxlf 21061 0 'x'}}}"
+									"{{{pxyl 21 317 618 1}}}",
+									"{{{pxylf 21 425 618 1 'x'}}}"
 								],
 								[
-									"{{{pxl 21062 0}}}",
-									"{{{pxlf 21063 0 'x'}}}"
+									"{{{pxyl 21 317 604 1}}}",
+									"{{{pxylf 21 425 604 1 'x'}}}"
 								]
 							]
 						},
 						{
 							"type": "text",
 							"paragraphs": [
-								"{{{xl 21032 3}}}",
-								"{{{xl 21036 0}}}",
-								"{{{xl 21037 0}}}",
-								"{{{xl 21038 0}}}",
-								"{{{xl 21039 0}}}",
-								"{{{xl 21040 3}}}"
+								"{{{xyl 21 312 579 4}}}",
+								"{{{xyl 21 321 531 1}}}",
+								"{{{xyl 21 321 519 1}}}",
+								"{{{xyl 21 321 507 1}}}",
+								"{{{xyl 21 321 495 1}}}",
+								"{{{xyl 21 321 483 4}}}"
 							]
 						}
 					]
@@ -187620,39 +187625,39 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "Open Game License Version 1.0a"
 			},
-			"name": "{{{xlf 23013 0 'an'}}}",
+			"name": "{{{xylf 23 72 693 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 23013 0 'an'}}}"
+					"title": "{{{xylf 23 72 693 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 23014 1}}}",
-						"{{{xl 23016 29}}}",
-						"{{{xl 23046 5}}}",
-						"{{{xl 23052 1}}}",
-						"{{{xl 23054 2}}}",
-						"{{{xl 23057 3}}}",
-						"{{{xl 23061 4}}}",
-						"{{{xl 23066 10}}}",
-						"{{{xl 23077 2}}}",
-						"{{{xl 23080 3}}}",
-						"{{{xl 23084 1}}}",
-						"{{{xl 23086 2}}}",
-						"{{{xl 23089 3}}}",
-						"{{{xl 23093 3}}}",
-						"{{{xl 23097 2}}}",
-						"{{{xl 23100 0}}}",
-						"{{{xl 23101 1}}}",
-						"{{{xl 23103 3}}}",
-						"{{{xl 23107 2}}}",
-						"{{{xl 23110 2}}}",
-						"{{{xl 23113 1}}}",
-						"{{{xl 23115 6}}}",
-						"{{{xl 23122 4}}}",
-						"{{{xl 23127 9}}}"
+						"{{{xyl 23 72 687 2}}}",
+						"{{{xyl 23 81 674 30}}}",
+						"{{{xyl 23 81 479 6}}}",
+						"{{{xyl 23 81 440 2}}}",
+						"{{{xyl 23 81 427 3}}}",
+						"{{{xyl 23 81 407 4}}}",
+						"{{{xyl 23 81 381 5}}}",
+						"{{{xyl 23 81 349 11}}}",
+						"{{{xyl 23 81 277 3}}}",
+						"{{{xyl 23 81 258 4}}}",
+						"{{{xyl 23 81 232 2}}}",
+						"{{{xyl 23 81 219 3}}}",
+						"{{{xyl 23 81 199 4}}}",
+						"{{{xyl 23 81 173 4}}}",
+						"{{{xyl 23 81 147 3}}}",
+						"{{{xyl 23 81 128 1}}}",
+						"{{{xyl 23 81 121 2}}}",
+						"{{{xyl 23 81 115 4}}}",
+						"{{{xyl 23 81 95 3}}}",
+						"{{{xyl 23 81 82 3}}}",
+						"{{{xyl 23 312 215 2}}}",
+						"{{{xyl 23 312 199 7}}}",
+						"{{{xyl 23 312 159 5}}}",
+						"{{{xyl 23 312 131 10}}}"
 					]
 				}
 			]
@@ -187663,69 +187668,69 @@ export class HelyxPFSQuest14
 				"type": "Page",
 				"notes": "PAIZO INC."
 			},
-			"name": "{{{xlf 23137 0 'an'}}}",
+			"name": "{{{xylf 23 312 693 1 'an'}}}",
 			"blocks": [
 				{
 					"type": "journal-title",
-					"title": "{{{xlf 23137 0 'an'}}}"
+					"title": "{{{xylf 23 312 693 1 'an'}}}"
 				},
 				{
 					"type": "text",
 					"paragraphs": [
-						"{{{xl 23138 1}}}",
-						"{{{xl 23140 1}}}",
-						"{{{xl 23142 1}}}",
-						"{{{xl 23144 1}}}",
-						"{{{xl 23146 1}}}",
-						"{{{xl 23148 1}}}",
-						"{{{xl 23150 1}}}",
-						"{{{xl 23152 1}}}",
-						"{{{xl 23154 1}}}",
-						"{{{xl 23156 3}}}",
-						"{{{xl 23160 1}}}",
-						"{{{xl 23162 1}}}",
-						"{{{xl 23164 1}}}",
-						"{{{xl 23166 1}}}",
-						"{{{xl 23168 1}}}",
-						"{{{xl 23170 1}}}",
-						"{{{xl 23172 1}}}",
-						"{{{xl 23174 1}}}",
-						"{{{xl 23176 1}}}",
-						"{{{xl 23178 1}}}",
-						"{{{xl 23180 1}}}",
-						"{{{xl 23182 1}}}",
-						"{{{xl 23184 1}}}",
-						"{{{xl 23186 1}}}",
-						"{{{xl 23188 1}}}",
-						"{{{xl 23190 1}}}",
-						"{{{xl 23192 1}}}",
-						"{{{xl 23194 1}}}",
-						"{{{xl 23196 1}}}",
-						"{{{xl 23198 1}}}",
-						"{{{xl 23200 1}}}",
-						"{{{xl 23202 1}}}",
-						"{{{xl 23204 1}}}",
-						"{{{xl 23206 1}}}",
-						"{{{xl 23208 1}}}",
-						"{{{xl 23210 1}}}",
-						"{{{xl 23212 1}}}",
-						"{{{xl 23214 1}}}",
-						"{{{xl 23216 1}}}",
-						"{{{xl 23218 1}}}",
-						"{{{xl 23220 1}}}",
-						"{{{xl 23222 1}}}",
-						"{{{xl 23224 1}}}",
-						"{{{xl 23226 1}}}",
-						"{{{xl 23228 1}}}",
-						"{{{xl 23230 1}}}",
-						"{{{xl 23232 1}}}",
-						"{{{xl 23234 1}}}",
-						"{{{xl 23236 1}}}",
-						"{{{xl 23238 1}}}",
-						"{{{xl 23240 1}}}",
-						"{{{xl 23242 1}}}",
-						"{{{xl 23244 1}}}",
-						"{{{xl 23246 1}}}"
+						"{{{xyl 23 312 685 2}}}",
+						"{{{xyl 23 312 677 2}}}",
+						"{{{xyl 23 312 669 2}}}",
+						"{{{xyl 23 312 660 2}}}",
+						"{{{xyl 23 312 652 2}}}",
+						"{{{xyl 23 312 644 2}}}",
+						"{{{xyl 23 312 636 2}}}",
+						"{{{xyl 23 312 628 2}}}",
+						"{{{xyl 23 312 619 2}}}",
+						"{{{xyl 23 312 611 4}}}",
+						"{{{xyl 23 312 595 2}}}",
+						"{{{xyl 23 312 587 2}}}",
+						"{{{xyl 23 312 578 2}}}",
+						"{{{xyl 23 312 570 2}}}",
+						"{{{xyl 23 312 562 2}}}",
+						"{{{xyl 23 312 554 2}}}",
+						"{{{xyl 23 312 546 2}}}",
+						"{{{xyl 23 312 537 2}}}",
+						"{{{xyl 23 312 529 2}}}",
+						"{{{xyl 23 312 521 2}}}",
+						"{{{xyl 23 312 513 2}}}",
+						"{{{xyl 23 312 505 2}}}",
+						"{{{xyl 23 312 496 2}}}",
+						"{{{xyl 23 312 488 2}}}",
+						"{{{xyl 23 312 480 2}}}",
+						"{{{xyl 23 312 472 2}}}",
+						"{{{xyl 23 312 464 2}}}",
+						"{{{xyl 23 312 455 2}}}",
+						"{{{xyl 23 312 447 2}}}",
+						"{{{xyl 23 312 439 2}}}",
+						"{{{xyl 23 312 431 2}}}",
+						"{{{xyl 23 312 423 2}}}",
+						"{{{xyl 23 312 414 2}}}",
+						"{{{xyl 23 312 406 2}}}",
+						"{{{xyl 23 312 398 2}}}",
+						"{{{xyl 23 312 390 2}}}",
+						"{{{xyl 23 312 382 2}}}",
+						"{{{xyl 23 312 373 2}}}",
+						"{{{xyl 23 312 365 2}}}",
+						"{{{xyl 23 312 357 2}}}",
+						"{{{xyl 23 312 349 2}}}",
+						"{{{xyl 23 312 341 2}}}",
+						"{{{xyl 23 312 332 2}}}",
+						"{{{xyl 23 312 324 2}}}",
+						"{{{xyl 23 312 316 2}}}",
+						"{{{xyl 23 312 308 2}}}",
+						"{{{xyl 23 312 300 2}}}",
+						"{{{xyl 23 312 291 2}}}",
+						"{{{xyl 23 312 283 2}}}",
+						"{{{xyl 23 312 275 2}}}",
+						"{{{xyl 23 312 267 2}}}",
+						"{{{xyl 23 312 259 2}}}",
+						"{{{xyl 23 312 250 2}}}",
+						"{{{xyl 23 312 242 2}}}"
 					]
 				}
 			]
@@ -187738,7 +187743,7 @@ export class HelyxPFSQuest14
 		"target": "pfsq14_scenes",
 		"type": "Scene"
 	},
-	"name": "{{{xlf 11029 0 'an'}}}",
+	"name": "{{{xylf 11 72 497 1 'an'}}}",
 	"includes": [
 		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq14-the-swordlord-s-challenge/scene-a.json"
 	]
@@ -187749,7 +187754,7 @@ export class HelyxPFSQuest14
 		"target": "pfsq14_scenes",
 		"type": "Scene"
 	},
-	"name": "{{{xlf 3012 0 'an'}}}",
+	"name": "{{{xylf 3 344 599 1 'an'}}}",
 	"includes": [
 		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq14-the-swordlord-s-challenge/wog.json"
 	],
@@ -187777,7 +187782,7 @@ export class HelyxPFSQuest14
 			"strokeColor": "#ffffff",
 			"strokeAlpha": 0,
 			"texture": null,
-			"text": "{{{xlf 3094 0 'an'}}}",
+			"text": "{{{xylf 3 321 472 1 'an'}}}",
 			"fontFamily": "Signika",
 			"fontSize": 27,
 			"textColor": "#ffffff",
@@ -187810,7 +187815,7 @@ export class HelyxPFSQuest14
 			"strokeColor": "#ffffff",
 			"strokeAlpha": 0,
 			"texture": null,
-			"text": "{{{xlf 3096 0 'an'}}}",
+			"text": "{{{xylf 3 479 385 1 'an'}}}",
 			"fontFamily": "Signika",
 			"fontSize": 14,
 			"textColor": "#ffffff",
@@ -187825,18 +187830,18 @@ export class HelyxPFSQuest14
 ]);
     static itemsFiles =     
     [ 
-        "actors", "journals/00_cover", "journals/01_adventure", "journals/02_appendix1",
-        "journals/03_appendix2", "journals/04_appendix3", "journals/05_backmatter",
+        "actors_v6", "journals/00_cover_v6", "journals/01_adventure_v6", "journals/02_appendix1_v6",
+        "journals/03_appendix2_v6", "journals/04_appendix3_v6", "journals/05_backmatter_v6",
         "scenes/scene-a", "scenes/wog"
     ]; 
 
     static folders = 
     [ 
-        { idname: "pfsq14_journals", name: 'PFSQ14 - {{{xlf 1010 1 "any"}}}', type: "JournalEntry" },
-        { idname: "pfsq14_actors", name: 'PFSQ14 - {{{xlf 1010 1 "any"}}}', type: "Actor" },        
+        { idname: "pfsq14_journals", name: 'PFSQ14 - {{{xylf 1 66 146 2 "any"}}}', type: "JournalEntry" },
+        { idname: "pfsq14_actors", name: 'PFSQ14 - {{{xylf 1 66 146 2 "any"}}}', type: "Actor" },        
         { idname: "pfsq14_npcs", name: 'NPCs', parent: "pfsq14_actors" },     
         { idname: "pfsq14_uniques", name: 'Uniques', parent: "pfsq14_actors" }, 
-        { idname: "pfsq14_scenes", name: 'PFSQ14 - {{{xlf 1010 1 "any"}}}', type: "Scene" },  
+        { idname: "pfsq14_scenes", name: 'PFSQ14 - {{{xylf 1 66 146 2 "any"}}}', type: "Scene" },  
     ];
 
     static fixes(str, index)
@@ -204167,7 +204172,7 @@ export class HelyxPFSQuest20
 		{
 			"helyx": {
 				"type": "Page",
-				"idname": "pfsq19_license",
+				"idname": "pfsq20_license",
 				"notes": "Open Game License Version 1.0a"
 			},
 			"name": "{{{xlf 30013 0 'an'}}}",
@@ -204193,7 +204198,7 @@ export class HelyxPFSQuest20
 		{
 			"helyx": {
 				"type": "Page",
-				"idname": "pfsq18_25134",
+				"idname": "pfsq20_end_credits",
 				"notes": "PAIZO INC."
 			},
 			"name": "{{{xlf 30013 0 'an'}}}",
@@ -204590,6 +204595,2997 @@ export class HelyxPFSQuest21
         { idname: "pfsq21_npcs", name: 'NPCs', parent: "pfsq21_actors" },          
         { idname: "pfsq21_uniques", name: 'Uniques', parent: "pfsq21_actors" },         
         { idname: "pfsq21_scenes", name: "pfsq21 - {{{xlf 1009 1 'any'}}}", type: "Scene" },  
+    ];
+
+    static fixes(str, index)
+    {
+        return str.replace("�", ".").replace("�", ".");
+    }  
+}
+
+
+export class HelyxPFSQuest22
+{
+    static idname = "pfsq22-friends-in-need";
+
+    static title = "pfsq22";
+    static prefix = "pfsq22";
+    static nbPages = 25;
+    static identification = {position : { page:24,  x:216, y:41}, value: 'PATHFINDER QUEST #22' };
+
+    static resources_directories = [ "actors", "scenes", "items", "assets"];
+    static drm = "FREE" ;
+    static system="pf2e";
+    static content = { from: 3, to: 24};
+    static language = 'en';
+    static color_assign = "default";
+    static flags = { midjourney_content: false, tokens_on_maps: false };
+    static midsize = 300;
+    static family = "quests";
+
+    static summary = 
+    {
+        cover: { image: "cover", x: 0, y: 0, width: 1261, height: 649 },
+        title: "PFSQ22 - {{{xylf 1 111 176 2 'any'}}}",
+        summary:  "{{{pxyl 2 248 363 7}}}"
+    };
+
+    static contents = 
+    {
+        pfs_how_to_play: { locations: { page: 2, bounds: { left: 40, top: 300, right: 200, bottom: 170}}},
+        front_credits: { locations: { page: 2, bounds: { left: 11, top: 710, right: 200, bottom: 300 } } },
+        credits: { locations: { page: 25, bounds: { left: 311, top: 700, right: 500, bottom: 230 } } },
+        license: { locations: { page: 25, bounds:
+          [
+            { left: 70, top: 694, right: 300, bottom: 95 },
+            { left: 310, top: 178, right: 300, bottom: 95 }
+          ] 
+        
+        }} 
+    };
+
+    static fonts = [{"src":{"page":3,"index":3000,"x":125,"y":87},"position":3000,"flags":{"sideblock":true},"roles":["image-name","journal-title"],"index":0}
+,{"src":{"page":3,"index":3001,"x":232,"y":690},"position":3001,"flags":{"sideblock":true},"roles":["journal-title"],"index":1}
+,{"src":{"page":3,"index":3003,"x":207,"y":718},"position":3003,"flags":{"skip":true},"roles":["title"],"index":2}
+,{"src":{"page":3,"index":3006,"x":321,"y":579},"position":3006,"flags":{"sideblock":true},"roles":["paragraph"],"index":3}
+,{"src":{"page":3,"index":3014,"x":404,"y":495},"position":3014,"flags":{"italic":true,"sideblock":true},"roles":["paragraph"],"index":4}
+,{"src":{"page":3,"index":3016,"x":72,"y":627},"position":3016,"flags":{},"roles":["journal-title"],"index":5}
+,{"src":{"page":3,"index":3017,"x":72,"y":615},"position":3017,"flags":{},"roles":["paragraph"],"index":6}
+,{"src":{"page":3,"index":3028,"x":183,"y":495},"position":3028,"flags":{"italic":true},"roles":["paragraph"],"index":7}
+,{"src":{"page":3,"index":3057,"x":299,"y":16},"position":3057,"flags":{"skip":true},"roles":["page-number"],"index":8}
+,{"src":{"page":3,"index":3060,"x":364,"y":420},"position":3060,"flags":{"skip":true},"roles":["map"],"index":9}
+,{"src":{"page":3,"index":3061,"x":364,"y":420},"position":3061,"flags":{"skip":true},"roles":["map"],"index":10}
+,{"src":{"page":3,"index":3062,"x":319,"y":461},"position":3062,"flags":{"skip":true},"roles":["map"],"index":11}
+,{"src":{"page":4,"index":4001,"x":299,"y":14},"position":4001,"flags":{"skip":true},"roles":["page-number"],"index":12}
+,{"src":{"page":4,"index":4002,"x":216,"y":41},"position":4002,"flags":{"skip":true},"roles":["title"],"index":13}
+,{"src":{"page":4,"index":4004,"x":222,"y":736},"position":4004,"flags":{"skip":true},"roles":["title"],"index":14}
+,{"src":{"page":4,"index":4009,"x":72,"y":651},"position":4009,"flags":{"bold":true},"roles":["paragraph","section"],"index":15}
+,{"src":{"page":4,"index":4013,"x":72,"y":603},"position":4013,"flags":{},"roles":["read-section"],"index":16}
+,{"src":{"page":4,"index":4069,"x":312,"y":159},"position":4069,"flags":{},"roles":["section"],"index":17}
+,{"src":{"page":5,"index":5005,"x":72,"y":687},"position":5005,"flags":{"bold":true},"roles":["stat-block"],"index":18}
+,{"src":{"page":5,"index":5006,"x":132,"y":687},"position":5006,"flags":{},"roles":["stat-block"],"index":19}
+,{"src":{"page":5,"index":5039,"x":72,"y":327},"position":5039,"flags":{},"roles":["journal-title"],"index":20}
+,{"src":{"page":7,"index":7005,"x":83,"y":675},"position":7005,"flags":{"skip":true},"roles":["map"],"index":21}
+,{"src":{"page":7,"index":7009,"x":83,"y":407},"position":7009,"flags":{"skip":true},"roles":["map"],"index":22}
+,{"src":{"page":8,"index":8032,"x":312,"y":663},"position":8032,"flags":{},"roles":["creature-title"],"index":23}
+,{"src":{"page":9,"index":9030,"x":234,"y":435},"position":9030,"flags":{"italic":true},"roles":["paragraph"],"index":24}
+,{"src":{"page":11,"index":11016,"x":127,"y":567},"position":11016,"flags":{"italic":true},"roles":["paragraph"],"index":25}
+,{"src":{"page":11,"index":11026,"x":81,"y":459},"position":11026,"flags":{},"roles":["stat-block","pf2-tags"],"index":26}
+,{"src":{"page":11,"index":11039,"x":95,"y":375},"position":11039,"flags":{"glyphs":true},"roles":["stat-block"],"glyphs":{"[[reaction]]":"<span class='activity-icon'>R</span>","[reaction]":"<span class='activity-icon'>R</span>","[one-action]":"<span class='activity-icon'>A</span>","[two-actions]":"<span class='activity-icon'>D</span>","[three-actions]":"<span class='activity-icon'>T</span>","[free-action]":"<span class='activity-icon'>F</span>"},"index":27}
+,{"src":{"page":12,"index":12006,"x":321,"y":651},"position":12006,"flags":{"sideblock":true},"roles":["paragraph"],"index":28}
+,{"src":{"page":12,"index":12009,"x":330,"y":615},"position":12009,"flags":{"bold":true,"sideblock":true},"roles":["paragraph"],"index":29}
+,{"src":{"page":12,"index":12028,"x":72,"y":639},"position":12028,"flags":{"italic":true},"roles":["stat-block"],"index":30}
+,{"src":{"page":22,"index":22008,"x":72,"y":543},"position":22008,"flags":{},"roles":["paragraph"],"index":31}
+,{"src":{"page":22,"index":22015,"x":104,"y":519},"position":22015,"flags":{},"roles":["paragraph"],"index":32}
+,{"src":{"page":23,"index":23000,"x":159,"y":678},"position":23000,"flags":{"skip":true},"roles":[],"index":33}
+,{"src":{"page":23,"index":23001,"x":339,"y":688},"position":23001,"flags":{"skip":true},"roles":[],"index":34}
+,{"src":{"page":23,"index":23004,"x":34,"y":643},"position":23004,"flags":{"skip":true},"roles":[],"index":35}
+,{"src":{"page":23,"index":23009,"x":397,"y":603},"position":23009,"flags":{"skip":true},"roles":[],"index":36}
+,{"src":{"page":23,"index":23022,"x":142,"y":583},"position":23022,"flags":{"skip":true},"roles":[],"index":37}
+,{"src":{"page":23,"index":23033,"x":258,"y":641},"position":23033,"flags":{"skip":true},"roles":[],"index":38}
+,{"src":{"page":23,"index":23035,"x":417,"y":559},"position":23035,"flags":{"skip":true},"roles":[],"index":39}
+,{"src":{"page":24,"index":24117,"x":312,"y":535},"position":24117,"flags":{},"roles":["journal-title"],"index":40}
+,{"src":{"page":24,"index":24128,"x":312,"y":387},"position":24128,"flags":{"bold":true,"italic":true},"roles":["paragraph"],"index":41}
+];
+    static fonts_files = [ "fonts_v6" ];
+
+    static images = [{"position":{"page":1,"index":79,"x":-1,"y":254,"w":1262,"h":649,"size":3276152},"idname":"cover","target":"assets"}
+,{"position":{"page":3,"index":191,"x":279,"y":78,"w":510,"h":711,"size":1450440},"idname":"lolly.actor","target":"actors","tokens":[{"x":127,"y":0,"w":245,"h":245,"idname":"lolly.token","target":"actors","model":"green_marble"}]}
+,{"position":{"page":3,"index":724,"x":311,"y":332,"w":462,"h":298,"size":550704},"idname":"golarion","target":"scenes"}
+,{"position":{"page":4,"index":99,"x":318,"y":24,"w":665,"h":1081,"size":2875460},"idname":"thakik.actor","target":"actors","tokens":[{"x":219,"y":96,"w":244,"h":244,"idname":"thakik.token","target":"actors","model":"green_marble"}]}
+,{"position":{"page":7,"index":100,"x":72,"y":702,"w":633,"h":953,"size":1809747},"idname":"scene_a","target":"scenes","transformation":{"rotation":90}}
+,{"position":{"page":7,"index":111,"x":529,"y":72,"w":633,"h":953,"size":1809747},"idname":"scene_b","target":"scenes","transformation":{"rotation":-90}}
+,{"position":{"page":8,"index":100,"x":424,"y":29,"w":885,"h":1047,"size":3706380},"idname":"metal-scamp.actor","target":"actors","transformation":{"flip":"H"},"tokens":[{"x":13,"y":214,"w":672,"h":672,"idname":"metal-scamp.token","target":"actors","model":"red_evil"}]}
+,{"position":{"page":9,"index":100,"x":-1,"y":7,"w":808,"h":1091,"size":3526112},"idname":"wood-scamp.actor","target":"actors","tokens":[{"x":13,"y":203,"w":682,"h":682,"idname":"wood-scamp.token","target":"actors","model":"red_evil"}]}
+,{"position":{"page":10,"index":100,"x":-1,"y":27,"w":896,"h":939,"size":3365376},"idname":"baby-scamp-swarm.actor","target":"actors","tokens":[{"x":30,"y":84,"w":756,"h":756,"idname":"baby-scamp-swarm.token","target":"actors","model":"red_evil"}]}
+,{"position":{"page":21,"index":107,"x":309,"y":413,"w":576,"h":576,"size":1327104},"idname":"earth-scamp.actor","target":"actors","tokens":[{"x":0,"y":0,"w":576,"h":576,"idname":"earth-scamp.token","target":"actors","model":"red_evil"}]}
+,{"position":{"page":21,"index":113,"x":1,"y":36,"w":676,"h":901,"size":2436304},"idname":"sod-hound.actor","target":"actors","tokens":[{"x":310,"y":229,"w":314,"h":314,"idname":"sod-hound.token","target":"actors","model":"red_evil"}]}
+,{"position":{"page":21,"index":123,"x":303,"y":55,"w":629,"h":721,"size":1814036},"idname":"gluttonous-geode.actor","target":"actors","tokens":[{"x":58,"y":65,"w":462,"h":462,"idname":"gluttonous-geode.token","target":"actors","model":"red_evil"}]}
+];
+    static images_files = [ "images_v6" ];
+
+    static import_order = [ "pfsq22_lolly", "pfsq22_thakik", "pfsq22_metal_scamp", "pfsq22_weak_wood_wisp", "pfsq22_wood_wisp", "pfsq22_baby_scamp_swarm", "pfsq22_anxious_baby_scamp_swarm", "pfsq22_weak_wood_scamp", "pfsq22_wood_scamp", "pfsq22_elite_wood_scamp", "pfsq22_vegetable_lamp", "pfsq22_sod_hound", "pfsq22_weak_gluttonous_geode", "pfsq22_gluttonous_geode", "pfsq22_earth_falls_lvl1-2", "pfsq22_earth_falls_lvl3-4", "pfsq22_lightning_strike_lvl1-2", "pfsq22_lightning_strike_lvl3-4", "pfsq22_wind_buffets_lvl1-2", "pfsq22_wind_buffets_lvl3-4", "pfsq22_cover_j", "pfsq22_adventure", "pfsq22_appendix1", "pfsq22_appendix2", "pfsq22_apx3", "pfsq22_oplay", "pfsq22_village", "pfsq22_pyramid", "pfsq22_wig"];
+    static items = new Map([[ "pfsq22_lolly" ,{
+	"helyx": {
+		"idname": "pfsq22_lolly",
+		"type": "Actor",
+		"target": "pfsq22_npcs",
+		"sources": {
+			"pf2e": {
+				"name": "Commoner",
+				"type": "compendium",
+				"compendium": "pf2e.pathfinder-npc-core"
+			}
+		}
+	},
+	"name": "{{{xylf 3 125 87 1 'an'}}}",
+	"img": {
+		"src": "{{{imgpath 'lolly.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'lolly.token'}}}"
+	}
+}]
+,[ "pfsq22_thakik" ,{
+	"helyx": {
+		"idname": "pfsq22_thakik",
+		"type": "Actor",
+		"target": "pfsq22_npcs",
+		"sources": {
+			"pf2e": {
+				"name": "Commoner",
+				"type": "compendium",
+				"compendium": "pf2e.pathfinder-npc-core"
+			}
+		}
+	},
+	"name": "{{{xylf 4 144 87 1 'an'}}}",
+	"img": {
+		"src": "{{{imgpath 'thakik.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'thakik.token'}}}"
+	}
+}]
+,[ "pfsq22_metal_scamp" ,{
+	"helyx": {
+		"idname": "pfsq22_metal_scamp",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Metal Scamp (Quest 22)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'metal-scamp.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'metal-scamp.token'}}}"
+	}
+}]
+,[ "pfsq22_weak_wood_wisp" ,{
+	"helyx": {
+		"idname": "pfsq22_weak_wood_wisp",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Weak Wood Wisp",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	}
+}]
+,[ "pfsq22_wood_wisp" ,{
+	"helyx": {
+		"idname": "pfsq22_wood_wisp",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Wood Wisp",
+				"type": "compendium",
+				"compendium": "pf2e.rage-of-elements-bestiary"
+			}
+		}
+	}
+}]
+,[ "pfsq22_baby_scamp_swarm" ,{
+	"helyx": {
+		"idname": "pfsq22_baby_scamp_swarm",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Baby Scamp Swarm",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'baby-scamp-swarm.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'baby-scamp-swarm.token'}}}"
+	}
+}]
+,[ "pfsq22_anxious_baby_scamp_swarm" ,{
+	"helyx": {
+		"idname": "pfsq22_anxious_baby_scamp_swarm",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Anxious Baby Scamp Swarm",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'baby-scamp-swarm.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'baby-scamp-swarm.token'}}}"
+	}
+}]
+,[ "pfsq22_weak_wood_scamp" ,{
+	"helyx": {
+		"idname": "pfsq22_weak_wood_scamp",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Weak Wood Scamp",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'wood-scamp.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'wood-scamp.token'}}}"
+	}
+}]
+,[ "pfsq22_wood_scamp" ,{
+	"helyx": {
+		"idname": "pfsq22_wood_scamp",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Wood Scamp (Quest 22)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'wood-scamp.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'wood-scamp.token'}}}"
+	}
+}]
+,[ "pfsq22_elite_wood_scamp" ,{
+	"helyx": {
+		"idname": "pfsq22_elite_wood_scamp",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Elite Wood Scamp",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'wood-scamp.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'wood-scamp.token'}}}"
+	}
+}]
+,[ "pfsq22_vegetable_lamp" ,{
+	"helyx": {
+		"idname": "pfsq22_vegetable_lamp",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Vegetable Lamb",
+				"type": "compendium",
+				"compendium": "pf2e.rage-of-elements-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'wood-scamp.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'wood-scamp.token'}}}"
+	}
+}]
+,[ "pfsq22_sod_hound" ,{
+	"helyx": {
+		"idname": "pfsq22_sod_hound",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Sod Hound",
+				"type": "compendium",
+				"compendium": "pf2e.pathfinder-monster-core"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'sod-hound.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'sod-hound.token'}}}"
+	}
+}]
+,[ "pfsq22_weak_gluttonous_geode" ,{
+	"helyx": {
+		"idname": "pfsq22_weak_gluttonous_geode",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Weak Gluttonous Geode",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'gluttonous-geode.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'gluttonous-geode.token'}}}"
+	}
+}]
+,[ "pfsq22_gluttonous_geode" ,{
+	"helyx": {
+		"idname": "pfsq22_gluttonous_geode",
+		"type": "Actor",
+		"target": "pfsq22_bestiary",
+		"sources": {
+			"pf2e": {
+				"name": "Gluttonous Geode (Quest 22)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	},
+	"img": {
+		"src": "{{{imgpath 'gluttonous-geode.actor'}}}"
+	},
+	"token": {
+		"src": "{{{tokenpath 'gluttonous-geode.token'}}}"
+	}
+}]
+,[ "pfsq22_earth_falls_lvl1-2" ,{
+	"helyx": {
+		"idname": "pfsq22_earth_falls_lvl1-2",
+		"type": "Actor",
+		"target": "pfsq22_hazards",
+		"sources": {
+			"pf2e": {
+				"name": "Earth Falls (1-2)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	}
+}]
+,[ "pfsq22_earth_falls_lvl3-4" ,{
+	"helyx": {
+		"idname": "pfsq22_earth_falls_lvl3-4",
+		"type": "Actor",
+		"target": "pfsq22_hazards",
+		"sources": {
+			"pf2e": {
+				"name": "Earth Falls (3-4)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	}
+}]
+,[ "pfsq22_lightning_strike_lvl1-2" ,{
+	"helyx": {
+		"idname": "pfsq22_lightning_strike_lvl1-2",
+		"type": "Actor",
+		"target": "pfsq22_hazards",
+		"sources": {
+			"pf2e": {
+				"name": "Lightning Strikes (1-2)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	}
+}]
+,[ "pfsq22_lightning_strike_lvl3-4" ,{
+	"helyx": {
+		"idname": "pfsq22_lightning_strike_lvl3-4",
+		"type": "Actor",
+		"target": "pfsq22_hazards",
+		"sources": {
+			"pf2e": {
+				"name": "Lightning Strikes (3-4)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	}
+}]
+,[ "pfsq22_wind_buffets_lvl1-2" ,{
+	"helyx": {
+		"idname": "pfsq22_wind_buffets_lvl1-2",
+		"type": "Actor",
+		"target": "pfsq22_hazards",
+		"sources": {
+			"pf2e": {
+				"name": "Wind Buffets (1-2)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	}
+}]
+,[ "pfsq22_wind_buffets_lvl3-4" ,{
+	"helyx": {
+		"idname": "pfsq22_wind_buffets_lvl3-4",
+		"type": "Actor",
+		"target": "pfsq22_hazards",
+		"sources": {
+			"pf2e": {
+				"name": "Wind Buffets (3-4)",
+				"type": "compendium",
+				"compendium": "pf2e.pfs-season-6-bestiary"
+			}
+		}
+	}
+}]
+,[ "pfsq22_cover_j" ,{
+	"helyx": {
+		"idname": "pfsq22_cover_j",
+		"type": "JournalEntry",
+		"target": "pfsq22_journals"
+	},
+	"name": "00 {{{xylf 1 111 176 2 'any'}}}",
+	"pages": [
+		{
+			"helyx": {
+				"idname": "pfsq22_cover",
+				"type": "Page"
+			},
+			"name": "Cover [Image]",
+			"img": {
+				"src": "{{{imgpath 'cover'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_credits",
+				"type": "Page",
+				"notes": "Front credits"
+			},
+			"name": "Credits",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "Credits"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xylf 2 12 690 1 'b'}}} {{{xyl 2 12 680 1}}}",
+						"{{{xylf 2 12 663 1 'b'}}} {{{xyl 2 12 653 1}}}",
+						"{{{xylf 2 12 636 1 'b'}}} {{{xyl 2 12 626 1}}}",
+						"{{{xylf 2 12 609 1 'b'}}} {{{xyl 2 12 599 1}}}",
+						"{{{xylf 2 12 582 1 'b'}}} {{{xyl 2 12 571 1}}}",
+						"{{{xylf 2 12 554 1 'b'}}} {{{xyl 2 12 544 1}}}",
+						"{{{xylf 2 12 527 1 'b'}}} {{{xyl 2 12 517 1}}}",
+						"{{{xylf 2 12 500 1 'b'}}} {{{xyl 2 12 490 1}}}",
+						"{{{xylf 2 12 473 1 'b'}}} {{{xyl 2 12 463 1}}}",
+						"{{{xylf 2 12 446 1 'b'}}} {{{xyl 2 12 436 1}}}",
+						"{{{xylf 2 12 419 1 'b'}}} {{{xyl 2 12 409 1}}}",
+						"{{{xylf 2 12 392 1 'b'}}} {{{xyl 2 12 382 1}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_htp",
+				"type": "Page",
+				"notes": "HOW TO PLAY"
+			},
+			"name": "{{{xylf 2 49 218 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 2 49 218 1 'an'}}}"
+				},
+				{
+					"type": "section",
+					"section": "dices",
+					"title": "{{{xylf 2 49 218 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xylf 2 51 185 3 'nt'}}}",
+								"{{{xylf 2 51 147 3 'nt'}}}",
+								"{{{xylf 2 51 108 3 'nt'}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "dices",
+					"title": "{{{xylf 2 248 551 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 2 248 540 2}}}",
+								"{{{xyl 2 248 529 2}}}",
+								"{{{xyl 2 248 518 2}}}",
+								"{{{xyl 2 248 507 5}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "dices",
+					"title": "{{{xylf 2 248 466 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 2 248 455 6}}}",
+								"[X] {{{xylf 2 274 421 1 'an'}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 2 248 375 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 2 248 363 7}}}"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}]
+,[ "pfsq22_adventure" ,{
+	"helyx": {
+		"idname": "pfsq22_adventure",
+		"type": "JournalEntry",
+		"target": "pfsq22_journals"
+	},
+	"name": "01 Adventure",
+	"pages": [
+		{
+			"helyx": {
+				"idname": "pfsq22_wig",
+				"type": "Page",
+				"notes": "Where on Golarion"
+			},
+			"name": "{{{xylf 3 344 599 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 3 344 599 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 3 321 579 10}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_003002",
+				"type": "Page",
+				"notes": "Adventure Background"
+			},
+			"name": "{{{xylf 3 72 627 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 3 72 627 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 3 72 615 9}}}",
+						"{{{xyl 3 81 507 10}}}",
+						"{{{xyl 3 321 291 14}}}",
+						"{{{xyl 3 321 147 7}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_005001",
+				"type": "Page",
+				"notes": "Explore, Report, Cooperate!"
+			},
+			"name": "{{{xylf 5 359 666 2 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 5 359 666 2 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 5 320 627 8}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_lolly",
+				"type": "Page"
+			},
+			"name": "{{{xylf 3 125 87 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'lolly.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_thakik",
+				"type": "Page"
+			},
+			"name": "{{{xylf 4 144 87 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'thakik.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_004002",
+				"type": "Page",
+				"notes": "Getting Started"
+			},
+			"name": "{{{xylf 4 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 4 72 687 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 4 72 675 6}}}"
+					]
+				},
+				{
+					"type": "read-section",
+					"paragraphs": [
+						"{{{xyl 4 72 603 10}}}",
+						"{{{xyl 4 321 687 13}}}",
+						"{{{xyl 4 321 531 4}}}"
+					]
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 4 312 471 4}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "question",
+					"title": "{{{xylf 4 321 423 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 4 429 423 6}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "question",
+					"title": "{{{xylf 4 321 351 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 4 464 351 7}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "question",
+					"title": "{{{xylf 4 321 267 2 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 4 355 255 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "question",
+					"title": "{{{xylf 4 321 219 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 4 472 219 4}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "skill-society",
+					"title": "{{{xylf 4 312 159 2 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 4 312 135 6}}}"
+							]
+						},
+						{
+							"type": "statblock",
+							"statblock": [
+								"{{{pxyl 5 72 687 6}}}",
+								"{{{pxyl 5 72 627 4}}}",
+								"{{{pxyl 5 72 591 4}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "skill-arcana",
+					"title": "{{{xylf 5 72 543 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 5 72 531 5}}}"
+							]
+						},
+						{
+							"type": "statblock",
+							"statblock": [
+								"{{{pxyl 5 72 471 6}}}",
+								"{{{pxyl 5 72 411 4}}}",
+								"{{{pxyl 5 72 375 4}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 5 72 327 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 5 72 315 4}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_005003",
+				"type": "Page",
+				"notes": "Planar Instabilities"
+			},
+			"name": "{{{xylf 5 72 255 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 5 72 255 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 5 72 243 15}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_005002",
+				"type": "Page",
+				"notes": "Running This Quest"
+			},
+			"name": "{{{xylf 5 351 514 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 5 351 514 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 5 320 495 10}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_005004",
+				"type": "Page",
+				"notes": "Proving Their Worth"
+			},
+			"name": "{{{xylf 5 312 327 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 5 312 327 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 5 312 315 11}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 5 321 183 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 5 371 183 5}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "treasure",
+					"title": "{{{xylf 5 321 123 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 5 354 123 5}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_005004b",
+				"type": "Page",
+				"notes": "King of the hill"
+			},
+			"name": "{{{xylf 6 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 6 72 687 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 6 72 675 4}}}"
+					]
+				},
+				{
+					"type": "read-section",
+					"paragraphs": [
+						"{{{xyl 6 72 615 4}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 6 81 555 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 6 169 555 4}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 6 81 507 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 6 142 507 3}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_005004c",
+				"type": "Page",
+				"notes": "Prank War"
+			},
+			"name": "{{{xylf 6 72 459 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 6 72 459 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 6 72 447 3}}}"
+					]
+				},
+				{
+					"type": "read-section",
+					"paragraphs": [
+						"{{{xyl 6 72 399 4}}}"
+					]
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 6 81 339 6}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 6 81 267 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 6 172 267 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 6 81 231 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 6 108 231 3}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_005004d",
+				"type": "Page",
+				"notes": "Craft Time"
+			},
+			"name": "{{{xylf 6 72 183 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 6 72 183 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 6 72 171 2}}}"
+					]
+				},
+				{
+					"type": "read-section",
+					"paragraphs": [
+						"{{{xyl 6 72 135 1}}}",
+						"{{{xyl 6 81 123 5}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 6 320 687 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 6 406 687 5}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 6 320 627 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 6 348 627 5}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_005004e",
+				"type": "Page",
+				"notes": "Trivia Time"
+			},
+			"name": "{{{xylf 6 311 555 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 6 311 555 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 6 311 543 3}}}"
+					]
+				},
+				{
+					"type": "read-section",
+					"paragraphs": [
+						"{{{xyl 6 311 495 2}}}",
+						"{{{xyl 6 320 471 4}}}",
+						"{{{xyl 6 320 423 2}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 6 320 387 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 6 407 387 5}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 6 320 327 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 6 348 327 5}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_006001",
+				"type": "Page",
+				"notes": "Traps"
+			},
+			"name": "{{{xylf 6 311 255 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 6 311 255 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 6 311 243 6}}}"
+					]
+				},
+				{
+					"type": "read-section",
+					"paragraphs": [
+						"{{{xyl 6 311 159 4}}}",
+						"{{{xyl 6 320 111 2}}}",
+						"{{{xyl 6 320 87 2}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_A",
+				"type": "Page",
+				"notes": "Pyramids Ruins"
+			},
+			"name": "{{{xylf 8 72 687 1 'adn'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 8 72 687 1 'adn'}}}",
+					"cr": "{{{xylf 8 216 687 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 8 72 675 9}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 8 81 567 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 8 139 567 13}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "bylevel",
+					"title": "{{{xylf 8 312 687 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "creature",
+							"ref": "pfsq22_metal_scamp",
+							"cr": "{{{slicexylf 8 312 663 3 'n' 12 11}}}",
+							"statblock": [
+								"{{{pxyl 8 312 651 1}}}"
+							]
+						},
+						{
+							"type": "hazard",
+							"name": "{{{slicexlf 8036 2 'tn' 0 19}}}",
+							"cr": "{{{slicexylf 8 312 627 3 'n' 19 9}}}",
+							"statblock": [
+								"{{{pxyl 8 312 615 1}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "bylevel",
+					"title": "{{{xylf 8 312 591 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "creature",
+							"ref": "pfsq22_metal_scamp",
+							"amount": 2,
+							"cr": "{{{slicexylf 8 312 567 3 'n' 17 11}}}",
+							"statblock": [
+								"{{{pxyl 8 312 555 1}}}"
+							]
+						},
+						{
+							"type": "hazard",
+							"name": "{{{slicexlf 8045 2 'tn' 0 19}}}",
+							"cr": "{{{slicexylf 8 312 531 3 'n' 19 9}}}",
+							"statblock": [
+								"{{{pxyl 8 312 519 1}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "treasure",
+					"title": "{{{xylf 8 321 495 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 8 354 495 3}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_008003",
+				"type": "Page",
+				"notes": "Scamp Fight"
+			},
+			"name": "{{{xylf 8 409 447 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 8 409 447 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 8 408 435 14}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_B",
+				"type": "Page",
+				"notes": "B. Town Center"
+			},
+			"name": "{{{xylf 8 360 255 1 'adn'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 8 360 255 1 'adn'}}}",
+					"cr": "{{{xylf 8 360 243 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 8 343 231 9}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 8 321 123 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 8 375 123 5}}}{{{xyl 9 72 687 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "bylevel",
+					"title": "{{{xylf 9 72 639 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "creature",
+							"ref": "pfsq22_baby_scamp_swarm",
+							"cr": "{{{slicexylf 9 72 615 3 'n' 17 11}}}",
+							"statblock": [
+								"{{{pxyl 9 72 603 1}}}"
+							]
+						},
+						{
+							"type": "hazard",
+							"name": "{{{slicexlf 9014 2 'tn' 0 19}}}",
+							"cr": "{{{slicexylf 9 72 579 3 'n' 19 9}}}",
+							"statblock": [
+								"{{{pxyl 9 72 567 1}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "bylevel",
+					"title": "{{{xylf 9 72 543 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "creature",
+							"ref": "pfsq22_anxious_baby_scamp_swarm",
+							"cr": "{{{slicexylf 9 72 519 3 'n' 25 11}}}",
+							"statblock": [
+								"{{{pxyl 9 72 507 1}}}"
+							]
+						},
+						{
+							"type": "hazard",
+							"name": "{{{slicexlf 9023 2 'tn' 0 19}}}",
+							"cr": "{{{slicexylf 9 72 483 3 'n' 19 9}}}",
+							"statblock": [
+								"{{{pxyl 9 72 471 1}}}"
+							]
+						},
+						{
+							"type": "section",
+							"section": "treasure",
+							"title": "{{{xylf 9 81 447 1 'dn'}}}",
+							"blocks": [
+								{
+									"type": "text",
+									"paragraphs": [
+										"{{{xyl 9 116 447 4}}}"
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_009002",
+				"type": "Page",
+				"notes": "Defense"
+			},
+			"name": "{{{xylf 9 312 685 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 9 312 685 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 9 312 674 9}}}"
+					]
+				},
+				{
+					"type": "read-section",
+					"paragraphs": [
+						"{{{xyl 9 312 566 5}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_C",
+				"type": "Page",
+				"notes": "C. Pyramid Base Moderate"
+			},
+			"name": "{{{xylf 9 312 483 1 'adn'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 9 312 483 1 'adn'}}}",
+					"cr": "{{{xylf 9 458 483 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 9 312 471 10}}}",
+						"{{{xyl 9 341 351 4}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "bylevel",
+					"title": "{{{xylf 9 347 291 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "creature",
+							"ref": "pfsq22_vegetable_lamp",
+							"cr": "{{{slicexylf 9 347 267 3 'n' 15 11}}}",
+							"statblock": [
+								"{{{pxyl 9 352 255 1}}}"
+							]
+						},
+						{
+							"type": "hazard",
+							"name": "{{{slicexlf 9068 2 'tn' 0 19}}}",
+							"cr": "{{{slicexylf 9 338 231 3 'n' 19 9}}}",
+							"statblock": [
+								"{{{pxyl 9 330 219 1}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "bylevel",
+					"title": "{{{xylf 9 312 195 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "creature",
+							"ref": "pfsq22_sod_hound",
+							"cr": "{{{slicexylf 9 312 171 3 'n' 10 11}}}",
+							"statblock": [
+								"{{{pxyl 9 312 159 1}}}"
+							]
+						},
+						{
+							"type": "hazard",
+							"name": "{{{slicexlf 9077 2 'tn' 0 19}}}",
+							"cr": "{{{slicexylf 9 312 135 3 'n' 19 9}}}",
+							"statblock": [
+								"{{{pxyl 9 312 123 1}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "treasure",
+					"title": "{{{xylf 9 321 99 1 'dn'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 9 355 99 7}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_010002",
+				"type": "Page",
+				"notes": "Conclusion"
+			},
+			"name": "{{{xylf 10 72 675 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 10 72 675 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 10 72 663 10}}}"
+					]
+				},
+				{
+					"type": "section",
+					"section": "development",
+					"title": "{{{xylf 10 312 675 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 10 312 663 5}}}"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}]
+,[ "pfsq22_appendix1" ,{
+	"helyx": {
+		"idname": "pfsq22_appendix1",
+		"type": "JournalEntry",
+		"target": "pfsq22_journals"
+	},
+	"name": "02 {{{xylf 11 72 687 1 'an'}}}",
+	"pages": [
+		{
+			"helyx": {
+				"idname": "pfsq22_011001",
+				"type": "Page",
+				"notes": "Appendix 1: Level 1–2 Encounters"
+			},
+			"name": "{{{xylf 11 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 11 72 687 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 11 72 675 7}}}",
+						"{{{xyl 11 81 591 7}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_011002",
+				"type": "Page",
+				"notes": "Planar Instabilities (levels 1–2)"
+			},
+			"name": "{{{xylf 11 72 519 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 11 72 519 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 11 72 507 2}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"ref": "pfsq22_earth_falls_lvl1-2",
+					"cr": "{{{slicexylf 11 72 471 3 'n' 12 9}}}",
+					"tags": "{{{xytags 11 81 459 'ancestry'}}}{{{xytags 11 122 459 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 11 72 447 2}}}",
+						"{{{pxyl 11 72 435 4}}}",
+						"{{{pxyl 11 72 399 3}}}",
+						"{{{pxyl 11 72 375 21}}}",
+						"{{{pxyl 11 72 243 8}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"ref": "pfsq22_lightning_strike_lvl1-2",
+					"cr": "{{{slicexylf 11 311 687 3 'n' 18 9}}}",
+					"tags": "{{{xytags 11 320 675 'ancestry'}}}{{{xytags 11 360 675 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 11 311 663 2}}}",
+						"{{{pxyl 11 311 651 7}}}",
+						"{{{pxyl 11 311 579 3}}}",
+						"{{{pxyl 11 311 555 10}}}",
+						"{{{pxyl 11 311 507 6}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"ref": "pfsq22_wind_buffets_lvl1-2",
+					"cr": "{{{slicexylf 11 311 447 3 'n' 13 9}}}",
+					"tags": "{{{xytags 11 320 435 'ancestry'}}}{{{xytags 11 360 435 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 11 311 423 2}}}",
+						"{{{pxyl 11 311 411 3}}}",
+						"{{{pxyl 11 311 387 3}}}",
+						"{{{pxyl 11 311 363 12}}}",
+						"{{{pxyl 11 311 303 16}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_012002",
+				"type": "Page",
+				"notes": "Encounter a (levels 1–2)"
+			},
+			"name": "{{{xylf 12 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 12 72 687 1 'an'}}}"
+				},
+				{
+					"type": "section",
+					"section": "balance",
+					"title": "{{{xylf 12 344 671 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 12 321 651 3}}}",
+								"{{{xyl 12 330 615 3}}}",
+								"{{{xyl 12 330 591 3}}}",
+								"{{{xyl 12 330 567 3}}}",
+								"{{{xyl 12 330 543 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_metal_scamp",
+					"cr": "{{{slicexylf 12 72 663 3 'n' 12 11}}}",
+					"tags": "{{{xytags 12 77 651 'size'}}}{{{xytags 12 105 651 'ancestry'}}}{{{xytags 12 143 651 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 12 72 639 2}}}",
+						"{{{pxyl 12 72 627 2}}}",
+						"{{{pxyl 12 72 615 2}}}",
+						"{{{pxyl 12 72 603 2}}}",
+						"{{{pxyl 12 72 591 12}}}{{{hr}}}",
+						"{{{pxyl 12 72 579 8}}}",
+						"{{{pxyl 12 72 567 7}}}{{{hr}}}",
+						"{{{pxyl 12 72 543 2}}}",
+						"{{{pxyl 12 72 531 6}}}",
+						"{{{pxyl 12 72 519 5}}}",
+						"{{{pxyl 12 72 507 8}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"name": "{{{slicexlf 12084 2 'tn' 0 19}}}",
+					"cr": "{{{slicexylf 12 72 435 3 'n' 19 9}}}",
+					"statblock": [
+						"{{{pxyl 12 72 423 1}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_weak_wood_wisp",
+					"amount": "[O]",
+					"cr": "{{{slicexylf 12 72 399 3 'n' 19 12}}}",
+					"tags": "{{{xytags 12 78 387 'size'}}}{{{xytags 12 101 387 'ancestry'}}}{{{xytags 12 139 387 'ancestry'}}}{{{xytags 12 163 387 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 12 72 375 2}}}",
+						"{{{pxyl 12 72 363 2}}}",
+						"{{{pxyl 12 72 351 2}}}",
+						"{{{pxyl 12 72 339 2}}}",
+						"{{{pxyl 12 72 327 12}}}{{{hr}}}",
+						"{{{pxyl 12 72 315 8}}}",
+						"{{{pxyl 12 72 303 7}}}",
+						"{{{pxyl 12 72 279 10}}}",
+						"{{{pxyl 12 72 171 16}}}",
+						"{{{pxyl 12 321 483 1}}}",
+						"{{{pxyl 12 321 471 1}}}",
+						"{{{pxyl 12 321 459 1}}}",
+						"{{{pxyl 12 321 447 1}}}{{{hr}}}",
+						"{{{pxyl 12 312 435 2}}}",
+						"{{{pxyl 12 312 423 7}}}",
+						"{{{pxyl 12 312 399 4}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_013002",
+				"type": "Page",
+				"notes": "Encounter B (levels 1–2)"
+			},
+			"name": "{{{xylf 13 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 13 72 687 1 'an'}}}"
+				},
+				{
+					"type": "section",
+					"section": "balance",
+					"title": "{{{xylf 13 344 671 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 13 321 651 3}}}",
+								"{{{xyl 13 330 615 3}}}",
+								"{{{xyl 13 330 591 3}}}",
+								"{{{xyl 13 330 567 3}}}",
+								"{{{xyl 13 330 543 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "hazard",
+					"name": "{{{slicexlf 13006 2 'tn' 0 19}}}",
+					"cr": "{{{slicexylf 13 72 663 3 'n' 19 9}}}",
+					"statblock": [
+						"{{{pxyl 13 72 651 1}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_baby_scamp_swarm",
+					"cr": "{{{slicexylf 13 72 627 3 'n' 17 11}}}",
+					"tags": "{{{xytags 13 76 615 'uncommon'}}}{{{xytags 13 112 615 'ancestry'}}}{{{xytags 13 136 615 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 13 72 603 2}}}",
+						"{{{pxyl 13 72 591 2}}}",
+						"{{{pxyl 13 72 579 12}}}",
+						"{{{pxyl 13 72 567 5}}}{{{hr}}}",
+						"{{{pxyl 13 72 519 8}}}",
+						"{{{pxyl 13 72 507 10}}}{{{hr}}}",
+						"{{{pxyl 13 72 471 2}}}",
+						"{{{pxyl 13 72 459 6}}}",
+						"{{{pxyl 13 72 399 6}}}",
+						"{{{pxyl 13 72 363 15}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_weak_wood_scamp",
+					"amount": "[O]",
+					"cr": "{{{slicexylf 13 312 471 3 'n' 20 12}}}",
+					"tags": "{{{xytags 13 316 459 'size'}}}{{{xytags 13 342 459 'ancestry'}}}{{{xytags 13 381 459 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 13 312 447 2}}}",
+						"{{{pxyl 13 312 435 2}}}",
+						"{{{pxyl 13 312 423 2}}}",
+						"{{{pxyl 13 312 411 2}}}",
+						"{{{pxyl 13 312 399 12}}}{{{hr}}}",
+						"{{{pxyl 13 312 387 8}}}",
+						"{{{pxyl 13 312 375 7}}}{{{hr}}}",
+						"{{{pxyl 13 312 351 2}}}",
+						"{{{pxyl 13 312 339 6}}}",
+						"{{{pxyl 13 312 327 13}}}",
+						"{{{pxyl 13 312 303 8}}}",
+						"{{{pxyl 13 312 243 6}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_wood_scamp",
+					"amount": "[O]",
+					"cr": "{{{slicexylf 14 72 687 3 'n' 15 11}}}",
+					"tags": "{{{xytags 14 76 675 'size'}}}{{{xytags 14 103 675 'ancestry'}}}{{{xytags 14 141 675 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 14 72 663 2}}}",
+						"{{{pxyl 14 72 651 2}}}",
+						"{{{pxyl 14 72 639 2}}}",
+						"{{{pxyl 14 72 627 2}}}",
+						"{{{pxyl 14 72 615 12}}}{{{hr}}}",
+						"{{{pxyl 14 72 603 8}}}",
+						"{{{pxyl 14 72 591 6}}}{{{hr}}}",
+						"{{{pxyl 14 72 567 2}}}",
+						"{{{pxyl 14 72 555 6}}}",
+						"{{{pxyl 14 72 543 13}}}",
+						"{{{pxyl 14 72 519 8}}}",
+						"{{{pxyl 14 72 459 6}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_elite_wood_scamp",
+					"amount": "[O]",
+					"cr": "{{{slicexylf 14 312 687 3 'n' 21 11}}}",
+					"tags": "{{{xytags 14 316 675 'size'}}}{{{xytags 14 342 675 'ancestry'}}}{{{xytags 14 381 675 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 14 312 663 2}}}",
+						"{{{pxyl 14 312 651 2}}}",
+						"{{{pxyl 14 312 639 2}}}",
+						"{{{pxyl 14 312 627 2}}}",
+						"{{{pxyl 14 312 615 12}}}{{{hr}}}",
+						"{{{pxyl 14 312 603 8}}}",
+						"{{{pxyl 14 312 591 6}}}{{{hr}}}",
+						"{{{pxyl 14 312 567 2}}}",
+						"{{{pxyl 14 312 555 7}}}",
+						"{{{pxyl 14 312 531 13}}}",
+						"{{{pxyl 14 312 507 8}}}",
+						"{{{pxyl 14 312 447 6}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_015002",
+				"type": "Page",
+				"notes": "Encounter C (levels 1–2)"
+			},
+			"name": "{{{xylf 15 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 15 72 687 1 'an'}}}"
+				},
+				{
+					"type": "section",
+					"section": "balance",
+					"title": "{{{xylf 15 344 671 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 15 321 651 3}}}",
+								"{{{xyl 15 330 615 3}}}",
+								"{{{xyl 15 330 591 3}}}",
+								"{{{xyl 15 330 567 3}}}",
+								"{{{xyl 15 330 543 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "hazard",
+					"name": "{{{slicexlf 15006 2 'tn' 0 19}}}",
+					"cr": "{{{slicexylf 15 72 663 3 'n' 19 9}}}",
+					"statblock": [
+						"{{{pxyl 15 72 651 1}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_vegetable_lamp",
+					"cr": "{{{slicexylf 15 72 627 3 'n' 15 11}}}",
+					"tags": "{{{xytags 15 77 615 'size'}}}{{{xytags 15 105 615 'ancestry'}}}{{{xytags 15 143 615 'ancestry'}}}{{{xytags 15 167 615 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 15 72 603 2}}}",
+						"{{{pxyl 15 72 591 2}}}",
+						"{{{pxyl 15 72 579 2}}}",
+						"{{{pxyl 15 72 567 12}}}",
+						"{{{pxyl 15 72 555 7}}}{{{hr}}}",
+						"{{{pxyl 15 72 483 8}}}",
+						"{{{pxyl 15 72 471 6}}}{{{hr}}}",
+						"{{{pxyl 15 72 447 2}}}",
+						"{{{pxyl 15 72 435 5}}}",
+						"{{{pxyl 15 72 423 6}}}",
+						"{{{pxyl 15 72 411 8}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_weak_gluttonous_geode",
+					"cr": "{{{slicexylf 15 312 483 3 'n' 26 12}}}",
+					"tags": "{{{xytags 15 317 471 'size'}}}{{{xytags 15 347 471 'ancestry'}}}{{{xytags 15 382 471 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 15 312 459 2}}}",
+						"{{{pxyl 15 312 447 2}}}",
+						"{{{pxyl 15 312 435 2}}}",
+						"{{{pxyl 15 312 423 12}}}{{{hr}}}",
+						"{{{pxyl 15 312 411 8}}}",
+						"{{{pxyl 15 312 399 4}}}{{{hr}}}",
+						"{{{pxyl 15 312 387 2}}}",
+						"{{{pxyl 15 312 375 5}}}",
+						"{{{pxyl 15 312 363 13}}}",
+						"{{{pxyl 15 312 243 9}}}"
+					]
+				}
+			]
+		}
+	]
+}]
+,[ "pfsq22_appendix2" ,{
+	"helyx": {
+		"idname": "pfsq22_appendix2",
+		"type": "JournalEntry",
+		"target": "pfsq22_journals"
+	},
+	"name": "03 {{{xylf 16 72 687 1 'an'}}}",
+	"pages": [
+		{
+			"helyx": {
+				"idname": "pfsq22_016001",
+				"type": "Page",
+				"notes": "Appendix 2: Level 3–4 Encounters"
+			},
+			"name": "{{{xylf 16 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 16 72 687 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 16 72 675 9}}}",
+						"{{{xyl 16 81 591 7}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_016002",
+				"type": "Page",
+				"notes": "Planar Instabilities (levels 3–4)"
+			},
+			"name": "{{{xylf 16 72 519 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 16 72 519 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 16 72 507 2}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"ref": "pfsq22_earth_falls_lvl3-4",
+					"cr": "{{{slicexylf 16 72 471 3 'n' 12 9}}}",
+					"tags": "{{{xytags 16 81 459 'ancestry'}}}{{{xytags 16 120 459 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 16 72 447 2}}}",
+						"{{{pxyl 16 72 435 4}}}",
+						"{{{pxyl 16 72 399 3}}}",
+						"{{{pxyl 16 72 375 21}}}",
+						"{{{pxyl 16 72 243 9}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"ref": "pfsq22_lightning_strike_lvl3-4",
+					"cr": "{{{slicexylf 16 312 687 3 'n' 18 9}}}",
+					"tags": "{{{xytags 16 321 675 'ancestry'}}}{{{xytags 16 359 675 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 16 312 663 2}}}",
+						"{{{pxyl 16 312 651 7}}}",
+						"{{{pxyl 16 312 579 3}}}",
+						"{{{pxyl 16 312 555 10}}}",
+						"{{{pxyl 16 312 507 6}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"ref": "pfsq22_wind_buffets_lvl3-4",
+					"cr": "{{{slicexylf 16 312 447 3 'n' 13 9}}}",
+					"tags": "{{{xytags 16 321 435 'ancestry'}}}{{{xytags 16 359 435 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 16 312 423 2}}}",
+						"{{{pxyl 16 312 411 3}}}",
+						"{{{pxyl 16 312 387 3}}}",
+						"{{{pxyl 16 312 363 11}}}",
+						"{{{pxyl 16 312 303 16}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_017002",
+				"type": "Page",
+				"notes": "Encounter a (levels 3–4)"
+			},
+			"name": "{{{xylf 17 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 17 72 687 1 'an'}}}"
+				},
+				{
+					"type": "section",
+					"section": "balance",
+					"title": "{{{xylf 17 344 671 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 17 321 651 3}}}",
+								"{{{xyl 17 330 615 3}}}",
+								"{{{xyl 17 330 591 3}}}",
+								"{{{xyl 17 330 567 3}}}",
+								"{{{xyl 17 330 543 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_metal_scamp",
+					"amount": "2",
+					"cr": "{{{slicexylf 17 72 663 3 'n' 17 11}}}",
+					"tags": "{{{xytags 17 77 651 'size'}}}{{{xytags 17 105 651 'ancestry'}}}{{{xytags 17 143 651 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 17 72 639 2}}}",
+						"{{{pxyl 17 72 627 2}}}",
+						"{{{pxyl 17 72 615 2}}}",
+						"{{{pxyl 17 72 603 2}}}",
+						"{{{pxyl 17 72 591 12}}}{{{hr}}}",
+						"{{{pxyl 17 72 579 8}}}",
+						"{{{pxyl 17 72 567 7}}}{{{hr}}}",
+						"{{{pxyl 17 72 543 2}}}",
+						"{{{pxyl 17 72 531 6}}}",
+						"{{{pxyl 17 72 519 5}}}",
+						"{{{pxyl 17 72 507 8}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"name": "{{{slicexlf 17068 2 'tn' 0 19}}}",
+					"cr": "{{{slicexylf 17 72 435 3 'n' 19 9}}}",
+					"statblock": [
+						"{{{pxyl 17 72 423 1}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_wood_wisp",
+					"amount": "[O]",
+					"cr": "{{{slicexylf 17 72 399 3 'n' 14 11}}}",
+					"tags": "{{{xytags 17 78 387 'size'}}}{{{xytags 17 101 387 'ancestry'}}}{{{xytags 17 139 387 'ancestry'}}}{{{xytags 17 163 387 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 17 72 375 2}}}",
+						"{{{pxyl 17 72 363 2}}}",
+						"{{{pxyl 17 72 351 2}}}",
+						"{{{pxyl 17 72 339 2}}}",
+						"{{{pxyl 17 72 327 12}}}{{{hr}}}",
+						"{{{pxyl 17 72 315 8}}}",
+						"{{{pxyl 17 72 303 6}}}",
+						"{{{pxyl 17 72 279 10}}}",
+						"{{{pxyl 17 312 483 20}}}{{{hr}}}",
+						"{{{pxyl 17 312 327 2}}}",
+						"{{{pxyl 17 312 315 6}}}",
+						"{{{pxyl 17 312 291 4}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_018002",
+				"type": "Page",
+				"notes": "Encounter B (levels 3–4)"
+			},
+			"name": "{{{xylf 18 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 18 72 687 1 'an'}}}"
+				},
+				{
+					"type": "section",
+					"section": "balance",
+					"title": "{{{xylf 18 344 671 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 18 321 651 3}}}",
+								"{{{xyl 18 330 615 3}}}",
+								"{{{xyl 18 330 591 3}}}",
+								"{{{xyl 18 330 567 3}}}",
+								"{{{xyl 18 330 543 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_anxious_baby_scamp_swarm",
+					"cr": "{{{slicexylf 18 72 663 3 'n' 25 11}}}",
+					"tags": "{{{xytags 18 76 651 'uncommon'}}}{{{xytags 18 112 651 'ancestry'}}}{{{xytags 18 137 651 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 18 72 639 2}}}",
+						"{{{pxyl 18 72 627 2}}}",
+						"{{{pxyl 18 72 615 12}}}",
+						"{{{pxyl 18 72 603 5}}}{{{hr}}}",
+						"{{{pxyl 18 72 555 8}}}",
+						"{{{pxyl 18 72 543 10}}}{{{hr}}}",
+						"{{{pxyl 18 72 507 2}}}",
+						"{{{pxyl 18 72 495 5}}}",
+						"{{{pxyl 18 72 471 15}}}",
+						"{{{pxyl 18 72 375 6}}}"
+					]
+				},
+				{
+					"type": "hazard",
+					"name": "{{{slicexlf 18079 2 'tn' 0 19}}}",
+					"cr": "{{{slicexylf 18 72 303 3 'n' 19 9}}}",
+					"statblock": [
+						"{{{pxyl 18 72 291 1}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_wood_scamp",
+					"amount": "[O]",
+					"cr": "{{{slicexylf 18 312 483 3 'n' 15 11}}}",
+					"tags": "{{{xytags 18 316 471 'size'}}}{{{xytags 18 342 471 'ancestry'}}}{{{xytags 18 382 471 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 18 312 459 2}}}",
+						"{{{pxyl 18 312 447 2}}}",
+						"{{{pxyl 18 312 435 2}}}",
+						"{{{pxyl 18 312 423 2}}}",
+						"{{{pxyl 18 312 411 12}}}{{{hr}}}",
+						"{{{pxyl 18 312 399 8}}}",
+						"{{{pxyl 18 312 387 6}}}{{{hr}}}",
+						"{{{pxyl 18 312 363 2}}}",
+						"{{{pxyl 18 312 351 6}}}",
+						"{{{pxyl 18 312 339 13}}}",
+						"{{{pxyl 18 312 315 8}}}",
+						"{{{pxyl 18 312 255 6}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_019002",
+				"type": "Page",
+				"notes": "Encounter C (levels 3–4)"
+			},
+			"name": "{{{xylf 19 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 19 72 687 1 'an'}}}"
+				},
+				{
+					"type": "section",
+					"section": "balance",
+					"title": "{{{xylf 19 344 671 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 19 321 651 3}}}",
+								"{{{xyl 19 330 615 3}}}",
+								"{{{xyl 19 330 591 3}}}",
+								"{{{xyl 19 330 567 3}}}",
+								"{{{xyl 19 330 543 3}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "hazard",
+					"name": "{{{slicexlf 19006 2 'tn' 0 19}}}",
+					"cr": "{{{slicexylf 19 72 663 3 'n' 19 9}}}",
+					"statblock": [
+						"{{{pxyl 19 72 651 1}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_sod_hound",
+					"cr": "{{{slicexylf 19 72 627 3 'n' 10 11}}}",
+					"tags": "{{{xytags 19 77 615 'size'}}}{{{xytags 19 111 615 'ancestry'}}}{{{xytags 19 145 615 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 19 72 603 2}}}",
+						"{{{pxyl 19 72 591 2}}}",
+						"{{{pxyl 19 72 579 2}}}",
+						"{{{pxyl 19 72 567 12}}}",
+						"{{{pxyl 19 72 555 3}}}{{{hr}}}",
+						"{{{pxyl 19 72 531 8}}}",
+						"{{{pxyl 19 72 519 4}}}{{{hr}}}",
+						"{{{pxyl 19 72 507 2}}}",
+						"{{{pxyl 19 72 495 6}}}",
+						"{{{pxyl 19 72 483 5}}}"
+					]
+				},
+				{
+					"type": "creature",
+					"ref": "pfsq22_gluttonous_geode",
+					"amount": "[O]",
+					"cr": "{{{slicexylf 19 72 423 3 'n' 21 11}}}",
+					"tags": "{{{xytags 19 80 411 'size'}}}{{{xytags 19 111 411 'ancestry'}}}{{{xytags 19 145 411 'ancestry'}}}",
+					"statblock": [
+						"{{{pxyl 19 72 399 2}}}",
+						"{{{pxyl 19 72 387 2}}}",
+						"{{{pxyl 19 72 375 2}}}",
+						"{{{pxyl 19 72 363 12}}}{{{hr}}}",
+						"{{{pxyl 19 72 351 8}}}",
+						"{{{pxyl 19 72 339 4}}}{{{hr}}}",
+						"{{{pxyl 19 72 327 2}}}",
+						"{{{pxyl 19 72 315 6}}}",
+						"{{{pxyl 19 72 303 13}}}",
+						"{{{pxyl 19 72 183 6}}}"
+					]
+				}
+			]
+		}
+	]
+}]
+,[ "pfsq22_apx3" ,{
+	"helyx": {
+		"idname": "pfsq22_apx3",
+		"type": "JournalEntry",
+		"target": "pfsq22_journals"
+	},
+	"name": "04 {{{xylf 20 227 687 1 'an'}}}",
+	"pages": [
+		{
+			"helyx": {
+				"idname": "pfsq22_img1",
+				"type": "Page",
+				"notes": "LOLLY ADAFISH"
+			},
+			"name": "{{{xylf 20 132 399 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'lolly.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_img2",
+				"type": "Page",
+				"notes": "METAL SCAMP"
+			},
+			"name": "{{{xylf 20 136 375 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'metal-scamp.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_img3",
+				"type": "Page",
+				"notes": "THAKIK"
+			},
+			"name": "{{{xylf 20 397 399 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'thakik.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_img4",
+				"type": "Page",
+				"notes": "WOOD SCAMP"
+			},
+			"name": "{{{xylf 20 374 375 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'wood-scamp.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_img5",
+				"type": "Page",
+				"notes": "BABY SCAMP SWARM"
+			},
+			"name": "{{{xylf 21 112 399 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'baby-scamp-swarm.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_img6",
+				"type": "Page",
+				"notes": "SOD HOUND"
+			},
+			"name": "{{{xylf 21 140 375 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'sod-hound.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_img7",
+				"type": "Page",
+				"notes": "EARTH SCAMP"
+			},
+			"name": "{{{xylf 21 375 399 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'earth-scamp.actor'}}}"
+			}
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_img8",
+				"type": "Page",
+				"notes": "GLUTTONOUS GEODE"
+			},
+			"name": "{{{xylf 21 352 375 1 'an'}}} [Image]",
+			"img": {
+				"src": "{{{imgpath 'gluttonous-geode.actor'}}}"
+			}
+		}
+	]
+}]
+,[ "pfsq22_oplay" ,{
+	"helyx": {
+		"idname": "pfsq22_oplay",
+		"type": "JournalEntry",
+		"target": "pfsq22_journals"
+	},
+	"name": "05 {{{xylf 22 72 687 1 'any'}}}",
+	"pages": [
+		{
+			"helyx": {
+				"idname": "pfsq20_oplay_01",
+				"type": "Page"
+			},
+			"name": "{{{xylf 22 72 687 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 22 72 687 1 'an'}}}"
+				},
+				{
+					"type": "section",
+					"section": "dices",
+					"title": "{{{xylf 22 72 663 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "table",
+							"columns": "2",
+							"headers": [
+								"{{{xylf 22 77 639 1 'an'}}}",
+								"{{{xylf 22 138 639 1 'an'}}}"
+							],
+							"lines": [
+								[
+									"{{{pxyl 22 77 624 1}}}",
+									"{{{pxyl 22 138 624 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 610 1}}}",
+									"{{{pxyl 22 138 610 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 596 1}}}",
+									"{{{pxyl 22 138 596 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 582 1}}}",
+									"{{{pxyl 22 138 582 1}}}"
+								]
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "treasure",
+					"title": "{{{xylf 22 72 557 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 22 72 543 5}}}",
+								"{{{xyl 22 72 519 5}}}",
+								"{{{xyl 22 72 495 5}}}",
+								"{{{xyl 22 72 471 5}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "dices",
+					"title": "{{{xylf 22 72 435 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "table",
+							"columns": "2",
+							"headers": [
+								"{{{xylf 22 77 410 1 'an'}}}",
+								"{{{xylf 22 185 410 1 'an'}}}"
+							],
+							"lines": [
+								[
+									"{{{pxyl 22 77 395 1}}}",
+									"{{{pxyl 22 185 395 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 381 1}}}",
+									"{{{pxyl 22 185 381 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 367 1}}}",
+									"{{{pxyl 22 185 367 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 353 1}}}",
+									"{{{pxyl 22 185 353 1}}}"
+								]
+							]
+						},
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 22 72 327 4}}}",
+								"{{{xyl 22 81 279 3}}}",
+								"{{{xyl 22 81 267 3}}}",
+								"{{{xyl 22 81 255 3}}}",
+								"{{{xyl 22 81 243 3}}}",
+								"{{{xyl 22 81 231 4}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "dices",
+					"title": "{{{xylf 22 72 171 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "table",
+							"columns": "2",
+							"headers": [
+								"{{{xylf 22 77 146 1 'an'}}}",
+								"{{{xylf 22 150 146 1 'an'}}}"
+							],
+							"lines": [
+								[
+									"{{{pxyl 22 77 131 1}}}",
+									"{{{pxyl 22 150 131 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 117 1}}}",
+									"{{{pxyl 22 150 117 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 103 1}}}",
+									"{{{pxyl 22 150 103 1}}}"
+								],
+								[
+									"{{{pxyl 22 77 89 1}}}",
+									"{{{pxyl 22 150 89 1}}}"
+								]
+							]
+						},
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 22 312 687 2}}}",
+								"{{{xyl 22 321 663 4}}}",
+								"{{{xyl 22 321 639 7}}}",
+								"{{{xyl 22 321 579 4}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "dices",
+					"title": "{{{xylf 22 312 543 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "table",
+							"columns": "2",
+							"headers": [
+								"{{{xylf 22 316 515 1 'an'}}}",
+								"{{{xylf 22 390 515 1 'an'}}}"
+							],
+							"lines": [
+								[
+									"{{{pxyl 22 316 499 2}}}",
+									"{{{pxyl 22 390 499 1}}}"
+								],
+								[
+									"{{{pxyl 22 316 484 1}}}",
+									"{{{pxyl 22 390 484 1}}}"
+								],
+								[
+									"{{{pxyl 22 316 470 1}}}",
+									"{{{pxyl 22 390 470 1}}}"
+								],
+								[
+									"{{{pxyl 22 316 456 1}}}",
+									"{{{pxyl 22 390 456 1}}}"
+								]
+							]
+						},
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 22 312 435 2}}}",
+								"{{{xyl 22 321 411 4}}}",
+								"{{{xyl 22 321 387 7}}}",
+								"{{{xyl 22 321 327 4}}}"
+							]
+						}
+					]
+				},
+				{
+					"type": "section",
+					"section": "balance",
+					"title": "{{{xylf 22 312 291 1 'an'}}}",
+					"blocks": [
+						{
+							"type": "text",
+							"paragraphs": [
+								"{{{xyl 22 312 267 6}}}",
+								"{{{xyl 22 321 195 3}}}",
+								"{{{xyl 22 321 183 3}}}",
+								"{{{xyl 22 321 171 3}}}",
+								"{{{xyl 22 321 159 3}}}",
+								"{{{xyl 22 321 147 3}}}",
+								"{{{xyl 22 321 135 3}}}"
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_license",
+				"type": "Page",
+				"notes": "ORC notice"
+			},
+			"name": "{{{xylf 24 312 535 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 24 312 535 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 24 312 507 5}}}",
+						"{{{xyl 24 312 447 3}}}",
+						"{{{xyl 24 312 423 2}}}",
+						"{{{xyl 24 312 387 3}}}",
+						"{{{xyl 24 312 351 9}}}",
+						"{{{xyl 24 312 255 3}}}",
+						"{{{xyl 24 312 219 5}}}"
+					]
+				}
+			]
+		},
+		{
+			"helyx": {
+				"idname": "pfsq22_end_credits",
+				"type": "Page",
+				"notes": "PAIZO INC."
+			},
+			"name": "{{{xylf 24 72 692 1 'an'}}}",
+			"blocks": [
+				{
+					"type": "journal-title",
+					"title": "{{{xylf 24 72 692 1 'an'}}}"
+				},
+				{
+					"type": "text",
+					"paragraphs": [
+						"{{{xyl 24 72 679 2}}}",
+						"{{{xyl 24 72 668 2}}}",
+						"{{{xyl 24 72 657 2}}}",
+						"{{{xyl 24 72 646 2}}}",
+						"{{{xyl 24 72 635 2}}}",
+						"{{{xyl 24 72 624 2}}}",
+						"{{{xyl 24 72 613 3}}}",
+						"{{{xyl 24 72 602 3}}}",
+						"{{{xyl 24 72 580 3}}}",
+						"{{{xyl 24 72 558 2}}}",
+						"{{{xyl 24 72 547 3}}}",
+						"{{{xyl 24 72 525 2}}}",
+						"{{{xyl 24 72 514 2}}}",
+						"{{{xyl 24 72 503 2}}}",
+						"{{{xyl 24 72 492 2}}}",
+						"{{{xyl 24 72 481 2}}}",
+						"{{{xyl 24 72 470 3}}}",
+						"{{{xyl 24 72 448 3}}}",
+						"{{{xyl 24 72 426 2}}}",
+						"{{{xyl 24 72 415 2}}}",
+						"{{{xyl 24 72 404 2}}}",
+						"{{{xyl 24 72 393 2}}}",
+						"{{{xyl 24 72 382 2}}}",
+						"{{{xyl 24 72 371 2}}}",
+						"{{{xyl 24 72 357 2}}}",
+						"{{{xyl 24 72 346 2}}}",
+						"{{{xyl 24 72 335 2}}}",
+						"{{{xyl 24 72 324 4}}}",
+						"{{{xyl 24 72 313 4}}}",
+						"{{{xyl 24 72 302 4}}}",
+						"{{{xyl 24 72 291 2}}}",
+						"{{{xyl 24 72 280 2}}}",
+						"{{{xyl 24 72 269 2}}}",
+						"{{{xyl 24 72 258 2}}}",
+						"{{{xyl 24 72 247 4}}}",
+						"{{{xyl 24 72 236 2}}}",
+						"{{{xyl 24 72 225 2}}}",
+						"{{{xyl 24 72 214 2}}}",
+						"{{{xyl 24 72 203 2}}}",
+						"{{{xyl 24 72 192 2}}}",
+						"{{{xyl 24 72 181 2}}}",
+						"{{{xyl 24 72 170 2}}}",
+						"{{{xyl 24 72 159 2}}}",
+						"{{{xyl 24 72 146 4}}}",
+						"{{{xyl 24 72 135 2}}}",
+						"{{{xyl 24 72 124 2}}}",
+						"{{{xyl 24 72 113 2}}}",
+						"{{{xyl 24 72 102 2}}}{{{xyl 24 321 692 1}}}",
+						"{{{xyl 24 312 681 2}}}",
+						"{{{xyl 24 312 670 4}}}",
+						"{{{xyl 24 312 656 5}}}",
+						"{{{xyl 24 312 632 2}}}",
+						"{{{xyl 24 312 621 4}}}",
+						"{{{xyl 24 312 610 2}}}",
+						"{{{xyl 24 312 599 2}}}",
+						"{{{xyl 24 312 588 5}}}"
+					]
+				}
+			]
+		}
+	]
+}]
+,[ "pfsq22_village" ,{
+	"helyx": {
+		"idname": "pfsq22_village",
+		"target": "pfsq22_scenes",
+		"type": "Scene"
+	},
+	"name": "{{{xylf 7 83 675 1 'an'}}}",
+	"includes": [
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq22-friends-in-need/scene-a.json"
+	],
+	"tokens": [],
+	"notes": [
+		{
+			"helyx": {
+				"idname": "pfsq22_A"
+			},
+			"entryId": "nnXUI9covylVTEmt",
+			"pageId": "kWtI05wmqTSpGlbm",
+			"global": false,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"x": 800,
+			"y": 600,
+			"elevation": 0,
+			"sort": 0,
+			"iconSize": 80,
+			"texture": {
+				"tint": "#ffffff",
+				"src": "icons/svg/book.svg",
+				"anchorX": 0.5,
+				"anchorY": 0.5,
+				"fit": "contain",
+				"scaleX": 1,
+				"scaleY": 1,
+				"alphaThreshold": 0
+			},
+			"text": "",
+			"fontFamily": "",
+			"fontSize": 32,
+			"textColor": "#ffffff",
+			"textAnchor": 1,
+			"_id": "hh51B0RJKGhyr9YC",
+			"locked": false,
+			"flags": {}
+		}
+	],
+	"drawings": [
+		{
+			"strokeWidth": 8,
+			"strokeColor": "#ffffff",
+			"strokeAlpha": 1,
+			"bezierFactor": 0,
+			"fillType": 0,
+			"fillColor": "#ffffff",
+			"fillAlpha": 0.5,
+			"texture": null,
+			"fontFamily": "",
+			"fontSize": 48,
+			"textColor": "#ffffff",
+			"textAlpha": 1,
+			"elevation": 0,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"interface": false,
+			"x": 1000,
+			"y": 900,
+			"sort": 0,
+			"shape": {
+				"type": "r",
+				"width": 700,
+				"height": 600,
+				"radius": null,
+				"points": []
+			},
+			"_id": "ZW4rCPcGzAixfGMk",
+			"rotation": 0,
+			"hidden": false,
+			"locked": false,
+			"flags": {},
+			"text": "{{{xylf 7 151 566 1 'an'}}}"
+		},
+		{
+			"strokeWidth": 8,
+			"strokeColor": "#ffffff",
+			"strokeAlpha": 1,
+			"bezierFactor": 0,
+			"fillType": 0,
+			"fillColor": "#ffffff",
+			"fillAlpha": 0.5,
+			"texture": null,
+			"fontFamily": "",
+			"fontSize": 48,
+			"textColor": "#ffffff",
+			"textAlpha": 1,
+			"elevation": 0,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"interface": false,
+			"x": 1100,
+			"y": 1600,
+			"sort": 1,
+			"shape": {
+				"type": "r",
+				"width": 600,
+				"height": 400,
+				"radius": null,
+				"points": []
+			},
+			"_id": "GMWYlEV1DP5k2g23",
+			"rotation": 0,
+			"hidden": false,
+			"locked": false,
+			"flags": {},
+			"name": "",
+			"text": "{{{xylf 7 179 459 1 'an'}}}"
+		}
+	]
+}]
+,[ "pfsq22_pyramid" ,{
+	"helyx": {
+		"idname": "pfsq22_pyramid",
+		"target": "pfsq22_scenes",
+		"type": "Scene"
+	},
+	"name": "{{{xylf 7 83 349 1 'an'}}}",
+	"includes": [
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq22-friends-in-need/scene-b.json"
+	],
+	"tokens": [],
+	"notes": [
+		{
+			"helyx": {
+				"idname": "pfsq22_B"
+			},
+			"entryId": "bKfP6m641DL4dLxH",
+			"pageId": "8PNKZboevAd2iSOX",
+			"global": false,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"x": 750,
+			"y": 550,
+			"elevation": 0,
+			"sort": 0,
+			"iconSize": 80,
+			"texture": {
+				"tint": "#ffffff",
+				"src": "icons/svg/book.svg",
+				"anchorX": 0.5,
+				"anchorY": 0.5,
+				"fit": "contain",
+				"scaleX": 1,
+				"scaleY": 1,
+				"alphaThreshold": 0
+			},
+			"text": "",
+			"fontFamily": "",
+			"fontSize": 32,
+			"textColor": "#ffffff",
+			"textAnchor": 1,
+			"_id": "6tZ5EfGG25PAbL1S",
+			"locked": false,
+			"flags": {}
+		}
+	],
+	"drawings": [
+		{
+			"strokeWidth": 8,
+			"strokeColor": "#ffffff",
+			"strokeAlpha": 1,
+			"bezierFactor": 0,
+			"fillType": 0,
+			"fillColor": "#ffffff",
+			"fillAlpha": 0.5,
+			"texture": null,
+			"fontFamily": "",
+			"fontSize": 48,
+			"textColor": "#ffffff",
+			"textAlpha": 1,
+			"elevation": 0,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"interface": false,
+			"x": 1400,
+			"y": 1200,
+			"sort": 0,
+			"shape": {
+				"type": "r",
+				"width": 400,
+				"height": 500,
+				"radius": null,
+				"points": []
+			},
+			"_id": "8Lj8qliMKxpjjfoW",
+			"rotation": 0,
+			"hidden": false,
+			"locked": false,
+			"flags": {},
+			"name": "",
+			"text": "{{{xylf 7 151 566 1 'an'}}}"
+		},
+		{
+			"strokeWidth": 8,
+			"strokeColor": "#ffffff",
+			"strokeAlpha": 1,
+			"bezierFactor": 0,
+			"fillType": 0,
+			"fillColor": "#ffffff",
+			"fillAlpha": 0.5,
+			"texture": null,
+			"fontFamily": "",
+			"fontSize": 48,
+			"textColor": "#ffffff",
+			"textAlpha": 1,
+			"elevation": 0,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"interface": false,
+			"x": 1900,
+			"y": 1200,
+			"sort": 1,
+			"shape": {
+				"type": "r",
+				"width": 500,
+				"height": 400,
+				"radius": null,
+				"points": []
+			},
+			"_id": "p6cZVonkI5NWwnIr",
+			"rotation": 0,
+			"hidden": false,
+			"locked": false,
+			"flags": {},
+			"name": "",
+			"text": "{{{xylf 7 179 459 1 'an'}}}"
+		}
+	]
+}]
+,[ "pfsq22_wig" ,{
+	"helyx": {
+		"idname": "pfsq22_wig",
+		"target": "pfsq22_scenes",
+		"type": "Scene"
+	},
+	"name": "{{{xylf 3 344 599 1 'an'}}}",
+	"includes": [
+		"modules/pf2-pdf-en-import/datas/imports/quests/pfsq22-friends-in-need/wig.json"
+	],
+	"drawings": [
+		{
+			"strokeWidth": 0,
+			"strokeColor": "#ffffff",
+			"strokeAlpha": 1,
+			"bezierFactor": 0,
+			"fillType": 0,
+			"fillColor": "#ffffff",
+			"fillAlpha": 0.5,
+			"texture": null,
+			"text": "{{{xylf 3 319 461 1 'an'}}}",
+			"fontFamily": "",
+			"fontSize": 48,
+			"textColor": "#ffffff",
+			"textAlpha": 1,
+			"elevation": 0,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"interface": false,
+			"x": 74,
+			"y": 42,
+			"sort": 0,
+			"shape": {
+				"type": "r",
+				"width": 550,
+				"height": 50,
+				"radius": null,
+				"points": []
+			},
+			"_id": "y7PRqgwgDZDOQwOF",
+			"rotation": 0,
+			"hidden": false,
+			"locked": false,
+			"flags": {},
+			"name": ""
+		},
+		{
+			"strokeWidth": 0,
+			"strokeColor": "#ffffff",
+			"strokeAlpha": 1,
+			"bezierFactor": 0,
+			"fillType": 0,
+			"fillColor": "#ffffff",
+			"fillAlpha": 0.5,
+			"texture": null,
+			"text": "{{{xylf 3 364 420 1 'an'}}}",
+			"fontFamily": "",
+			"fontSize": 48,
+			"textColor": "#ffffff",
+			"textAlpha": 1,
+			"elevation": 0,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"interface": false,
+			"x": 348,
+			"y": 300,
+			"sort": 1,
+			"shape": {
+				"type": "r",
+				"width": 240,
+				"height": 50,
+				"radius": null,
+				"points": []
+			},
+			"_id": "DxU3JBSdigTHRASJ",
+			"rotation": 0,
+			"hidden": false,
+			"locked": false,
+			"flags": {},
+			"name": ""
+		},
+		{
+			"strokeWidth": 0,
+			"strokeColor": "#ffffff",
+			"strokeAlpha": 1,
+			"bezierFactor": 0,
+			"fillType": 0,
+			"fillColor": "#ffffff",
+			"fillAlpha": 0.5,
+			"texture": null,
+			"text": "{{{xylf 3 449 386 1 'an'}}}",
+			"fontFamily": "",
+			"fontSize": 48,
+			"textColor": "#ffffff",
+			"textAlpha": 1,
+			"elevation": 0,
+			"levels": [
+				"defaultLevel0000"
+			],
+			"interface": false,
+			"x": 807,
+			"y": 521,
+			"sort": 2,
+			"shape": {
+				"type": "r",
+				"width": 250,
+				"height": 50,
+				"radius": null,
+				"points": []
+			},
+			"_id": "FziLDnSVeJKVyF3O",
+			"rotation": 0,
+			"hidden": false,
+			"locked": false,
+			"flags": {},
+			"name": ""
+		}
+	]
+}]
+]);
+    static itemsFiles =     
+    [
+    
+        "actors_v6", "journals/00_cover_v6", "journals/01_adventure_v6", "journals/02_appendix1_v6",
+        "journals/03_appendix2_v6", "journals/04_appendix3_v6", "journals/05_backmatter_v6",
+        "scenes/scene-a", "scenes/scene-b", "scenes/wig"
+    ]; 
+
+    static folders = 
+    [ 
+        { idname: "pfsq22_journals", name: "PFSQ22 - {{{xylf 1 111 176 2 'any'}}}", type: "JournalEntry" },
+        { idname: "pfsq22_actors", name: "PFSQ22 - {{{xylf 1 111 176 2 'any'}}}", type: "Actor" },    
+        { idname: "pfsq22_bestiary", name: 'Bestiary', parent: "pfsq22_actors" },      
+        { idname: "pfsq22_npcs", name: 'NPCs', parent: "pfsq22_actors" },          
+        { idname: "pfsq22_hazards", name: 'Hazards', parent: "pfsq22_actors" },         
+        { idname: "pfsq22_scenes", name: "PFSQ22 - {{{xylf 1 111 176 2 'any'}}}", type: "Scene" },  
     ];
 
     static fixes(str, index)
@@ -207480,6 +210476,7 @@ constructor()
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest19, idname: "pfsq19-the-elsewhere-feast", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq19-the-elsewhere-feast"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest20, idname: "pfsq20-show-must-go-on", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq20-show-must-go-on"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest21, idname: "pfsq21-infernal-infiltration", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq21-infernal-infiltration"}));
+        this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest22, idname: "pfsq22-friends-in-need", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq22-friends-in-need"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxPFSQuest27, idname: "pfsq27-within-the-glacier", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "pfsq27-within-the-glacier"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxKingmakerCampsiteMultiPack, idname: "flip-mat-kingmaker-campsite-multi-pack", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "flip-mat-kingmaker-campsite-multi-pack"}));
         this.adventures.push(new HelyxAdventure (this, {descriptor: HelyxFlipMatForest, idname: "flip-mat-forest", datas_directory: "modules/pf2-pdf-en-import/datas", shared_resources_directory: "modules/pf2-pdf-en-import/datas", origin: "pf2-pdf-en-import", export_directory: "flip-mat-forest"}));
